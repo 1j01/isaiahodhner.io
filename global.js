@@ -8,6 +8,27 @@ window.onload = function(){
 			if(local_href){
 				links[i].setAttribute("href", local_href);
 			}
+			var data_email = links[i].getAttribute("data-email");
+			if(data_email){
+				var email_provider = data_email;
+				var contact = links[i];
+				var magic = document.getElementById("magic");
+				var id = document.getElementById("name");
+				var my_name = id.innerHTML;
+				var reveal = function(){
+					magic.innerHTML = "email";
+					id.innerHTML = my_name.replace(" ", "") + "@" + email_provider;
+					contact.onclick = hide;
+					return false;
+				}
+				var hide = function(){
+					magic.innerHTML = "name";
+					id.innerHTML = my_name;
+					contact.onclick = reveal;
+					return false;
+				}
+				hide();
+			}
 		}
 	}
 	

@@ -16,13 +16,13 @@ boil = ({title, head, body})->
 			</head>
 			<body>
 				<header>
-					<b>Hi, my name is</b>
-					<h1>Isaiah Odhner</h1>
+					<b>Hi, my <span id="magic">name</span> is</b>
+					<h1 id="name">Isaiah Odhner</h1>
 					<b>and this is my portfolio</b>
 					<nav>
 						<a href="/" data-local="index.html">Home</a>
 						<a href="/textures" data-local="textures.html">Textures</a>
-						<a href="#!?/myfullname@gmail.com">Kontact</a>
+						<a href="#!?/myfullnamehere@gmail.com" data-email="gmail.com">Contact</a>
 					</nav>
 				</header>
 				#{tab tab body}
