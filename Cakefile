@@ -35,9 +35,7 @@ task "sbuild", ->
 	texture_imgs = (
 		for fname in fs.readdirSync("images/textures")
 			"""
-				<article class='tile texture'>
-					<img src='images/textures/#{fname}'>
-				</article>
+				<article><img src='images/textures/#{fname}'></article>
 			"""
 	).join "\n"
 	
