@@ -81,7 +81,7 @@ task "sbuild", ->
 		'MOS':
 			description: 'Monochrome Operating System'
 			repo: 'mos'
-		'choon.js':
+		'Choon.js':
 			description: 'Choon language interpreter built with the Web Audio API'
 			repo: 'choon.js'
 		'PesterChum':
