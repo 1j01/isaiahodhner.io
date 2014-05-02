@@ -51,58 +51,58 @@ task "sbuild", ->
 		"""
 	
 	projects =
-		'Tiamblia':
+		'tiamblia':
+			name: 'Tiamblia'
 			description: 'A notagame'
-			repo: 'tiamblia'
-		'BoxArt':
+		'boxart':
+			name: 'BoxArt'
 			description: '3d interactive box art generator'
-			repo: 'boxart'
-		'Babble':
+		'babble':
+			name: 'Babble'
 			description: 'Sentence generator and more'
-			repo: 'babble'
-		'MultiFiddle':
+		'multifiddle':
+			name: 'MultiFiddle'
 			description: 'Minimalistic multilingual live code fiddling environment'
-			repo: 'multifiddle'
-		'Paint':
+		'jspaint':
+			name: 'Paint'
 			description: 'Good old mspaint, but with unlimited undos/redos'
-			repo: 'jspaint'
-		'MyDE':
+		'IDE':
+			name: 'MyDE'
 			description: 'My custom development environment (currently defunct)'
-			repo: 'IDE'
-		'One Bit Per Pixel':
+		'1bpp':
+			name: 'One Bit Per Pixel'
 			description: 'A notagame in pure B&W'
-			repo: '1bpp'
-		'MindMap':
+		'mind-map':
+			name: 'MindMap'
 			description: 'Map your mind without ugly boxes'
-			repo: 'mind-map'
-		'Guitar':
+		'guitar':
+			name: 'Guitar'
 			description: 'Easily play and record tabs'
-			repo: 'guitar'
-		'MOS':
+		'mos':
+			name: 'MOS'
 			description: 'Monochrome Operating System'
-			repo: 'mos'
-		'Choon.js':
+		'choon.js':
+			name: 'Choon.js'
 			description: 'Choon language interpreter built with the Web Audio API'
-			repo: 'choon.js'
-		'PesterChum':
+		'pesterchum':
+			name: 'PesterChum'
 			description: 'MS Paint Adventures chat client'
-			repo: 'pesterchum'
-		'GIF Maker':
+		'gif-maker':
+			name: 'GIF Maker'
 			description: 'Make animated GIF images'
-			repo: 'gif-maker'
-		'Une: The Complete Multitool':
+		'une':
+			name: 'Une: The Complete Multitool'
 			description: 'An incomplete unitool for a game called 5UNE17A'
-			repo: 'une'
 	
 	fs.writeFileSync "index.html", boil
 		title: "Portfolio"
 		body: (
-			for project_name in Object.keys(projects)
-				project = projects[project_name]
+			for p in Object.keys(projects)
+				project = projects[p]
 				"""
-					<article><a href="http://github.com/1j01/#{project.repo}">
-						<header>#{project_name}</header>
-						<img width=256 height=256 src="images/projects/#{project.repo}.png">
+					<article><a href="#{ project.url ? "http://github.com/1j01/#{p}" }">
+						<header>#{project.name}</header>
+						<img width=256 height=256 src="images/projects/#{p}.png">
 						<footer>#{project.description}</footer>
 					</a></article>
 				"""
