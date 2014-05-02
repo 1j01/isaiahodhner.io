@@ -69,9 +69,11 @@ task "sbuild", ->
 		'IDE':
 			name: 'MyDE'
 			description: 'My custom development environment (currently defunct)'
+			url: 'repo'
 		'1bpp':
 			name: 'One Bit Per Pixel'
 			description: 'A notagame in pure B&W'
+			url: 'repo'
 		'mind-map':
 			name: 'MindMap'
 			description: 'Map your mind without ugly boxes'
@@ -87,6 +89,7 @@ task "sbuild", ->
 		'pesterchum':
 			name: 'PesterChum'
 			description: 'MS Paint Adventures chat client'
+			url: 'repo'
 		'gif-maker':
 			name: 'GIF Maker'
 			description: 'Make animated GIF images'
@@ -100,7 +103,12 @@ task "sbuild", ->
 			for p in Object.keys(projects)
 				project = projects[p]
 				"""
-					<article><a href="#{ project.url ? "http://github.com/1j01/#{p}" }">
+					<article><a href="#{
+						if project.url is 'repo'
+							"http://github.com/1j01/#{p}"
+						else
+							project.url ? "http://1j01.github.io/#{p}/"
+					}">
 						<header>#{project.name}</header>
 						<img width=256 height=256 src="images/projects/#{p}.png">
 						<footer>#{project.description}</footer>
