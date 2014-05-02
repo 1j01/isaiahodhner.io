@@ -96,6 +96,12 @@ task "sbuild", ->
 		'une':
 			name: 'Une: The Complete Multitool'
 			description: 'An incomplete unitool for a game called 5UNE17A'
+		'pool':
+			name: 'Jussom Billiards'
+			description: 'Just playing around with physics'
+		'pipes':
+			name: 'Pipes'
+			description: '3d pipes screensaver remake'
 	
 	fs.writeFileSync "index.html", boil
 		title: "Portfolio"
