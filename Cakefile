@@ -11,8 +11,8 @@ boil = ({title, head, body})->
 				<meta charset="utf-8">
 				#{tab tab "<title>#{title} — Isaiah Odhner</title>"}
 				#{tab tab (head ? "")}
-				<link rel="stylesheet" type="text/css" href="global.css">
-				<script async src="global.js"></script>
+				<link rel="stylesheet" type="text/css" href="portfolio.css">
+				<script async src="portfolio.js"></script>
 			</head>
 			<body>
 				<header>
@@ -22,7 +22,7 @@ boil = ({title, head, body})->
 					<nav>
 						<a href="/" data-local="index.html">Home</a>
 						<a href="/textures" data-local="textures.html">Textures</a>
-						<a href="#!?/myfullnamehere@gmail.com" data-email="gmail.com">Contact</a>
+						<a href="#!?/myfullnamehere@gmail.com">Contact</a>
 					</nav>
 				</header>
 				#{tab tab body}

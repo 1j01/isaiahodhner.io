@@ -9,16 +9,17 @@ window.onload = function(){
 				links[i].setAttribute("href", local_href);
 			}
 		}
-		var data_email = links[i].getAttribute("data-email");
-		if(data_email){
-			var email_provider = data_email;
+		var href = links[i].getAttribute("href");
+		var epmatch = /(@.*$)/.exec(href);
+		if(epmatch){
+			var email_provider = (epmatch||[])[1];
 			var contact = links[i];
 			var magic = document.getElementById("magic");
 			var id = document.getElementById("name");
 			var my_name = id.innerHTML;
 			var reveal = function(){
 				magic.innerHTML = "email";
-				id.innerHTML = my_name.replace(" ", "") + "@" + email_provider;
+				id.innerHTML = my_name.replace(" ", "") + email_provider;
 				contact.onclick = hide;
 				return false;
 			}
