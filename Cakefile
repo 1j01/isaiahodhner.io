@@ -13,6 +13,7 @@ boil = ({title, head, body})->
 				#{tab tab (head ? "")}
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
 				<script async src="portfolio.js"></script>
+				<script async src="global.js"></script>
 			</head>
 			<body>
 				<header>
