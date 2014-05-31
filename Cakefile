@@ -40,7 +40,7 @@ task 'sbuild', ->
 	texture_images = (
 		for fname in fs.readdirSync('images/textures')
 			"""
-				<article itemscope itemtype="ImageObject">
+				<article itemscope itemtype="http://schema.org/ImageObject">
 					<img src="images/textures/#{fname}" itemprop="contentURL">
 				</article>
 			"""
@@ -122,11 +122,13 @@ task 'sbuild', ->
 						project.url ? "http://1j01.github.io/#{key}/"
 				
 				"""
-					<article itemscope itemtype="WebPage"><a href="#{url}" itemprop="contentURL">
-						<header itemprop="name">#{project.name}</header>
-						<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">
-						<footer itemprop="description">#{project.description}</footer>
-					</a></article>
+					<article itemscope itemtype="http://schema.org/WebPage">
+						<a href="#{url}" itemprop="url">
+							<header itemprop="name">#{project.name}</header>
+							<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">
+							<footer itemprop="description">#{project.description}</footer>
+						</a>
+					</article>
 				"""
 				
 		).join '\n'
