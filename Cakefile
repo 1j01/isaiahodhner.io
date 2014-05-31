@@ -1,16 +1,20 @@
 
 fs = require 'fs'
 
-tab = (str)-> str.replace(/\n/g, "\n\t")
+tab = (str)-> str.replace(/\n/g, '\n\t')
 
 boil = ({title, head, body})->
 	"""
 		<!doctype html>
-		<html lang="en-us">
+		<html lang="en-US">
 			<head>
 				<meta charset="utf-8">
 				#{tab tab "<title>#{title} — Isaiah Odhner</title>"}
 				#{tab tab (head ? "")}
+				<meta name="author" content="Isaiah Odhner">
+				<meta name="description" content="Isaiah Odhner's portfolio website">
+				<meta name="keywords" content="Isaiah Odhner, 1j0, 1j01">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
 				<script async src="portfolio.js"></script>
 				<script async src="global.js"></script>
@@ -31,23 +35,25 @@ boil = ({title, head, body})->
 		</html>
 	"""
 
-task "sbuild", ->
+task 'sbuild', ->
 	
-	texture_imgs = (
-		for fname in fs.readdirSync("images/textures")
+	texture_images = (
+		for fname in fs.readdirSync('images/textures')
 			"""
-				<article><img src='images/textures/#{fname}'></article>
+				<article itemscope itemtype="ImageObject">
+					<img src="images/textures/#{fname}" itemprop="contentURL">
+				</article>
 			"""
-	).join "\n"
+	).join '\n'
 	
-	fs.writeFileSync "textures.html", boil
-		title: "Textures"
+	fs.writeFileSync 'textures.html', boil
+		title: 'Textures'
 		body: """
 			<p>
 				These are some textures I made with code and a tool that I also made.
 			</p>
 			<div id="textures">
-				#{tab texture_imgs}
+				#{tab texture_images}
 			</div>
 		"""
 	
@@ -95,7 +101,7 @@ task "sbuild", ->
 			name: 'GIF Maker'
 			description: 'Make animated GIF images'
 		'une':
-			name: 'Une: The Complete Multitool'
+			name: 'UNE: The Complete Multitool'
 			description: 'An incomplete unitool for a game called 5UNE17A'
 		'pool':
 			name: 'Jussom Billiards'
@@ -104,22 +110,24 @@ task "sbuild", ->
 			name: 'Pipes'
 			description: '3d pipes screensaver remake'
 	
-	fs.writeFileSync "index.html", boil
-		title: "Portfolio"
+	fs.writeFileSync 'index.html', boil
+		title: 'Portfolio'
 		body: (
-			for p in Object.keys(projects)
-				project = projects[p]
+			for key, project of projects
+				
+				url =
+					if project.url is 'repo'
+						"http://github.com/1j01/#{key}"
+					else
+						project.url ? "http://1j01.github.io/#{key}/"
+				
 				"""
-					<article><a href="#{
-						if project.url is 'repo'
-							"http://github.com/1j01/#{p}"
-						else
-							project.url ? "http://1j01.github.io/#{p}/"
-					}">
-						<header>#{project.name}</header>
-						<img width=256 height=256 src="images/projects/#{p}.png">
-						<footer>#{project.description}</footer>
+					<article itemscope itemtype="WebPage"><a href="#{url}" itemprop="contentURL">
+						<header itemprop="name">#{project.name}</header>
+						<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">
+						<footer itemprop="description">#{project.description}</footer>
 					</a></article>
 				"""
-		).join "\n"
+				
+		).join '\n'
 
