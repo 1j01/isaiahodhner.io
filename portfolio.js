@@ -22,13 +22,13 @@ window.onload = function(){
 				id.innerHTML = my_name.replace(" ", "") + email_provider;
 				contact.onclick = hide;
 				return false;
-			}
+			};
 			var hide = function(){
 				magic.innerHTML = "name";
 				id.innerHTML = my_name;
 				contact.onclick = reveal;
 				return false;
-			}
+			};
 			hide();
 		}
 	}
@@ -59,11 +59,6 @@ window.onload = function(){
 				tile.style.mozTransition =
 					"opacity 0.5s ease-in-out";
 				
-				/*if((i%2)==0){
-					var spacer = document.createElement("div");
-					spacer.className = "spacer";
-					textures.insertBefore(spacer, tile);
-				}*/
 			}
 		})(tiles[i], i); }
 		
