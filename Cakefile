@@ -1,5 +1,6 @@
 
 fs = require 'fs'
+print = console.log
 
 tab = (str)-> str.replace(/\n/g, '\n\t')
 
@@ -133,3 +134,38 @@ task 'sbuild', ->
 				
 		).join '\n'
 
+
+task 'optimages', ->
+	optimage = require 'optimage'
+	glob = require 'glob'
+	
+	glob '**/*.png', (err, files)->
+		if err
+			print err
+		else
+			do fn = (i = 0)->
+				next = ->
+					if i + 1 < files.length
+						fn i + 1
+				
+				f = files[i]
+				
+				if f.match /node_modules/
+					do next
+				else
+					optimage {
+						inputFile: f
+						outputFile: f
+					}, (err, res)->
+						
+						if err
+							print "#{f} ::: ERROR"
+							print err
+							print "\n"
+						else
+							if (res.stderr.indexOf 'already optimized') isnt -1 or res.saved < 10
+								print "#{f} ::: already optimized"
+							else
+								print "#{f} ::: saved #{res.saved} bytes"
+						
+						do next

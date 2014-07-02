@@ -7,16 +7,22 @@
 		"portfolio"
 	],
 	
-	"main": "index.html",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/1j01/1j01.github.io.git"
 	},
-	"scripts": {
-		"build": "cake sbuild"
-	},
-	"private": true,
 	"bugs": {
 		"url": "https://github.com/1j01/1j01.github.io/issues"
+	},
+	"private": true,
+	
+	"scripts": {
+		"build": "cake sbuild",
+		"optimages": "cake optimages"
+	},
+	"main": "index.html",
+	"devDependencies": {
+		"optimage": "0.2.0",
+		"glob": "4.0.3"
 	}
 }
