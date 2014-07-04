@@ -24,95 +24,13 @@
 		<canvas><h1>404: Page Not Found</h1></canvas>
 		
 		<script>
-			var err = document.title;
+			var err = "404";
 			var blockSizeOuter = 60;
 			var blockSizeInner = 50;
 			var randomness = 0;
 			var flicker = false;
 			var shrapnel = false;
-			
-			var gridNumbers = [[
-				"####",
-				"#  #",
-				"#  #",
-				"#  #",
-				"#  #",
-				"#  #",
-				"####"
-			], [
-				"#",
-				"#",
-				"#",
-				"#",
-				"#",
-				"#",
-				"#"
-			], [
-				"####",
-				"   #",
-				"   #",
-				"####",
-				"#   ",
-				"#   ",
-				"####"
-			], [
-				"####",
-				"   #",
-				"   #",
-				"####",
-				"   #",
-				"   #",
-				"####"
-			], [
-				"#  #",
-				"#  #",
-				"#  #",
-				"####",
-				"   #",
-				"   #",
-				"   #"
-			], [
-				"####",
-				"#   ",
-				"#   ",
-				"####",
-				"   #",
-				"   #",
-				"####"
-			], [
-				"####",
-				"#   ",
-				"#   ",
-				"####",
-				"#  #",
-				"#  #",
-				"####"
-			], [
-				"####",
-				"   #",
-				"   #",
-				"   #",
-				"   #",
-				"   #",
-				"   #"
-			], [
-				"####",
-				"#  #",
-				"#  #",
-				"####",
-				"#  #",
-				"#  #",
-				"####"
-			], [
-				"####",
-				"#  #",
-				"#  #",
-				"####",
-				"   #",
-				"   #",
-				"####"
-			]];
-			/*var grid1 = [
+			var grid1 = [
 				"                  ",
 				" #  #  ####  #  # ",
 				" #  #  #  #  #  # ",
@@ -122,7 +40,7 @@
 				"    #  #  #     # ",
 				"    #  ####     # ",
 				"                  "
-			];*/
+			];
 			var grid2 = [
 				"                ",
 				" ####           ",
@@ -134,25 +52,6 @@
 				" #### #    #    ",
 				"                "
 			];
-			
-			var grid1 = [
-				" ",
-				" ",
-				" ",
-				" ",
-				" ",
-				" ",
-				" ",
-				" ",
-				" "
-			];
-			for(var i = 0; i < err.length; i++){
-				var n = Number(err[i]);
-				var g = gridNumbers[n];
-				for(var v = 0; v < g.length; v++){
-					grid1[v+1] += g[v] + " ";
-				}
-			}
 			var grid = grid1;
 			
 			var canvas = document.querySelector("canvas");
@@ -168,34 +67,30 @@
 			var d = dots.data;
 			for(var x = 0; x <= dots.width; x += 4){
 				for(var y = 0; y <= dots.height; y += 4){
-					var i = x*4+y*4*dots.width;
-					d[i+0] = 255;//red
-					d[i+1] = 128;//green
-					d[i+2] = 0;//blue
-					d[i+3] = 255;//alpha
+					var i = 4*(x + y*dots.width);
+					d[i+0] = 255; //red
+					d[i+1] = 128; //green
+					d[i+2] = 0;   //blue
+					d[i+3] = 255; //alpha
 				}
 			}
 			var dark = ctx.createImageData(blockSizeInner, blockSizeInner);
 			var d = dark.data;
 			for(var x = 0; x <= dark.width; x += 8){
 				for(var y = 0; y <= dark.height; y += 8){
-					var i = x*4+y*4*dark.width;
-					d[i+0] = 255;//red
-					d[i+1] = 128;//green
-					d[i+2] = 0;//blue
-					d[i+3] = 255;//alpha
+					var i = 4*(x + y*dots.width);
+					d[i+0] = 255; //red
+					d[i+1] = 128; //green
+					d[i+2] = 0;   //blue
+					d[i+3] = 255; //alpha
 				}
 			}
 			
-			//ctx.putImageData(dat, 0, 0); 
-			setInterval(function(){
-				//ctx.clearRect(0, 0, 2000, 2000);
+			every(100, function(){
 				for(var y = 0; y < grid.length; y++){
 					for(var x = 0; x < grid[y].length; x++){
 						if(grid[y][x] !== " "){
-							//ctx.globalAlpha=0.1;//Math.random();
-							//ctx.putImageData((grid[y][x]!==" ")?dots:dark, x*blockSizeOuter+Math.random()*randomness, y*blockSizeOuter+Math.random()*randomness); 
-							ctx.putImageData(dots, x*blockSizeOuter+r(), y*blockSizeOuter+r()); 
+							ctx.putImageData(dots, x*blockSizeOuter+r(), y*blockSizeOuter+r());
 							if(flicker){
 								ctx.fillStyle = "rgba(0,0,0,"+(Math.random())*(Math.random())+")";
 								ctx.fillRect(x*blockSizeOuter, y*blockSizeOuter, blockSizeInner, blockSizeInner);
@@ -203,50 +98,50 @@
 						}
 					}
 				}
-				//ctx.globalAlpha=1;
-			}, 100);
-			//ctx.putImageData(dat, 0, 0); 
-			setInterval(function(){
-				//ctx.clearRect(0, 0, 2000, 2000);
+			});
+			
+			every(10, function(){
 				if(shrapnel)
 					for(var y = Math.ceil(Math.random()*3); y < grid.length; y += Math.ceil(Math.random()*5)){
 						for(var x = Math.ceil(Math.random()*3); x < grid[y].length; x += Math.ceil(Math.random()*5)){
 							if(grid[y][x] !== " "){
-								//ctx.globalAlpha=0.1;//Math.random();
 								var w = Math.random()*50;
 								var h = Math.random()*50;
-								//ctx.putImageData((grid[y][x] !== " ")?dots:dark, x*blockSizeOuter+Math.random()*randomness, y*blockSizeOuter+Math.random()*randomness,
-								//	w, h, w, h); 
-								ctx.putImageData(dots, x*blockSizeOuter+r(), y*blockSizeOuter+r(),
-									w, h, w, h); 
-								//ctx.putImageData(dots, x*blockSizeOuter+Math.random()*randomness, y*blockSizeOuter+Math.random()*randomness); 
+								ctx.putImageData(
+									dots,
+									x*blockSizeOuter+r(), y*blockSizeOuter+r(),
+									w, h,
+									w, h
+								);
 							}
 						}
 					}
-				//ctx.globalAlpha = 1;
-			}, 10);
+			});
+			
 			function start(){
 				randomness = 0;
-				setTimeout(function(){
+				after(2000, function(){
 					flicker = true;
-					setTimeout(function(){
+					after(4000, function(){
 						randomness = 50;
-						setTimeout(function(){ msg();
+						after(4000, function(){ msg();
 							randomness = 500;
-							setTimeout(function(){
+							after(4000, function(){
 								/*re*/start();
-								setTimeout(function(){ msg();
+								after(2000, function(){ msg();
 									ctx.clearRect(0, 0, canvas.width, canvas.height);
-									setTimeout(function(){ msg();
+									after(2000, function(){ msg();
 										shrapnel = !shrapnel;
-									}, 2000);
-								}, 2000);
-							}, 4000);
-						}, 4000);
-					}, 4000);
-				}, 2000);
+									});
+								});
+							});
+						});
+					});
+				});
 			}
 			start();
+			function after(t,f){setTimeout(f,t);}
+			function every(t,f){setInterval(f,t);}
 			function r(){return Math.random()*randomness-randomness/2}
 			function msg(){
 				var newgrid = (Math.random()<0.5) ? grid1 : grid2;
