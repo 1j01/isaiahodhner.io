@@ -2,23 +2,27 @@
 fs = require 'fs'
 print = console.log
 
-tab = (str)-> str.replace(/\n/g, '\n\t')
+tab = (str)->
+	# Indent the output. Because I care.
+	str.replace(/\n/g, '\n\t')
 
 boil = ({title, head, body})->
+	# Boilerplate and stuff.
+	# A Template, really. But I like 'boiling', like I'm cooking webpages.
+	# ...before serving them... yes...
+	# I don't use any of that nasty phpreprocessed stuff.
 	"""
 		<!doctype html>
 		<html lang="en-US">
 			<head>
 				<meta charset="utf-8">
-				#{tab tab "<title>#{title} — Isaiah Odhner</title>"}
+				<title>#{title} — Isaiah Odhner</title>
 				#{tab tab (head ? "")}
 				<meta name="author" content="Isaiah Odhner">
 				<meta name="description" content="Isaiah Odhner's portfolio website">
 				<meta name="keywords" content="Isaiah Odhner, 1j0, 1j01">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
-				<script async src="portfolio.js"></script>
-				<script async src="global.js"></script>
 			</head>
 			<body>
 				<header>
@@ -32,11 +36,13 @@ boil = ({title, head, body})->
 					</nav>
 				</header>
 				#{tab tab body}
+				<script src="portfolio.js"></script>
+				<script src="global.js"></script>
 			</body>
 		</html>
 	"""
 
-task 'sbuild', ->
+task 'boil', 'Build the website, boiling the pages.', ->
 	
 	texture_images = (
 		for fname in fs.readdirSync('images/textures')
@@ -135,7 +141,8 @@ task 'sbuild', ->
 		).join '\n'
 
 
-task 'optimages', ->
+task 'optimages', 'Optimize all the images.', ->
+	
 	optimage = require 'optimage'
 	glob = require 'glob'
 	
@@ -169,3 +176,5 @@ task 'optimages', ->
 								print "#{f} ::: saved #{res.saved} bytes"
 						
 						do next
+
+task 'sbuild', '(invokes boil) Sublime build: run with Ctrl+B in project dir in Sublime Text', -> invoke 'boil'
