@@ -1,6 +1,11 @@
 
 fs = require 'fs'
+path = require 'path'
+glob = require 'glob'
+
 print = console.log
+after = (ms, fn)-> setTimeout(fn, ms)
+every = (ms, fn)-> setInterval(fn, ms)
 
 tab = (str)->
 	# Indent the output. Because I care.
@@ -45,10 +50,10 @@ boil = ({title, head, body})->
 task 'boil', 'Build the website, boiling the pages.', ->
 	
 	texture_images = (
-		for fname in fs.readdirSync('images/textures')
+		for fname in glob.sync 'images/textures/*.png'
 			"""
 				<article itemscope itemtype="http://schema.org/ImageObject">
-					<img src="images/textures/#{fname}" itemprop="contentURL">
+					<img src="#{fname}" itemprop="contentURL">
 				</article>
 			"""
 	).join '\n'
@@ -144,7 +149,6 @@ task 'boil', 'Build the website, boiling the pages.', ->
 task 'optimages', 'Optimize all the images.', ->
 	
 	optimage = require 'optimage'
-	glob = require 'glob'
 	
 	glob '**/*.png', (err, files)->
 		if err
@@ -177,4 +181,106 @@ task 'optimages', 'Optimize all the images.', ->
 						
 						do next
 
-task 'sbuild', '(invokes boil) Sublime build: run with Ctrl+B in project dir in Sublime Text', -> invoke 'boil'
+task 'e', 'Edit a tiled version of a texture in photoshop.', (options)->
+	# haha this whole thing is so overkill
+	
+	cd = fs.realpathSync "."
+	temp = "#{cd}/temp"
+	try fs.mkdirSync temp
+	
+	gm = require 'gm'
+	cp = require 'child_process'
+	readline = require 'readline'
+	optimage = require 'optimage'
+	
+	rl = readline.createInterface
+		input: process.stdin
+		output: process.stdout
+	
+	rl.setPrompt "> "
+	rl.question "Please enter the filename (extension optional) of an image in 1j01.github.io/images/textures/", (f)->
+		f = f.replace ".png", ""
+		rl.close()
+		
+		PsDir = "C:/Program Files (x86)/Adobe/Adobe Photoshop CS2"
+		Photoshop = "#{PsDir}/Photoshop.exe"
+		ImageReady = "#{PsDir}/ImageReady.exe"
+		
+		originalFilePath = path.normalize "#{cd}/images/textures/#{f}.png"
+		tiledFilePath = path.normalize "#{temp}/#{f}-tiled.png"
+		newFilePath = path.normalize "#{cd}/images/textures/#{f}-psedit.png"
+		
+		print "Editing a tiled version of #{originalFilePath}"
+		
+		fs.exists originalFilePath, (exists)->
+			if not exists
+				print "ERROR: #{originalFilePath} does not exist."
+			else
+				
+				img = gm()
+				
+				# Tile the texture (there might be an option (-tile) for this, but whatever: the documentation is terrible and this works)
+				w = h = 512
+				for x in [0...3]
+					for y in [0...3]
+						img.in '-page', "+#{x*w}+#{y*h}"
+						img.in originalFilePath
+				
+				# Merge the images as a matrix
+				img.mosaic()
+				
+				# Write the file
+				img.write tiledFilePath, (err)->
+					if err
+						print """
+						
+						
+						Is GraphicsMagic installed and in the path and computer restarted and stuff?
+						You need the Q8 version btw.
+						DSWYFT
+						
+						
+						"""
+						# Why do I have such detailed error handling in my portfolio website's Cakefile? idk
+						# I don't remember what DSWYFT stands for. It's a TANSA. (a Thoughtless And Non-Standard Accronym)
+						return console.error err
+					
+					# Sometimes gm calls back without having written a file, maybe this helps. Probably not.
+					after 50, ->
+						
+						fs.chmod tiledFilePath, 0o777, (err)->
+							if err
+								print "chmod 777 ::: ERROR"
+								return console.error err
+							
+							cp.spawn Photoshop, [tiledFilePath], cwd: (require 'path').dirname(tiledFilePath)
+							
+							fs.watch tiledFilePath, ->
+								gm()
+								.in(tiledFilePath)
+								.crop(w, h, w, h) # (width, height, x, y)!? :(
+								.write newFilePath, (err)->
+									if err
+										print "gm.write() error"
+										return console.error err
+									else
+										# regenerate textures.html in case there's a new texture
+										invoke 'boil'
+										# optimize the new image
+										optimage {
+											inputFile: newFilePath
+											outputFile: newFilePath
+										}, (err, res)->
+											
+											if err
+												print "Optimizing #{newFilePath} ::: ERROR"
+												print err
+												print "\n"
+											else
+												if (res.stderr.indexOf 'already optimized') isnt -1 # or res.saved < 10
+													print "Optimizing #{newFilePath} ::: already optimized??"
+												else
+													print "Optimizing #{newFilePath} ::: saved #{res.saved} bytes"
+
+
+task 'sbuild', '(invokes boil) Sublime build: run with Ctrl+B in project dir in Sublime Text', -> invoke 'boil'

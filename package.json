@@ -23,6 +23,7 @@
 	"main": "index.html",
 	"devDependencies": {
 		"optimage": "0.2.0",
+		"gm": "1.16.0",
 		"glob": "4.0.3"
 	}
 }
