@@ -108,6 +108,10 @@
 				
 				updateDimensions();
 				
+				if(!(img.naturalWidth && img.naturalHeight)){
+					return; // image hasn't loaded; prevent infinite loop
+				}
+				
 				ctxToBecome.clearRect(0, 0, canvasToBecome.width, canvasToBecome.height);
 				for(var x=0; x<canvasToBecome.width; x+=img.naturalWidth){
 					for(var y=0; y<canvasToBecome.height; y+=img.naturalHeight){
