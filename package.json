@@ -17,13 +17,14 @@
 	"private": true,
 	
 	"scripts": {
-		"build": "cake sbuild",
+		"build": "cake build",
 		"optimages": "cake optimages"
 	},
 	"main": "index.html",
 	"devDependencies": {
 		"optimage": "0.2.0",
 		"gm": "1.16.0",
-		"glob": "4.0.3"
+		"glob": "4.0.3",
+		"coffee-script": "1.8.0"
 	}
 }

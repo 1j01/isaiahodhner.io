@@ -83,8 +83,8 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			name: 'MultiFiddle'
 			description: 'Minimalistic multilingual live code fiddling environment'
 		'jspaint':
-			name: 'Paint'
-			description: 'Good old mspaint, but with unlimited undos/redos'
+			name: 'JS Paint'
+			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
 		'IDE':
 			name: 'MyDE'
 			description: 'My custom development environment (currently defunct)'
@@ -283,4 +283,6 @@ task 'e', 'Edit a tiled version of a texture in photoshop.', (options)->
 													print "Optimizing #{newFilePath} ::: saved #{res.saved} bytes"
 
 
-task 'sbuild', '(invokes boil) Sublime build: run with Ctrl+B in project dir in Sublime Text', -> invoke 'boil'
+task 'sbuild', '(invokes boil) invoked by Ctrl+B in Sublime Text', -> invoke 'boil'
+task 'build', '(invokes boil)', -> invoke 'boil'
+
