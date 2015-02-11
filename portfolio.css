@@ -81,9 +81,29 @@ article .repo:focus {
 }
 
 /* selection color */
-::selection {
-	background: #FAFC82; /* WebKit/Blink Browsers */
+::selection { /* WebKit/Blink Browsers */
+	background: rgba(160, 217, 255, 0.61);
 }
-::-moz-selection {
-	background: #FAFC82; /* Gecko Browsers */
+::-moz-selection { /* Gecko Browsers */
+	background: rgba(160, 217, 255, 0.61);
 }
+
+/* selection shenanigans */
+body {
+	user-select: none;
+	-webkit-user-select: none;
+}
+body > * {
+	user-select: text;
+	-webkit-user-select: text;
+}
+body > article { 
+	user-select: none;
+	-webkit-user-select: none;
+}
+body > article > header,
+body > article > footer {
+	user-select: text;
+	-webkit-user-select: text;
+}
+
