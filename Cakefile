@@ -28,6 +28,7 @@ boil = ({title, head, body})->
 				<meta name="keywords" content="Isaiah Odhner, 1j0, 1j01">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
+				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.css">
 			</head>
 			<body>
 				<header>
@@ -127,19 +128,24 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		body: (
 			for key, project of projects
 				
+				repo_url = "http://github.com/1j01/#{key}"
+				gh_pages_url = "http://1j01.github.io/#{key}/"
 				url =
 					if project.url is 'repo'
-						"http://github.com/1j01/#{key}"
+						repo_url
 					else
-						project.url ? "http://1j01.github.io/#{key}/"
+						project.url ? gh_pages_url
 				
 				"""
 					<article itemscope itemtype="http://schema.org/WebPage">
+						<header itemprop="name">
+							<span>#{project.name}</span>
+							<a href="#{repo_url}" class="repo" title="View repository on Github"><span class="octicon octicon-repo"></span></a>
+						</header>
 						<a href="#{url}" itemprop="url">
-							<header itemprop="name">#{project.name}</header>
 							<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">
-							<footer itemprop="description">#{project.description}</footer>
 						</a>
+						<footer itemprop="description">#{project.description}</footer>
 					</article>
 				"""
 				
