@@ -9,7 +9,8 @@ body > header {
 	padding: 10px;
 	background: white;
 }
-header b, header h1 {
+header b,
+header h1 {
 	display: inline;
 	padding: 3px;
 	font-weight: normal;
@@ -22,6 +23,7 @@ nav {
 	margin-top: 0.5em;
 	margin-bottom: 2em;
 }
+
 article {
 	display: inline-block;
 	width: 256px;
@@ -65,6 +67,8 @@ article footer {
 	font-size: 1.0em;
 	text-shadow: 0 2px 5px black, 0 0 15px black;
 }
+
+/* repo icon link */
 article .repo {
 	float: right;
 	transition: opacity 0.2s ease-in-out;
@@ -76,6 +80,7 @@ article .repo:focus {
 	opacity: 1;
 }
 
+/* selection color */
 ::selection {
 	background: #FAFC82; /* WebKit/Blink Browsers */
 }
