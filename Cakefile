@@ -139,8 +139,8 @@ task 'boil', 'Build the website, boiling the pages.', ->
 				"""
 					<article itemscope itemtype="http://schema.org/WebPage">
 						<header itemprop="name">
-							<span>#{project.name}</span>
 							<a href="#{repo_url}" class="repo" title="View repository on Github"><span class="octicon octicon-repo"></span></a>
+							<span>#{project.name}</span>
 						</header>
 						<a href="#{url}" itemprop="url">
 							<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">

@@ -82,10 +82,10 @@ article .repo:focus {
 
 /* selection color */
 ::selection { /* WebKit/Blink Browsers */
-	background: rgba(160, 217, 255, 0.61);
+	background: rgba(98, 180, 254, 0.64);
 }
 ::-moz-selection { /* Gecko Browsers */
-	background: rgba(160, 217, 255, 0.61);
+	background: rgba(98, 180, 254, 0.64);
 }
 
 /* selection shenanigans */
