@@ -76,7 +76,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			description: 'A notagame'
 		'boxart':
 			name: 'BoxArt'
-			description: '3d interactive box art generator'
+			description: '3d drag & drop box art generator'
 		'babble':
 			name: 'Babble'
 			description: 'Sentence generator and more'
