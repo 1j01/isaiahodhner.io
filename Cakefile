@@ -85,9 +85,9 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'jspaint':
 			name: 'JS Paint'
 			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
-		'IDE':
-			name: 'MyDE'
-			description: 'My custom development environment (currently defunct)'
+		'board-game':
+			name: 'Chance'
+			description: 'A board game?'
 			url: 'repo'
 		'1bpp':
 			name: 'One Bit Per Pixel'
