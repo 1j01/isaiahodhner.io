@@ -26,6 +26,7 @@ nav {
 
 article {
 	display: inline-block;
+	position: relative;
 	width: 256px;
 	height: 256px;
 	margin: 1em;
@@ -40,8 +41,13 @@ article > a {
 	width: 100%;
 	height: 100%;
 }
-article {
-	position: relative;
+article > a {
+	transition: outline 0.2s ease-in-out, box-shadow;
+	outline: 1px solid transparent;
+}
+article > a:focus {
+	outline: 1px solid white;
+	box-shadow: 0px 0px 5px 1px white;
 }
 article header,
 article footer {
@@ -73,6 +79,7 @@ article .repo {
 	float: right;
 	transition: opacity 0.2s ease-in-out;
 	opacity: 0.3;
+	outline: none;
 }
 article .repo:hover,
 article .repo:active,
