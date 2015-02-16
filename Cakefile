@@ -42,8 +42,10 @@ boil = ({title, head, body})->
 					</nav>
 				</header>
 				#{tab tab body}
-				<script src="portfolio.js"></script>
-				<script src="global.js"></script>
+				<script src="lib/coffee-script.js"></script>
+				<script src="portfolio.coffee" type="text/coffeescript"></script>
+				<script src="textures.coffee" type="text/coffeescript"></script>
+				<script src="global.coffee" type="text/coffeescript"></script>
 			</body>
 		</html>
 	"""
@@ -63,7 +65,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		title: 'Textures'
 		body: """
 			<p>
-				These are some textures I made with code and a tool that I also made.
+				These are some textures I made with code and a tool that made with code.
 			</p>
 			<div id="textures">
 				#{tab texture_images}
