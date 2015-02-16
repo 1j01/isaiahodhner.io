@@ -90,7 +90,6 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'board-game':
 			name: 'Chance'
 			description: 'A board game?'
-			url: 'repo'
 		'1bpp':
 			name: 'One Bit Per Pixel'
 			description: 'A notagame in pure B&W'
