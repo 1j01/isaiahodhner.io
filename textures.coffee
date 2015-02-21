@@ -40,7 +40,54 @@ canvas.style.left = "0"
 canvas.style.top = "0"
 canvas.style.pointerEvents = "none"
 
-omgz = []
+
+
+particles = []
+
+class Particle
+	
+	constructor: ({@img, @x, @y})->
+		particles.push @
+		@vx = (Math.random() * 2 - 1) * 59
+		@vy = (Math.random() * 2 - 1) * 59
+		@r = 50 + Math.random() * 50
+		@life = 100 + Math.random() * 100
+	
+	draw: ->
+		
+		x = ~~(@x += @vx)
+		y = ~~(@y += @vy)
+		r = ~~(@r)
+		
+		#ctx.drawImage(particle.img, x+Math.random()*20, y+Math.random()*20, Math.random()*20, Math.random()*20)
+		#ctx.drawImage(canvasToBecome, x-r, y-r, r+r, r+r, x-r, y-r, r+r, r+r)
+		
+		tempCanvas.width = tempCanvas.height = r+r
+		drawImageSafe(tempCtx, canvasToBecome, x-r, y-r, r+r, r+r, r-r, r-r, r+r, r+r)
+		
+		# @TODO: support transparent textures because I have some and
+		# they show up... different...-ly looking
+		tempCtx.globalCompositeOperation = "destination-atop"
+		tempCtx.beginPath()
+		tempCtx.arc(r, r, r*0.9, 0, 2 * Math.PI)
+		
+		if "USE GRADIENT"
+			# @TODO: prerender a black-to-white gradient on a canvas
+			rdl = tempCtx.createRadialGradient(r, r, r*0.5, r, r, r*0.9)
+			rdl.addColorStop(0, "rgba(0, 0, 0, 1)")
+			rdl.addColorStop(1, "rgba(0, 0, 0, 0)")
+			tempCtx.fillStyle = rdl
+		else if "USE SHADOW"
+			tempCtx.shadowBlur = r*0.1
+			tempCtx.shadowColor = "white"
+			tempCtx.fillStyle = "white"
+		
+		tempCtx.fill()
+		
+		tempCtx.globalCompositeOperation = "source-over"
+		ctx.drawImage(tempCanvas, x-r, y-r)
+		
+
 scrollyness = 0
 updateDimensions = ->
 	if canvas.width isnt window.innerWidth
@@ -62,19 +109,14 @@ splatter = (img)->
 		for y in [0..canvasToBecome.height] by img.naturalHeight
 			ctxToBecome.drawImage(img, x, y)
 	
-	omgz = []
+	particles = []
 	for i in [0..30]
 		rect = img.getBoundingClientRect()
-		omg =
+		new Particle {
+			img
 			x: rect.left + rect.width * Math.random()
 			y: rect.top + rect.height * Math.random()
-			vx: (Math.random() * 2 - 1) * 59
-			vy: (Math.random() * 2 - 1) * 59
-			r: 50 + Math.random() * 50
-			life: 100 + Math.random() * 100
-			img: img
-		
-		omgz.push(omg)
+		}
 	
 	animate()
 
@@ -86,56 +128,25 @@ document.body.onscroll = (e)->
 
 animating = no
 animate = ->
-	animating = omgz.length > 0 or scrollyness > 0.05
+	animating = particles.length > 0 or scrollyness > 0.05
 	return unless animating
 	
 	#ctx.fillStyle = "rgba(0, 100, 0, 0.05)"
 	#ctx.fillRect(0,0,5000,5000)
-	for omg, i in omgz by -1
-		omg.life -= 10
-		if omg.life <= 0
-			omgz.splice(i, 1)
+	for particle, i in particles by -1
+		particle.life -= 10
+		if particle.life <= 0
+			particles.splice(i, 1)
 			continue # as in, don't continue executing statements in this iteration
 		
-		rect = omg.img.getBoundingClientRect()
+		rect = particle.img.getBoundingClientRect()
 		g = 2
-		omg.vx += g if x < rect.left
-		omg.vy += g if y < rect.top
-		omg.vx -= g if x > rect.right
-		omg.vy -= g if y > rect.bottom
+		particle.vx += g if particle.x < rect.left
+		particle.vy += g if particle.y < rect.top
+		particle.vx -= g if particle.x > rect.right
+		particle.vy -= g if particle.y > rect.bottom
 		
-		x = ~~(omg.x += omg.vx)
-		y = ~~(omg.y += omg.vy)
-		r = ~~(omg.r)
-		
-		#ctx.drawImage(omg.img, x+Math.random()*20, y+Math.random()*20, Math.random()*20, Math.random()*20)
-		#ctx.drawImage(canvasToBecome, x-r, y-r, r+r, r+r, x-r, y-r, r+r, r+r)
-		
-		tempCanvas.width = tempCanvas.height = r+r
-		drawImageSafe(tempCtx, canvasToBecome, x-r, y-r, r+r, r+r, r-r, r-r, r+r, r+r)
-		
-		# @TODO: support transparent textures because I have some and
-		# they show up... different...-ly looking
-		tempCtx.globalCompositeOperation = "destination-atop"
-		tempCtx.beginPath()
-		tempCtx.arc(r, r, r*0.9, 0, 2 * Math.PI)
-		
-		if "USE GRADIENT"
-			# @TODO: reuse gradient??
-			# or cache a rendered black-to-white gradient on a canvas
-			rdl = tempCtx.createRadialGradient(r, r, r*0.5, r, r, r*0.9)
-			rdl.addColorStop(0, "rgba(0, 0, 0, 1)")
-			rdl.addColorStop(1, "rgba(0, 0, 0, 0)")
-			tempCtx.fillStyle = rdl
-		else if "USE SHADOW"
-			tempCtx.shadowBlur = r*0.1
-			tempCtx.shadowColor = "white"
-			tempCtx.fillStyle = "white"
-		
-		tempCtx.fill()
-		
-		tempCtx.globalCompositeOperation = "source-over"
-		ctx.drawImage(tempCanvas, x-r, y-r)
+		particle.draw()
 		
 		#ctx.globalCompositeOperation = "source-atop"
 		#ctx.drawImage(canvasToBecome, 0, 0)
