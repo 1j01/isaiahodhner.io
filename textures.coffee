@@ -12,6 +12,7 @@ return unless (
 )
 ctx = canvas.getContext("2d")
 
+###
 drawImageSafe = (ctx, img, sx, sy, sw, sh, dx, dy, dw, dh)->
 	ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
 
@@ -27,12 +28,7 @@ catch
 		sh = Math.max(img.height - sy, 0) if sy + sh > img.height
 		try ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
 		#catch e then console.log e
-
-canvasToBecome = document.createElement("canvas")
-ctxToBecome = canvasToBecome.getContext("2d")
-
-tempCanvas = document.createElement("canvas")
-tempCtx = tempCanvas.getContext("2d")
+###
 
 document.body.appendChild(canvas)
 canvas.style.position = "fixed"
@@ -46,12 +42,30 @@ particles = []
 
 class Particle
 	
+	spriteCanvas = document.createElement("canvas")
+	spriteCtx = spriteCanvas.getContext("2d")
+	
+	sr = 100 # sprite radius, which should be the maximum radius
+	spriteCanvas.width = spriteCanvas.height = sr+sr
+	rdl = spriteCtx.createRadialGradient(sr, sr, sr*0.5, sr, sr, sr*0.9)
+	rdl.addColorStop(0, "rgba(0, 0, 0, 1)")
+	rdl.addColorStop(1, "rgba(0, 0, 0, 0)")
+	spriteCtx.fillStyle = rdl
+	spriteCtx.beginPath()
+	spriteCtx.arc(sr, sr, sr*0.9, 0, 2 * Math.PI)
+	spriteCtx.fill()
+	
+	tempCanvas = document.createElement("canvas")
+	tempCtx = tempCanvas.getContext("2d")
+	tempCanvas.width = tempCanvas.height = sr+sr
+	
 	constructor: ({@img, @x, @y})->
 		particles.push @
 		@vx = (Math.random() * 2 - 1) * 59
 		@vy = (Math.random() * 2 - 1) * 59
-		@r = 50 + Math.random() * 50
+		@r = sr * (0.5 + Math.random() * 0.5)
 		@life = 100 + Math.random() * 100
+		@img.pattern ?= tempCtx.createPattern(@img, "repeat")
 	
 	draw: ->
 		
@@ -62,52 +76,42 @@ class Particle
 		#ctx.drawImage(particle.img, x+Math.random()*20, y+Math.random()*20, Math.random()*20, Math.random()*20)
 		#ctx.drawImage(canvasToBecome, x-r, y-r, r+r, r+r, x-r, y-r, r+r, r+r)
 		
-		tempCanvas.width = tempCanvas.height = r+r
-		drawImageSafe(tempCtx, canvasToBecome, x-r, y-r, r+r, r+r, r-r, r-r, r+r, r+r)
+		#tempCanvas.width = tempCanvas.height = r+r
+		tempCtx.save()
+		#tempCtx.translate(x, y)
+		tempCtx.translate(-x, -y)
+		tempCtx.fillStyle = @img.pattern
+		#tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height) #(x-r, y-r, r+r, r+r)
+		#tempCtx.fillRect(-x-r, -y-r, r+r, r+r)
+		#tempCtx.fillRect(-x, -y, r+r, r+r)
+		tempCtx.fillRect(x, y, sr+sr, sr+sr)
+		tempCtx.restore()
+		#drawImageSafe(tempCtx, canvasToBecome, x-r, y-r, r+r, r+r, r-r, r-r, r+r, r+r)
 		
-		# @TODO: support transparent textures because I have some and
-		# they show up... different...-ly looking
 		tempCtx.globalCompositeOperation = "destination-atop"
-		tempCtx.beginPath()
-		tempCtx.arc(r, r, r*0.9, 0, 2 * Math.PI)
-		
-		if "USE GRADIENT"
-			# @TODO: prerender a black-to-white gradient on a canvas
-			rdl = tempCtx.createRadialGradient(r, r, r*0.5, r, r, r*0.9)
-			rdl.addColorStop(0, "rgba(0, 0, 0, 1)")
-			rdl.addColorStop(1, "rgba(0, 0, 0, 0)")
-			tempCtx.fillStyle = rdl
-		else if "USE SHADOW"
-			tempCtx.shadowBlur = r*0.1
-			tempCtx.shadowColor = "white"
-			tempCtx.fillStyle = "white"
-		
-		tempCtx.fill()
-		
+		tempCtx.drawImage(
+			# source (sprite)
+			spriteCanvas, 0, 0, sr+sr, sr+sr
+			# destination (on tempCanvas)
+			(sr-r)/2, (sr-r)/2, r+r, r+r
+		)
 		tempCtx.globalCompositeOperation = "source-over"
-		ctx.drawImage(tempCanvas, x-r, y-r)
+		ctx.drawImage(tempCanvas, x-sr, y-sr)
 		
 
 scrollyness = 0
 updateDimensions = ->
 	if canvas.width isnt window.innerWidth
 		canvas.width = window.innerWidth
-		canvasToBecome.width = window.innerWidth
 	if canvas.height isnt window.innerHeight
 		canvas.height = window.innerHeight
-		canvasToBecome.height = window.innerHeight
 
 splatter = (img)->
 	
 	updateDimensions()
 	
 	# prevent infinite loop if image hasn't loaded
-	return unless img.naturalWidth and img.naturalHeight
-	
-	ctxToBecome.clearRect(0, 0, canvasToBecome.width, canvasToBecome.height)
-	for x in [0..canvasToBecome.width] by img.naturalWidth
-		for y in [0..canvasToBecome.height] by img.naturalHeight
-			ctxToBecome.drawImage(img, x, y)
+	#return unless img.naturalWidth and img.naturalHeight
 	
 	particles = []
 	for i in [0..30]
@@ -123,7 +127,7 @@ splatter = (img)->
 window.onresize =
 document.body.onscroll = (e)->
 	updateDimensions()
-	scrollyness = 1
+	scrollyness = 1 # @TODO: calculate amount scrolled
 	animate()
 
 animating = no
@@ -148,8 +152,6 @@ animate = ->
 		
 		particle.draw()
 		
-		#ctx.globalCompositeOperation = "source-atop"
-		#ctx.drawImage(canvasToBecome, 0, 0)
 		ctx.globalCompositeOperation = "source-over"
 	
 	
