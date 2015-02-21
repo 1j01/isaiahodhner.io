@@ -51,8 +51,25 @@ boil = ({title, head, body})->
 
 task 'boil', 'Build the website, boiling the pages.', ->
 	
+	texture_fnames = glob.sync 'images/textures/*.png'
+	n = texture_fnames.length
+	nondivisibles = []
+	divisibles = []
+	(if n / i is n // i then divisibles else nondivisibles).push i for i in [1..10]
+	Array::joinEnglish = (conjunction)->
+		if @length > 0
+			[most..., last] = @
+			"#{most.join(", ")} #{conjunction} #{last}"
+		else
+			@[0]
+	console.log "
+		#{n} textures,
+		divisible by #{divisibles.joinEnglish "and"},
+		but not by #{nondivisibles.joinEnglish "or"}
+	"
+	
 	texture_images = (
-		for fname in glob.sync 'images/textures/*.png'
+		for fname in texture_fnames
 			"""
 				<article itemscope itemtype="http://schema.org/ImageObject">
 					<img src="#{fname}" itemprop="contentURL">
