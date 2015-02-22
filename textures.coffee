@@ -12,24 +12,6 @@ return unless (
 )
 ctx = canvas.getContext("2d")
 
-###
-drawImageSafe = (ctx, img, sx, sy, sw, sh, dx, dy, dw, dh)->
-	ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
-
-try
-	# Firefox and IE don't allow out-of-bound source dimensions, which I rely on
-	ctx.drawImage(canvas, -50, 50, 50, 50, 50, 50, 50, 50)
-catch
-	# This function probably isn't bullet-proof
-	drawImageSafe = (ctx, img, sx, sy, sw, sh, dx, dy, dw, dh)->
-		sw += sx; sx = 0 if sx <= 0
-		sh += sy; sy = 0 if sy <= 0
-		sw = Math.max(img.width - sx, 0) if sx + sw > img.width
-		sh = Math.max(img.height - sy, 0) if sy + sh > img.height
-		try ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh)
-		#catch e then console.log e
-###
-
 document.body.appendChild(canvas)
 canvas.style.position = "fixed"
 canvas.style.left = "0"
@@ -45,7 +27,7 @@ class Particle
 	spriteCanvas = document.createElement("canvas")
 	spriteCtx = spriteCanvas.getContext("2d")
 	
-	sr = 100 # sprite radius, which should be the maximum radius
+	sr = max_radius = 100 # sprite radius
 	spriteCanvas.width = spriteCanvas.height = sr+sr
 	rdl = spriteCtx.createRadialGradient(sr, sr, sr*0.5, sr, sr, sr*0.9)
 	rdl.addColorStop(0, "rgba(0, 0, 0, 1)")
@@ -63,7 +45,7 @@ class Particle
 		particles.push @
 		@vx = (Math.random() * 2 - 1) * 59
 		@vy = (Math.random() * 2 - 1) * 59
-		@r = sr * (0.5 + Math.random() * 0.5)
+		@r = max_radius * (1 - Math.random()/2)
 		@life = 100 + Math.random() * 100
 		@img.pattern ?= tempCtx.createPattern(@img, "repeat")
 	
@@ -73,20 +55,11 @@ class Particle
 		y = ~~(@y += @vy)
 		r = ~~(@r)
 		
-		#ctx.drawImage(particle.img, x+Math.random()*20, y+Math.random()*20, Math.random()*20, Math.random()*20)
-		#ctx.drawImage(canvasToBecome, x-r, y-r, r+r, r+r, x-r, y-r, r+r, r+r)
-		
-		#tempCanvas.width = tempCanvas.height = r+r
 		tempCtx.save()
-		#tempCtx.translate(x, y)
 		tempCtx.translate(-x, -y)
 		tempCtx.fillStyle = @img.pattern
-		#tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height) #(x-r, y-r, r+r, r+r)
-		#tempCtx.fillRect(-x-r, -y-r, r+r, r+r)
-		#tempCtx.fillRect(-x, -y, r+r, r+r)
 		tempCtx.fillRect(x, y, sr+sr, sr+sr)
 		tempCtx.restore()
-		#drawImageSafe(tempCtx, canvasToBecome, x-r, y-r, r+r, r+r, r-r, r-r, r+r, r+r)
 		
 		tempCtx.globalCompositeOperation = "destination-atop"
 		tempCtx.drawImage(
@@ -110,9 +83,6 @@ splatter = (img)->
 	
 	updateDimensions()
 	
-	# prevent infinite loop if image hasn't loaded
-	#return unless img.naturalWidth and img.naturalHeight
-	
 	particles = []
 	for i in [0..30]
 		rect = img.getBoundingClientRect()
@@ -130,30 +100,21 @@ document.body.onscroll = (e)->
 	scrollyness = 1 # @TODO: calculate amount scrolled
 	animate()
 
-animating = no
 animate = ->
-	animating = particles.length > 0 or scrollyness > 0.05
-	return unless animating
 	
-	#ctx.fillStyle = "rgba(0, 100, 0, 0.05)"
-	#ctx.fillRect(0,0,5000,5000)
 	for particle, i in particles by -1
 		particle.life -= 10
 		if particle.life <= 0
 			particles.splice(i, 1)
-			continue # as in, don't continue executing statements in this iteration
-		
-		rect = particle.img.getBoundingClientRect()
-		g = 2
-		particle.vx += g if particle.x < rect.left
-		particle.vy += g if particle.y < rect.top
-		particle.vx -= g if particle.x > rect.right
-		particle.vy -= g if particle.y > rect.bottom
-		
-		particle.draw()
-		
-		ctx.globalCompositeOperation = "source-over"
-	
+		else
+			rect = particle.img.getBoundingClientRect()
+			g = 2
+			particle.vx += g if particle.x < rect.left
+			particle.vy += g if particle.y < rect.top
+			particle.vx -= g if particle.x > rect.right
+			particle.vy -= g if particle.y > rect.bottom
+			
+			particle.draw()
 	
 	ctx.save()
 	ctx.globalCompositeOperation = "destination-out"
@@ -170,10 +131,10 @@ animate = ->
 		ctx.fillStyle = "rgba(0, 0, 0, " + (0.1-ah/450) + ")"
 		ctx.fillRect(rect.left, rect.top + ah, rect.width, rect.height + ah)
 	
-	
 	ctx.restore()
 	
-	requestAnimationFrame(animate)
+	if particles.length > 0 or scrollyness > 0.05
+		requestAnimationFrame(animate)
 
 
 tiles = textures.children
