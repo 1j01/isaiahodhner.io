@@ -54,6 +54,7 @@ class Particle
 		x = ~~(@x += @vx)
 		y = ~~(@y += @vy)
 		r = ~~(@r)
+		a = @life / 50
 		
 		tempCtx.save()
 		tempCtx.translate(-x, -y)
@@ -69,10 +70,12 @@ class Particle
 			(sr-r)/2, (sr-r)/2, r+r, r+r
 		)
 		tempCtx.globalCompositeOperation = "source-over"
+		ctx.save()
+		ctx.globalAlpha = a
 		ctx.drawImage(tempCanvas, x-sr, y-sr)
+		ctx.restore()
 		
 
-scrollyness = 0
 updateDimensions = ->
 	if canvas.width isnt window.innerWidth
 		canvas.width = window.innerWidth
@@ -93,6 +96,8 @@ splatter = (img)->
 		}
 	
 	animate()
+
+scrollyness = 0
 
 window.onresize =
 document.body.onscroll = (e)->
@@ -119,6 +124,8 @@ animate = ->
 	ctx.save()
 	ctx.globalCompositeOperation = "destination-out"
 	
+	# Clear the canvas when scrolling
+	# @TODO: better handling for mobile, where scroll events are only sent once scrolling stops
 	scrollyness *= 0.9
 	if scrollyness < 0.0001
 		scrollyness = 0
@@ -126,10 +133,11 @@ animate = ->
 		ctx.fillStyle = "rgba(0, 0, 0, #{Math.min(scrollyness, 0.1)})"
 		ctx.fillRect(0, 0, canvas.width, canvas.height)
 	
+	# Clear the canvas on the header area
 	rect = header.getBoundingClientRect()
 	for ah in [0..30]
-		ctx.fillStyle = "rgba(0, 0, 0, " + (0.1-ah/450) + ")"
-		ctx.fillRect(rect.left, rect.top + ah, rect.width, rect.height + ah)
+		ctx.fillStyle = "rgba(0, 0, 0, 0.04)"
+		ctx.fillRect(rect.left, rect.top + ah, rect.width, rect.height + ah/2)
 	
 	ctx.restore()
 	
