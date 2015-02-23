@@ -105,6 +105,14 @@ document.body.onscroll = (e)->
 	scrollyness = 1 # @TODO: calculate amount scrolled
 	animate()
 
+cleary = (fn)->
+	ctx.save()
+	ctx.globalCompositeOperation = "destination-out"
+	fn (x, y, w, h, a)->
+		ctx.fillStyle = "rgba(0, 0, 0, #{a})"
+		ctx.fillRect(x, y, w, h)
+	ctx.restore()
+
 animate = ->
 	
 	for particle, i in particles by -1
@@ -121,25 +129,20 @@ animate = ->
 			
 			particle.draw()
 	
-	ctx.save()
-	ctx.globalCompositeOperation = "destination-out"
-	
 	# Clear the canvas when scrolling
 	# @TODO: better handling for mobile, where scroll events are only sent once scrolling stops
 	scrollyness *= 0.9
 	if scrollyness < 0.0001
 		scrollyness = 0
 	else
-		ctx.fillStyle = "rgba(0, 0, 0, #{Math.min(scrollyness, 0.1)})"
-		ctx.fillRect(0, 0, canvas.width, canvas.height)
+		cleary (clear)->
+			clear(0, 0, canvas.width, canvas.height, Math.min(scrollyness, 0.1))
 	
 	# Clear the canvas on the header area
 	rect = header.getBoundingClientRect()
-	for ah in [0..30]
-		ctx.fillStyle = "rgba(0, 0, 0, 0.04)"
-		ctx.fillRect(rect.left, rect.top + ah, rect.width, rect.height + ah/2)
-	
-	ctx.restore()
+	cleary (clear)->
+		for ah in [0..30]
+			clear(rect.left, rect.top + ah, rect.width, rect.height + ah/2, 0.04)
 	
 	if particles.length > 0 or scrollyness > 0.05
 		requestAnimationFrame(animate)
