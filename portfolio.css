@@ -4,10 +4,12 @@ body {
 	text-align: center;
 	margin: 0;
 	padding: 0;
+	background: #1D1D1D;
 }
 body > header {
-	padding: 10px;
-	background: white;
+	padding: 40px;
+	background: #303030;
+	color: rgb(255, 255, 255);
 }
 header b,
 header h1 {
@@ -21,7 +23,10 @@ header b {
 nav {
 	font-size: 1.3em;
 	margin-top: 0.5em;
-	margin-bottom: 2em;
+	/* margin-bottom: 2em; */
+}
+a {
+	color: #80BD01;
 }
 
 article {
@@ -89,10 +94,10 @@ article .repo:focus {
 
 /* selection color */
 ::selection { /* WebKit/Blink Browsers */
-	background: rgba(98, 180, 254, 0.64);
+	 background: rgba(98, 180, 254, 0.15);
 }
 ::-moz-selection { /* Gecko Browsers */
-	background: rgba(98, 180, 254, 0.64);
+	background: rgba(98, 180, 254, 0.15);
 }
 
 /* selection shenanigans */
@@ -108,7 +113,16 @@ body > article {
 	user-select: none;
 	-webkit-user-select: none;
 }
+body > header {
+	user-select: none;
+	-webkit-user-select: none;
+}
+body > header * {
+	user-select: text;
+	-webkit-user-select: text;
+}
 body > article > header,
+body > article > header *,
 body > article > footer {
 	user-select: text;
 	-webkit-user-select: text;

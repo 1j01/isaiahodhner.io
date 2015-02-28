@@ -32,9 +32,7 @@ boil = ({title, head, body})->
 			</head>
 			<body>
 				<header>
-					<b>Hi, my name is</b>
-					<h1>Isaiah Odhner</h1>
-					<b>and this is my portfolio</b>
+					<b>Hi, my name is </b><h1>Isaiah Odhner</h1><b> and this is my portfolio</b>
 					<nav>
 						<a href="/">Home</a>
 						<a href="/textures">Textures</a>
@@ -49,24 +47,28 @@ boil = ({title, head, body})->
 		</html>
 	"""
 
-task 'boil', 'Build the website, boiling the pages.', ->
-	
-	texture_fnames = glob.sync 'images/textures/*.png'
-	n = texture_fnames.length
+Array::conjunct = (conjunction)->
+	if @length > 0
+		[most..., last] = @
+		"#{most.join(", ")} #{conjunction} #{last}"
+	else
+		@[0]
+
+log_divisibles = (n, unit)->
 	nondivisibles = []
 	divisibles = []
 	(if n / i is n // i then divisibles else nondivisibles).push i for i in [1..10]
-	Array::joinEnglish = (conjunction)->
-		if @length > 0
-			[most..., last] = @
-			"#{most.join(", ")} #{conjunction} #{last}"
-		else
-			@[0]
 	console.log "
-		#{n} textures,
-		divisible by #{divisibles.joinEnglish "and"},
-		but not by #{nondivisibles.joinEnglish "or"}
+		#{n} #{unit},
+		divisible by #{divisibles.conjunct "and"},
+		but not by #{nondivisibles.conjunct "or"}
 	"
+
+task 'boil', 'Build the website, boiling the pages.', ->
+	
+	texture_fnames = glob.sync 'images/textures/*.png'
+	
+	log_divisibles(texture_fnames.length, "texture tiles")
 	
 	texture_images = (
 		for fname in texture_fnames
@@ -110,7 +112,6 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'1bpp':
 			name: 'One Bit Per Pixel'
 			description: 'A notagame in pure B&W'
-			url: 'repo'
 		'mind-map':
 			name: 'MindMap'
 			description: 'Map your mind without ugly boxes'
@@ -126,7 +127,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'pesterchum':
 			name: 'PesterChum'
 			description: 'MS Paint Adventures chat client'
-			url: 'repo'
+			url: 'https://rawgit.com/1j01/pesterchum/master/app/reaction/test.html'
 		'gif-maker':
 			name: 'GIF Maker'
 			description: 'Make animated GIF images'
@@ -139,6 +140,8 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'pipes':
 			name: 'Pipes'
 			description: '3d pipes screensaver remake'
+	
+	log_divisibles(Object.keys(projects).length, "project tiles")
 	
 	fs.writeFileSync 'index.html', boil
 		title: 'Portfolio'
