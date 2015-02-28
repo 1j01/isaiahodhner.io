@@ -5,11 +5,12 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #1D1D1D;
+	color: white;
 }
 body > header {
 	padding: 40px;
 	background: #303030;
-	color: rgb(255, 255, 255);
+	color: white;
 }
 header b,
 header h1 {
@@ -27,6 +28,9 @@ nav {
 }
 a {
 	color: #80BD01;
+}
+p {
+	color: #636363;
 }
 
 article {
