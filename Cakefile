@@ -100,6 +100,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'babble':
 			name: 'Babble'
 			description: 'Sentence generator and more'
+			bg: "light"
 		'multifiddle':
 			name: 'MultiFiddle'
 			description: 'Minimalistic multilingual live code fiddling environment'
@@ -115,9 +116,11 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'mind-map':
 			name: 'MindMap'
 			description: 'Map your mind without ugly boxes'
+			bg: "light"
 		'guitar':
 			name: 'Guitar'
 			description: 'Easily play and record tabs'
+			bg: "light"
 		'mos':
 			name: 'MOS'
 			description: 'Monochrome Operating System'
@@ -134,19 +137,36 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'une':
 			name: 'UNE: The Complete Multitool'
 			description: 'An incomplete unitool for a game called 5UNE17A'
+		'transpairency':
+			name: 'Trans<em>pair</em>ency'
+			description: 'B&W to transparent'
+			bg: "light"
 		'pool':
 			name: 'Jussom Billiards'
 			description: 'Just playing around with physics'
 		'pipes':
 			name: 'Pipes'
 			description: '3d pipes screensaver remake'
+		'countdown.ml':
+			name: 'Countdown.ml'
+			description: 'What does it look like?'
+			bg: "light"
+		'font-detective':
+			name: 'Font Detective'
+			description: 'Detects fonts in browser'
+			bg: "light"
+		'>> 98':
+			name: '98'
+			description: 'Windows 98 desktop remake'
 	
 	log_divisibles(Object.keys(projects).length, "project tiles")
 	
 	fs.writeFileSync 'index.html', boil
 		title: 'Portfolio'
 		body: (
+			
 			for key, project of projects
+				key = key.replace ">> ", ""
 				
 				repo_url = "http://github.com/1j01/#{key}"
 				gh_pages_url = "http://1j01.github.io/#{key}/"
@@ -156,8 +176,10 @@ task 'boil', 'Build the website, boiling the pages.', ->
 					else
 						project.url ? gh_pages_url
 				
+				bg = project.bg ? "normal"
+				
 				"""
-					<article itemscope itemtype="http://schema.org/WebPage">
+					<article itemscope itemtype="http://schema.org/WebPage" data-bg="#{bg}">
 						<a href="#{url}" itemprop="url">
 							<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">
 						</a>

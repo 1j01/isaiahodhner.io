@@ -65,12 +65,15 @@ article footer {
 	padding: 5px;
 	background: rgba(0, 0, 0, 0.6);
 	color: white;
-	text-shadow: 0 2px 5px black;
+	text-shadow: 0 2px 5px black, 0 1px 1px black;
 }
-article header *,
-article footer * {
-	color: white;
+[data-bg="light"] header,
+[data-bg="light"] footer {
+	background: #1D1D1D;
+}
+article a {
 	text-decoration: none;
+	color: inherit;
 }
 article header {
 	top: 0;
