@@ -1,7 +1,7 @@
 
-textures = document.getElementById("textures")
+patterns = document.getElementById("patterns")
 header = document.getElementsByTagName("header")[0]
-return unless textures and header
+return unless patterns and header
 
 canvas = document.createElement("canvas")
 return unless (
@@ -148,7 +148,7 @@ animate = ->
 		requestAnimationFrame(animate)
 
 
-tiles = textures.children
+tiles = patterns.children
 for tile in tiles
 	do (tile)->
 		img = tile.children[0]

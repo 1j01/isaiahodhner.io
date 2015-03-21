@@ -35,13 +35,13 @@ boil = ({title, head, body})->
 					<h1>Isaiah Odhner</h1>
 					<nav>
 						<a href="/">Home</a>
-						<a href="/textures">Textures</a>
+						<a href="/patterns">Patterns</a>
 						<a href="mailto:isaiahodhner@gmail.com">Contact</a>
 					</nav>
 				</header>
 				#{tab tab body}
 				<script src="lib/coffee-script.js"></script>
-				<script src="textures.coffee" type="text/coffeescript"></script>
+				<script src="patterns.coffee" type="text/coffeescript"></script>
 				<script src="global.coffee" type="text/coffeescript"></script>
 			</body>
 		</html>
@@ -66,12 +66,12 @@ log_divisibles = (n, unit)->
 
 task 'boil', 'Build the website, boiling the pages.', ->
 	
-	texture_fnames = glob.sync 'images/textures/*.png'
+	pattern_fnames = glob.sync 'images/patterns/*.png'
 	
-	log_divisibles(texture_fnames.length, "texture tiles")
+	log_divisibles(pattern_fnames.length, "pattern tiles")
 	
-	texture_images = (
-		for fname in texture_fnames
+	pattern_images = (
+		for fname in pattern_fnames
 			"""
 				<article itemscope itemtype="http://schema.org/ImageObject">
 					<img src="#{fname}" itemprop="contentURL">
@@ -79,14 +79,14 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			"""
 	).join '\n'
 	
-	fs.writeFileSync 'textures.html', boil
-		title: 'Textures'
+	fs.writeFileSync 'patterns.html', boil
+		title: 'Patterns'
 		body: """
 			<p>
-				These are some textures I made with code and a tool that made with code.
+				These are some patterns I made with code and a tool that made with code.
 			</p>
-			<div id="textures">
-				#{tab texture_images}
+			<div id="patterns">
+				#{tab pattern_images}
 			</div>
 		"""
 	
@@ -207,7 +207,7 @@ task 'optimages', 'Optimize all the images.', ->
 						
 						do next
 
-task 'e', 'Edit a tiled version of a texture in photoshop.', (options)->
+task 'e', 'Edit a tiled version of a pattern in photoshop.', (options)->
 	# haha this whole thing is so overkill
 	
 	cd = fs.realpathSync "."
@@ -224,7 +224,7 @@ task 'e', 'Edit a tiled version of a texture in photoshop.', (options)->
 		output: process.stdout
 	
 	rl.setPrompt "> "
-	rl.question "Please enter the filename (extension optional) of an image in 1j01.github.io/images/textures/", (f)->
+	rl.question "Please enter the filename (extension optional) of an image in 1j01.github.io/images/patterns/", (f)->
 		f = f.replace ".png", ""
 		rl.close()
 		
@@ -232,9 +232,9 @@ task 'e', 'Edit a tiled version of a texture in photoshop.', (options)->
 		Photoshop = "#{PsDir}/Photoshop.exe"
 		ImageReady = "#{PsDir}/ImageReady.exe"
 		
-		originalFilePath = path.normalize "#{cd}/images/textures/#{f}.png"
+		originalFilePath = path.normalize "#{cd}/images/patterns/#{f}.png"
 		tiledFilePath = path.normalize "#{temp}/#{f}-tiled.png"
-		newFilePath = path.normalize "#{cd}/images/textures/#{f}-psedit.png"
+		newFilePath = path.normalize "#{cd}/images/patterns/#{f}-psedit.png"
 		
 		print "Editing a tiled version of #{originalFilePath}"
 		
@@ -245,7 +245,7 @@ task 'e', 'Edit a tiled version of a texture in photoshop.', (options)->
 				
 				img = gm()
 				
-				# Tile the texture (there might be an option (-tile) for this, but whatever: the documentation is terrible and this works)
+				# Tile the pattern (there might be an option (-tile) for this, but whatever: the documentation is terrible and this works)
 				w = h = 512
 				for x in [0...3]
 					for y in [0...3]
@@ -290,7 +290,7 @@ task 'e', 'Edit a tiled version of a texture in photoshop.', (options)->
 										print "gm.write() error"
 										return console.error err
 									else
-										# regenerate textures.html in case there's a new texture
+										# regenerate patterns.html in case there's a new pattern
 										invoke 'boil'
 										# optimize the new image
 										optimage {
