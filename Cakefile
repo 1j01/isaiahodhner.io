@@ -32,7 +32,7 @@ boil = ({title, head, body})->
 			</head>
 			<body>
 				<header>
-					<b>Hi, my name is </b><h1>Isaiah Odhner</h1><b> and this is my portfolio</b>
+					<h1>Isaiah Odhner</h1>
 					<nav>
 						<a href="/">Home</a>
 						<a href="/textures">Textures</a>
