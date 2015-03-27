@@ -4,7 +4,7 @@ body {
 	text-align: center;
 	margin: 0;
 	padding: 0;
-	background: #1D1D1D;
+	background: #DAEFFF;
 	color: white;
 	line-height: 1;
 }
@@ -13,11 +13,11 @@ body {
 }
 body > header {
 	padding: 40px;
-	background: #303030;
+	background: #0083A5;
 	color: white;
 }
 header h1 {
-	font-size: 2.1em;
+	font-size: 3em;
 	font-weight: normal;
 	margin: 0;
 }
@@ -26,7 +26,7 @@ nav {
 	margin-top: 0.5em;
 }
 a {
-	color: #80BD01;
+	color: #98E100;
 }
 p {
 	color: #636363;
@@ -40,7 +40,7 @@ article {
 	margin: 1em;
 	
 	transition: opacity 5s ease-in-out, -webkit-transform 5s ease-in-out, -moz-transform 5s ease-in-out;
-	box-shadow: 0 0 0 5px black;
+	box-shadow: 0 0 0 5px #0083A5;
 	vertical-align: top;
 }
 article > img,
@@ -63,13 +63,14 @@ article footer {
 	left: 0;
 	right: 0;
 	padding: 5px;
-	background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 131, 165, 0.58);
 	color: white;
-	text-shadow: 0 2px 5px black, 0 1px 1px black;
+	/* text-shadow: 0 2px 5px black, 0 1px 1px black; */
+	text-shadow: 0 1px 5px rgb(0, 49, 61), 0 0 15px rgb(0, 131, 165);
 }
 [data-bg="light"] header,
 [data-bg="light"] footer {
-	background: #1D1D1D;
+	/* background: #1D1D1D; */
 }
 article a {
 	text-decoration: none;
@@ -82,7 +83,7 @@ article header {
 article footer {
 	bottom: 0;
 	font-size: 1.0em;
-	text-shadow: 0 2px 5px black, 0 0 15px black;
+	/*text-shadow: 0 1px 5px rgb(0, 158, 255), 0 0 15px rgb(0, 131, 165);*/
 }
 
 /* repo icon link */
@@ -100,10 +101,10 @@ article .repo:focus {
 
 /* selection color */
 ::selection { /* WebKit/Blink Browsers */
-	 background: rgba(98, 180, 254, 0.15);
+	 background: rgba(98, 180, 254, 0.6);
 }
 ::-moz-selection { /* Gecko Browsers */
-	background: rgba(98, 180, 254, 0.15);
+	background: rgba(98, 180, 254, 0.6);
 }
 
 /* selection shenanigans */
