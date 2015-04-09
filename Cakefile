@@ -155,9 +155,12 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			name: 'Font Detective'
 			description: 'Detects fonts in browser'
 			bg: "light"
-		'>> 98':
+		'>> 98': # really this should be an array
 			name: '98'
 			description: 'Windows 98 desktop remake'
+		'stick-mangler':
+			name: 'Stick Mangler'
+			description: 'Not Stick Ranger'
 	
 	log_divisibles(Object.keys(projects).length, "project tiles")
 	
