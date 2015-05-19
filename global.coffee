@@ -56,7 +56,4 @@ generatePageIcon = (draw)->
 		draw c.getContext '2d'
 		l.href = c.toDataURL()
 
-if module?
-	module.exports = flamingIcon
-else
-	generatePageIcon flamingIcon
+generatePageIcon flamingIcon

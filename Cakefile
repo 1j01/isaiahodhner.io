@@ -21,14 +21,15 @@ boil = ({title, head, body})->
 		<html lang="en-US">
 			<head>
 				<meta charset="utf-8">
-				<title>#{title} — Isaiah Odhner</title>
-				#{tab tab (head ? "")}
 				<meta name="author" content="Isaiah Odhner">
 				<meta name="description" content="Isaiah Odhner's portfolio website">
 				<meta name="keywords" content="Isaiah Odhner, 1j0, 1j01">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<title>#{title} — Isaiah Odhner</title>
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.css">
+				<script src="global.coffee" type="text/coffeescript"></script>
+				#{tab tab (head ? "")}
 			</head>
 			<body>
 				<header>
@@ -40,9 +41,8 @@ boil = ({title, head, body})->
 					</nav>
 				</header>
 				#{tab tab body}
+				<footer></footer>
 				<script src="lib/coffee-script.js"></script>
-				<script src="patterns.coffee" type="text/coffeescript"></script>
-				<script src="global.coffee" type="text/coffeescript"></script>
 			</body>
 		</html>
 	"""
@@ -54,7 +54,7 @@ Array::conjunct = (conjunction)->
 	else
 		@[0]
 
-log_divisibles = (n, unit)->
+log_divisibles = (n, unit, more_info...)->
 	nondivisibles = []
 	divisibles = []
 	(if n / i is n // i then divisibles else nondivisibles).push i for i in [1..10]
@@ -62,13 +62,13 @@ log_divisibles = (n, unit)->
 		#{n} #{unit},
 		divisible by #{divisibles.conjunct "and"},
 		but not by #{nondivisibles.conjunct "or"}
-	"
+	", more_info...
 
 task 'boil', 'Build the website, boiling the pages.', ->
 	
 	pattern_fnames = glob.sync 'images/patterns/*.png'
 	
-	log_divisibles(pattern_fnames.length, "pattern tiles")
+	log_divisibles pattern_fnames.length, "pattern tiles"
 	
 	pattern_images = (
 		for fname in pattern_fnames
@@ -77,10 +77,11 @@ task 'boil', 'Build the website, boiling the pages.', ->
 					<img src="#{fname}" itemprop="contentURL">
 				</article>
 			"""
-	).join '\n'
+	).join ''
 	
 	fs.writeFileSync 'patterns.html', boil
 		title: 'Patterns'
+		head: '<script src="patterns.coffee" type="text/coffeescript"></script>'
 		body: """
 			<p>
 				These are some patterns I made with code and a tool that made with code.
@@ -155,17 +156,18 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			name: 'Font Detective'
 			description: 'Detects fonts in browser'
 			bg: "light"
-		'>> 98': # really this should be an array
+		'>> 98': # really this whole data structure should be an array; this is a hack to place this item
 			name: '98'
 			description: 'Windows 98 desktop remake'
 		'stick-mangler':
 			name: 'Stick Mangler'
 			description: 'Not Stick Ranger'
 	
-	log_divisibles(Object.keys(projects).length, "project tiles")
+	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
 	fs.writeFileSync 'index.html', boil
 		title: 'Portfolio'
+		head: '<script src="project-tiles.coffee" type="text/coffeescript"></script>'
 		body: (
 			
 			for key, project of projects
@@ -180,9 +182,13 @@ task 'boil', 'Build the website, boiling the pages.', ->
 						project.url ? gh_pages_url
 				
 				bg = project.bg ? "normal"
+				sizes = ["1x1"] if fs.existsSync "images/projects/#{key}.png"
+				for img_path in glob.sync "images/projects/#{key}-*.png"
+					m = img_path.match /-(\d+x\d+)\./
+					sizes.push m[1] if m
 				
 				"""
-					<article itemscope itemtype="http://schema.org/WebPage" data-bg="#{bg}">
+					<article itemscope itemtype="http://schema.org/WebPage" data-bg="#{bg}" data-sizes="#{sizes}">
 						<a href="#{url}" itemprop="url">
 							<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">
 						</a>
@@ -194,7 +200,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 					</article>
 				"""
 				
-		).join '\n'
+		).join ''
 
 
 task 'optimages', 'Optimize all the images.', ->

@@ -1,11 +1,17 @@
 {
 	"name": "portfolio",
+	"version": "1.0.0",
 	"author": "Isaiah Odhner",
 	"description": "My portfolio",
 	"keywords": [
 		"personal",
 		"portfolio",
-		"website"
+		"website",
+		"person",
+		"programmer",
+		"projects",
+		"Isaiah",
+		"Odhner"
 	],
 	"repository": {
 		"type": "git",
