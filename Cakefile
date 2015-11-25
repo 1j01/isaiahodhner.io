@@ -162,6 +162,20 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'stick-mangler':
 			name: 'Stick Mangler'
 			description: 'Not Stick Ranger'
+		'audio-editor':
+			name: 'Audio Editor'
+			description: 'An online digital audio worksation'
+		'project-nexus':
+			name: 'Project Nexus'
+			description: 'A hub for all your coding projects'
+			url: 'repo'
+		'sbahjifier':
+			name: 'SBAHJifier'
+			description: 'Make any page look like SWEET BRO AND HELLA JEFF'
+			url: 'https://chrome.google.com/webstore/detail/sbahjifier/gejobhmmpioknjihlhemplpfchbnbpin'
+		'rtttl.js':
+			name: 'RTTTL.js'
+			description: 'Play a bunch of ringtones'
 	
 	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
@@ -173,7 +187,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			for key, project of projects
 				key = key.replace ">> ", ""
 				
-				repo_url = "http://github.com/1j01/#{key}"
+				repo_url = project.repo_url ? "http://github.com/1j01/#{key}"
 				gh_pages_url = "http://1j01.github.io/#{key}/"
 				url =
 					if project.url is 'repo'
@@ -342,4 +356,4 @@ task 'e', 'Edit a tiled version of a pattern in photoshop.', (options)->
 
 task 'sbuild', '(invokes boil) invoked by Ctrl+B in Sublime Text', -> invoke 'boil'
 task 'build', '(invokes boil)', -> invoke 'boil'
-
+
