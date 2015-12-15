@@ -165,6 +165,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'audio-editor':
 			name: 'Audio Editor'
 			description: 'An online digital audio worksation'
+			url: 'https://audioeditor.ml'
 		'project-nexus':
 			name: 'Project Nexus'
 			description: 'A hub for all your coding projects'
