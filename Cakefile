@@ -177,6 +177,9 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'rtttl.js':
 			name: 'RTTTL.js'
 			description: 'Play a bunch of ringtones'
+		'tri-chromatic-keyboard':
+			name: 'Tri-Chromatic Keyboard'
+			description: 'Better than a regular keyboard'
 	
 	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
