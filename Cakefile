@@ -91,9 +91,68 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		"""
 	
 	projects =
+		'audio-editor':
+			name: 'Audio Editor'
+			description: 'An online digital audio worksation'
+			url: 'https://audioeditor.ml'
+		'tri-chromatic-keyboard':
+			name: 'Tri-Chromatic Keyboard'
+			description: 'Better than a regular keyboard'
+		'guitar':
+			name: 'Guitar'
+			description: 'Easily play and record tabs'
+			bg: "light"
+		'choon.js':
+			name: 'Choon.js'
+			description: 'Choon language interpreter built with the Web Audio API'
+		'rtttl.js':
+			name: 'RTTTL.js'
+			description: 'Play a bunch of ringtones'
+		'jspaint':
+			name: 'JS Paint'
+			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
+		'project-nexus':
+			name: 'Project Nexus'
+			description: 'A hub for all your coding projects'
+			url: 'repo'
+		'multifiddle':
+			name: 'MultiFiddle'
+			description: 'Minimalistic multiplayer live code fiddling environment'
+		'mind-map':
+			name: 'MindMap'
+			description: 'Map your mind without ugly boxes'
+			bg: "light"
+		'transpairency':
+			name: 'Trans<em>pair</em>ency'
+			description: 'B&W to transparent'
+			bg: "light"
 		'tiamblia':
 			name: 'Tiamblia'
 			description: 'A notagame'
+		'slugg':
+			name: 'SLUGG'
+			description: 'A simple little up-going game'
+		'mos':
+			name: 'MOS'
+			description: 'Monochrome Operating System'
+		'1bpp':
+			name: 'One Bit Per Pixel'
+			description: 'A notagame in pure B&W'
+		'board-game':
+			name: 'Chance'
+			description: 'A board game?'
+		'une':
+			name: 'UNE: The Complete Multitool'
+			description: 'An incomplete unitool for a game called 5UNE17A'
+		'stick-mangler':
+			name: 'Stick Mangler'
+			description: 'Not Stick Ranger'
+		'pool':
+			name: 'Jussom Billiards'
+			description: 'Just playing around with physics'
+		'pipes':
+			name: 'Pipes'
+			description: '3d pipes screensaver remake'
 		'boxart':
 			name: 'BoxArt'
 			description: '3d drag & drop box art generator'
@@ -101,56 +160,14 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			name: 'Babble'
 			description: 'Sentence generator and more'
 			bg: "light"
-		'multifiddle':
-			name: 'MultiFiddle'
-			description: 'Minimalistic multilingual live code fiddling environment'
-		'jspaint':
-			name: 'JS Paint'
-			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
-		'board-game':
-			name: 'Chance'
-			description: 'A board game?'
-		'1bpp':
-			name: 'One Bit Per Pixel'
-			description: 'A notagame in pure B&W'
 		'patterns':
 			name: 'Patterns'
 			description: 'Procedurally generated patterns'
 			url: 'patterns'
-		'mind-map':
-			name: 'MindMap'
-			description: 'Map your mind without ugly boxes'
-			bg: "light"
-		'guitar':
-			name: 'Guitar'
-			description: 'Easily play and record tabs'
-			bg: "light"
-		'mos':
-			name: 'MOS'
-			description: 'Monochrome Operating System'
-		'choon.js':
-			name: 'Choon.js'
-			description: 'Choon language interpreter built with the Web Audio API'
-		'pesterchum':
-			name: 'PesterChum'
-			description: 'MS Paint Adventures chat client'
-			url: 'https://rawgit.com/1j01/pesterchum/master/app/reaction/test.html'
+			repo_url: 'https://github.com/1j01/1j01.github.io'
 		'gif-maker':
 			name: 'GIF Maker'
 			description: 'Make animated GIF images'
-		'une':
-			name: 'UNE: The Complete Multitool'
-			description: 'An incomplete unitool for a game called 5UNE17A'
-		'transpairency':
-			name: 'Trans<em>pair</em>ency'
-			description: 'B&W to transparent'
-			bg: "light"
-		'pool':
-			name: 'Jussom Billiards'
-			description: 'Just playing around with physics'
-		'pipes':
-			name: 'Pipes'
-			description: '3d pipes screensaver remake'
 		'countdown.ml':
 			name: 'Countdown.ml'
 			description: 'What does it look like?'
@@ -162,27 +179,14 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'>> 98': # really this whole data structure should be an array; this is a hack to place this item
 			name: '98'
 			description: 'Windows 98 desktop remake'
-		'stick-mangler':
-			name: 'Stick Mangler'
-			description: 'Not Stick Ranger'
-		'audio-editor':
-			name: 'Audio Editor'
-			description: 'An online digital audio worksation'
-			url: 'https://audioeditor.ml'
-		'project-nexus':
-			name: 'Project Nexus'
-			description: 'A hub for all your coding projects'
+		'pesterchum':
+			name: 'PesterChum'
+			description: 'MS Paint Adventures chat client'
 			url: 'repo'
 		'sbahjifier':
 			name: 'SBAHJifier'
 			description: 'Make any page look like SWEET BRO AND HELLA JEFF'
 			url: 'https://chrome.google.com/webstore/detail/sbahjifier/gejobhmmpioknjihlhemplpfchbnbpin'
-		'rtttl.js':
-			name: 'RTTTL.js'
-			description: 'Play a bunch of ringtones'
-		'tri-chromatic-keyboard':
-			name: 'Tri-Chromatic Keyboard'
-			description: 'Better than a regular keyboard'
 	
 	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
@@ -193,7 +197,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			for key, project of projects
 				key = key.replace ">> ", ""
 				
-				repo_url = project.repo_url ? "http://github.com/1j01/#{key}"
+				repo_url = project.repo_url ? "https://github.com/1j01/#{key}"
 				gh_pages_url = "http://1j01.github.io/#{key}/"
 				url =
 					if project.url is 'repo'
