@@ -25,7 +25,7 @@ boil = ({title, head, body})->
 				<meta name="description" content="Isaiah Odhner's portfolio website">
 				<meta name="keywords" content="Isaiah Odhner, 1j0, 1j01">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<title>#{title} — Isaiah Odhner</title>
+				<title>#{if title then "#{title} — " else ""}Isaiah Odhner</title>
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.css">
 				<script src="global.coffee" type="text/coffeescript"></script>
@@ -35,8 +35,7 @@ boil = ({title, head, body})->
 				<header>
 					<h1>Isaiah Odhner</h1>
 					<nav>
-						<a href="/">Home</a>
-						<a href="/patterns">Patterns</a>
+						<a href="/">Projects</a>
 						<a href="mailto:isaiahodhner@gmail.com">Contact</a>
 					</nav>
 				</header>
@@ -114,6 +113,10 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		'1bpp':
 			name: 'One Bit Per Pixel'
 			description: 'A notagame in pure B&W'
+		'patterns':
+			name: 'Patterns'
+			description: 'Procedurally generated patterns'
+			url: 'patterns'
 		'mind-map':
 			name: 'MindMap'
 			description: 'Map your mind without ugly boxes'
@@ -184,7 +187,6 @@ task 'boil', 'Build the website, boiling the pages.', ->
 	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
 	fs.writeFileSync 'index.html', boil
-		title: 'Portfolio'
 		head: '<script src="project-tiles.coffee" type="text/coffeescript"></script>'
 		body: (
 			
