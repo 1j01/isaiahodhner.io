@@ -102,12 +102,6 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			name: 'Guitar'
 			description: 'Easily play and record tabs'
 			bg: "light"
-		'choon.js':
-			name: 'Choon.js'
-			description: 'Choon language interpreter built with the Web Audio API'
-		'rtttl.js':
-			name: 'RTTTL.js'
-			description: 'Play a bunch of ringtones'
 		'jspaint':
 			name: 'JS Paint'
 			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
@@ -167,11 +161,17 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			repo_url: 'https://github.com/1j01/1j01.github.io'
 		'gif-maker':
 			name: 'GIF Maker'
-			description: 'Make animated GIF images'
+			description: 'Make animated GIFs'
 		'countdown.ml':
 			name: 'Countdown.ml'
-			description: 'What does it look like?'
+			description: 'A simple countdown timer'
 			bg: "light"
+		'choon.js':
+			name: 'Choon.js'
+			description: 'Choon language interpreter built with the Web Audio API'
+		'rtttl.js':
+			name: 'RTTTL.js'
+			description: 'Play a bunch of ringtones'
 		'font-detective':
 			name: 'Font Detective'
 			description: 'Detects fonts in browser'
