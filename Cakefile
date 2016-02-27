@@ -90,103 +90,160 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			</div>
 		"""
 	
-	projects =
-		'audio-editor':
-			name: 'Audio Editor'
+	projects = [
+		{
+			repo_name: 'audio-editor'
+			title: 'Audio Editor'
 			description: 'An online digital audio worksation'
 			url: 'https://audioeditor.ml'
-		'tri-chromatic-keyboard':
-			name: 'Tri-Chromatic Keyboard'
+		}
+		{
+			repo_name: 'tri-chromatic-keyboard'
+			title: 'Tri-Chromatic Keyboard'
 			description: 'Better than a regular keyboard'
-		'guitar':
-			name: 'Guitar'
+		}
+		{
+			repo_name: 'guitar'
+			title: 'Guitar'
 			description: 'Easily play and record tabs'
 			bg: "light"
-		'jspaint':
-			name: 'JS Paint'
+		}
+		{
+			repo_name: 'jspaint'
+			title: 'JS Paint'
 			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
-		'project-nexus':
-			name: 'Project Nexus'
+		}
+		{
+			repo_name: 'project-nexus'
+			title: 'Project Nexus'
 			description: 'A hub for all your coding projects'
 			url: 'repo'
-		'multifiddle':
-			name: 'MultiFiddle'
+		}
+		{
+			repo_name: 'multifiddle'
+			title: 'MultiFiddle'
 			description: 'Minimalistic multiplayer live code fiddling environment'
-		'mind-map':
-			name: 'MindMap'
+		}
+		{
+			repo_name: 'mind-map'
+			title: 'MindMap'
 			description: 'Map your mind without ugly boxes'
 			bg: "light"
-		'transpairency':
-			name: 'Trans<em>pair</em>ency'
+		}
+		{
+			repo_name: 'transpairency'
+			title: 'Trans<em>pair</em>ency'
 			description: 'B&W to transparent'
 			bg: "light"
-		'tiamblia':
-			name: 'Tiamblia'
+		}
+		{
+			repo_name: 'tiamblia'
+			title: 'Tiamblia'
 			description: 'A notagame'
-		'slugg':
-			name: 'SLUGG'
+		}
+		{
+			repo_name: 'slugg'
+			title: 'SLUGG'
 			description: 'A simple little up-going game'
-		'mos':
-			name: 'MOS'
+		}
+		{
+			repo_name: 'mos'
+			title: 'MOS'
 			description: 'Monochrome Operating System'
-		'1bpp':
-			name: 'One Bit Per Pixel'
+		}
+		{
+			repo_name: '1bpp'
+			title: 'One Bit Per Pixel'
 			description: 'A notagame in pure B&W'
-		'board-game':
-			name: 'Chance'
+		}
+		{
+			repo_name: 'board-game'
+			title: 'Chance'
 			description: 'A board game?'
-		'une':
-			name: 'UNE: The Complete Multitool'
+		}
+		{
+			repo_name: 'une'
+			title: 'UNE: The Complete Multitool'
 			description: 'An incomplete unitool for a game called 5UNE17A'
-		'stick-mangler':
-			name: 'Stick Mangler'
+		}
+		{
+			repo_name: 'stick-mangler'
+			title: 'Stick Mangler'
 			description: 'Not Stick Ranger'
-		'pool':
-			name: 'Jussom Billiards'
+		}
+		{
+			repo_name: 'pool'
+			title: 'Jussom Billiards'
 			description: 'Just playing around with physics'
-		'pipes':
-			name: 'Pipes'
+		}
+		{
+			repo_name: 'pipes'
+			title: 'Pipes'
 			description: '3d pipes screensaver remake'
-		'boxart':
-			name: 'BoxArt'
+		}
+		{
+			repo_name: 'boxart'
+			title: 'BoxArt'
 			description: '3d drag & drop box art generator'
-		'babble':
-			name: 'Babble'
+		}
+		{
+			repo_name: 'babble'
+			title: 'Babble'
 			description: 'Sentence generator and more'
 			bg: "light"
-		'patterns':
-			name: 'Patterns'
+		}
+		{
+			repo_name: 'patterns'
+			title: 'Patterns'
 			description: 'Procedurally generated patterns'
 			url: 'patterns'
 			repo_url: 'https://github.com/1j01/1j01.github.io'
-		'gif-maker':
-			name: 'GIF Maker'
+		}
+		{
+			repo_name: 'gif-maker'
+			title: 'GIF Maker'
 			description: 'Make animated GIFs'
-		'countdown.ml':
-			name: 'Countdown.ml'
+		}
+		{
+			repo_name: 'countdown.ml'
+			title: 'Countdown.ml'
 			description: 'A simple countdown timer'
 			bg: "light"
-		'choon.js':
-			name: 'Choon.js'
+		}
+		{
+			repo_name: 'choon.js'
+			title: 'Choon.js'
 			description: 'Choon language interpreter built with the Web Audio API'
-		'rtttl.js':
-			name: 'RTTTL.js'
+		}
+		{
+			repo_name: 'rtttl.js'
+			title: 'RTTTL.js'
 			description: 'Play a bunch of ringtones'
-		'font-detective':
-			name: 'Font Detective'
+		}
+		{
+			repo_name: 'font-detective'
+			title: 'Font Detective'
 			description: 'Detects fonts in browser'
 			bg: "light"
-		'>> 98': # really this whole data structure should be an array; this is a hack to place this item
-			name: '98'
+		}
+		{
+			repo_name: '98'
+			title: '98'
 			description: 'Windows 98 desktop remake'
-		'pesterchum':
-			name: 'PesterChum'
+		}
+		{
+			repo_name: 'pesterchum'
+			title: 'PesterChum'
 			description: 'MS Paint Adventures chat client'
 			url: 'repo'
-		'sbahjifier':
-			name: 'SBAHJifier'
+		}
+		{
+			repo_name: 'sbahjifier'
+			title: 'SBAHJifier'
 			description: 'Make any page look like SWEET BRO AND HELLA JEFF'
 			url: 'https://chrome.google.com/webstore/detail/sbahjifier/gejobhmmpioknjihlhemplpfchbnbpin'
+		}
+	]
 	
 	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
@@ -194,11 +251,11 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		head: '<script src="project-tiles.coffee" type="text/coffeescript"></script>'
 		body: (
 			
-			for key, project of projects
-				key = key.replace ">> ", ""
+			for project in projects
 				
-				repo_url = project.repo_url ? "https://github.com/1j01/#{key}"
-				gh_pages_url = "http://1j01.github.io/#{key}/"
+				image_url = project.image_url ? "images/projects/#{project.repo_name}.png"
+				repo_url = project.repo_url ? "https://github.com/1j01/#{project.repo_name}"
+				gh_pages_url = "http://1j01.github.io/#{project.repo_name}/"
 				url =
 					if project.url is 'repo'
 						repo_url
@@ -206,19 +263,22 @@ task 'boil', 'Build the website, boiling the pages.', ->
 						project.url ? gh_pages_url
 				
 				bg = project.bg ? "normal"
-				sizes = ["1x1"] if fs.existsSync "images/projects/#{key}.png"
-				for img_path in glob.sync "images/projects/#{key}-*.png"
-					m = img_path.match /-(\d+x\d+)\./
-					sizes.push m[1] if m
-				
+				if project.image_url
+					sizes = ["1x1"]
+				else
+					sizes = ["1x1"] if fs.existsSync "images/projects/#{project.repo_name}.png"
+					for img_path in glob.sync "images/projects/#{project.repo_name}-*.png"
+						m = img_path.match /-(\d+x\d+)\./
+						sizes.push m[1] if m
+					
 				"""
 					<article itemscope itemtype="http://schema.org/WebPage" data-bg="#{bg}" data-sizes="#{sizes}">
 						<a href="#{url}" itemprop="url">
-							<img itemprop="image" width=256 height=256 src="images/projects/#{key}.png">
+							<img itemprop="image" width=256 height=256 src="#{image_url}">
 						</a>
 						<header itemprop="name">
-							<a href="#{repo_url}" class="repo" title="View repository on Github"><span class="octicon octicon-repo"></span></a>
-							<span>#{project.name}</span>
+							<a href="#{repo_url}" class="repo" title="View repository on GitHub"><span class="octicon octicon-repo"></span></a>
+							<span>#{project.title}</span>
 						</header>
 						<footer itemprop="description">#{project.description}</footer>
 					</article>
@@ -322,7 +382,7 @@ task 'e', 'Edit a tiled version of a pattern in photoshop.', (options)->
 						
 						
 						"""
-						# Why do I have such detailed error handling in my portfolio website's Cakefile? idk
+						# Why do I have such detailed error handling in my website's Cakefile? idk
 						# I don't remember what DSWYFT stands for. It's a TANSA. (a Thoughtless And Non-Standard Accronym)
 						return console.error err
 					
