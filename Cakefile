@@ -26,9 +26,11 @@ boil = ({title, head, body})->
 				<meta name="keywords" content="Isaiah Odhner, 1j0, 1j01">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>#{if title then "#{title} — " else ""}Isaiah Odhner</title>
+				<link rel="icon" sizes="any" type="image/svg+xml" href="images/icons/favicon.svg">
+				<link rel="icon" sizes="16x16" type="image/x-icon" href="images/icons/favicon.ico">
+				<link rel="icon" sizes="16x16" type="image/png" href="images/icons/favicon.png">
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
 				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.css">
-				<script src="global.coffee" type="text/coffeescript"></script>
 				#{tab tab (head ? "")}
 			</head>
 			<body>
