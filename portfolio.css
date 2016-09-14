@@ -45,8 +45,12 @@ article {
 	box-shadow: 0 0 0 5px #0083A5;
 	vertical-align: top;
 }
-article > a > img {
+article img {
 	vertical-align: top;
+}
+#patterns article img {
+	width: 256px;
+	height: 256px;
 }
 article > a {
 	display: block;
