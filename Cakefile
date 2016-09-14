@@ -13,9 +13,7 @@ tab = (str)->
 
 boil = ({title, head, body})->
 	# Boilerplate and stuff.
-	# A Template, really. But I like 'boiling', like I'm cooking webpages.
-	# ...before serving them... yes...
-	# I don't use any of that nasty phpreprocessed stuff.
+	# A Template, really. But I like 'boiling', like I'm cooking webpages. (Before serving them.)
 	"""
 		<!doctype html>
 		<html lang="en-US">
@@ -39,7 +37,7 @@ boil = ({title, head, body})->
 					<h1>Isaiah Odhner</h1>
 					<nav>
 						<a href="/">Projects</a>
-						<a href="mailto:isaiahodhner@gmail.com">Contact</a>
+						<a href="mailto:isaiahodhner@gmail.com">Send me an email</a>
 					</nav>
 				</header>
 				#{tab tab body}
@@ -49,12 +47,12 @@ boil = ({title, head, body})->
 		</html>
 	"""
 
-Array::conjunct = (conjunction)->
-	if @length > 0
-		[most..., last] = @
+conjunct = (array, conjunction)->
+	if array.length > 0
+		[most..., last] = array
 		"#{most.join(", ")} #{conjunction} #{last}"
 	else
-		@[0]
+		array[0]
 
 log_divisibles = (n, unit, more_info...)->
 	nondivisibles = []
@@ -62,8 +60,8 @@ log_divisibles = (n, unit, more_info...)->
 	(if n / i is n // i then divisibles else nondivisibles).push i for i in [1..10]
 	console.log "
 		#{n} #{unit},
-		divisible by #{divisibles.conjunct "and"},
-		but not by #{nondivisibles.conjunct "or"}
+		divisible by #{conjunct(divisibles, "and")},
+		but not by #{conjunct(nondivisibles, "or")}
 	", more_info...
 
 task 'boil', 'Build the website, boiling the pages.', ->

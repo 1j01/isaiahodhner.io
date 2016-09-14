@@ -29,6 +29,9 @@ nav {
 	font-size: 1.3em;
 	margin-top: 0.5em;
 }
+nav a:not(:last-child) {
+	padding-right: 0.4em;
+}
 a {
 	color: #98E100;
 }
