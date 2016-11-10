@@ -138,7 +138,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			bg: "light"
 		}
 		{
-			repo_name: 'tiamblia'
+			repo_name: 'tiamblia-original'
 			title: 'Tiamblia'
 			description: 'A notagame'
 		}
