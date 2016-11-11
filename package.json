@@ -24,13 +24,14 @@
   "scripts": {
     "start": "http-server -a localhost -o",
     "build": "cake build",
+    "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "cake optimages"
   },
   "main": "index.html",
   "devDependencies": {
     "coffee-script": "^1.8.0",
-    "glob": "4.0.3",
-    "gm": "1.16.0",
+    "glob": "^4.0.3",
+    "gm": "^1.16.0",
     "http-server": "^0.7.4",
     "optimage": "^0.2.0"
   }
