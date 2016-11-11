@@ -38,6 +38,15 @@ a {
 p {
 	color: #636363;
 }
+.octicon {
+	fill: currentColor;
+	padding: 5px;
+}
+a,
+span,
+.octicon {
+	vertical-align: middle;
+}
 
 article {
 	display: inline-block;

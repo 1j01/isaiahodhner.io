@@ -2,6 +2,7 @@
 fs = require 'fs'
 path = require 'path'
 glob = require 'glob'
+octicons = require 'octicons'
 
 tab = (str)->
 	# Indent the output. Because I care.
@@ -25,15 +26,16 @@ boil = ({title, head, body})->
 				<link rel="icon" sizes="16x16" type="image/x-icon" href="images/icons/favicon.ico">
 				<link rel="icon" sizes="16x16" type="image/png" href="images/icons/favicon.png">
 				<link rel="stylesheet" type="text/css" href="portfolio.css">
-				<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.css">
 				#{tab tab (head ? "")}
 			</head>
 			<body>
 				<header>
 					<h1>Isaiah Odhner</h1>
+					<h2>Node.js & web developer & designer</h2>
 					<nav>
 						<a href="/">Projects</a>
-						<a href="mailto:isaiahodhner@gmail.com">Send me an email</a>
+						<a href="https://github.com/1j01">#{octicons["mark-github"].toSVG()}GitHub</a>
+						<a href="mailto:isaiahodhner@gmail.com">#{octicons.mail.toSVG()}Contact</a>
 					</nav>
 				</header>
 				#{tab tab body}
@@ -42,6 +44,8 @@ boil = ({title, head, body})->
 			</body>
 		</html>
 	"""
+	# <h2>Node.js & web developer & designer<br/>& game developer & wannabe entrepreneur<br/>& a little bit of a "piano musician"</h2>
+	# aka "piano artist" icyww
 
 conjunct = (array, conjunction)->
 	if array.length > 0
@@ -120,7 +124,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 							<img itemprop="image" width=256 height=256 src="#{image_url}">
 						</a>
 						<header itemprop="name">
-							<a href="#{repo_url}" class="repo" title="View repository on GitHub"><span class="octicon octicon-repo"></span></a>
+							<a href="#{repo_url}" class="repo" title="View repository on GitHub">#{octicons.repo.toSVG()}</span></a>
 							<span>#{project.title}</span>
 						</header>
 						<footer itemprop="description">#{project.description}</footer>
