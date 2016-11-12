@@ -5,7 +5,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background: #DAEFFF;
-	color: white;
+	color: #505050;
 	line-height: 1;
 }
 * {
@@ -33,19 +33,21 @@ nav a:not(:last-child) {
 	padding-right: 0.4em;
 }
 a {
+	text-decoration: none;
+}
+nav a {
 	color: #98E100;
 }
-p {
-	color: #636363;
+p a {
+	color: #ff2eaa;
 }
 .octicon {
 	fill: currentColor;
-	padding: 5px;
+	padding: 0 5px;
 }
-a,
-span,
-.octicon {
-	vertical-align: middle;
+article span,
+article header .octicon {
+	vertical-align: middle; 
 }
 
 article {
@@ -146,6 +148,9 @@ body > header {
 body > header * {
 	user-select: text;
 	-webkit-user-select: text;
+}
+body > header h1 a {
+	color: inherit;
 }
 body > article > header,
 body > article > header *,

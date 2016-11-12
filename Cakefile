@@ -8,7 +8,7 @@ tab = (str)->
 	# Indent the output. Because I care.
 	str.replace(/\n/g, '\n\t')
 
-boil = ({title, head, body})->
+boil = ({title, head, main})->
 	# Boilerplate and stuff.
 	# A Template, really. But I like 'boiling', like I'm cooking webpages. (Before serving them.)
 	"""
@@ -30,15 +30,18 @@ boil = ({title, head, body})->
 			</head>
 			<body>
 				<header>
-					<h1>Isaiah Odhner</h1>
+					<h1><a href="/">Isaiah Odhner</a></h1>
 					<h2>Node.js & web developer & designer</h2>
 					<nav>
-						<a href="/">Projects</a>
+						<a href="/apps">Apps</a>
+						<a href="/games">Games</a>
 						<a href="https://github.com/1j01">#{octicons["mark-github"].toSVG()}GitHub</a>
 						<a href="mailto:isaiahodhner@gmail.com">#{octicons.mail.toSVG()}Contact</a>
 					</nav>
 				</header>
-				#{tab tab body}
+				<main>
+					#{tab tab tab main}
+				</main>
 				<footer></footer>
 				<script src="lib/coffee-script.js"></script>
 			</body>
@@ -82,7 +85,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 	fs.writeFileSync 'patterns.html', boil
 		title: 'Patterns'
 		head: '<script src="patterns.coffee" type="text/coffeescript"></script>'
-		body: """
+		main: """
 			<p>
 				These are some patterns I made with code and a tool that made with code.
 			</p>
@@ -94,44 +97,55 @@ task 'boil', 'Build the website, boiling the pages.', ->
 	projects = require "./projects"
 	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
-	fs.writeFileSync 'index.html', boil
-		head: '<script src="project-tiles.coffee" type="text/coffeescript"></script>'
-		body: (
-			
-			for project in projects
+	display_projects = (projects)->
+		boil
+			head: '<script src="project-tiles.coffee" type="text/coffeescript"></script>'
+			main: (
 				
-				image_url = project.image_url ? "images/projects/#{project.repo_name}.png"
-				repo_url = project.repo_url ? "https://github.com/1j01/#{project.repo_name}"
-				gh_pages_url = "http://1j01.github.io/#{project.repo_name}/"
-				url =
-					if project.url is 'repo'
-						repo_url
-					else
-						project.url ? gh_pages_url
-				
-				bg = project.bg ? "normal"
-				if project.image_url
-					sizes = ["1x1"]
-				else
-					sizes = ["1x1"] if fs.existsSync "images/projects/#{project.repo_name}.png"
-					for img_path in glob.sync "images/projects/#{project.repo_name}-*.png"
-						m = img_path.match /-(\d+x\d+)\./
-						sizes.push m[1] if m
+				for project in projects
 					
-				"""
-					<article itemscope itemtype="http://schema.org/WebPage" data-bg="#{bg}" data-sizes="#{sizes}">
-						<a href="#{url}" itemprop="url">
-							<img itemprop="image" width=256 height=256 src="#{image_url}">
-						</a>
-						<header itemprop="name">
-							<a href="#{repo_url}" class="repo" title="View repository on GitHub">#{octicons.repo.toSVG()}</span></a>
-							<span>#{project.title}</span>
-						</header>
-						<footer itemprop="description">#{project.description}</footer>
-					</article>
-				"""
-				
-		).join ''
+					image_url = project.image_url ? "images/projects/#{project.repo_name}.png"
+					repo_url = project.repo_url ? "https://github.com/1j01/#{project.repo_name}"
+					gh_pages_url = "http://1j01.github.io/#{project.repo_name}/"
+					url =
+						if project.url is 'repo'
+							repo_url
+						else
+							project.url ? gh_pages_url
+					
+					bg = project.bg ? "normal"
+					if project.image_url
+						sizes = ["1x1"]
+					else
+						sizes = ["1x1"] if fs.existsSync "images/projects/#{project.repo_name}.png"
+						for img_path in glob.sync "images/projects/#{project.repo_name}-*.png"
+							m = img_path.match /-(\d+x\d+)\./
+							sizes.push m[1] if m
+						
+					"""
+						<article itemscope itemtype="http://schema.org/WebPage" data-bg="#{bg}" data-sizes="#{sizes}">
+							<a href="#{url}" itemprop="url">
+								<img itemprop="image" width=256 height=256 src="#{image_url}">
+							</a>
+							<header itemprop="name">
+								<a href="#{repo_url}" class="repo" title="View repository on GitHub">#{octicons.repo.toSVG()}</span></a>
+								<span>#{project.title}</span>
+							</header>
+							<footer itemprop="description">#{project.description}</footer>
+						</article>
+					"""
+					
+			).join ''
+	
+	fs.writeFileSync 'index.html', boil
+		main: "
+			<p>I have too many projects. I make <a href='/apps'>web apps</a> and <a href='/games'>games</a>, and
+			<a href='https://github.com/1j01'>libraries, tools, and other stuff</a>.</p>
+			<p>I like making <a href='/patterns'>procedural art</a>.
+			I play piano, and I have a <a href='https://soundcloud.com/isaiah-odhner'>SoundCloud</a> account, no relation.</p>
+		"
+	fs.writeFileSync 'apps.html', display_projects(projects.apps)
+	fs.writeFileSync 'games.html', display_projects(projects.games)
 
 
 task 'optimages', 'Optimize all the images.', ->
