@@ -41,6 +41,10 @@ nav a {
 p a {
 	color: #ff2eaa;
 }
+p {
+	max-width: 70em;
+	margin: 16px auto;
+}
 .octicon {
 	fill: currentColor;
 	padding: 0 5px;
@@ -54,13 +58,17 @@ article {
 	display: inline-block;
 	position: relative;
 	margin: 16px;
-	
-	transition: opacity 5s ease-in-out, -webkit-transform 5s ease-in-out, -moz-transform 5s ease-in-out;
 	box-shadow: 0 0 0 5px #0083A5;
 	vertical-align: top;
 }
 article img {
 	vertical-align: top;
+}
+#patterns {
+	/* XXX: negative margin shouldn't really be needed */
+	/* 16px = the margin of the p before #patterns and of articles in #patterns */
+	/* 5px = width of border implemented as a box-shadow on the articles */
+	margin-top: calc(5px - 16px);
 }
 #patterns article img {
 	width: 256px;

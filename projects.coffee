@@ -19,6 +19,12 @@ module.exports = {
 			bg: "light"
 		}
 		{
+			repo_name: 'midiflip'
+			title: 'MidiFlip'
+			description: 'Mathematical MIDI manipulation'
+			bg: "light"
+		}
+		{
 			repo_name: 'jspaint'
 			title: 'JS Paint'
 			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
@@ -125,7 +131,13 @@ module.exports = {
 		{
 			repo_name: 'slugg'
 			title: 'SLUGG'
-			description: 'A simple little up-going game'
+			description: 'A dystopian trainhopping up-going parkour game-to-be'
+		}
+		{
+			repo_name: 'columns'
+			title: 'Columns'
+			description: 'A #BadBoxArt jam game'
+			bg: "light"
 		}
 		{
 			repo_name: 'mos'
@@ -156,6 +168,12 @@ module.exports = {
 			repo_name: 'pool'
 			title: 'Jussom Billiards'
 			description: 'Just playing around with physics'
+		}
+		{
+			repo_name: 'dat-boi'
+			title: 'Dat Boi'
+			description: 'Here comes dat boi!'
+			bg: "light"
 		}
 		{
 			repo_name: 'pipes'

@@ -88,6 +88,12 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		main: """
 			<p>
 				These are some patterns I made with code and a tool that made with code.
+				Some of them don't repeat seemlessly because I hadn't worked out all the kinks in my implementation of a wrapping canvas.
+				I also only have the code to reproduce a few of these.
+				I've started working on a <a href="https://github.com/1j01/ink-dangle">new tool</a> (terrible working title Ink Dangle)
+				that allow for more types of doodles (3D, anyone?),
+				give control over time,
+				all while saving a fully reproducible program in every screenshot.
 			</p>
 			<div id="patterns">
 				#{tab pattern_images}

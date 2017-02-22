@@ -1,7 +1,6 @@
 
 patterns = document.getElementById("patterns")
-header = document.getElementsByTagName("header")[0]
-return unless patterns and header
+return unless patterns
 
 canvas = document.createElement("canvas")
 return unless (
@@ -138,11 +137,11 @@ animate = ->
 		cleary (clear)->
 			clear(0, 0, canvas.width, canvas.height, Math.min(scrollyness, 0.1))
 	
-	# Clear the canvas on the header area
-	rect = header.getBoundingClientRect()
+	# Clear the canvas above the patterns area
+	patterns_area_rect = patterns.getBoundingClientRect()
 	cleary (clear)->
 		for ah in [0..30]
-			clear(rect.left, rect.top + ah, rect.width, rect.height + ah/2, 0.04)
+			clear(0, 0, canvas.width, patterns_area_rect.top - ah/2, 0.04)
 	
 	if particles.length > 0 or scrollyness > 0.05
 		requestAnimationFrame(animate)
@@ -154,5 +153,4 @@ for tile in tiles
 		img = tile.children[0]
 		tile.style.cursor = "pointer"
 		img.onclick = -> splatter(img)
-
 
