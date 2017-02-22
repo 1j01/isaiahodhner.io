@@ -138,12 +138,15 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			).join ''
 	
 	fs.writeFileSync 'index.html', boil
-		main: "
-			<p>I have too many projects. I make <a href='/apps'>web apps</a> and <a href='/games'>games</a>, and
-			<a href='https://github.com/1j01'>libraries, tools, and other stuff</a>.</p>
-			<p>I like making <a href='/patterns'>procedural art</a>.
-			I play piano, and I have a <a href='https://soundcloud.com/isaiah-odhner'>SoundCloud</a> account, no relation.</p>
-		"
+		main: """
+			<p>
+				I make <a href='/apps'>web apps</a>.
+				I also make <a href='/games'>games and experiments</a>, and some
+				<a href='https://github.com/1j01'>libraries, tools, and other stuff</a>.
+			</p>
+			<p>I like making music, so several of my projects are geared towards that.</p>
+			<p>I like making procedural art sometimes, such as <a href='/patterns'>these patterns</a>.</p>
+		"""
 	fs.writeFileSync 'apps.html', display_projects(projects.apps)
 	fs.writeFileSync 'games.html', display_projects(projects.games)
 
