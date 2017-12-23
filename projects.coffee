@@ -30,6 +30,13 @@ module.exports = {
 			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
 		}
 		{
+			repo_name: 'nonsensical'
+			title: 'Nonsensical'
+			description: 'An English sentence generator made for #ProcJam'
+			url: "https://1j01.itch.io/nonsensical"
+			bg: "light"
+		}
+		{
 			repo_name: 'project-nexus'
 			title: 'Project Nexus'
 			description: 'A hub for all your coding projects'
