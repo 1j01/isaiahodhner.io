@@ -99,13 +99,6 @@ module.exports = {
 			title: '98'
 			description: 'Windows 98 desktop remake'
 		}
-		# not much of an app
-		# {
-		# 	repo_name: 'babble'
-		# 	title: 'Babble'
-		# 	description: 'Sentence generator'
-		# 	bg: "light"
-		# }
 		# an app and some other stuff
 		# {
 		# 	repo_name: 'pesterchum'

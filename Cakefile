@@ -37,6 +37,8 @@ boil = ({title, head, main})->
 						<a href="/games">Games</a>
 						<a href="https://github.com/1j01">#{octicons["mark-github"].toSVG()}GitHub</a>
 						<a href="mailto:isaiahodhner@gmail.com">#{octicons.mail.toSVG()}Contact</a>
+						<br><br>
+						<a href="https://twitter.com/isaiahodhner">Follow me on Twitter!</a>
 					</nav>
 				</header>
 				<main>
@@ -87,13 +89,15 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		head: '<script src="patterns.coffee" type="text/coffeescript"></script>'
 		main: """
 			<p>
-				These are some patterns I made with code and a tool that made with code.
+				These are some patterns I made with code and a tool that I made.
 				Some of them don't repeat seemlessly because I hadn't worked out all the kinks in my implementation of a wrapping canvas.
 				I also only have the code to reproduce a few of these.
-				I've started working on a <a href="https://github.com/1j01/ink-dangle">new tool</a> (terrible working title Ink Dangle)
-				that allow for more types of doodles (3D, anyone?),
-				give control over time,
-				all while saving a fully reproducible program in every screenshot.
+			</p>
+			<p>
+				I've since started a project called <a href="https://github.com/1j01/pixel-weaver">Pixel Weaver</a>
+				that allows for more types of doodles (3D, anyone?),
+				gives control over time,
+				all while saving reproducible programs in every exported screenshot.
 			</p>
 			<div id="patterns">
 				#{tab pattern_images}
