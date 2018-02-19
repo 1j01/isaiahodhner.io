@@ -24,6 +24,7 @@
   "scripts": {
     "start": "http-server -a localhost -o",
     "build": "cake build",
+    "watch": "run-when-changed --watch \"**/*.coffee\" --watch \"Cakefile\" --exec \"cake build\"",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "cake optimages"
   },
@@ -34,6 +35,7 @@
     "gm": "^1.16.0",
     "http-server": "^0.7.4",
     "octicons": "^5.0.1",
-    "optimage": "^0.2.0"
+    "optimage": "^0.2.0",
+    "run-when-changed": "^2.0.3"
   }
 }
