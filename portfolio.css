@@ -18,12 +18,42 @@ body > header {
 	padding: 40px;
 	background: #0083A5;
 	color: white;
-	margin-bottom: 16px;
 }
 header h1 {
 	font-size: 3em;
 	font-weight: normal;
 	margin: 0;
+}
+.mission.big {
+	font-size: 10vmin;
+	margin: 0;
+	padding: 1em;
+	text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+}
+.mission.big .word {
+	display: block;
+}
+.mission:not(.big) {
+	font-size: 2em;
+	text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+}
+.mission strong.word {
+	font-size: 1.3em;
+}
+@media (max-width: 700px) {
+	.mission:not(.big),
+	.mission.big { /* specifity hacks */
+		font-size: 10vmin;
+	}
+	.mission .word {
+		display: block;
+	}
+}
+.mission.on-mission-page {
+	/*background: #FFC107;*/
+	/*color: white;*/
+	background: #000000;
+	color: white;
 }
 nav {
 	font-size: 1.3em;
@@ -34,9 +64,8 @@ nav a:not(:last-child) {
 }
 a {
 	text-decoration: none;
-}
-nav a {
-	color: #98E100;
+	/*color: #98E100;*/
+	color: inherit;
 }
 p a {
 	color: #ff2eaa;
@@ -44,6 +73,8 @@ p a {
 p {
 	max-width: 70em;
 	margin: 16px auto;
+	padding: 0 16px;
+	text-align: left;
 }
 .octicon {
 	fill: currentColor;
@@ -53,7 +84,6 @@ article span,
 article header .octicon {
 	vertical-align: middle; 
 }
-
 article {
 	display: inline-block;
 	position: relative;
@@ -64,11 +94,13 @@ article {
 article img {
 	vertical-align: top;
 }
-#patterns {
-	/* XXX: negative margin shouldn't really be needed */
+.tiles-container {
 	/* 16px = the margin of the p before #patterns and of articles in #patterns */
 	/* 5px = width of border implemented as a box-shadow on the articles */
-	margin-top: calc(5px - 16px);
+	padding-top: calc(16px - 5px);
+}
+main > h1 {
+	font-size: 2em;
 }
 #patterns article img {
 	width: 256px;
