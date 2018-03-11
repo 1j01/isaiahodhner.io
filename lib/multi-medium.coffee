@@ -48,17 +48,6 @@ deserialize_strokes = (strokes)->
 		points: for i in [0...coords.length] by 2
 			{x: coords[i], y: coords[i+1]}
 
-draw_strokes = (strokes, ctx, scale=1)->
-	ctx.lineJoin = "round"
-	ctx.lineCap = "round"
-	ctx.beginPath()
-	for {points} in strokes
-		ctx.moveTo(points[0].x*scale, points[0].y*scale)
-		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
-		ctx.lineTo(point.x*scale, point.y*scale) for point in points
-		ctx.points
-	ctx.stroke()
-
 Spanvas = (word, data)->
 	spanvas = document.createElement "span"
 	spanvas.style.position = "relative"
@@ -135,7 +124,8 @@ Spanvas = (word, data)->
 					max_y = Math.max(max_y, point.y)
 					min_y = Math.min(min_y, point.y)
 			
-			padding = line_width * 2
+			padding = MultiMedium.getPadding(line_width)
+			
 			y_offset = ~~Math.min(0, min_y * scale)
 			canvas.width = (max_x - min_x) * scale + padding * 2
 			canvas.height = Math.max(rect.height, max_y * scale - y_offset + padding * 2)
@@ -144,11 +134,13 @@ Spanvas = (word, data)->
 			ctx.strokeStyle = style?.color
 			ctx.save()
 			ctx.translate(-min_x * scale + padding, -y_offset + padding)
-			draw_strokes strokes, ctx, scale
+			MultiMedium.drawStrokes strokes, ctx, scale
 			ctx.restore()
 			
 			spanvas.style.color = "transparent"
 			canvas.style.top = "#{y_offset}px"
+			# canvas.style.left = "#{-padding/2}px"
+			# canvas.style.top = "#{y_offset - padding/2}px"
 			
 			if canvas.width isnt rect.width
 				spanvas.style.letterSpacing = "#{Math.max(-8, (canvas.width - original_width) / word.length)}px"
@@ -270,7 +262,7 @@ Spanvas = (word, data)->
 		ctx.fillText selected_word, 20, baseline
 		ctx.strokeStyle = element_style?.color
 		ctx.lineWidth = 10
-		draw_strokes strokes, ctx, canvas.height
+		MultiMedium.drawStrokes strokes, ctx, canvas.height
 	
 	point_for = (e)->
 		rect = canvas.getBoundingClientRect()
@@ -340,3 +332,20 @@ Spanvas = (word, data)->
 @MultiMedium.setData = (datas)->
 	for data, i in datas
 		all_spanvases[i].setData {strokes: deserialize_strokes(data)} if data
+
+
+# for override
+@MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
+	ctx.lineJoin = "round"
+	ctx.lineCap = "round"
+	ctx.beginPath()
+	for {points} in strokes
+		ctx.moveTo(points[0].x*scale, points[0].y*scale)
+		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
+		ctx.lineTo(point.x*scale, point.y*scale) for point in points
+		ctx.points
+	ctx.stroke()
+
+# for override
+@MultiMedium.getPadding = (line_width)->
+	line_width * 2

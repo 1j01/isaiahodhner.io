@@ -230,9 +230,12 @@ task 'boil', 'Build the website, boiling the pages.', ->
 				<strong class="word">MAKING</strong>
 				<span class="word">BETTER</span>
 				<aside style="font-family: monospace; font-size: 1rem; margin-top: 2rem;">
-					@TODO: This begs to be made colorful, and animated. Dynamic!
-					<br><br>
-					P.S. This was drawn with a touchpad, okay? :)
+					@TODO: Have the birds land on the text.
+					Animate the text itself!
+					Add leaves!
+					Branches!
+					Clouds!
+					Redraw the text with a tablet, instead of a touchpad.
 				</aside>
 			</h2>
 			<div style="padding: 5rem"> <!-- so it's not ridiculously scrunched at the bottom - especially after that huge header thing! -->

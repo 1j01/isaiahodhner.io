@@ -49,11 +49,17 @@ header h1 {
 		display: block;
 	}
 }
-.mission.on-mission-page {
+.mission.big.on-mission-page {
 	/*background: #FFC107;*/
 	/*color: white;*/
-	background: #000000;
-	color: white;
+	background: #87ceeb;
+	/*color: black;*/
+	color: #4e321d;
+	text-shadow: none;
+	line-height: 1.5;
+}
+.mission.on-mission-page aside {
+	color: black;
 }
 nav {
 	font-size: 1.3em;

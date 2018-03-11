@@ -24,3 +24,6 @@
 	box-shadow: 0 0 2px 3px #FFFFFF, 0 0 4px 5px #FFC7C7, 0 0 100px 5px #FF77BB;
 	z-index: 1;
 }
+.multi-medium-word {
+	text-shadow: none;
+}
