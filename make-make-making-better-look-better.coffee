@@ -1,43 +1,4 @@
 
-# svgNS = "http://www.w3.org/2000/svg"
-
-# svg = document.querySelector ".mission svg"
-
-# words = "Make Making Better".split(" ")
-# lineHeight = svg.getAttribute("height") / words.length
-# fontSize = lineHeight * 0.8
-
-# textElements =
-# 	for word, index in words
-# 		textElement = document.createElementNS(svgNS, "text")
-# 		textElement.setAttribute("x", 20)
-# 		textElement.setAttribute("y", lineHeight * (0.8 + index))
-# 		textElement.setAttribute("fill", "white")
-# 		# textElement.setAttribute("font-size", lineHeight + "px")
-# 		textElement.style.fontSize = fontSize + "px"
-# 		textElement.setAttribute("pointer-events", "fill")
-# 		textElement.textContent = word
-# 		svg.appendChild(textElement)
-
-# # isPointOnText = (x, y)->
-# # 	document.elementFromPoint(x, y) in textElements
-
-
-# canvas = document.createElement("canvas")
-# ctx = canvas.getContext("2d")
-# canvas.width = svg.width
-# canvas.height = svg.height
-# ctx.drawImage(svg, 0, 0)
-
-# id = ctx.getImageData(0, 0, canvas.width, canvas.height)
-
-# isPointOnText = (x, y)->
-# 	id.data[(x + (y * canvas.height)) * 4 + 3] > 125
-
-# addEventListener "mousemove", (event)->
-# 	console.log isPointOnText(event.clientX, event.clientY)
-
-
 for element in document.querySelectorAll ".mission .word"
 	text = element.innerText
 	element.innerHTML = ""

@@ -100,7 +100,6 @@ Spanvas = (word, data)->
 		{strokes}
 	
 	spanvas.setData = (data)->
-		# console.log "setData", spanvas, data
 		{strokes} = data
 		# if strokes?.length
 		# 	spanvas.setAttribute("data-handwriting", JSON.stringify([{strokes: serialize_strokes(strokes)}]))
@@ -115,7 +114,6 @@ Spanvas = (word, data)->
 		original_width ?= rect.width
 		canvas.style.display = "inline-block"
 		ctx = canvas.getContext "2d"
-		# console.log "render", strokes?, original_width, rect.width
 		if strokes
 			scale = rect.height
 			
@@ -123,9 +121,6 @@ Spanvas = (word, data)->
 				when "normal" then 400
 				when "bold" then 700
 				else style?.fontWeight ? 400
-			
-			# if not isFinite(weight)
-			# 	throw new Error("weight is #{weight}; must provide style.fontWeight")
 			
 			line_width = 1 + (parseInt(weight) / 400 * scale / 30)
 			
@@ -142,7 +137,6 @@ Spanvas = (word, data)->
 			
 			padding = line_width * 2
 			y_offset = ~~Math.min(0, min_y * scale)
-			# console.log max_x, min_x, scale, padding
 			canvas.width = (max_x - min_x) * scale + padding * 2
 			canvas.height = Math.max(rect.height, max_y * scale - y_offset + padding * 2)
 			
