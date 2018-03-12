@@ -243,7 +243,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 				</p>
 				<p>
 					I'll be writing a manifesto, which I'll put here, or at least link to it (maybe I'll put it on Medium?).
-					Also, I plan on starting a Patreon page.
+					I also plan on starting a Patreon page.
 					For now you can follow me on Twitter, <a href="https://twitter.com/isaiahodhner">@isaiahodhner</a>.
 				</p>
 			</div>
