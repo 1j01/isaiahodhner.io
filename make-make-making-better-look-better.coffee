@@ -15,15 +15,155 @@ word_ctxs = []
 # but instead we're collecting contexts
 MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
 	# console.trace "draw strokes"
+	weight = ctx.lineWidth
 	ctx.lineJoin = "round"
 	ctx.lineCap = "round"
+	
 	ctx.beginPath()
 	word_ctxs.push(ctx)
-	for {points} in strokes
-		ctx.moveTo(points[0].x*scale, points[0].y*scale)
-		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
-		ctx.lineTo(point.x*scale, point.y*scale) for point in points
+	# for [0..3]
+	# for ctx.strokeStyle in [""]
+	# for ctx.globalAlpha in [0.3, 0.5, 1]
+	# for alpha in [0.3, 0.5, 1]
+	# 	ctx.globalAlpha = alpha
+	# for color in ["#f0d", "#f0a", "#a4f"]
+	for color in ["#4e321d", "#966643", "#733e17"]
+		ctx.strokeStyle = color
+		ctx.beginPath()
+		for {points} in strokes
+			ctx.moveTo(points[0].x*scale, points[0].y*scale)
+			ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
+			# ctx.lineTo(point.x*scale, point.y*scale) for point in points
+			for point in points
+				ctx.lineTo(
+					point.x * scale + (Math.random() * 2 - 1) * weight/2
+					point.y * scale + (Math.random() * 2 - 1) * weight/3
+				)
+		ctx.stroke()
 	
+	# for color in ["#4e321d", "#966643", "#733e17"]
+	# 	ctx.strokeStyle = color
+	# 	ctx.beginPath()
+	# 	for {points} in strokes
+	# 		ctx.moveTo(points[0].x*scale, points[0].y*scale)
+	# 		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
+	# 		# ctx.lineTo(point.x*scale, point.y*scale) for point in points
+	# 		for point in points
+	# 			if Math.random() < 0.3
+	# 				ctx.moveTo(
+	# 					point.x * scale
+	# 					point.y * scale
+	# 				)
+	# 				ctx.lineTo(
+	# 					point.x * scale + (Math.random() * 2 - 1) * 3
+	# 					point.y * scale + (Math.random() * 2 - 1) * 2
+	# 				)
+	# 	ctx.stroke()
+	
+	# for color in ["#4e321d", "#966643", "#733e17"]
+	# 	for {points} in strokes
+	# 		for point in points
+	# 			if Math.random() < 0.3
+	# 				ctx.strokeStyle = color
+	# 				ctx.lineWidth = weight / 4
+	# 				ctx.beginPath()
+	# 				ctx.moveTo(
+	# 					point.x * scale
+	# 					point.y * scale
+	# 				)
+	# 				ctx.lineTo(
+	# 					end_x = point.x * scale + (Math.random() * 2 - 1) * 8
+	# 					end_y = point.y * scale + (Math.random() * 2 - 1) * 5 - 3
+	# 				)
+	# 				ctx.stroke()
+	# 				ctx.fillStyle = "green"
+	# 				ctx.beginPath()
+	# 				ctx.arc(end_x, end_y, weight / 4, 0, Math.PI * 2)
+	# 				ctx.fill()
+	
+	choose = (a)->
+		a[~~(Math.random() * a.length)]
+	
+	
+	# console.log scale, weight
+	# for [0...(scale**3/1000)]
+	# for [0...(weight - 2)**4*4]
+	num_little_branches = if ctx is word_ctxs[1] then 600 else 50
+	for [0...num_little_branches]
+		color = choose(["#4e321d", "#966643", "#733e17"])
+		{points} = choose(strokes)
+		if points.length
+			point = choose(points)
+			ctx.strokeStyle = color
+			ctx.lineWidth = weight / 4
+			ctx.beginPath()
+			ctx.moveTo(
+				point.x * scale
+				point.y * scale
+			)
+			ctx.lineTo(
+				end_x = point.x * scale + (Math.random() * 2 - 1) * weight / 2
+				end_y = point.y * scale + ((Math.random() * 2 - 1) * 5 - 3) * weight / 6
+			)
+			ctx.stroke()
+			ctx.fillStyle = "green"
+			ctx.beginPath()
+			ctx.arc(end_x, end_y, weight / 4, 0, Math.PI * 2)
+			ctx.fill()
+	
+	draw_branch = (x, y, angle=Math.random()*Math.PI*2, recursion_level=0)->
+		# console.trace("draw branch") if recursion_level < 1
+		ctx.save()
+		ctx.translate(x, y)
+		ctx.rotate(angle)
+	
+		ctx.strokeStyle = color
+		ctx.lineWidth = weight / 4
+		ctx.beginPath()
+		ctx.moveTo(0, 0)
+		ctx.lineTo(
+			end_x = 0 #(Math.random() * 2 - 1) * 8
+			end_y = Math.random() * 10 #(Math.random() * 2 - 1) * 5 - 3
+		)
+		ctx.stroke()
+		ctx.fillStyle = "green"
+		ctx.beginPath()
+		ctx.arc(end_x, end_y, weight / 4, 0, Math.PI * 2)
+		if recursion_level < 3
+			for [0...2]
+				relative_angle = (Math.random() * 2 - 1) * 0.9
+				draw_branch(end_x, end_y, relative_angle, recursion_level + 1)
+		
+		ctx.fill()
+		
+		ctx.restore()
+	
+	scan_points = (angle)->
+		furthest_dist = -Infinity
+		furthest_point = null
+		for {points} in strokes
+			for point in points
+				# x = point.x * Math.cos(angle) - point.y * Math.sin(angle)
+				y = point.y * Math.cos(angle) - point.x * Math.sin(angle)
+				if y > furthest_dist
+					furthest_dist = y
+					furthest_point = point
+		furthest_point
+	
+	for [0...2]
+		# color = choose(["#4e321d", "#966643", "#733e17"])
+		color = "#733e17"
+		# {points} = choose(strokes)
+		# if points.length
+		# 	point = choose(points)
+		angle = Math.PI * 2 * Math.random()
+		point = scan_points(angle)
+		draw_branch(
+			point.x * scale
+			point.y * scale
+			angle
+		)
+			
 	# ctx.shadowBlur = 10
 	
 	# ctx.lineWidth = 12
@@ -36,10 +176,10 @@ MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
 	
 	# ctx.lineWidth = 5
 	# ctx.strokeStyle = "#fff"
-	ctx.stroke()
+	# ctx.stroke()
 
-# MultiMedium.getPadding = (lineWidth)->
-# 	50
+MultiMedium.getPadding = (lineWidth)->
+	50
 
 for element in document.querySelectorAll ".mission .word"
 	# @TODO: make it so it copies with spaces to the clipboard
@@ -131,6 +271,7 @@ animate = ->
 	if canvas.width isnt width or canvas.height isnt height
 		canvas.width = width
 		canvas.height = height
+		MultiMedium.rerender()
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 
 	bird.step() for bird in birds

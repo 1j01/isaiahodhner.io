@@ -59,6 +59,10 @@ header h1 {
 	line-height: 1.5;
 }
 .mission.on-mission-page aside {
+	color: rgba(0, 0, 0, 0.1);
+	transition: color .5s ease;
+}
+.mission.on-mission-page:hover aside {
 	color: black;
 }
 nav {

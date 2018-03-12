@@ -138,12 +138,13 @@ Spanvas = (word, data)->
 			ctx.restore()
 			
 			spanvas.style.color = "transparent"
-			canvas.style.top = "#{y_offset}px"
-			# canvas.style.left = "#{-padding/2}px"
-			# canvas.style.top = "#{y_offset - padding/2}px"
+			# canvas.style.top = "#{y_offset}px"
+			canvas.style.left = "#{-padding}px"
+			canvas.style.top = "#{y_offset - padding}px"
+			# canvas.style.top = "#{-padding}px"
 			
-			if canvas.width isnt rect.width
-				spanvas.style.letterSpacing = "#{Math.max(-8, (canvas.width - original_width) / word.length)}px"
+			canvas_text_width = canvas.width - padding * 2
+			spanvas.style.letterSpacing = "#{Math.max(-8, (canvas_text_width - original_width) / word.length)}px"
 	
 	# setTimeout ->
 	# 	spanvas.setData data if data
@@ -333,6 +334,12 @@ Spanvas = (word, data)->
 	for data, i in datas
 		all_spanvases[i].setData {strokes: deserialize_strokes(data)} if data
 
+@MultiMedium.rerender = ->
+	# TODO: re-calculate original width of the text
+	# notably not needed if calling MultiMedium.setData
+	for spanvas in all_spanvases
+		spanvas.render()
+
 
 # for override
 @MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
@@ -343,7 +350,6 @@ Spanvas = (word, data)->
 		ctx.moveTo(points[0].x*scale, points[0].y*scale)
 		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
 		ctx.lineTo(point.x*scale, point.y*scale) for point in points
-		ctx.points
 	ctx.stroke()
 
 # for override
