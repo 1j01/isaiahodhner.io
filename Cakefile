@@ -15,7 +15,8 @@ boil = ({title, head, main})->
 	# A Template, really. But I like 'boiling', like I'm cooking webpages. (Before serving them.)
 	is_front_page = not title
 	is_mission_page = title is "Make Making Better"
-	show_mission_big = is_front_page # displayed separately on the mission page
+	show_mission_big = no # is_front_page
+	# (the `.mission` is displayed separately on the mission page)
 	"""
 		<!doctype html>
 		<html lang="en-US">
