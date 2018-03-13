@@ -104,7 +104,7 @@ document.body.onscroll = (e)->
 	scrollyness = 1 # @TODO: calculate amount scrolled
 	animate()
 
-cleary = (fn)->
+perform_cleary_operation = (fn)->
 	ctx.save()
 	ctx.globalCompositeOperation = "destination-out"
 	fn (x, y, w, h, a)->
@@ -134,14 +134,16 @@ animate = ->
 	if scrollyness < 0.0001
 		scrollyness = 0
 	else
-		cleary (clear)->
+		perform_cleary_operation (clear)->
 			clear(0, 0, canvas.width, canvas.height, Math.min(scrollyness, 0.1))
 	
 	# Clear the canvas above the patterns area
 	patterns_area_rect = patterns.getBoundingClientRect()
-	cleary (clear)->
+	perform_cleary_operation (clear)->
 		for ah in [0..30]
 			clear(0, 0, canvas.width, patterns_area_rect.top - ah/2, 0.04)
+			bottom_y = patterns_area_rect.bottom + ah/2
+			clear(0, bottom_y, canvas.width, canvas.height - bottom_y, 0.04)
 	
 	if particles.length > 0 or scrollyness > 0.05
 		requestAnimationFrame(animate)
