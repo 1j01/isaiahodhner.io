@@ -68,9 +68,12 @@ header h1 {
 .mission .link-indicator {
 	font-size: 1rem;
 	text-shadow: none;
+	margin-top: 5px; /* based mainly on the text-shadow of the above elements, which is linear px */
 }
-.mission.big .link-indicator {
-	font-size: 0.3em;
+@media (min-width: 550px) {
+	.mission.big .link-indicator {
+		font-size: 0.3em;
+	}
 }
 .mission .link-indicator::before {
 	content: "\bb\a0";
@@ -111,6 +114,11 @@ a {
 }
 p a {
 	color: #ff2eaa;
+}
+@media (min-width: 700px) {
+	.textual-page-content {
+		padding: 2em;
+	}
 }
 p {
 	max-width: 70em;

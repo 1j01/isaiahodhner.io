@@ -179,7 +179,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 	
 	fs.writeFileSync 'index.html', boil
 		main: """
-			<div style="padding: 5rem"> <!-- so it's not ridiculously scrunched at the bottom - especially after that huge header thing! -->
+			<div class="textual-page-content">
 				<p>
 					Hi, my name is <b>Isaiah Odhner</b>.
 				</p>
@@ -238,7 +238,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 					Redraw the text with a tablet rather than a touchpad.
 				</aside>
 			</h2>
-			<div style="padding: 5rem"> <!-- so it's not ridiculously scrunched at the bottom - especially after that huge header thing! -->
+			<div class="textual-page-content">
 				<p>
 					I want to <strong>improve creative software</strong>.
 					I have a lot of ideas about how to do this.
