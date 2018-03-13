@@ -44,6 +44,7 @@ boil = ({title, head, main})->
 								<span class="word">MAKE</span>
 								<strong class="word">MAKING</strong>
 								<span class="word">BETTER</span>
+								<div class="subtitle link-indicator">A manifesto (to come)</div>
 							</a>
 						</h2>
 						<a href="https://twitter.com/isaiahodhner">#{twitter_icon}Follow me on Twitter</a> <!-- for project announcements, art, etc. -->

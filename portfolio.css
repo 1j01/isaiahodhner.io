@@ -65,6 +65,38 @@ header h1 {
 .mission.on-mission-page:hover aside {
 	color: black;
 }
+.mission .link-indicator {
+	font-size: 1rem;
+	text-shadow: none;
+}
+.mission.big .link-indicator {
+	font-size: 0.3em;
+}
+.mission .link-indicator::before {
+	content: "\bb\a0";
+	animation: spin-arrows 1.5s 0.5s linear infinite;
+	display: inline-block;
+}
+.mission .link-indicator::after {
+	content: "\a0\bb";
+	animation: spin-arrows 1.5s 0s linear infinite;
+	display: inline-block;
+}
+/*.mission .link-indicator::before,
+.mission .link-indicator::after {
+	animation: spin-arrows 1.5s linear infinite;
+	display: inline-block;
+}*/
+@keyframes spin-arrows {
+	from {
+		transform: rotateX(0turn);
+		/*opacity: 0.1;*/
+	}
+	to {
+		transform: rotateX(1turn);
+		/*opacity: 1;*/
+	}
+}
 nav {
 	font-size: 1.3em;
 	margin-top: 0.5em;
