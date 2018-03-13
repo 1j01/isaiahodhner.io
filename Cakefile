@@ -1,6 +1,5 @@
 
 fs = require 'fs'
-path = require 'path'
 glob = require 'glob'
 octicons = require 'octicons'
 
@@ -16,7 +15,7 @@ boil = ({title, head, main})->
 	# A Template, really. But I like 'boiling', like I'm cooking webpages. (Before serving them.)
 	is_front_page = not title
 	is_mission_page = title is "Make Making Better"
-	show_mission_big = is_front_page #or is_mission_page
+	show_mission_big = is_front_page # displayed separately on the mission page
 	"""
 		<!doctype html>
 		<html lang="en-US">
@@ -37,7 +36,6 @@ boil = ({title, head, main})->
 			<body>
 				<header>
 					<h1><a href="/">Isaiah Odhner</a></h1>
-					<!--<h3 class="boring-sort-of-'role'-description--(not really who i am as a person..)">Node.js & web developer & designer</h3>-->
 					#{if is_mission_page then "" else """
 					<nav>
 						<h2 class="mission#{if show_mission_big then " big" else ""}">
@@ -48,16 +46,13 @@ boil = ({title, head, main})->
 								<div class="subtitle link-indicator">A manifesto (to come)</div>
 							</a>
 						</h2>
-						<a href="https://twitter.com/isaiahodhner">#{twitter_icon}Follow me on Twitter</a> <!-- for project announcements, art, etc. -->
+						<a href="https://twitter.com/isaiahodhner">#{twitter_icon}Follow me on Twitter</a>
 						<br><br>
-						<a href="mailto:isaiahodhner@gmail.com">#{email_icon}Send me some Email</a> <!-- (no need to be all formal!) -->
+						<a href="mailto:isaiahodhner@gmail.com">#{email_icon}Send me some Email</a>
 						<br><br>
-						<!--<a href="https://github.com/1j01">#{octicons["mark-github"].toSVG()}Check me out on GitHub</a>
-						<br><br>-->
 						<a href="/apps">Apps</a>
 						<a href="/games">Games</a>
 						<a href="https://github.com/1j01">#{octicons["mark-github"].toSVG()}More on GitHub</a>
-						<br><br>
 					</nav>
 					"""}
 				</header>
@@ -78,8 +73,6 @@ boil = ({title, head, main})->
 			</body>
 		</html>
 	"""
-	# <h2>Node.js & web developer & designer<br/>& game developer & wannabe entrepreneur<br/>& a little bit of a "piano musician"</h2>
-	# aka "piano artist" icyww (sometimes shortened to "pianartist")
 
 conjunct = (array, conjunction)->
 	if array.length > 0
@@ -219,7 +212,8 @@ task 'boil', 'Build the website, boiling the pages.', ->
 					<!--
 					Do I really need to make a mind mapping app? I have a <em>vision</em> for a cool one, all minimalistic and shit, with realtime collaboration, and all of that, but
 					to be honest, pencil and paper or an indented text file work pretty well.
-					Do I need to make MultiFiddle? Well, JSFiddle has a lot of problems, especially with CoffeeScript, some serious issues with indentation that just make it unusable.
+					Do I need to make MultiFiddle? Well, JSFiddle has a lot of problems, especially with CoffeeScript, seriously its essentially unusable.
+					I have to copy and paste from another editor when trying to use that, to deal with the indentation.
 					But they've improved it a lot recently (<em>not those problems *ahem*</em>), and (but) maybe I could go <em>work there</em> instead, and help improve it in ways that I care about.
 					-->
 				</p>
