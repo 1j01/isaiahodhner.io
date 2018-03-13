@@ -14,11 +14,21 @@ body {
 body > footer {
 	margin-top: 16px;
 }
-body > header {
+body > header,
+body > footer {
 	padding: 40px;
+}
+header {
 	background: #0083A5;
 	color: white;
 }
+footer {
+	background: #132125;
+	color: #cecece;
+}
+/*footer p a {
+	color: red;
+}*/
 header h1 {
 	font-size: 3em;
 	font-weight: normal;
