@@ -11,12 +11,17 @@ body {
 * {
 	font-size: 100%;
 }
-body > footer {
-	margin-top: 16px;
-}
 body > header,
-body > footer {
-	padding: 40px;
+body > footer,
+.textual-page-content{
+	padding: 1em 0;
+}
+@media (min-width: 700px) {
+	body > header,
+	body > footer,
+	.textual-page-content{
+		padding: 2em;
+	}
 }
 header {
 	background: #0083A5;
@@ -125,11 +130,6 @@ a {
 p a {
 	color: #ff2eaa;
 }
-@media (min-width: 700px) {
-	.textual-page-content {
-		padding: 2em;
-	}
-}
 p {
 	max-width: 70em;
 	margin: 16px auto;
@@ -163,6 +163,7 @@ article img {
 	/* 16px = the margin of the p before #patterns and of articles in #patterns */
 	/* 5px = width of border implemented as a box-shadow on the articles */
 	padding-top: calc(16px - 5px);
+	padding-bottom: calc(16px - 5px);
 }
 main > h1 {
 	font-size: 2em;
