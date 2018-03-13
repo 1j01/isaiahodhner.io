@@ -118,9 +118,14 @@ p {
 	padding: 0 16px;
 	text-align: left;
 }
-.octicon {
+.octicon,
+.icon {
 	fill: currentColor;
 	padding: 0 5px;
+}
+.icon-twitter,
+.icon-email {
+	vertical-align: text-bottom;
 }
 article span,
 article header .octicon {
