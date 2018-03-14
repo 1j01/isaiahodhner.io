@@ -15,7 +15,8 @@
 	border: 1px dashed rgba(0, 0, 0, 0.5);
 	border-radius: 8px;
 }
-.multi-medium-word.selected {
+.multi-medium-word:focus {
+	outline: none;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 3px #FFFFFF, 0 0 4px 5px #FFC7C7, 0 0 100px 5px #FF77BB;
 	z-index: 1;

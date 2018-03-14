@@ -1,5 +1,7 @@
 
-# TODO: sync with https://github.com/multiism/multi-medium
+###
+# NOTE: This should be kept in sync with https://github.com/multiism/multi-medium
+###
 
 all_spanvases = []
 selected_spanvas = null
@@ -31,7 +33,6 @@ save_button.addEventListener "click", (e)->
 savings.appendChild save_button
 
 serialize_strokes = (strokes)->
-	# console.log "serialize_strokes", strokes
 	resolution = 1000
 	for {points} in strokes
 		a = []
@@ -43,7 +44,6 @@ serialize_strokes = (strokes)->
 		a
 
 deserialize_strokes = (strokes)->
-	# console.log "deserialize_strokes", strokes
 	for coords in strokes
 		points: for i in [0...coords.length] by 2
 			{x: coords[i], y: coords[i+1]}
@@ -61,41 +61,43 @@ Spanvas = (word, data)->
 	canvas.style.left = "0"
 	canvas.style.top = "0"
 	
-	# TODO: have this be a "mode" or enable it when creating the Input
-	# i.e. if edit_mode
-		# spanvas.style.cursor = "pointer"
-		# TODO: handle this higher up (globally), and deselect if you click off of any spanvases
-		# spanvas.addEventListener "click", (e)->
-		# 	spanvas.select()
-	
 	spanvas.appendChild document.createTextNode word
 	spanvas.appendChild canvas
 	
 	strokes = null
 	style = null
 	
-	spanvas.select = ->
-		selected_spanvas?.classList.remove "selected"
-		selected_spanvas?.render()
-		selected_spanvas = spanvas
-		selected_spanvas.classList.add "selected"
-		selected_spanvas.render()
+	spanvas.deselect = ->
+		spanvas.removeAttribute "tabIndex"
+		spanvas.render()
+		selected_spanvas = null
 		the_input?.clear()
 	
+	spanvas.select = ->
+		selected_spanvas?.deselect()
+		selected_spanvas = spanvas
+		spanvas.render()
+		the_input?.clear()
+		spanvas.setAttribute "tabIndex", "0"
+		# TODO: left/right/up/down caret-like movement for going between words (or at least left/right for previous/next word)
+		spanvas.focus()
+		spanvas.addEventListener "focusout", (e)->
+			spanvas.deselect()
+		, once: yes
+	
 	spanvas.hasData = ->
-		if strokes then yes else no
+		strokes?
 	
 	spanvas.getData = ->
 		{strokes}
 	
 	spanvas.setData = (data)->
 		{strokes} = data
-		# if strokes?.length
-		# 	spanvas.setAttribute("data-handwriting", JSON.stringify([{strokes: serialize_strokes(strokes)}]))
 		spanvas.render()
 	
 	spanvas.setStyle = (new_style)->
 		style = new_style
+		spanvas.render()
 	
 	original_width = null
 	spanvas.render = ->
@@ -138,19 +140,19 @@ Spanvas = (word, data)->
 			ctx.restore()
 			
 			spanvas.style.color = "transparent"
-			# canvas.style.top = "#{y_offset}px"
 			canvas.style.left = "#{-padding}px"
 			canvas.style.top = "#{y_offset - padding}px"
-			# canvas.style.top = "#{-padding}px"
 			
 			canvas_text_width = canvas.width - padding * 2
 			spanvas.style.letterSpacing = "#{Math.max(-8, (canvas_text_width - original_width) / word.length)}px"
+		
+		return
 	
-	# setTimeout ->
-	# 	spanvas.setData data if data
-	# 	json = localStorage["multi-medium:#{all_spanvases.indexOf spanvas}:strokes"]
-	# 	if json
-	# 		spanvas.setData {strokes: deserialize_strokes JSON.parse json}
+	setTimeout ->
+		spanvas.setData data if data?.strokes
+		json = localStorage["multi-medium:#{all_spanvases.indexOf spanvas}:strokes"]
+		if json
+			spanvas.setData {strokes: deserialize_strokes JSON.parse json}
 	
 	all_spanvases.push spanvas
 	spanvas
@@ -165,7 +167,6 @@ Spanvas = (word, data)->
 			data = handwriting_data?[i]
 			if data
 				strokes = deserialize_strokes data.strokes
-				# console.log "deserialized as", strokes
 			spanvas = Spanvas word, {strokes}
 			element.appendChild spanvas
 			unless i + 1 is words.length
@@ -176,9 +177,9 @@ Spanvas = (word, data)->
 		style = getComputedStyle element
 		for spanvas in spanvases
 			spanvas.setStyle style
-			spanvas.render()
+		return
 	
-	setTimeout render
+	requestAnimationFrame render
 	
 	element
 
@@ -214,7 +215,8 @@ Spanvas = (word, data)->
 		canvas.width = element.clientWidth - pl - pr - cml - cmr - cpl - cpr - cbl - cbr
 		canvas.height = element.clientHeight - pt - pb - cmt - cmb - cpt - cpb - cbt - cbb
 		# WOW, THAT'S A LITTLE BIT ABSURD, DON'T YOU THINK?
-		# can I not use scrollWidth/scrollHeight?
+		# can I not use scrollWidth/scrollHeight to remove at least some of those?
+		# (this code is trying to handle extreme cases not present in the demo btw)
 		# console.log "absurdity test", element.clientWidth, element.scrollWidth, canvas.width
 
 		render()
@@ -262,7 +264,7 @@ Spanvas = (word, data)->
 		ctx.clearRect 0, 0, canvas.width, canvas.height
 		ctx.fillStyle = "rgba(100, 100, 100, 0.1)"
 		ctx.font = "#{baseline}px sans-serif"
-		selected_word = selected_spanvas?.textContent ? selected_spanvas?.innerText
+		selected_word = selected_spanvas?.textContent ? selected_spanvas?.innerText ? ""
 		ctx.fillText selected_word, 20, baseline
 		ctx.strokeStyle = element_style?.color
 		ctx.lineWidth = 10
@@ -311,6 +313,12 @@ Spanvas = (word, data)->
 			strokes.splice strokes.indexOf(pointer.stroke), 1
 		delete pointers[e.pointerId]
 	
+	window.addEventListener "click", (e)->
+		spanvas = e.target.closest(".multi-medium-word")
+		spanvas?.select()
+	
+	document.body.classList.add("multi-medium-edit-mode") # for cursor: pointer
+
 	# @TODO: localize this event listener
 	window.addEventListener "keydown", (e)->
 		if e.ctrlKey and not (e.metaKey or e.altKey)
@@ -319,10 +327,10 @@ Spanvas = (word, data)->
 			if e.keyCode is 89 # Y
 				redo()
 	
-	setTimeout update_dimensions
+	requestAnimationFrame update_dimensions
 	window.addEventListener "resize", update_dimensions
 	
-	setTimeout ->
+	requestAnimationFrame ->
 		for spanvas in all_spanvases when not spanvas.hasData()
 			spanvas.select()
 			break
@@ -336,12 +344,15 @@ Spanvas = (word, data)->
 @MultiMedium.setData = (datas)->
 	for data, i in datas
 		all_spanvases[i].setData {strokes: deserialize_strokes(data)} if data
+	return
 
 @MultiMedium.rerender = ->
+	# NOTE: MultiMedium.rerender is not needed when calling MultiMedium.setData
+
 	# TODO: re-calculate original width of the text
-	# notably not needed if calling MultiMedium.setData
 	for spanvas in all_spanvases
 		spanvas.render()
+	return
 
 
 # for override
@@ -351,7 +362,7 @@ Spanvas = (word, data)->
 	ctx.beginPath()
 	for {points} in strokes
 		ctx.moveTo(points[0].x*scale, points[0].y*scale)
-		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
+		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1 # make single points visible
 		ctx.lineTo(point.x*scale, point.y*scale) for point in points
 	ctx.stroke()
 
