@@ -39,31 +39,38 @@ MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
 	# num_splotchy_knots = if ctx is word_ctxs[1] then 60 else 5
 	# for [0...num_splotchy_knots]
 	# 	color = choose(["#4e321d", "#966643", "#733e17"])
-	# 	{points} = choose(strokes)
-	# 	if points.length
-	# 		point = choose(points)
-	# 		ctx.strokeStyle = color
-	# 		ctx.beginPath()
-	# 		ctx.moveTo(points[0].x*scale, points[0].y*scale)
-	# 		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
-	# 		for point in points
-	# 			if Math.random() < 0.3
-	# 				ctx.moveTo(
-	# 					point.x * scale
-	# 					point.y * scale
-	# 				)
-	# 				ctx.lineTo(
-	# 					point.x * scale + (Math.random() * 2 - 1) * weight/2
-	# 					point.y * scale + (Math.random() * 2 - 1) * weight/3
-	# 				)
+	# 	stroke = choose(strokes)
+	# 	if stroke?
+	# 		{points} = stroke
+	# 		if points.length
+	# 			ctx.strokeStyle = color
+	# 			ctx.beginPath()
+	# 			ctx.moveTo(points[0].x*scale, points[0].y*scale)
+	# 			ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1
+	# 			for point in points
+	# 				if Math.random() < 0.3
+	# 					ctx.moveTo(
+	# 						point.x * scale
+	# 						point.y * scale
+	# 					)
+	# 					ctx.lineTo(
+	# 						point.x * scale + (Math.random() * 2 - 1) * weight/2
+	# 						point.y * scale + (Math.random() * 2 - 1) * weight/3
+	# 					)
 	# 	ctx.stroke()
+	
+	find_random_point = ->
+		# TODO: even distribution with varying numbers of points in each stroke (especially e.g. dotted 'i's)
+		# (or we might want to base it on ImageData instead of the list of points)
+		stroke = choose(strokes)
+		if stroke?
+			return choose(stroke.points)
 	
 	num_little_branches = if ctx is word_ctxs[1] then 600 else 50
 	for [0...num_little_branches]
 		color = choose(["#4e321d", "#966643", "#733e17"])
-		{points} = choose(strokes)
-		if points.length
-			point = choose(points)
+		point = find_random_point()
+		if point?
 			ctx.strokeStyle = color
 			ctx.lineWidth = weight / 4
 			ctx.beginPath()
@@ -107,7 +114,7 @@ MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
 		
 		ctx.restore()
 	
-	scan_points = (angle)->
+	find_furthest_point_in_direction = (angle)->
 		furthest_dist = -Infinity
 		furthest_point = null
 		for {points} in strokes
@@ -122,13 +129,14 @@ MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
 	for [0...2]
 		color = "#733e17"
 		angle = Math.PI * 2 * Math.random()
-		point = scan_points(angle)
-		draw_branch(
-			point.x * scale
-			point.y * scale
-			color
-			angle
-		)
+		point = find_furthest_point_in_direction(angle)
+		if point?
+			draw_branch(
+				point.x * scale
+				point.y * scale
+				color
+				angle
+			)
 
 MultiMedium.getPadding = (lineWidth)->
 	50

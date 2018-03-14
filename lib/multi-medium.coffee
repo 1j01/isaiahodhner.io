@@ -213,8 +213,10 @@ Spanvas = (word, data)->
 		cbb = _ canvas_style.borderBottom
 		canvas.width = element.clientWidth - pl - pr - cml - cmr - cpl - cpr - cbl - cbr
 		canvas.height = element.clientHeight - pt - pb - cmt - cmb - cpt - cpb - cbt - cbb
-		# WOW, THAT'S A LITTLE BIT UBSURD, DON'T YOU THINK?
-		
+		# WOW, THAT'S A LITTLE BIT ABSURD, DON'T YOU THINK?
+		# can I not use scrollWidth/scrollHeight?
+		# console.log "absurdity test", element.clientWidth, element.scrollWidth, canvas.width
+
 		render()
 	
 	pointers = {}
@@ -224,12 +226,13 @@ Spanvas = (word, data)->
 	
 	update = ->
 		render()
-		selected_spanvas.setData {strokes}
-		# @HACK
-		document.body.appendChild savings
-		savings.innerHTML = ""
-		savings.appendChild save_button
-		localStorage["multi-medium:#{all_spanvases.indexOf selected_spanvas}:strokes"] = JSON.stringify serialize_strokes strokes
+		if selected_spanvas?
+			selected_spanvas.setData {strokes}
+			# @HACK
+			document.body.appendChild savings
+			savings.innerHTML = ""
+			savings.appendChild save_button
+			localStorage["multi-medium:#{all_spanvases.indexOf selected_spanvas}:strokes"] = JSON.stringify serialize_strokes strokes
 	
 	clear = ->
 		pointers = {}
