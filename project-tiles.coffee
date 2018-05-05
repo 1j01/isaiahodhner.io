@@ -13,7 +13,8 @@ debug = (args...)->
 	# console.log args...
 
 
-margin = parseInt (getComputedStyle document.querySelector "article").margin
+margin = parseInt (getComputedStyle document.querySelector "article").marginLeft
+margin = 0 unless isFinite(margin)
 spacing = 2 * margin
 tile_length_1 = 256
 tile_length_for = (n)-> tile_length_1 * n + spacing * (n - 1)
@@ -64,6 +65,7 @@ do find_a_layout = ->
 	loop
 		break if margin + (tile_length_for tiles_per_row + 1) + margin > document.body.clientWidth
 		tiles_per_row += 1
+		break if tiles_per_row >= 50
 	
 	
 	return if tiles_per_row is previous_tiles_per_row
