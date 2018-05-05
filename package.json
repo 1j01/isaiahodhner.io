@@ -22,7 +22,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "live-server --middleware=../.././extensionless-urls.js",
+    "start": "live-server --middleware=../../extensionless-urls.js",
     "build": "cake build",
     "watch": "run-when-changed --watch \"**/*.coffee\" --watch \"Cakefile\" --exec \"cake build\"",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
