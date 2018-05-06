@@ -2,6 +2,16 @@
 module.exports = {
 	apps: [
 		{
+			repo_name: '98'
+			title: '98.js'
+			description: 'Windows 98 desktop remake'
+		}
+		{
+			repo_name: 'jspaint'
+			title: 'JS Paint'
+			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
+		}
+		{
 			repo_name: 'wavey'
 			title: 'Wavey'
 			description: 'An online digital audio worksation'
@@ -23,11 +33,6 @@ module.exports = {
 			title: 'MidiFlip'
 			description: 'Mathematical MIDI manipulation'
 			bg: "light"
-		}
-		{
-			repo_name: 'jspaint'
-			title: 'JS Paint'
-			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
 		}
 		{
 			repo_name: 'nonsensical'
@@ -95,11 +100,6 @@ module.exports = {
 		# 	description: 'Detects fonts in browser'
 		# 	bg: "light"
 		# }
-		{
-			repo_name: '98'
-			title: '98.js'
-			description: 'Windows 98 desktop remake'
-		}
 		# an app
 		# {
 		# 	repo_name: 'pesterchum'
