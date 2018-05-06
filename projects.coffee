@@ -46,6 +46,7 @@ module.exports = {
 			repo_name: 'multifiddle'
 			title: 'MultiFiddle'
 			description: 'Minimalistic multiplayer live code fiddling environment'
+			url: "http://multifiddle.ml" # TODO: HTTPS
 		}
 		{
 			repo_name: 'mind-map'
@@ -99,12 +100,18 @@ module.exports = {
 			title: '98'
 			description: 'Windows 98 desktop remake'
 		}
-		# an app and some other stuff
+		# an app
 		# {
 		# 	repo_name: 'pesterchum'
 		# 	title: 'PesterChum'
-		# 	description: 'MS Paint Adventures chat client'
+		# 	description: 'Chat client from Homestuck'
 		# 	url: 'repo'
+		# }
+		# an app
+		# {
+		# 	repo_name: 'she-has-what?'
+		# 	title: 'She Has What?'
+		# 	description: 'Doc Scratch Reaction GIF Generator'
 		# }
 		# an extension, not an app
 		# {

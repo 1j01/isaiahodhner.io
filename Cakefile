@@ -141,7 +141,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 				
 				image_url = project.image_url ? "images/projects/#{project.repo_name}.png"
 				repo_url = project.repo_url ? "https://github.com/1j01/#{project.repo_name}"
-				gh_pages_url = "http://isaiahodhner.ml/#{project.repo_name}/"
+				gh_pages_url = "https://1j01.github.io/#{project.repo_name}/"
 				url =
 					if project.url is 'repo'
 						repo_url
