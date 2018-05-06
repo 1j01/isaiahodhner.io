@@ -5,6 +5,7 @@ module.exports = {
 			repo_name: '98'
 			title: '98.js'
 			description: 'Windows 98 desktop remake'
+			url: "https://98.js.org"
 		}
 		{
 			repo_name: 'jspaint'
