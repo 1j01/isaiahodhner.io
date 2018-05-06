@@ -97,7 +97,7 @@ module.exports = {
 		# }
 		{
 			repo_name: '98'
-			title: '98'
+			title: '98.js'
 			description: 'Windows 98 desktop remake'
 		}
 		# an app
