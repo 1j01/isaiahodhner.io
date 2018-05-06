@@ -1,7 +1,7 @@
 
-# [IsaiahOdhner.ml](http://IsaiahOdhner.ml)
+# [IsaiahOdhner.ml](https://IsaiahOdhner.ml)
 
-My website. [Go ahead, go to it.](http://IsaiahOdhner.ml)
+My website. [Go ahead, go to it.](https://IsaiahOdhner.ml)
 
 I want to completely redo it at some point so I can write long-form about my projects,
 and also to better emphasize the projects that I care about more,
