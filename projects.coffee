@@ -52,7 +52,7 @@ module.exports = {
 			repo_name: 'multifiddle'
 			title: 'MultiFiddle'
 			description: 'Minimalistic multiplayer live code fiddling environment'
-			url: "http://multifiddle.ml" # TODO: HTTPS
+			url: "https://multifiddle.ml"
 		}
 		{
 			repo_name: 'mind-map'
