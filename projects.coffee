@@ -128,7 +128,7 @@ module.exports = {
 			title: 'Patterns'
 			description: 'Procedurally generated patterns'
 			url: 'patterns'
-			repo_url: 'https://github.com/1j01/1j01.github.io'
+			repo_url: 'https://github.com/1j01/isaiahodhner.ml'
 		}
 	]
 	games: [
