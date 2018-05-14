@@ -11,6 +11,7 @@ module.exports = {
 			repo_name: 'jspaint'
 			title: 'JS Paint'
 			description: 'Classic MS Paint, revived +Transparency +Unlimited Undos'
+			url: "https://jspaint.ml"
 		}
 		{
 			repo_name: 'wavey'
