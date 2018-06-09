@@ -9,7 +9,7 @@
 #console.log _redirects.join("\n")
 
 /98/* https://98.js.org/:splat
-/jspaint/* https://jspaint.ml/:splat
+/jspaint/* https://jspaint.app/:splat
 /wavey/* https://audioeditor.ml/:splat
 /tri-chromatic-keyboard/* https://1j01.github.io/tri-chromatic-keyboard/:splat
 /guitar/* https://1j01.github.io/guitar/:splat
