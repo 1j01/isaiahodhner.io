@@ -21,7 +21,7 @@ rl = readline.createInterface
 	output: process.stdout
 
 rl.setPrompt "> "
-rl.question "Please enter the filename (extension optional) of an image in 1j01.github.io/images/patterns/", (f)->
+rl.question "Please enter the filename (extension optional) of an image in ./images/patterns/", (f)->
 	f = f.replace ".png", ""
 	rl.close()
 	
