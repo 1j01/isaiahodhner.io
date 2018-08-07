@@ -76,7 +76,7 @@ boil = ({title, head, main})->
 	"""
 
 conjunct = (array, conjunction)->
-	if array.length > 0
+	if array.length > 1
 		[most..., last] = array
 		"#{most.join(", ")} #{conjunction} #{last}"
 	else
