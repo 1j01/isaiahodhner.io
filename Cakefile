@@ -133,9 +133,10 @@ task 'boil', 'Build the website, boiling the pages.', ->
 		"""
 	
 	projects = require "./projects"
-	log_divisibles Object.keys(projects).length, "project tiles", "(before tiles are spanned)"
 	
 	display_projects = (projects, title)->
+		log_divisibles Object.keys(projects).length, "#{title} project tiles", "(before tiles are spanned)"
+	
 		articles_for_projects = (
 			for project in projects
 				
