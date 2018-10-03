@@ -1,4 +1,24 @@
 
+# TODO: animate the text itself! with an animation of writing it and having the visuals all sprout from that
+# I want it to be luscious but also legible,
+# so it might be easier to go for a top down view, like of a garden with bushes in it making up the text
+
+# also, eventually this should be done using the technology I'm envisioning, and ideally editable in the page
+# (like you start out you think it's just a cool animated header, but you can actually mess around and you're in a full-blown editor)
+# but I could try to get across some concepts / the potential power of a system where you can retroactively edit anything
+
+# I also have various ideas about how it could be presented in stages, like:
+# handwriting "MAKE" (physically),
+# then typing out "MAKING" (digitally),
+# and then handwriting "BETTER" digitally,
+# where all the luscious greenery effects come into play
+# and then going back and applying the effects to the first and second words
+# (maybe (implying or actually) automatically recognizing paths, with skeletonization)
+
+# TODO: Add some clouds! maybe. or change the perspective. then i could make interesting stuff on the ground instead.
+# TODO: Redraw the text with a tablet, rather than a touchpad - or at least a mouse!
+
+
 choose = (a)->
 	a[~~(Math.random() * a.length)]
 
@@ -14,8 +34,8 @@ canvas.style.pointerEvents = "none"
 
 word_ctxs = []
 # the MultiMedium thing is mostly just getting in the way at this point
-# we'd rather control the drawing entirely
-# but instead we're collecting contexts
+# I'd rather control the drawing entirely
+# but instead I'm collecting contexts
 MultiMedium.drawStrokes = (strokes, ctx, scale=1)->
 	weight = ctx.lineWidth
 	ctx.lineJoin = "round"
@@ -164,7 +184,7 @@ class Bird
 		@vy = 0
 		@target_x = 0
 		@target_y = 0
-		# TODO: landing
+		# TODO: have the birds land on the text
 		@land_at_target = false
 		# TODO: plausible locomotion, probably 3D as well to make it easier to think about
 		@flapCyclePosition = Math.random()
