@@ -125,7 +125,7 @@ task 'boil', 'Build the website, boiling the pages.', ->
 				I've since started a project called <a href="https://github.com/1j01/pixelweaver">Pixelweaver</a>
 				that allows for more types of doodles (3D, anyone?),
 				gives control over time,
-				all while saving reproducible programs in every exported screenshot.
+				all while saving reproducible programs in every exported image.
 			</p>
 			<div class="tiles-container" id="patterns">
 				#{tab pattern_images}
