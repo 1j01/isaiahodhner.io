@@ -40,12 +40,15 @@ boil = ({title, head, main})->
 					#{if is_mission_page then "" else """
 					<nav>
 						<h2 class="mission#{if show_mission_big then " big" else ""}">
+							what’s the big ideal?
+							<!--
 							<a href="/make-making-better">
 								<span class="word">MAKE</span>
 								<strong class="word">MAKING</strong>
 								<span class="word">BETTER</span>
 								<div class="subtitle link-indicator">A manifesto (to come)</div>
 							</a>
+							-->
 						</h2>
 						<a href="https://twitter.com/isaiahodhner">#{twitter_icon}Follow me on Twitter</a>
 						<br><br>
