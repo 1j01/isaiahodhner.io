@@ -21,13 +21,13 @@ module.exports = {
 		{
 			repo_name: 'wavey'
 			title: 'Wavey'
-			description: 'An online digital audio worksation'
+			description: 'Proof-of-concept online <abbr title="digital audio workstation">DAW</abbr>'
 			url: 'https://audioeditor.ml'
 		}
 		{
 			repo_name: 'tri-chromatic-keyboard'
 			title: 'Tri-Chromatic Keyboard'
-			description: 'Better than a regular keyboard'
+			description: 'Like piano, but more symmetrical'
 		}
 		{
 			repo_name: 'guitar'
@@ -69,7 +69,7 @@ module.exports = {
 		{
 			repo_name: 'transpairency'
 			title: 'Trans<em>pair</em>ency'
-			description: 'B&W to transparent'
+			description: 'Transparency from two opaque images (black and white <abbr title="backgrounds">BGs</abbr>)'
 			bg: "light"
 		}
 		{
@@ -127,13 +127,25 @@ module.exports = {
 		# 	description: 'Make any page look like SWEET BRO AND HELLA JEFF'
 		# 	url: 'https://chrome.google.com/webstore/detail/sbahjifier/gejobhmmpioknjihlhemplpfchbnbpin'
 		# }
-		# not really an "app"
+		# a gallery, not an app
 		{
 			repo_name: 'patterns'
 			title: 'Patterns'
 			description: 'Procedurally generated patterns'
 			url: 'patterns'
 			repo_url: 'https://github.com/1j01/isaiahodhner.ml'
+		}
+		{
+			repo_name: 'pixelweaver'
+			title: 'Pixelweaver'
+			url: 'repo'
+			description: 'Reproducible Procedural Art'
+		}
+		{
+			repo_name: 'mopaint'
+			title: 'Mopaint'
+			description: 'Break down the boundary between programming and art. Reproducible Procedural Art 2'
+			url: 'https://mopaint.app/'
 		}
 	]
 	games: [
