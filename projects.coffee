@@ -14,6 +14,11 @@ module.exports = {
 			url: "https://jspaint.app"
 		}
 		{
+			repo_name: 'midi-recorder'
+			title: 'MIDI Recorder'
+			description: 'The simplest way to record MIDI'
+		}
+		{
 			repo_name: 'wavey'
 			title: 'Wavey'
 			description: 'An online digital audio worksation'
