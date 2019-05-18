@@ -50,12 +50,12 @@ boil = ({title, head, main})->
 							</a>
 							-->
 						</h2>
-						<a href="https://twitter.com/isaiahodhner">#{twitter_icon}Follow me on Twitter</a>
+						<a href="mailto:isaiahodhner@gmail.com">#{email_icon}Email</a>
+						<a href="https://twitter.com/isaiahodhner">#{twitter_icon}Twitter</a>
 						<br><br>
-						<a href="mailto:isaiahodhner@gmail.com">#{email_icon}Send me some Email</a>
+						<a href="/apps">Web Apps</a>
+						<a href="/games">Games & Game-like Stuff</a>
 						<br><br>
-						<a href="/apps">Apps</a>
-						<a href="/games">Games</a>
 						<a href="https://github.com/1j01">#{octicons["mark-github"].toSVG()}More on GitHub</a>
 					</nav>
 					"""}
