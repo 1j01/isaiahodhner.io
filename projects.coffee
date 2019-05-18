@@ -75,7 +75,7 @@ module.exports = {
 		{
 			repo_name: 'boxart'
 			title: 'BoxArt'
-			description: '3d drag & drop box art generator'
+			description: '3D drag & drop box art generator'
 		}
 		# {
 		# 	repo_name: 'gif-maker'
@@ -144,11 +144,28 @@ module.exports = {
 		{
 			repo_name: 'mopaint'
 			title: 'Mopaint'
-			description: 'Break down the boundary between programming and art. Reproducible Procedural Art 2'
+			# description: 'Break down the boundary between programming and art.<br/>Eliminate fear of data loss.<br/>Reproducible Procedural Art 2'
+			# description: 'Break down the boundary between programming and art.<br/>Refactor brush strokes.<br/>Reproducible Procedural Art 2'
+			description: 'Break down the boundary between programming and art.<br/>Reproducible Procedural Art 2'
+			# description: 'Reproducible Procedural Human Art'
+			# description: 'Reproducible Human Art'
+			# description: 'Human Art with Program-based Documents'
+			# description: 'A new zen in art'
+			# description: 'Unlocking a new type of zen in art making'
+			# description: 'Unleashing/Realizing a new type of zen in art making'
+			# The power to change anything you have in your document after the fact (to undo, to change your mind,)
+			# is basically the kind of power & zen unlocked with computers (and e.g. MacPaint, vis-à-vis https://archive.org/details/mac_Zen_the_Art_of_Macintosh1986)
+			# but a difference in degree/extent/completeness becomes a difference in kind
 			url: 'https://mopaint.app/'
 		}
 	]
 	games: [
+		{
+			repo_name: 'columns'
+			title: 'Columns'
+			description: 'A #BadBoxArt jam game'
+			bg: "light"
+		}
 		{
 			repo_name: 'tiamblia-original'
 			title: 'Tiamblia'
@@ -160,21 +177,15 @@ module.exports = {
 			description: 'A dystopian trainhopping up-going parkour game-to-be'
 		}
 		{
-			repo_name: 'columns'
-			title: 'Columns'
-			description: 'A #BadBoxArt jam game'
-			bg: "light"
-		}
-		{
 			repo_name: 'mos'
 			title: 'MOS'
 			description: 'Monochrome Operating System'
 		}
-		{
-			repo_name: '1bpp'
-			title: 'One Bit Per Pixel'
-			description: 'A notagame in pure B&W'
-		}
+		# {
+		# 	repo_name: '1bpp'
+		# 	title: 'One Bit Per Pixel'
+		# 	description: 'A B&W platformer-to-be'
+		# }
 		{
 			repo_name: 'board-game'
 			title: 'Chance'
@@ -204,7 +215,7 @@ module.exports = {
 		{
 			repo_name: 'pipes'
 			title: 'Pipes'
-			description: '3d pipes screensaver remake'
+			description: '3D pipes screensaver remake'
 		}
 	]
 }

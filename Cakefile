@@ -54,7 +54,7 @@ boil = ({title, head, main})->
 						<a href="https://twitter.com/isaiahodhner">#{twitter_icon}Twitter</a>
 						<br><br>
 						<a href="/apps">Web Apps</a>
-						<a href="/games">Games & Game-like Stuff</a>
+						<a href="/games">Games & Experiments</a>
 						<br><br>
 						<a href="https://github.com/1j01">#{octicons["mark-github"].toSVG()}More on GitHub</a>
 					</nav>
