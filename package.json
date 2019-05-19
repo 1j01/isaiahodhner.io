@@ -31,11 +31,11 @@
   "main": "index.html",
   "devDependencies": {
     "coffeescript": "2.4.1",
-    "glob": "^4.0.3",
-    "gm": "^1.16.0",
-    "live-server": "^1.2.0",
-    "octicons": "^5.0.1",
+    "glob": "^7.1.4",
+    "gm": "^1.23.1",
+    "live-server": "^1.2.1",
+    "octicons": "^8.5.0",
     "optimage": "^0.2.0",
-    "run-when-changed": "^2.0.3"
+    "run-when-changed": "^2.1.0"
   }
 }
