@@ -73,7 +73,7 @@ boil = ({title, head, main})->
 						<a href="https://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a>, <a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
 					</p>
 				</footer>
-				<script src="lib/coffee-script.js"></script>
+				<script src="lib/coffeescript.js"></script>
 			</body>
 		</html>
 	"""

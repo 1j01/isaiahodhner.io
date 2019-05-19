@@ -30,7 +30,7 @@
   },
   "main": "index.html",
   "devDependencies": {
-    "coffee-script": "^1.8.0",
+    "coffeescript": "2.4.1",
     "glob": "^4.0.3",
     "gm": "^1.16.0",
     "live-server": "^1.2.0",
