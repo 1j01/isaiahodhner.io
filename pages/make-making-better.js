@@ -1,9 +1,10 @@
 import React from "react";
+import initDoodles from "../src/make-make-making-better-look-better";
 
 class Manifesto extends React.Component {
 	render() {
 		return <div className="Manifesto">
-			<style>{`
+			<style jsx>{`
 				.multi-medium-input {
 					background: white;
 					color: #444;
@@ -53,7 +54,11 @@ class Manifesto extends React.Component {
 		</div>;
 	}
 	componentDidMount() {
-		import("../lib/multi-medium");
+		// import("../lib/multi-medium");
+		this.cleanupDoodles = initDoodles();
+	}
+	componentWillUnmount() {
+		this.cleanupDoodles();
 	}
 }
 

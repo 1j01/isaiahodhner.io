@@ -32,7 +32,7 @@ save_button.addEventListener "click", (e)->
 	savings.appendChild label
 	label.appendChild textarea
 	textarea.select()
-  return
+	return
 savings.appendChild save_button
 
 serialize_strokes = (strokes)->
@@ -75,9 +75,9 @@ Spanvas = (word, data)->
 		spanvas.render()
 		selected_spanvas = null
 		the_input?.clear()
-    return
+		return
 
-  spanvas.select = ->
+	spanvas.select = ->
 		selected_spanvas?.deselect()
 		selected_spanvas = spanvas
 		spanvas.render()
@@ -88,9 +88,9 @@ Spanvas = (word, data)->
 		spanvas.addEventListener "focusout", (e)->
 			spanvas.deselect()
 		, once: yes
-    return
+		return
 
-  spanvas.hasData = ->
+	spanvas.hasData = ->
 		strokes?
 	
 	spanvas.getData = ->
@@ -99,14 +99,14 @@ Spanvas = (word, data)->
 	spanvas.setData = (data)->
 		{strokes} = data
 		spanvas.render()
-    return
+		return
 
-  spanvas.setStyle = (new_style)->
+	spanvas.setStyle = (new_style)->
 		style = new_style
 		spanvas.render()
-    return
+		return
 
-  original_width = null
+	original_width = null
 	spanvas.render = ->
 		rect = spanvas.getBoundingClientRect()
 		original_width ?= rect.width
@@ -160,9 +160,9 @@ Spanvas = (word, data)->
 		json = localStorage["multi-medium:#{all_spanvases.indexOf spanvas}:strokes"]
 		if json
 			spanvas.setData {strokes: deserialize_strokes JSON.parse json}
-    return
+		return
 
-  all_spanvases.push spanvas
+	all_spanvases.push spanvas
 	spanvas
 
 
@@ -230,7 +230,7 @@ Spanvas = (word, data)->
 		render()
 		return
 
-  pointers = {}
+	pointers = {}
 	strokes = []
 	undoes = []
 	redoes = []
@@ -244,36 +244,36 @@ Spanvas = (word, data)->
 			savings.innerHTML = ""
 			savings.appendChild save_button
 			localStorage["multi-medium:#{all_spanvases.indexOf selected_spanvas}:strokes"] = JSON.stringify serialize_strokes strokes
-    return
+		return
 
-  clear = ->
+	clear = ->
 		pointers = {}
 		strokes = []
 		undoes = []
 		redoes = []
 		render()
-    return
+		return
 
-  undo = ->
+	undo = ->
 		if undoes.length
 			redoes.push serialize_strokes strokes
 			strokes = deserialize_strokes undoes.pop()
 			update()
-    return
+		return
 
-  redo = ->
+	redo = ->
 		if redoes.length
 			undoes.push serialize_strokes strokes
 			strokes = deserialize_strokes redoes.pop()
 			update()
-    return
+		return
 
-  undoable = ->
+	undoable = ->
 		undoes.push serialize_strokes strokes
 		redoes = []
-    return
+		return
 
-  render = ->
+	render = ->
 		baseline = canvas.height * 0.8
 		ctx.clearRect 0, 0, canvas.width, canvas.height
 		ctx.fillStyle = "rgba(100, 100, 100, 0.1)"
@@ -283,9 +283,9 @@ Spanvas = (word, data)->
 		ctx.strokeStyle = element_style?.color
 		ctx.lineWidth = 10
 		MultiMedium.drawStrokes strokes, ctx, canvas.height
-    return
+		return
 
-  point_for = (e)->
+	point_for = (e)->
 		rect = canvas.getBoundingClientRect()
 		canvas_style = getComputedStyle canvas
 		cpl = parseInt canvas_style.paddingLeft
@@ -304,9 +304,9 @@ Spanvas = (word, data)->
 		pointers[e.pointerId] = {stroke, type: e.pointerType}
 		strokes.push stroke
 		update()
-    return
+		return
 
-  window.addEventListener "pointermove", (e)->
+	window.addEventListener "pointermove", (e)->
 		pointer = pointers[e.pointerId]
 		if pointer
 			e.preventDefault()
@@ -319,25 +319,25 @@ Spanvas = (word, data)->
 			if Math.sqrt(dx*dx + dy*dy) > 0.02
 				pointer.stroke.points.push np
 				update()
-    return
+		return
 
-  window.addEventListener "pointerup", (e)->
+	window.addEventListener "pointerup", (e)->
 		delete pointers[e.pointerId]
-    return
+		return
 
-  canvas.addEventListener "pointercancel", (e)->
+	canvas.addEventListener "pointercancel", (e)->
 		pointer = pointers[e.pointerId]
 		if pointer
 			strokes.splice strokes.indexOf(pointer.stroke), 1
 		delete pointers[e.pointerId]
-    return
+		return
 
-  window.addEventListener "click", (e)->
+	window.addEventListener "click", (e)->
 		spanvas = e.target.closest(".multi-medium-word")
 		spanvas?.select()
-    return
+		return
 
-  document.body.classList.add("multi-medium-edit-mode") # for cursor: pointer
+	document.body.classList.add("multi-medium-edit-mode") # for cursor: pointer
 
 	# @TODO: localize this event listener
 	window.addEventListener "keydown", (e)->
@@ -346,9 +346,9 @@ Spanvas = (word, data)->
 				if e.shiftKey then redo() else undo()
 			if e.keyCode is 89 # Y
 				redo()
-    return
+		return
 
-  requestAnimationFrame update_dimensions
+	requestAnimationFrame update_dimensions
 	window.addEventListener "resize", update_dimensions
 
 	requestAnimationFrame ->
@@ -357,7 +357,7 @@ Spanvas = (word, data)->
 			break
 		return
 
-  if the_input then alert "Multiple MultiMedium.Inputs aren't exactly supported (for a silly reason)"
+	if the_input then alert "Multiple MultiMedium.Inputs aren't exactly supported (for a silly reason)"
 	the_input = element
 	the_input.clear = clear
 
@@ -387,7 +387,7 @@ Spanvas = (word, data)->
 		ctx.lineTo(points[0].x*scale, points[0].y*scale+0.01) if points.length is 1 # make single points visible
 		ctx.lineTo(point.x*scale, point.y*scale) for point in points
 	ctx.stroke()
-  return
+	return
 
 # for override
 @MultiMedium.getPadding = (line_width)->
