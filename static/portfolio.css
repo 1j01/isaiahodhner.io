@@ -156,7 +156,7 @@ article img {
 	padding-top: calc(16px - 5px);
 	padding-bottom: calc(16px - 5px);
 }
-main > h1 {
+.page-title {
 	font-size: 2em;
 }
 #patterns article img {

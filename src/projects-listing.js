@@ -3,7 +3,7 @@ import * as React from "react";
 
 class ProjectsListing extends React.Component {
 	render() {
-		return <div className="tiles-container">{
+		return <div className="ProjectsListing tiles-container">{
 			this.props.projects.map((project) => {
 				let sizes;
 				const image_url = project.image_url || `static/images/projects/${project.repo_name}.png`;
@@ -158,7 +158,7 @@ class ProjectsListing extends React.Component {
 			}
 
 			debug("couldn't find a layout in this order");
-			debug("maybe we can rearange some things?");
+			debug("maybe we can rearrange some things?");
 			for (let i1 = 0; i1 <= 200; i1++) {
 				shuffle(articles);
 				const layout = articles.map((article)=> choose_from(article.sizes));

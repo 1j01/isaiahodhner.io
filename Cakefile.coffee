@@ -20,44 +20,6 @@ log_divisibles = (n, unit, more_info...)->
 	", more_info...
 
 task 'boil', 'Build the website, boiling the pages.', ->
-	
-	pattern_fnames = glob.sync 'images/patterns/*.png'
-	
-	log_divisibles pattern_fnames.length, "pattern tiles"
-	
-	pattern_images = (
-		for fname in pattern_fnames
-			"""
-				<article itemscope itemtype="http://schema.org/ImageObject">
-					<img src="#{fname}" itemprop="contentURL">
-				</article>
-			"""
-	).join ''
-	
-	fs.writeFileSync 'patterns.html', boil
-		title: 'Patterns'
-		head: '<script src="patterns.coffee" type="text/coffeescript"></script>'
-		main: """
-			<h1>Patterns</h1>
-			<p>
-				These are some repeating patterns and textures I made with code (and a tool that I made (with code)).
-				Some of them aren't seamless because I hadn't worked out all the kinks in my implementation of a wrapping canvas.
-				<!--, an abstraction over the Canvas2D API that proxies all draw calls by translating to different positions and drawing it multiple times.
-				[is this accurate? i don't quite remember, i'm not confident enough atm to add that information here;
-				also it bothers me that I'm mentioning a tool that I made without linking to it or the source code;
-				so I should go find that] -->
-				I also only have the code to reproduce a few of these.
-			</p>
-			<p>
-				I've since started a project called <a href="https://github.com/1j01/pixelweaver">Pixelweaver</a>
-				that allows for more types of doodles (3D, anyone?),
-				gives control over time,
-				all while saving reproducible programs in every exported image.
-			</p>
-			<div class="tiles-container" id="patterns">
-				#{tab pattern_images}
-			</div>
-		"""
 
 	fs.writeFileSync 'make-making-better.html', boil
 		title: "Make Making Better"
