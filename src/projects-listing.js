@@ -6,7 +6,7 @@ class ProjectsListing extends React.Component {
 		return <div className="ProjectsListing tiles-container">{
 			this.props.projects.map((project) => {
 				let sizes;
-				const image_url = project.image_url || `static/images/projects/${project.repo_name}.png`;
+				const image_url = project.image_url || `/static/images/projects/${project.repo_name}.png`;
 				const repo_url = project.repo_url || `https://github.com/1j01/${project.repo_name}`;
 				const gh_pages_url = `https://1j01.github.io/${project.repo_name}/`;
 				const url =
