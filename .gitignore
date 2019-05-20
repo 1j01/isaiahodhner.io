@@ -4,6 +4,10 @@ temp/
 *.log
 *.bak
 
+# Next.js build output
+dist
+.next
+
 #################
 ## Eclipse
 #################

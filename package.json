@@ -22,9 +22,9 @@
   },
   "private": true,
   "scripts": {
-    "start": "live-server --middleware=../../extensionless-urls.js",
-    "build": "cake build",
-    "watch": "run-when-changed --watch \"**/*.coffee\" --watch \"Cakefile\" --exec \"cake build\"",
+    "dev": "next",
+    "build": "next export",
+    "start": "next start",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "cake optimages"
   },
@@ -37,5 +37,11 @@
     "octicons": "^8.5.0",
     "optimage": "^0.2.0",
     "run-when-changed": "^2.1.0"
+  },
+  "dependencies": {
+    "@githubprimer/octicons-react": "8.5.0",
+    "next": "8.1.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
   }
 }
