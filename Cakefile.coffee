@@ -59,16 +59,6 @@ task 'boil', 'Build the website, boiling the pages.', ->
 			</div>
 		"""
 
-
-		boil
-			title: title
-			head: '<script src="project-tiles.coffee" type="text/coffeescript"></script>'
-			main: """
-				<div class="">
-					#{tab articles_for_projects}
-				</div>
-			"""
-
 	fs.writeFileSync 'make-making-better.html', boil
 		title: "Make Making Better"
 		head: """
