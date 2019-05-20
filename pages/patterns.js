@@ -1,5 +1,6 @@
 import * as React from "react";
 import log_divisibles from "../src/log-divisibles";
+import Title from "../src/title";
 
 class Patterns extends React.Component {
 	render() {
@@ -20,6 +21,7 @@ class Patterns extends React.Component {
 		);
 
 		return <div>
+			<Title pageName="Patterns"/>
 			<h1 className="page-title">Patterns</h1>
 			<p>
 				These are some repeating patterns and textures I made with code (and a tool that I made (with code)).
