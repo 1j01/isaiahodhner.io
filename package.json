@@ -33,10 +33,7 @@
     "coffeescript": "2.4.1",
     "glob": "^7.1.4",
     "gm": "^1.23.1",
-    "live-server": "^1.2.1",
-    "octicons": "^8.5.0",
-    "optimage": "^0.2.0",
-    "run-when-changed": "^2.1.0"
+    "optimage": "^0.2.0"
   },
   "dependencies": {
     "@githubprimer/octicons-react": "8.5.0",
