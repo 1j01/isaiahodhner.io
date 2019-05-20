@@ -56,7 +56,6 @@ class Manifesto extends React.Component {
 		</div>;
 	}
 	componentDidMount() {
-		// import("../lib/multi-medium");
 		this.cleanupDoodles = initDoodles();
 	}
 	componentWillUnmount() {
