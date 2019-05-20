@@ -50,42 +50,47 @@ class ProjectsListing extends React.Component {
 			})
 		}</div>;
 	}
-	componentDidMount() {
-		const choose_from = a=> a[~~(Math.random() * a.length)];
-		const last_of = a=> a[a.length - 1];
 
-		const shuffle = (a)=> {
+	componentDidMount() {
+		const choose_from = a => a[~~(Math.random() * a.length)];
+		const last_of = a => a[a.length - 1];
+
+		const shuffle = (a) => {
 			let i = a.length;
-			if (i === 0) { return; }
+			if (i === 0) {
+				return;
+			}
 			while (--i) {
-				const j = ~~(Math.random() * (i+1));
+				const j = ~~(Math.random() * (i + 1));
 				[a[i], a[j]] = [a[j], a[i]];
 			}
 		};
 
-		const debug = (...args)=> {
+		const debug = (...args) => {
 			// console.log(...args);
 		};
 
 		let margin = parseInt((getComputedStyle(document.querySelector("article"))).marginLeft);
-		if (!isFinite(margin)) { margin = 0; }
+		if (!isFinite(margin)) {
+			margin = 0;
+		}
 		const spacing = 2 * margin;
 		const tile_length_1 = 256;
-		const tile_length_for = n=> (tile_length_1 * n) + (spacing * (n - 1));
+		const tile_length_for = n => (tile_length_1 * n) + (spacing * (n - 1));
 
 		for (let article of document.querySelectorAll("article")) {
-			((article)=> {
+			((article) => {
 				const img = article.querySelector("img");
 				img.src_1x1 = img.src;
 
-				article.sizes = article.dataset.sizes.split(",").map((size)=> {
+				article.sizes = article.dataset.sizes.split(",").map((size) => {
 					let [w, h] = size.split("x");
 					w = parseInt(w);
 					h = parseInt(h);
 					return [w, h];
 				});
 
-				return article.resize = (w, h)=> {
+				return article.resize = (w, h) => {
 					img.src =
 						(w === 1) && (h === 1)
 							? img.src_1x1
@@ -99,28 +104,38 @@ class ProjectsListing extends React.Component {
 		let tiles_per_row = 1;
 		let previous_tiles_per_row = 1;
 
-		const can_fit = (layout)=> {
+		const can_fit = (layout) => {
 			// debug("can_fit", {layout});
 			let x = 0;
 			for (let [w, h] of layout) {
 				// debug(`${w} wide tile at ${x}?`);
-				if ((w > 1) && ((x + w) > tiles_per_row)) { return false; }
+				if ((w > 1) && ((x + w) > tiles_per_row)) {
+					return false;
+				}
 				x += w;
-				if (x >= tiles_per_row) { x = 0; }
+				if (x >= tiles_per_row) {
+					x = 0;
+				}
 			}
 			// debug("no gaps so far, is the last row complete?", x);
 			return x === 0;
 		};
 
-		const find_a_layout = ()=> {
+		const find_a_layout = () => {
 			tiles_per_row = 1;
 			while (true) {
-				if ((margin + (tile_length_for(tiles_per_row + 1)) + margin) > document.body.clientWidth) { break; }
+				if ((margin + (tile_length_for(tiles_per_row + 1)) + margin) > document.body.clientWidth) {
+					break;
+				}
 				tiles_per_row += 1;
-				if (tiles_per_row >= 50) { break; }
+				if (tiles_per_row >= 50) {
+					break;
+				}
 			}
 
-			if (tiles_per_row === previous_tiles_per_row) { return; }
+			if (tiles_per_row === previous_tiles_per_row) {
+				return;
+			}
 			previous_tiles_per_row = tiles_per_row;
 
 			debug(`${tiles_per_row} tiles per row`);
@@ -131,7 +146,7 @@ class ProjectsListing extends React.Component {
 			debug("let's find a layout");
 			debug("can we have everything at max size?"); // assuming the last size in the array is the biggest
 			for (let j = 0; j <= 100; j++) {
-				const layout = articles.map((article)=> last_of(article.sizes));
+				const layout = articles.map((article) => last_of(article.sizes));
 				if (can_fit(layout)) {
 					debug("found a layout (without moving anything around; everything at max size)");
 					for (let i = 0; i < articles.length; i++) {
@@ -145,7 +160,7 @@ class ProjectsListing extends React.Component {
 
 			debug("no? okay, let's try some random sizes");
 			for (let k = 0; k <= 100; k++) {
-				const layout = articles.map((article)=> choose_from(article.sizes));
+				const layout = articles.map((article) => choose_from(article.sizes));
 				if (can_fit(layout)) {
 					debug("found a layout (without moving anything around)");
 					for (let i = 0; i < articles.length; i++) {
@@ -161,7 +176,7 @@ class ProjectsListing extends React.Component {
 			debug("maybe we can rearrange some things?");
 			for (let i1 = 0; i1 <= 200; i1++) {
 				shuffle(articles);
-				const layout = articles.map((article)=> choose_from(article.sizes));
+				const layout = articles.map((article) => choose_from(article.sizes));
 				if (can_fit(layout)) {
 					debug("found a layout (will have to move some things)");
 					for (let i = 0; i < articles.length; i++) {
@@ -177,7 +192,7 @@ class ProjectsListing extends React.Component {
 
 			debug("no perfect layout found");
 			debug("let's just use max sizes");
-			const layout = articles.map((article)=> last_of(article.sizes));
+			const layout = articles.map((article) => last_of(article.sizes));
 			for (let i = 0; i < articles.length; i++) {
 				const article = articles[i];
 				const [w, h] = layout[i];
@@ -191,6 +206,7 @@ class ProjectsListing extends React.Component {
 		this.resizeHandler = find_a_layout;
 		window.addEventListener("resize", this.resizeHandler);
 	}
+
 	componentWillUnmount() {
 		window.removeEventListener("resize", this.resizeHandler);
 	}
