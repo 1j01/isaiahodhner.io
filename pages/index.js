@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function Home() {
 	return <div className="textual-page-content">
 		<p>
@@ -15,8 +17,8 @@ function Home() {
 			This website is primarily a portfolio of many (but not all) of my projects.
 		</p>
 		<p>
-			I've made several <a href='/apps'>web apps</a>, as well as{" "}
-			<a href='/games'>games and experiments</a>, and some
+			I've made several <Link href="/apps"><a>web apps</a></Link>, as well as{" "}
+			<Link href="/games"><a>games and experiments</a></Link>, and some
 			libraries and such, which you can find <a href='https://github.com/1j01'>on GitHub</a>.
 		</p>
 		<p>
@@ -25,7 +27,7 @@ function Home() {
 			I'd like to live-stream some piano (programming too!), maybe join a band...
 		</p>
 		<p>
-			I like making procedural art sometimes, such as <a href='/patterns'>these patterns</a>.
+			I like making procedural art sometimes, such as <Link href="/patterns"><a>these patterns</a></Link>.
 			(I should put up a gallery sometime.)
 		</p>
 		<p>

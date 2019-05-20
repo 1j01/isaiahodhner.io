@@ -1,5 +1,6 @@
 import Octicon, {MarkGithub} from "@githubprimer/octicons-react";
 import App, {Container} from 'next/app';
+import Link from "next/link";
 import Title from "../src/title";
 import React from "react";
 
@@ -17,25 +18,25 @@ class MyApp extends App {
 		return <Container>
 			<Title/>
 			<header className="page-header">
-				<h1><a href="/">Isaiah Odhner</a></h1>
+				<h1><Link href="/"><a>Isaiah Odhner</a></Link></h1>
 				{is_mission_page ? null :
 					<nav>
 						<h2 className={`mission${show_mission_big ? " big" : ""}`}>
 							what’s the big ideal?
 
-							{/*<a href="/make-making-better">*/}
+							{/*<Link href="/make-making-better"><a>*/}
 							{/*	<span className="word">MAKE</span>*/}
 							{/*	<strong className="word">MAKING</strong>*/}
 							{/*	<span className="word">BETTER</span>*/}
 							{/*	<div className="subtitle link-indicator">A manifesto (to come)</div>*/}
-							{/*</a>*/}
+							{/*</a></Link>*/}
 
 						</h2>
 						<a href="mailto:isaiahodhner@gmail.com">{email_icon}Email</a>{" "}
 						<a href="https://twitter.com/isaiahodhner">{twitter_icon}Twitter</a>
 						<br/><br/>
-						<a href="/apps">Web Apps</a>{" "}
-						<a href="/games">Games & Experiments</a>
+						<Link href="/apps"><a>Web Apps</a></Link>{" "}
+						<Link href="/games"><a>Games & Experiments</a></Link>
 						<br/><br/>
 						<a href="https://github.com/1j01"><Octicon icon={MarkGithub}/>More on GitHub</a>
 					</nav>
