@@ -15,6 +15,7 @@ const log_divisibles = function (n, unit, ...more_info) {
 	for (let i = 1; i <= 10; i++) {
 		((n / i) === Math.floor(n / i) ? divisibles : nondivisibles).push(i);
 	}
+	if (typeof console === "undefined" || !console.log) { return; }
 	console.log(`\
 ${n} ${unit}, \
 divisible by ${conjunct(divisibles, "and")}, \

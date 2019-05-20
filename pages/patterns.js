@@ -1,15 +1,15 @@
 import * as React from "react";
+import log_divisibles from "../src/log-divisibles";
 
 class Patterns extends React.Component {
 	render() {
-		// const glob = require("glob");
-		// const pattern_fnames = glob.sync('images/patterns/*.png')
+		// const pattern_fnames = require("glob").sync('images/patterns/*.png')
 		// TODO: less patterns
 		const pattern_fnames =
 			["100.png","101.png","102.png","104.png","105 GOLDEN BALLS.png","105 MORE GOLDEN BALLS.png","106.png","107.png","11.png","15 edit.png","16.png","25.png","27 (time passes).png","28.png","29.png","2a03ee5b-5ac5-42e2-832f-cd777cec9997.png","3.png","30 edit.png","30.png"
 			,"31.png","32 edit.png","32.png","33 edit 2.png","33 edit.png","33.png","34.png","35 edit (made worse).png","36.png","37.png","4.png","40 edit 3.png","40 edit.png","40.png","41 edit.png","41.png","42 edit.png","42.png","43-psedit-2.png","43-psedit.png","43.png","45.png","5 edit.png","5-psedit.png","5.png","51.png","52 edit 2.png","52 edit.png","52.png","53 edit.png","53-psedit.png","53.png","54.png","55.png","56.png","57.png","58.png","59.png","6.png","60 edit.png","60.png","61.png","63.png","64 edit (ice).png","64 edit (snow).png","64 edit (snow2).png","64 edit.png","64.png","66.png","67 (time).png","68.png","69.png","6ea9af3c-a9d3-4d7b-8390-fabb44f8dfcc.png","7 edit.png","7.png","70.png","71.png","72.png","73.png","74.png","75.png","76.png","77.png","8 edit.png","80.5.png","81.png","82.png",
 			"82e79a7e-f577-4a63-8961-3008fc3588fe.png","85-psedit.png","85.png","86.png","860560cf-2e9a-4bd5-8322-a1faba28300f.png","87.png","88.png","89.png","9 edit.png","9.png","90.png","91.png","92.png","93.png","94.png","96.png","97.png","98.png","compositeoperation issues 2.png","compositeoperation issues.png","d52.png","download (1).png","download (12).png","download (3).png","download (4).png","download (5).png","download (6).png","download (8).png","download.png","fabb44f8dfcc.png","live edit (2).png","live edit.png","tiley-bright.png","tiley.png"];
-		// log_divisibles(pattern_fnames.length, "pattern tiles");
+		log_divisibles(pattern_fnames.length, "pattern tiles");
 
 		const pattern_images = pattern_fnames.map((fname)=>
 			<article
@@ -52,6 +52,7 @@ class Patterns extends React.Component {
 			!window.requestAnimationFrame ||
 			!("pointerEvents" in canvas.style)
 		) { return; }
+
 		const ctx = canvas.getContext("2d");
 
 		document.body.appendChild(canvas);
@@ -59,7 +60,6 @@ class Patterns extends React.Component {
 		canvas.style.left = "0";
 		canvas.style.top = "0";
 		canvas.style.pointerEvents = "none";
-
 
 
 		let particles = [];
