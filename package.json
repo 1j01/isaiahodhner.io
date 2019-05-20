@@ -23,7 +23,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next export",
+    "build": "next build && next export",
     "start": "next start",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "coffee optimize-images.coffee"

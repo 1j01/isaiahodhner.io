@@ -5,7 +5,7 @@ temp/
 *.bak
 
 # Next.js build output
-dist
+out
 .next
 
 #################
