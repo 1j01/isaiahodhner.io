@@ -76,7 +76,6 @@ class MyDocument extends Document {
 							{" "}<a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
 						</p>
 					</footer>
-					{/*<script src="lib/coffeescript.js"></script>*/}
 					<NextScript/>
 				</body>
 			</Html>
