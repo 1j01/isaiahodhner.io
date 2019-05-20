@@ -48,7 +48,7 @@ class Manifesto extends React.Component {
 					I have a lot of ideas about how to do this.
 				</p>
 				<p>
-					I'll be writing a manifesto, which I'll put here, or at least link to it (maybe I'll put it on Medium?).
+					I'll be writing a manifesto, which I'll put here, or at least link to it / redirect.
 					I also plan on starting a Patreon page.
 					For now you can follow me on Twitter, <a href="https://twitter.com/isaiahodhner">@isaiahodhner</a>.
 				</p>
