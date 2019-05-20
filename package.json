@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "author": "Isaiah Odhner",
   "description": "My portfolio",
   "keywords": [
@@ -26,7 +26,7 @@
     "build": "next export",
     "start": "next start",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
-    "optimages": "cake optimages"
+    "optimages": "coffee optimize-images.coffee"
   },
   "main": "index.html",
   "devDependencies": {
