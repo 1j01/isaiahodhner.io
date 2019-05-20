@@ -19,7 +19,7 @@ export const apps = [
 	{
 		repo_name: 'wavey',
 		title: 'Wavey',
-		description: 'Proof-of-concept online <abbr title="digital audio workstation">DAW</abbr>',
+		description: <>Proof-of-concept online <abbr title="digital audio workstation">DAW</abbr></>,
 		url: 'https://audioeditor.ml'
 	},
 	{
@@ -66,8 +66,8 @@ export const apps = [
 	},
 	{
 		repo_name: 'transpairency',
-		title: 'Trans<em>pair</em>ency',
-		description: 'Transparency from two opaque images (black and white <abbr title="backgrounds">BGs</abbr>)',
+		title: <>Trans<em>pair</em>ency</>,
+		description: <>Transparency from two opaque images (black and white <abbr title="backgrounds">BGs</abbr>)</>,
 		bg: "light"
 	},
 	{
@@ -142,9 +142,9 @@ export const apps = [
 	{
 		repo_name: 'mopaint',
 		title: 'Mopaint',
-		// description: 'Break down the boundary between programming and art.<br/>Eliminate fear of data loss.<br/>Reproducible Procedural Art 2'
-		// description: 'Break down the boundary between programming and art.<br/>Refactor brush strokes.<br/>Reproducible Procedural Art 2'
-		description: 'Break down the boundary between programming and art.<br/>Reproducible Procedural Art 2',
+		// description: <>Break down the boundary between programming and art.<br/>Eliminate fear of data loss.<br/>Reproducible Procedural Art 2</>
+		// description: <>Break down the boundary between programming and art.<br/>Refactor brush strokes.<br/>Reproducible Procedural Art 2</>
+		description: <>Break down the boundary between programming and art.<br/>Reproducible Procedural Art 2</>,
 		// description: 'Reproducible Procedural Human Art'
 		// description: 'Reproducible Human Art'
 		// description: 'Human Art with Program-based Documents'
