@@ -29,7 +29,7 @@ function Home() {
 			(I should put up a gallery sometime.)
 		</p>
 		<p>
-			*uh, the <a href="https://soundcloud.com/isaiah-odhner">exception</a>
+			*uh, the <a href="https://soundcloud.com/isaiah-odhner">exception</a>{" "}
 			that <a href="https://en.wikipedia.org/wiki/Exception_that_proves_the_rule">proves the rule</a>...
 		</p>
 	</div>;
