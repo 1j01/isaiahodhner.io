@@ -1,4 +1,4 @@
-import {apps, games} from "../projects";
+import {apps, games} from "../src/projects";
 import ProjectsListing from "../src/projects-listing";
 import log_divisibles from "../src/log-divisibles";
 import Title from "../src/title";
