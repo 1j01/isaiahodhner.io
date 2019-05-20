@@ -188,7 +188,11 @@ class ProjectsListing extends React.Component {
 
 		// @TODO: dynamically (or statically) apply a maximum site width?
 
-		window.addEventListener("resize", find_a_layout);
+		this.resizeHandler = find_a_layout;
+		window.addEventListener("resize", this.resizeHandler);
+	}
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.resizeHandler);
 	}
 }
 
