@@ -26,7 +26,8 @@ class MyDocument extends Document {
 					<meta name="keywords" content="Isaiah Odhner, 1j0, 1j01"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1"/>
 					<meta name="theme-color" content="#0083A5"/>
-					<title>{title ? `${title} — ` : ""}Isaiah Odhner</title>
+					{/*TODO*/}
+					{/*<title>{title ? `${title} — ` : ""}Isaiah Odhner</title>*/}
 					<link rel="icon" sizes="any" type="image/svg+xml" href="static/images/icons/favicon.svg"/>
 					<link rel="icon" sizes="16x16" type="image/x-icon" href="static/images/icons/favicon.ico"/>
 					<link rel="icon" sizes="16x16" type="image/png" href="static/images/icons/favicon.png"/>

@@ -58,52 +58,13 @@ task 'boil', 'Build the website, boiling the pages.', ->
 				#{tab pattern_images}
 			</div>
 		"""
-	
-	projects = require "./projects"
-	
-	display_projects = (projects, title)->
-		log_divisibles Object.keys(projects).length, "#{title} project tiles", "(before tiles are spanned)"
-	
-		articles_for_projects = (
-			for project in projects
-				
-				image_url = project.image_url ? "images/projects/#{project.repo_name}.png"
-				repo_url = project.repo_url ? "https://github.com/1j01/#{project.repo_name}"
-				gh_pages_url = "https://1j01.github.io/#{project.repo_name}/"
-				url =
-					if project.url is 'repo'
-						repo_url
-					else
-						project.url ? gh_pages_url
-				
-				bg = project.bg ? "normal"
-				if project.image_url
-					sizes = ["1x1"]
-				else
-					sizes = ["1x1"] if fs.existsSync "images/projects/#{project.repo_name}.png"
-					for img_path in glob.sync "images/projects/#{project.repo_name}-*.png"
-						m = img_path.match /-(\d+x\d+)\./
-						sizes.push m[1] if m
-					
-				"""
-					<article itemscope itemtype="http://schema.org/WebPage" data-bg="#{bg}" data-sizes="#{sizes}">
-						<a href="#{url}" itemprop="url">
-							<img itemprop="image" width=256 height=256 src="#{image_url}">
-						</a>
-						<header itemprop="name">
-							<a href="#{repo_url}" class="repo" title="View repository on GitHub">#{octicons.repo.toSVG()}</a>
-							<span>#{project.title}</span>
-						</header>
-						<footer itemprop="description">#{project.description}</footer>
-					</article>
-				"""
-		).join ''
-		
+
+
 		boil
 			title: title
 			head: '<script src="project-tiles.coffee" type="text/coffeescript"></script>'
 			main: """
-				<div class="tiles-container">
+				<div class="">
 					#{tab articles_for_projects}
 				</div>
 			"""
