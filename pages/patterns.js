@@ -154,12 +154,14 @@ class Patterns extends React.Component {
 
 		let scrollyness = 0;
 
-		window.onresize =
-			(document.body.onscroll = function(e){
-				updateDimensions();
-				scrollyness = 1; // @TODO: calculate amount scrolled
-				animate();
-			});
+		this.resizeAndScrollHandler = function(e){
+			updateDimensions();
+			scrollyness = 1; // @TODO: calculate amount scrolled
+			animate();
+		};
+
+		window.addEventListener("resize", this.resizeAndScrollHandler);
+		document.body.addEventListener("scroll", this.resizeAndScrollHandler);
 
 		const perform_cleary_operation = function(fn){
 			ctx.save();
@@ -221,6 +223,10 @@ class Patterns extends React.Component {
 			tile.style.cursor = "pointer";
 			img.onclick = () => splatter(img);
 		});
+	}
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.resizeAndScrollHandler);
+		document.body.removeEventListener("scroll", this.resizeAndScrollHandler);
 	}
 }
 
