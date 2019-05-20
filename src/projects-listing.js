@@ -54,7 +54,7 @@ class ProjectsListing extends React.Component {
 		const choose_from = a=> a[~~(Math.random() * a.length)];
 		const last_of = a=> a[a.length - 1];
 
-		const shuffle = function(a) {
+		const shuffle = (a)=> {
 			let i = a.length;
 			if (i === 0) { return; }
 			while (--i) {
@@ -63,7 +63,7 @@ class ProjectsListing extends React.Component {
 			}
 		};
 
-		const debug = function(...args){
+		const debug = (...args)=> {
 			// console.log(...args);
 		};
 
@@ -74,7 +74,7 @@ class ProjectsListing extends React.Component {
 		const tile_length_for = n=> (tile_length_1 * n) + (spacing * (n - 1));
 
 		for (let article of document.querySelectorAll("article")) {
-			(function(article){
+			((article)=> {
 				const img = article.querySelector("img");
 				img.src_1x1 = img.src;
 
@@ -86,12 +86,10 @@ class ProjectsListing extends React.Component {
 				});
 
 				return article.resize = (w, h)=> {
-					const src =
-						(w === 1) && (h === 1) ?
-							img.src_1x1
-							:
-							img.src_1x1.replace(/\.png$/, `-${w}x${h}.png`);
-					img.src = src;
+					img.src =
+						(w === 1) && (h === 1)
+							? img.src_1x1
+							: img.src_1x1.replace(/\.png$/, `-${w}x${h}.png`);
 					img.width = tile_length_for(w);
 					img.height = tile_length_for(h);
 				};
@@ -101,7 +99,7 @@ class ProjectsListing extends React.Component {
 		let tiles_per_row = 1;
 		let previous_tiles_per_row = 1;
 
-		const can_fit = function(layout){
+		const can_fit = (layout)=> {
 			// debug("can_fit", {layout});
 			let x = 0;
 			for (let [w, h] of layout) {
