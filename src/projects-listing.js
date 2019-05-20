@@ -44,6 +44,7 @@ class ProjectsListing extends React.Component {
 					<header itemProp="name">
 						<a href={repo_url} className="repo" title="View repository on GitHub"><Octicon icon={Repo}/></a>
 						<span>{project.title}</span>
+						{" " /* prevent double click selecting across header+footer as a single word */}
 					</header>
 					<footer itemProp="description">{project.description}</footer>
 				</article>;

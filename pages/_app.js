@@ -13,7 +13,7 @@ class MyApp extends App {
 		const show_mission_big = false; // is_front_page;
 
 		return <Container>
-			<header>
+			<header className="page-header">
 				<h1><a href="/">Isaiah Odhner</a></h1>
 				{is_mission_page ? null :
 					<nav>
@@ -38,10 +38,10 @@ class MyApp extends App {
 					</nav>
 				}
 			</header>
-			<main>
+			<main className="page-main">
 				<Component {...pageProps}/>
 			</main>
-			<footer>
+			<footer className="page-footer">
 				<p>
 					This website's source code is <a href="https://github.com/1j01/isaiahodhner.ml">on GitHub</a>.
 					Feel free to <a href="https://github.com/1j01/isaiahodhner.ml/issues/new">open any

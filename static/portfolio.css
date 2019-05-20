@@ -19,14 +19,14 @@ body {
 * {
 	font-size: 100%;
 }
-body > header,
-body > footer,
+.page-header,
+.page-footer,
 .textual-page-content{
 	padding: 1em 0;
 }
 @media (min-width: 700px) {
-	body > header,
-	body > footer,
+	.page-header,
+	.page-footer,
 	.textual-page-content{
 		padding: 2em;
 	}
@@ -110,7 +110,10 @@ nav {
 nav a:not(:last-child) {
 	padding-right: 0.4em;
 }
-body > header a {
+.page-header h1 a {
+	color: inherit;
+}
+.page-header a {
 	color: inherit;
 	text-decoration: none;
 }
@@ -130,7 +133,7 @@ p {
 	padding: 0 5px;
 }
 nav .octicon {
-    vertical-align: unset !important;
+	vertical-align: unset !important;
 }
 .icon-twitter,
 .icon-email {
@@ -234,25 +237,21 @@ body > * {
 	user-select: text;
 	-webkit-user-select: text;
 }
-body > article { 
+.page-header {
 	user-select: none;
 	-webkit-user-select: none;
 }
-body > header {
+.page-header * {
+	user-select: text;
+	-webkit-user-select: text;
+}
+.tiles-container > article {
 	user-select: none;
 	-webkit-user-select: none;
 }
-body > header * {
+.tiles-container > article > header,
+.tiles-container > article > header *,
+.tiles-container > article > footer {
 	user-select: text;
 	-webkit-user-select: text;
 }
-body > header h1 a {
-	color: inherit;
-}
-body > article > header,
-body > article > header *,
-body > article > footer {
-	user-select: text;
-	-webkit-user-select: text;
-}
-
