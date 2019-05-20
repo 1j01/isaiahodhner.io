@@ -24,7 +24,7 @@ export default ()=> {
 
 	const canvas = document.createElement("canvas");
 	const ctx = canvas.getContext("2d");
-	const container = document.querySelector(".mission");
+	const container = document.querySelector(".mission.big");
 	container.appendChild(canvas);
 	container.style.position = "relative";
 	canvas.style.position = "absolute";
