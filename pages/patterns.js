@@ -126,7 +126,7 @@ class Patterns extends React.Component {
 		}
 
 
-		const updateDimensions = function() {
+		const updateDimensions = ()=> {
 			if (canvas.width !== window.innerWidth) {
 				canvas.width = window.innerWidth;
 			}
@@ -135,7 +135,7 @@ class Patterns extends React.Component {
 			}
 		};
 
-		const splatter = function(img){
+		const splatter = (img)=> {
 
 			updateDimensions();
 
@@ -154,7 +154,7 @@ class Patterns extends React.Component {
 
 		let scrollyness = 0;
 
-		this.resizeAndScrollHandler = function(e){
+		this.resizeAndScrollHandler = (e)=> {
 			updateDimensions();
 			scrollyness = 1; // @TODO: calculate amount scrolled
 			animate();
@@ -163,17 +163,17 @@ class Patterns extends React.Component {
 		window.addEventListener("resize", this.resizeAndScrollHandler);
 		document.body.addEventListener("scroll", this.resizeAndScrollHandler);
 
-		const perform_cleary_operation = function(fn){
+		const perform_cleary_operation = (fn)=> {
 			ctx.save();
 			ctx.globalCompositeOperation = "destination-out";
-			fn(function(x, y, w, h, a){
+			fn((x, y, w, h, a)=> {
 				ctx.fillStyle = `rgba(0, 0, 0, ${a})`;
 				ctx.fillRect(x, y, w, h);
 			});
 			ctx.restore();
 		};
 
-		const animate = function() {
+		const animate = ()=> {
 
 			for (let i = particles.length - 1; i >= 0; i--) {
 				const particle = particles[i];
@@ -198,14 +198,14 @@ class Patterns extends React.Component {
 			if (scrollyness < 0.0001) {
 				scrollyness = 0;
 			} else {
-				perform_cleary_operation(function(clear){
+				perform_cleary_operation((clear)=> {
 					clear(0, 0, canvas.width, canvas.height, Math.min(scrollyness, 0.1));
 				});
 			}
 
 			// Clear the canvas above the patterns area
 			const patterns_area_rect = patterns.getBoundingClientRect();
-			perform_cleary_operation(function(clear){
+			perform_cleary_operation((clear)=> {
 				for (let ah = 0; ah <= 30; ah++) {
 					clear(0, 0, canvas.width, patterns_area_rect.top - (ah/2), 0.04);
 					const bottom_y = patterns_area_rect.bottom + (ah/2);
@@ -218,7 +218,7 @@ class Patterns extends React.Component {
 			}
 		};
 		const tiles = Array.from(patterns.children);
-		tiles.map(function(tile){
+		tiles.map((tile)=> {
 			const img = tile.children[0];
 			tile.style.cursor = "pointer";
 			img.onclick = () => splatter(img);
