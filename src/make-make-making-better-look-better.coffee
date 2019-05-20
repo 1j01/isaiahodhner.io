@@ -1,3 +1,6 @@
+###
+# NOTE: this file has been MANUALLY compiled (once) for now
+###
 
 # TODO: animate the text itself! with an animation of writing it and having the visuals all sprout from that
 # I want it to be luscious but also legible,
