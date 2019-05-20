@@ -154,14 +154,14 @@ class Patterns extends React.Component {
 
 		let scrollyness = 0;
 
-		this.resizeAndScrollHandler = (e) => {
+		this.resize_and_scroll_handler = (e) => {
 			updateDimensions();
 			scrollyness = 1; // @TODO: calculate amount scrolled
 			animate();
 		};
 
-		window.addEventListener("resize", this.resizeAndScrollHandler);
-		document.body.addEventListener("scroll", this.resizeAndScrollHandler);
+		window.addEventListener("resize", this.resize_and_scroll_handler);
+		document.addEventListener("scroll", this.resize_and_scroll_handler);
 
 		const perform_cleary_operation = (fn) => {
 			ctx.save();
@@ -225,8 +225,8 @@ class Patterns extends React.Component {
 				requestAnimationFrame(animate);
 			}
 		};
-		const tiles = Array.from(patterns.children);
-		tiles.map((tile) => {
+		const pattern_tiles = Array.from(document.querySelectorAll("#patterns > article"));
+		pattern_tiles.map((tile) => {
 			const img = tile.children[0];
 			tile.style.cursor = "pointer";
 			img.onclick = () => splatter(img);
@@ -234,8 +234,8 @@ class Patterns extends React.Component {
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener("resize", this.resizeAndScrollHandler);
-		document.body.removeEventListener("scroll", this.resizeAndScrollHandler);
+		window.removeEventListener("resize", this.resize_and_scroll_handler);
+		document.removeEventListener("scroll", this.resize_and_scroll_handler);
 	}
 }
 
