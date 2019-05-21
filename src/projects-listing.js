@@ -1,6 +1,6 @@
 import Octicon, {Repo} from "@githubprimer/octicons-react";
 import * as React from "react";
-import tileSizesByProjectRepoName from "../temp/tile-sizes-by-project-repo-name";
+const tileSizesByProjectRepoName = process.env.tileSizesByProjectRepoName;
 
 class ProjectsListing extends React.Component {
 	render() {

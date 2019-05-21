@@ -2,9 +2,6 @@
 // Event handlers like onClick can't be added to this file
 
 import Document, {Html, Head, Main, NextScript} from 'next/document';
-import updateTileSizesData from "../src/update-tile-sizes-data";
-
-updateTileSizesData();
 
 class MyDocument extends Document {
 	render() {
