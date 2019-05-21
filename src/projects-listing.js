@@ -21,6 +21,8 @@ class ProjectsListing extends React.Component {
 				} else {
 					sizes = tileSizesByProjectRepoName[project.repo_name] || ["1x1"];
 				}
+				const bigness = (size)=> size.split("x").reduce(((a, b)=> a * b), 1)
+				sizes.sort((a, b)=> bigness(a) - bigness(b));
 
 				return <article
 					key={project.repo_name}
