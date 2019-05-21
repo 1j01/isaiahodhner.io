@@ -1,26 +1,30 @@
 // _document is only rendered on the server side and not on the client side
 // Event handlers like onClick can't be added to this file
 
-import PropTypes from 'prop-types';
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import {projects} from "../src/projects";
 const fs = require("fs");
 const glob = require("glob");
+const path = require("path");
 
 const updateTileSizes = ()=> {
 	const tileSizesByProjectRepoName = {};
+	const tileImagesFolder = path.resolve("static/images/projects");
 	for (let project of projects) {
-		// TODO: simplify
-		let sizes = [];
-		if (fs.existsSync(`static/images/projects/${project.repo_name}.png`)) { sizes = ["1x1"]; }
-		for (let img_path of glob.sync(`static/images/projects/${project.repo_name}-*.png`)) {
-			const m = img_path.match(/-(\d+x\d+)\./);
-			if (m) { sizes.push(m[1]); }
+		const sizes = [];
+		if (fs.existsSync(path.join(tileImagesFolder, `${project.repo_name}.png`))) {
+			sizes.push("1x1");
+		}
+		for (let img_path of glob.sync(path.join(tileImagesFolder, `${project.repo_name}-*.png`))) {
+			const match = img_path.match(/-(\d+x\d+)\./);
+			if (match) {
+				sizes.push(match[1]);
+			}
 		}
 		tileSizesByProjectRepoName[project.repo_name] = sizes;
 	}
 
-	const tempFolder = require("path").resolve("./temp");
+	const tempFolder = path.resolve("./temp");
 	try {
 		fs.mkdirSync(tempFolder)
 	} catch(e) {
@@ -28,16 +32,15 @@ const updateTileSizes = ()=> {
 			throw e;
 		}
 	}
-	const outFile = require("path").join(tempFolder, "tile-sizes-by-project-repo-name.json");
-// console.log(outFile);
+	const outFile = path.join(tempFolder, "tile-sizes-by-project-repo-name.json");
 	fs.writeFileSync(outFile, JSON.stringify(tileSizesByProjectRepoName), "utf8");
+	console.log("wrote", outFile);
 };
 
 updateTileSizes();
 
 class MyDocument extends Document {
 	render() {
-		updateTileSizes();
 		return (
 			<Html lang="en-US">
 				<Head>
