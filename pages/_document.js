@@ -21,18 +21,31 @@ class MyDocument extends Document {
 			tileSizesByProjectRepoName[project.repo_name] = sizes;
 		}
 		console.log({tileSizesByProjectRepoName});
-		return {tileSizesByProjectRepoName, ...initialProps};
+		// return {tileSizesByProjectRepoName, ...initialProps};
+
+		const tempFolder = require("path").resolve("./temp");
+		try {
+			fs.mkdirSync(tempFolder)
+		} catch(e) {
+			if (e.code !== "EEXIST") {
+				throw e;
+			}
+		}
+		const outFile = require("path").join(tempFolder, "tile-sizes-by-project-repo-name.json");
+		// console.log(outFile);
+		fs.writeFileSync(outFile, JSON.stringify(tileSizesByProjectRepoName), "utf8");
+		return initialProps;
 	}
-	static childContextTypes = {
-		tileSizesByProjectRepoName: PropTypes.object.isRequired,
-		...Document.childContextTypes
-	};
-	getChildContext() {
-		const {tileSizesByProjectRepoName} = this.props;
-		const ctx = super.getChildContext();
-		console.log({ctx}, ctx.files, ctx.devFiles);
-		return {tileSizesByProjectRepoName, ...ctx};
-	}
+	// static childContextTypes = {
+	// 	tileSizesByProjectRepoName: PropTypes.object.isRequired,
+	// 	...Document.childContextTypes
+	// };
+	// getChildContext() {
+	// 	const {tileSizesByProjectRepoName} = this.props;
+	// 	const ctx = super.getChildContext();
+	// 	console.log(ctx);
+	// 	return {tileSizesByProjectRepoName, ...ctx};
+	// }
 	render() {
 		return (
 			<Html lang="en-US">

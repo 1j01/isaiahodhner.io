@@ -1,5 +1,6 @@
 import Octicon, {Repo} from "@githubprimer/octicons-react";
 import * as React from "react";
+import tileSizesByProjectRepoName from "../temp/tile-sizes-by-project-repo-name";
 
 class ProjectsListing extends React.Component {
 	render() {
@@ -18,18 +19,7 @@ class ProjectsListing extends React.Component {
 				if (project.image_url) {
 					sizes = ["1x1"];
 				} else {
-					console.log(this.context, this.context.tileSizesByProjectRepoName);
-					// TODO: get tile sizes working
-					// if (typeof window === 'undefined') {
-					// 	const fs = require("fs");
-					// 	if (fs.existsSync(`images/projects/${project.repo_name}.png`)) { sizes = ["1x1"]; }
-					// 	for (let img_path of glob.sync(`images/projects/${project.repo_name}-*.png`)) {
-					// 		const m = img_path.match(/-(\d+x\d+)\./);
-					// 		if (m) { sizes.push(m[1]); }
-					// 	}
-					// } else {
-					sizes = ["1x1"];
-					// }
+					sizes = tileSizesByProjectRepoName[project.repo_name] || ["1x1"];
 				}
 
 				return <article
