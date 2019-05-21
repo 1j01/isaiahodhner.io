@@ -22,9 +22,10 @@
   },
   "private": true,
   "scripts": {
+    "predev": "node src/create-dummy-tile-sizes-data.js",
     "dev": "next",
+    "prebuild": "node src/create-dummy-tile-sizes-data.js",
     "build": "next build && next export",
-    "start": "next start",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "coffee optimize-images.coffee"
   },
