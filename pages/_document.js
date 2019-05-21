@@ -1,14 +1,38 @@
 // _document is only rendered on the server side and not on the client side
 // Event handlers like onClick can't be added to this file
 
+import PropTypes from 'prop-types';
 import Document, {Html, Head, Main, NextScript} from 'next/document';
+import {projects} from "../src/projects";
 
 class MyDocument extends Document {
-	// static async getInitialProps(ctx) {
-	// 	const initialProps = await Document.getInitialProps(ctx);
-	// 	return {...initialProps};
-	// }
-
+	static async getInitialProps(ctx) {
+		const initialProps = await Document.getInitialProps(ctx);
+		const fs = require("fs");
+		const glob = require("glob");
+		const tileSizesByProjectRepoName = {};
+		for (let project of projects) {
+			let sizes = [];
+			if (fs.existsSync(`static/images/projects/${project.repo_name}.png`)) { sizes = ["1x1"]; }
+			for (let img_path of glob.sync(`static/images/projects/${project.repo_name}-*.png`)) {
+				const m = img_path.match(/-(\d+x\d+)\./);
+				if (m) { sizes.push(m[1]); }
+			}
+			tileSizesByProjectRepoName[project.repo_name] = sizes;
+		}
+		console.log({tileSizesByProjectRepoName});
+		return {tileSizesByProjectRepoName, ...initialProps};
+	}
+	static childContextTypes = {
+		tileSizesByProjectRepoName: PropTypes.object.isRequired,
+		...Document.childContextTypes
+	};
+	getChildContext() {
+		const {tileSizesByProjectRepoName} = this.props;
+		const ctx = super.getChildContext();
+		console.log({ctx}, ctx.files, ctx.devFiles);
+		return {tileSizesByProjectRepoName, ...ctx};
+	}
 	render() {
 		return (
 			<Html lang="en-US">

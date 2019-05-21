@@ -18,6 +18,7 @@ class ProjectsListing extends React.Component {
 				if (project.image_url) {
 					sizes = ["1x1"];
 				} else {
+					console.log(this.context, this.context.tileSizesByProjectRepoName);
 					// TODO: get tile sizes working
 					// if (typeof window === 'undefined') {
 					// 	const fs = require("fs");
