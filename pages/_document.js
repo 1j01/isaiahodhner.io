@@ -4,49 +4,40 @@
 import PropTypes from 'prop-types';
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 import {projects} from "../src/projects";
+const fs = require("fs");
+const glob = require("glob");
+
+const updateTileSizes = ()=> {
+	const tileSizesByProjectRepoName = {};
+	for (let project of projects) {
+		// TODO: simplify
+		let sizes = [];
+		if (fs.existsSync(`static/images/projects/${project.repo_name}.png`)) { sizes = ["1x1"]; }
+		for (let img_path of glob.sync(`static/images/projects/${project.repo_name}-*.png`)) {
+			const m = img_path.match(/-(\d+x\d+)\./);
+			if (m) { sizes.push(m[1]); }
+		}
+		tileSizesByProjectRepoName[project.repo_name] = sizes;
+	}
+
+	const tempFolder = require("path").resolve("./temp");
+	try {
+		fs.mkdirSync(tempFolder)
+	} catch(e) {
+		if (e.code !== "EEXIST") {
+			throw e;
+		}
+	}
+	const outFile = require("path").join(tempFolder, "tile-sizes-by-project-repo-name.json");
+// console.log(outFile);
+	fs.writeFileSync(outFile, JSON.stringify(tileSizesByProjectRepoName), "utf8");
+};
+
+updateTileSizes();
 
 class MyDocument extends Document {
-	static async getInitialProps(ctx) {
-		const initialProps = await Document.getInitialProps(ctx);
-		const fs = require("fs");
-		const glob = require("glob");
-		const tileSizesByProjectRepoName = {};
-		for (let project of projects) {
-			let sizes = [];
-			if (fs.existsSync(`static/images/projects/${project.repo_name}.png`)) { sizes = ["1x1"]; }
-			for (let img_path of glob.sync(`static/images/projects/${project.repo_name}-*.png`)) {
-				const m = img_path.match(/-(\d+x\d+)\./);
-				if (m) { sizes.push(m[1]); }
-			}
-			tileSizesByProjectRepoName[project.repo_name] = sizes;
-		}
-		console.log({tileSizesByProjectRepoName});
-		// return {tileSizesByProjectRepoName, ...initialProps};
-
-		const tempFolder = require("path").resolve("./temp");
-		try {
-			fs.mkdirSync(tempFolder)
-		} catch(e) {
-			if (e.code !== "EEXIST") {
-				throw e;
-			}
-		}
-		const outFile = require("path").join(tempFolder, "tile-sizes-by-project-repo-name.json");
-		// console.log(outFile);
-		fs.writeFileSync(outFile, JSON.stringify(tileSizesByProjectRepoName), "utf8");
-		return initialProps;
-	}
-	// static childContextTypes = {
-	// 	tileSizesByProjectRepoName: PropTypes.object.isRequired,
-	// 	...Document.childContextTypes
-	// };
-	// getChildContext() {
-	// 	const {tileSizesByProjectRepoName} = this.props;
-	// 	const ctx = super.getChildContext();
-	// 	console.log(ctx);
-	// 	return {tileSizesByProjectRepoName, ...ctx};
-	// }
 	render() {
+		updateTileSizes();
 		return (
 			<Html lang="en-US">
 				<Head>
