@@ -293,5 +293,8 @@ export default ()=> {
 
 	animation_frame_id = requestAnimationFrame(animate);
 
-	return ()=> cancelAnimationFrame(animation_frame_id);
+	return ()=> {
+		cancelAnimationFrame(animation_frame_id);
+		MultiMedium.all_spanvases = []; // @HACK! TODO: proper cleanup
+	}
 };
