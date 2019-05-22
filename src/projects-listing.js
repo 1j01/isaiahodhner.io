@@ -2,12 +2,7 @@ import Octicon, {Repo} from "@githubprimer/octicons-react";
 import * as React from "react";
 const tileSizesByProjectRepoName = process.env.tileSizesByProjectRepoName;
 
-const parseSize = (size)=> {
-	let [w, h] = size.split("x");
-	w = parseInt(w);
-	h = parseInt(h);
-	return [w, h];
-};
+const parseSize = (size)=> size.split("x").map(Number);
 
 class ProjectsListing extends React.Component {
 	render() {
