@@ -2,6 +2,13 @@ import Octicon, {Repo} from "@githubprimer/octicons-react";
 import * as React from "react";
 const tileSizesByProjectRepoName = process.env.tileSizesByProjectRepoName;
 
+const parseSize = (size)=> {
+	let [w, h] = size.split("x");
+	w = parseInt(w);
+	h = parseInt(h);
+	return [w, h];
+};
+
 class ProjectsListing extends React.Component {
 	render() {
 		return <div className="ProjectsListing tiles-container">{
@@ -21,7 +28,7 @@ class ProjectsListing extends React.Component {
 				} else {
 					sizes = tileSizesByProjectRepoName[project.repo_name] || ["1x1"];
 				}
-				const bigness = (size)=> size.split("x").reduce(((a, b)=> a * b), 1)
+				const bigness = (size)=> parseSize(size).reduce(((a, b)=> a * b), 1);
 				sizes.sort((a, b)=> bigness(a) - bigness(b));
 
 				return <article
@@ -72,28 +79,22 @@ class ProjectsListing extends React.Component {
 		const tile_length_1 = 256;
 		const tile_length_for = n => (tile_length_1 * n) + (spacing * (n - 1));
 
-		for (let article of document.querySelectorAll("article")) {
-			((article) => {
-				const img = article.querySelector("img");
-				img.src_1x1 = img.src;
+		const articles = Array.from(document.querySelectorAll("article"));
+		articles.forEach((article) => {
+			const img = article.querySelector("img");
+			img.src_1x1 = img.src;
 
-				article.sizes = article.dataset.sizes.split(",").map((size) => {
-					let [w, h] = size.split("x");
-					w = parseInt(w);
-					h = parseInt(h);
-					return [w, h];
-				});
+			article.sizes = article.dataset.sizes.split(",").map(parseSize);
 
-				return article.resize = (w, h) => {
-					img.src =
-						(w === 1) && (h === 1)
-							? img.src_1x1
-							: img.src_1x1.replace(/\.png$/, `-${w}x${h}.png`);
-					img.width = tile_length_for(w);
-					img.height = tile_length_for(h);
-				};
-			})(article);
-		}
+			article.resize = (w, h) => {
+				img.src =
+					(w === 1) && (h === 1)
+						? img.src_1x1
+						: img.src_1x1.replace(/\.png$/, `-${w}x${h}.png`);
+				img.width = tile_length_for(w);
+				img.height = tile_length_for(h);
+			};
+		});
 
 		let tiles_per_row = 1;
 		let previous_tiles_per_row = 1;
