@@ -2,7 +2,7 @@ import * as React from "react";
 import log_divisibles from "../src/log-divisibles";
 import Title from "../src/title";
 
-class Patterns extends React.Component {
+class PatternsPage extends React.Component {
 	render() {
 		// const pattern_fnames = require("glob").sync('images/patterns/*.png')
 		// TODO: less patterns
@@ -241,4 +241,4 @@ class Patterns extends React.Component {
 	}
 }
 
-export default Patterns;
+export default PatternsPage;

@@ -2,7 +2,7 @@ import React from "react";
 import initDoodles from "../src/make-make-making-better-look-better";
 import Title from "../src/title";
 
-class Manifesto extends React.Component {
+class ManifestoPage extends React.Component {
 	render() {
 		return <div className="Manifesto">
 			<Title pageName="Make Making Better"/>
@@ -63,4 +63,4 @@ class Manifesto extends React.Component {
 	}
 }
 
-export default Manifesto;
+export default ManifestoPage;

@@ -4,7 +4,7 @@ import log_divisibles from "../src/log-divisibles";
 import Title from "../src/title";
 import React from "react";
 
-function Apps() {
+function AppsPage() {
 	log_divisibles(Object.keys(apps).length, `Apps project tiles`, "(before tiles are spanned)");
 	return <>
 		<Title pageName="Apps"/>
@@ -12,4 +12,4 @@ function Apps() {
 	</>;
 }
 
-export default Apps;
+export default AppsPage;

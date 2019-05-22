@@ -3,7 +3,7 @@ import ProjectsListing from "../src/projects-listing";
 import log_divisibles from "../src/log-divisibles";
 import Title from "../src/title";
 
-function GamesAndExperiments() {
+function GamesAndExperimentsPage() {
 	log_divisibles(Object.keys(games).length, `Games and Experiments project tiles`, "(before tiles are spanned)");
 	return <>
 		<Title pageName="Games and Experiments"/>
@@ -11,4 +11,4 @@ function GamesAndExperiments() {
 	</>;
 }
 
-export default GamesAndExperiments;
+export default GamesAndExperimentsPage;

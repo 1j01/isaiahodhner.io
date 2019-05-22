@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function Home() {
+function HomePage() {
 	return <div className="textual-page-content">
 		<p>
 			Hi, my name is <b>Isaiah Odhner</b>.
@@ -37,4 +37,4 @@ function Home() {
 	</div>;
 }
 
-export default Home;
+export default HomePage;
