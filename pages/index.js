@@ -2,19 +2,34 @@ import Link from "next/link";
 
 function HomePage() {
 	return <div className="textual-page-content">
-		<p>
-			Hi, my name is <b>Isaiah Odhner</b>.
+		{/*<p>
+			Hi, my name is Isaiah.
 		</p>
 		<p>
+			I'm a programmer and avid pianist.
+		</p>
+		<p>
+			I haven't shared my music yet.
+		</p>*/}
+		<p>
+			Hi, I'm Isaiah
+		</p>
+		<p>
+			Programmer and pianist
+		</p>
+		<p>
+			Music not shared yet
+		</p>
+		{/*
+		<p>
 			I'm a programmer and designer,
-			interested in <a href="https://progrium.com/wiki/Generativity/">generativity</a>{" "}
-			(particularly with regards to technology, altho I'm not opposed to the more general concept),
+			interested in <a href="https://progrium.com/wiki/Generativity/">generativity</a>{" "},
 			and making powerful creative tools
-			(which I don't consider myself to have done yet; <a href="https://jspaint.app">jspaint</a> is pretty basic,
+			(which I don't consider myself to have done yet to be clear; <a href="https://jspaint.app">jspaint</a> is pretty basic,
 			as far as image editors go)
 		</p>
 		<p>
-			This website is primarily a portfolio of many (but not all) of my projects.
+			This website is primarily a portfolio of some of my projects.
 		</p>
 		<p>
 			I've made several <Link href="/apps"><a>web apps</a></Link>, as well as{" "}
@@ -28,12 +43,13 @@ function HomePage() {
 		</p>
 		<p>
 			I like making procedural art sometimes, such as <Link href="/patterns"><a>these patterns</a></Link>.
-			(I should put up a gallery sometime.)
+			(I should put up a gallery sometime (other than that one).)
 		</p>
 		<p>
 			*uh, the <a href="https://soundcloud.com/isaiah-odhner">exception</a>{" "}
 			that <a href="https://en.wikipedia.org/wiki/Exception_that_proves_the_rule">proves the rule</a>...
 		</p>
+		*/}
 	</div>;
 }
 
