@@ -19,7 +19,8 @@
 /mind-map/* https://1j01.github.io/mind-map/:splat
 /transpairency/* https://1j01.github.io/transpairency/:splat
 /boxart/* https://1j01.github.io/boxart/:splat
-/countdown.ml/* https://1j01.github.io/countdown.ml/:splat
+/countdown.ml/* https://1j01.github.io/fliptimer/:splat
+/fliptimer/* https://1j01.github.io/fliptimer/:splat
 /tiamblia-original/* https://1j01.github.io/tiamblia-original/:splat
 /slugg/* https://1j01.github.io/slugg/:splat
 /columns/* https://1j01.github.io/columns/:splat

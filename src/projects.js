@@ -82,8 +82,8 @@ export const apps = [
 	// 	description: 'Make animated GIFs'
 	// }
 	{
-		repo_name: 'countdown.ml',
-		title: 'Countdown.ml',
+		repo_name: 'fliptimer',
+		title: 'FlipTimer',
 		description: 'A simple countdown timer',
 		bg: "light"
 	},
