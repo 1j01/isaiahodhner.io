@@ -14,7 +14,7 @@ export const apps = [
 	{
 		repo_name: 'midi-recorder',
 		title: 'MIDI Recorder',
-		description: 'The simplest way to record MIDI',
+		description: 'The easiest way to record MIDI',
 		url: "https://midi-recorder.web.app"
 	},
 	{
