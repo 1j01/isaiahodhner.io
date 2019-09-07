@@ -31,6 +31,6 @@
 /stick-mangler/* https://1j01.github.io/stick-mangler/:splat
 /pool/* https://1j01.github.io/pool/:splat
 /dat-boi/* https://1j01.github.io/dat-boi/:splat
-/pipes/http://isaiahodhner.ml/pipes/ https://1j01.github.io/pipes/
+/pipes/http:/* https://1j01.github.io/pipes/
 /pipes/* https://1j01.github.io/pipes/:splat
 /ooplie/* https://1j01.github.io/ooplie/:splat
