@@ -217,4 +217,4 @@ export const games = [
 		description: '3D pipes screensaver remake'
 	}
 ];
-export const projects = apps.concat(games);
+export const projects = [...apps, ...games];
