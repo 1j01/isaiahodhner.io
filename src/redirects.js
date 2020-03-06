@@ -12,7 +12,7 @@
 
 // console.log(redirects.join("\n"));
 
-export default redirects = [
+module.exports = [
 	{from: "/98/*", to: "https://98.js.org/:splat"},
 	{from: "/jspaint/*", to: "https://jspaint.app/:splat"},
 	{from: "/wavey/*", to: "https://audioeditor.ml/:splat"},
