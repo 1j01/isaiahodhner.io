@@ -8,6 +8,9 @@ temp/
 out
 .next
 
+# ZEIT Now
+.now
+
 #################
 ## Eclipse
 #################
