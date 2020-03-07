@@ -1,5 +1,5 @@
 import Octicon, {MarkGithub} from "@githubprimer/octicons-react";
-import App, {Container} from 'next/app';
+import App from 'next/app';
 import Link from "next/link";
 import Title from "../src/title";
 import React from "react";
@@ -15,7 +15,7 @@ class MyApp extends App {
 		const is_mission_page = title === "Make Making Better";
 		const show_mission_big = false; // is_front_page;
 
-		return <Container>
+		return <>
 			<Title/>
 			<header className="page-header">
 				<h1><Link href="/"><a>Isaiah Odhner</a></Link></h1>
@@ -59,7 +59,7 @@ class MyApp extends App {
 					{" "}<a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
 				</p>
 			</footer>
-		</Container>;
+		</>;
 	}
 }
 
