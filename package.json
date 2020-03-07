@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "node src/server.js",
     "start": "NODE_ENV=production node src/server.js",
-    "build": "next build && next export",
+    "build-and-export-but-without-redirects-of-course": "next build && next export",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "coffee optimize-images.coffee"
   },
