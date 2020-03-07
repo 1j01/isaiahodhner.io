@@ -16,7 +16,7 @@ class PatternsPage extends React.Component {
 				itemScope
 				itemType="http://schema.org/ImageObject"
 			>
-				<img src={`/static/images/patterns/${fname}`} itemProp="contentURL"/>
+				<img src={`/images/patterns/${fname}`} itemProp="contentURL"/>
 			</article>
 		);
 

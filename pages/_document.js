@@ -15,10 +15,10 @@ class MyDocument extends Document {
 					<meta name="theme-color" content="#0083A5"/>
 					{/*TODO (in App) */}
 					{/*<title>{title ? `${title} — ` : ""}Isaiah Odhner</title>*/}
-					<link rel="icon" sizes="any" type="image/svg+xml" href="/static/images/icons/favicon.svg"/>
-					<link rel="icon" sizes="16x16" type="image/x-icon" href="/static/images/icons/favicon.ico"/>
-					<link rel="icon" sizes="16x16" type="image/png" href="/static/images/icons/favicon.png"/>
-					<link rel="stylesheet" type="text/css" href="/static/portfolio.css"/>
+					<link rel="icon" sizes="any" type="image/svg+xml" href="/images/icons/favicon.svg"/>
+					<link rel="icon" sizes="16x16" type="image/x-icon" href="/images/icons/favicon.ico"/>
+					<link rel="icon" sizes="16x16" type="image/png" href="/images/icons/favicon.png"/>
+					<link rel="stylesheet" type="text/css" href="/portfolio.css"/>
 				</Head>
 				<body>
 					<Main/>

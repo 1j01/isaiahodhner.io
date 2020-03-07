@@ -3,7 +3,7 @@ const path = require("path");
 
 const getTileSizesData = ()=> {
 	const tileSizesByProjectRepoName = {};
-	const tileImagesFolder = path.resolve("static/images/projects");
+	const tileImagesFolder = path.resolve("public/images/projects");
 	for (let img_path of glob.sync(path.join(tileImagesFolder, `*.png`))) {
 		const match = img_path.match(/[/\\]([^/\\]+)-(\d+x\d+)\.png/);
 		if (match) {
