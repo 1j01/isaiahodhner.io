@@ -33,7 +33,7 @@
     "coffeescript": "2.4.1",
     "glob": "^7.1.4"
   },
-  "optionalDependencies": {
+  "optionalGlobalDependencies": {
     "gm": "^1.23.1",
     "optimage": "^0.2.0"
   },
