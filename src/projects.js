@@ -21,7 +21,7 @@ export const apps = [
 		repo_name: 'wavey',
 		title: 'Wavey',
 		description: <>Proof-of-concept online <abbr title="digital audio workstation">DAW</abbr></>,
-		url: 'https://audioeditor.ml'
+		url: 'https://audio-editor.web.app'
 	},
 	{
 		repo_name: 'tri-chromatic-keyboard',
