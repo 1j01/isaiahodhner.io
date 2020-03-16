@@ -23,9 +23,8 @@
   "private": true,
   "scripts": {
     "dev": "node src/server.js",
-    "start": "NODE_ENV=production node src/server.js",
-    "heroku-postbuild": "next build",
-    "build-and-export-but-without-redirects-of-course": "next build && next export",
+    "build": "next build && next export",
+    "deploy": "next build && next export && firebase deploy",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "coffee optimize-images.coffee"
   },

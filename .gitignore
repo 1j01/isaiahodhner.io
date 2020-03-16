@@ -8,6 +8,10 @@ temp/
 out
 .next
 
+# Firebase Hosting
+.firebaserc
+.firebase/
+
 # ZEIT Now
 .now
 

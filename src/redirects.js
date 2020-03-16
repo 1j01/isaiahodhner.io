@@ -12,7 +12,7 @@
 
 // console.log(redirects.join("\n"));
 
-module.exports = [
+const redirects = [
 	{from: "/98/*", to: "https://98.js.org/:splat"},
 	{from: "/jspaint/*", to: "https://jspaint.app/:splat"},
 	{from: "/wavey/*", to: "https://audio-editor.web.app/:splat"},
@@ -40,3 +40,25 @@ module.exports = [
 	{from: "/pipes/*", to: "https://1j01.github.io/pipes/:splat"},
 	{from: "/ooplie/*", to: "https://1j01.github.io/ooplie/:splat"},
 ];
+
+// relevant docs:
+// https://firebase.google.com/docs/hosting/full-config#capture_url_segments_for_redirects
+
+const fs = require("fs");
+const path = require("path");
+const firebaseConfigPath = path.join(__dirname, "../firebase.json");
+const firebaseConfig = JSON.parse(fs.readFileSync(firebaseConfigPath, "utf8"));
+firebaseConfig.hosting.redirects = redirects.flatMap((redirect)=>
+	[{
+		source: redirect.from.replace(/\/\*$/, ""),
+		destination: redirect.to.replace(/:splat$/, ""),
+		type: 301,
+	}, {
+		source: redirect.from.replace(/\/\*$/, "/:splat*"),
+		destination: redirect.to,
+		type: 301,
+	},]
+)
+fs.writeFileSync(firebaseConfigPath, JSON.stringify(firebaseConfig, null, "\t"), "utf8");
+
+module.exports = redirects;
