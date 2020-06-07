@@ -132,7 +132,7 @@ export const apps = [
 		title: 'Patterns',
 		description: 'Procedurally generated patterns',
 		url: 'patterns',
-		repo_url: 'https://github.com/1j01/isaiahodhner.ml'
+		repo_url: 'https://github.com/1j01/isaiahodhner.io'
 	},
 	{
 		repo_name: 'pixelweaver',

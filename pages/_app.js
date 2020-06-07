@@ -47,8 +47,8 @@ class MyApp extends App {
 			</main>
 			<footer className="page-footer">
 				<p>
-					This website's source code is <a href="https://github.com/1j01/isaiahodhner.ml">on GitHub</a>.
-					Feel free to <a href="https://github.com/1j01/isaiahodhner.ml/issues/new">open any
+					This website's source code is <a href="https://github.com/1j01/isaiahodhner.io">on GitHub</a>.
+					Feel free to <a href="https://github.com/1j01/isaiahodhner.io/issues/new">open any
 					issues</a> there, or just <a href="mailto:isaiahodhner@gmail.com">send me an email</a>
 				</p>
 				<p>
