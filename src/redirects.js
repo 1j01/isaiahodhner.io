@@ -1,17 +1,4 @@
 
-// import {projects} from "./projects.js";
-
-// const redirects = [];
-// for (const project of projects) {
-// 	if (project.url == null || project.url.match(/^http/)) {
-// 		to_url = project.url || `https://1j01.github.io/${project.repo_name}`;
-// 		to_url_without_trailing_slash = to_url.replace(/\/$/, "");
-// 		redirects.push(`/${project.repo_name}/* ${to_url_without_trailing_slash}/:splat`);
-// 	}
-// }
-
-// console.log(redirects.join("\n"));
-
 const redirects = [
 	{from: "/make-making-better/*", to: "/fearless-exploration"},
 	{from: "/98/*", to: "https://98.js.org/:splat"},
@@ -27,6 +14,7 @@ const redirects = [
 	{from: "/boxart/*", to: "https://1j01.github.io/boxart/:splat"},
 	{from: "/countdown.ml/*", to: "https://1j01.github.io/fliptimer/:splat"},
 	{from: "/fliptimer/*", to: "https://1j01.github.io/fliptimer/:splat"},
+	{from: "/tiamblia/*", to: "https://1j01.github.io/tiamblia-original/:splat"},
 	{from: "/tiamblia-original/*", to: "https://1j01.github.io/tiamblia-original/:splat"},
 	{from: "/slugg/*", to: "https://1j01.github.io/slugg/:splat"},
 	{from: "/columns/*", to: "https://1j01.github.io/columns/:splat"},
@@ -40,6 +28,15 @@ const redirects = [
 	{from: "/pipes/http:/*", to: "https://1j01.github.io/pipes/"},
 	{from: "/pipes/*", to: "https://1j01.github.io/pipes/:splat"},
 	{from: "/ooplie/*", to: "https://1j01.github.io/ooplie/:splat"},
+	{from: "/choon.js/*", to: "https://1j01.github.io/choon.js/:splat"},
+	{from: "/cityship/*", to: "https://1j01.github.io/cityship/:splat"},
+	{from: "/gif-maker/*", to: "https://1j01.github.io/gif-maker/:splat"},
+	{from: "/organeq/*", to: "https://1j01.github.io/organeq/:splat"},
+	{from: "/palette.js/*", to: "https://1j01.github.io/anypalette.js/:splat"},
+	{from: "/anypalette.js/*", to: "https://1j01.github.io/anypalette.js/:splat"},
+	{from: "/pruzzle/*", to: "https://1j01.github.io/pruzzle/:splat"},
+	{from: "/simple-console/*", to: "https://1j01.github.io/simple-console/:splat"},
+	{from: "/whitebread/*", to: "https://1j01.github.io/whitebread/:splat"},
 ];
 
 // relevant docs:

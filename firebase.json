@@ -151,6 +151,16 @@
 				"type": 301
 			},
 			{
+				"source": "/tiamblia",
+				"destination": "https://1j01.github.io/tiamblia-original/",
+				"type": 301
+			},
+			{
+				"source": "/tiamblia/:splat*",
+				"destination": "https://1j01.github.io/tiamblia-original/:splat",
+				"type": 301
+			},
+			{
 				"source": "/tiamblia-original",
 				"destination": "https://1j01.github.io/tiamblia-original/",
 				"type": 301
@@ -278,6 +288,96 @@
 			{
 				"source": "/ooplie/:splat*",
 				"destination": "https://1j01.github.io/ooplie/:splat",
+				"type": 301
+			},
+			{
+				"source": "/choon.js",
+				"destination": "https://1j01.github.io/choon.js/",
+				"type": 301
+			},
+			{
+				"source": "/choon.js/:splat*",
+				"destination": "https://1j01.github.io/choon.js/:splat",
+				"type": 301
+			},
+			{
+				"source": "/cityship",
+				"destination": "https://1j01.github.io/cityship/",
+				"type": 301
+			},
+			{
+				"source": "/cityship/:splat*",
+				"destination": "https://1j01.github.io/cityship/:splat",
+				"type": 301
+			},
+			{
+				"source": "/gif-maker",
+				"destination": "https://1j01.github.io/gif-maker/",
+				"type": 301
+			},
+			{
+				"source": "/gif-maker/:splat*",
+				"destination": "https://1j01.github.io/gif-maker/:splat",
+				"type": 301
+			},
+			{
+				"source": "/organeq",
+				"destination": "https://1j01.github.io/organeq/",
+				"type": 301
+			},
+			{
+				"source": "/organeq/:splat*",
+				"destination": "https://1j01.github.io/organeq/:splat",
+				"type": 301
+			},
+			{
+				"source": "/palette.js",
+				"destination": "https://1j01.github.io/anypalette.js/",
+				"type": 301
+			},
+			{
+				"source": "/palette.js/:splat*",
+				"destination": "https://1j01.github.io/anypalette.js/:splat",
+				"type": 301
+			},
+			{
+				"source": "/anypalette.js",
+				"destination": "https://1j01.github.io/anypalette.js/",
+				"type": 301
+			},
+			{
+				"source": "/anypalette.js/:splat*",
+				"destination": "https://1j01.github.io/anypalette.js/:splat",
+				"type": 301
+			},
+			{
+				"source": "/pruzzle",
+				"destination": "https://1j01.github.io/pruzzle/",
+				"type": 301
+			},
+			{
+				"source": "/pruzzle/:splat*",
+				"destination": "https://1j01.github.io/pruzzle/:splat",
+				"type": 301
+			},
+			{
+				"source": "/simple-console",
+				"destination": "https://1j01.github.io/simple-console/",
+				"type": 301
+			},
+			{
+				"source": "/simple-console/:splat*",
+				"destination": "https://1j01.github.io/simple-console/:splat",
+				"type": 301
+			},
+			{
+				"source": "/whitebread",
+				"destination": "https://1j01.github.io/whitebread/",
+				"type": 301
+			},
+			{
+				"source": "/whitebread/:splat*",
+				"destination": "https://1j01.github.io/whitebread/:splat",
 				"type": 301
 			}
 		],
