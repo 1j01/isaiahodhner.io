@@ -1,5 +1,5 @@
 import "../lib/multi-medium";
-import makeMakingBetterStrokeData from "./make-making-better-stroke-data";
+import fearlessExplorationStrokeData from "./fearless-exploration-stroke-data";
 
 // TODO: animate the text itself! with an animation of writing it and having the visuals all sprout from that
 // I want it to be luscious but also legible,
@@ -10,15 +10,13 @@ import makeMakingBetterStrokeData from "./make-making-better-stroke-data";
 // but I could try to get across some concepts / the potential power of a system where you can retroactively edit anything
 
 // I also have various ideas about how it could be presented in stages, like:
-// handwriting "MAKE" (physically),
-// then typing out "MAKING" (digitally),
-// and then handwriting "BETTER" digitally,
+// handwriting then typing out then handwriting digitally,
 // where all the luscious greenery effects come into play
 // and then going back and applying the effects to the first and second words
 // (maybe (implying or actually) automatically recognizing paths, with skeletonization)
 
 // TODO: Add some clouds! maybe. or change the perspective. then i could make interesting stuff on the ground instead.
-// TODO: Redraw the text with a tablet, rather than a touchpad - or at least a mouse!
+// TODO: Redraw the text with a tablet rather than a mouse?
 
 export default ()=> {
 	const choose = a=> a[~~(Math.random() * a.length)];
@@ -188,7 +186,7 @@ export default ()=> {
 
 	MultiMedium.getPadding = lineWidth=> 50;
 
-	for (let element of document.querySelectorAll(".mission .word")) {
+	for (let element of document.querySelectorAll("main .mission .word")) {
 		// @TODO: make it so it copies with spaces to the clipboard
 		// (it copies with newlines, but if you paste it into the address bar of chrome for instance,
 		// it comes out as all one word)
@@ -200,7 +198,7 @@ export default ()=> {
 
 	// document.body.appendChild(new MultiMedium.Input());
 
-	MultiMedium.setData(makeMakingBetterStrokeData);
+	MultiMedium.setData(fearlessExplorationStrokeData);
 
 	word_ctxs = [];
 	// console.log("clear word_ctxs after setData which should be just before the final set of drawStrokes calls, in a requestAnimationFrame used to get computed styles");

@@ -59,9 +59,6 @@ header h1 {
 	font-size: 2em;
 	text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
 }
-.mission strong.word {
-	font-size: 1.3em;
-}
 @media (max-width: 700px) {
 	.mission:not(.big),
 	.mission.big { /* specifity hacks */

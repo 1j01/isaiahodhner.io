@@ -8,29 +8,30 @@ const twitter_icon = (<svg className="icon icon-twitter" height="24" xmlns="http
 const email_icon = (<svg className="icon icon-email" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 485.211 485.211"><path d="M485.211 363.906c0 10.637-2.992 20.498-7.785 29.174L324.225 221.67l151.54-132.584c5.895 9.355 9.446 20.344 9.446 32.219v242.601zM242.606 252.793l210.863-184.5c-8.653-4.737-18.397-7.642-28.908-7.642H60.651c-10.524 0-20.271 2.905-28.889 7.642l210.844 184.5zm58.787-11.162l-48.809 42.734a15.145 15.145 0 0 1-9.978 3.729c-3.57 0-7.125-1.242-9.98-3.729l-48.82-42.736L28.667 415.23c9.299 5.834 20.197 9.329 31.983 9.329h363.911c11.784 0 22.687-3.495 31.983-9.329L301.393 241.631zM9.448 89.085C3.554 98.44 0 109.429 0 121.305v242.602c0 10.637 2.978 20.498 7.789 29.174l153.183-171.44L9.448 89.085z"/></svg>);
 
 class MyApp extends App {
+	// static getInitialProps({router}) {
+	// 	console.log("getInitialProps", router.pathname, router.asPath, router.route);
+	// 	return {
+	// 		isMissionPage: router.asPath === "/fearless-exploration",
+	// 		isFrontPage: router.asPath === "/",
+	// 	};
+	// }
 	render() {
 		const {Component, pageProps} = this.props;
-		const title = null; // (TODO)
-		// const is_front_page = !title;
-		const is_mission_page = title === "Make Making Better";
+		// const is_front_page = (TODO);
+		// console.log(this.props);
 		const show_mission_big = false; // is_front_page;
 
 		return <>
 			<Title/>
 			<header className="page-header">
 				<h1><Link href="/"><a>Isaiah Odhner</a></Link></h1>
-				{is_mission_page ? null :
-					<nav>
+				{/*this.props.isMissionPage ? null :*/
+					<nav className="hide-on-mission-page">
 						<h2 className={`mission${show_mission_big ? " big" : ""}`}>
-							what’s the big ideal?
-
-							{/*<Link href="/make-making-better"><a>*/}
-							{/*	<span className="word">MAKE</span>*/}
-							{/*	<strong className="word">MAKING</strong>*/}
-							{/*	<span className="word">BETTER</span>*/}
-							{/*	<div className="subtitle link-indicator">A manifesto (to come)</div>*/}
-							{/*</a></Link>*/}
-
+							<Link href="/fearless-exploration"><a>
+								Fearless Exploration
+								<div className="subtitle link-indicator">A manifesto (to come)</div>
+							</a></Link>
 						</h2>
 						<a href="mailto:isaiahodhner@gmail.com">{email_icon}Email</a>{" "}
 						<a href="https://twitter.com/isaiahodhner">{twitter_icon}Twitter</a>

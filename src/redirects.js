@@ -13,6 +13,8 @@
 // console.log(redirects.join("\n"));
 
 const redirects = [
+	{from: "/make-making-better", to: "/fearless-exploration"},
+	{from: "/make-making-better/*", to: "/fearless-exploration"},
 	{from: "/98/*", to: "https://98.js.org/:splat"},
 	{from: "/jspaint/*", to: "https://jspaint.app/:splat"},
 	{from: "/wavey/*", to: "https://audio-editor.web.app/:splat"},

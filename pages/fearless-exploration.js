@@ -1,12 +1,15 @@
 import React from "react";
-import initDoodles from "../src/make-make-making-better-look-better";
+import initDoodles from "../src/fearless-exploration-doodle";
 import Title from "../src/title";
 
 class ManifestoPage extends React.Component {
 	render() {
 		return <div className="Manifesto">
-			<Title pageName="Make Making Better"/>
-			<style jsx>{`
+			<Title pageName="Fearless Exploration"/>
+			<style>{`
+				.hide-on-mission-page {
+					display: none;
+				}
 				.multi-medium-input {
 					background: white;
 					color: #444;
@@ -35,9 +38,8 @@ class ManifestoPage extends React.Component {
 				}
 			`}</style>
 			<h2 className="mission big on-mission-page" style={{position: "relative"}}>
-				<span className="word">MAKE</span>{" "}
-				<strong className="word">MAKING</strong>{" "}
-				<span className="word">BETTER</span>{" "}
+				<span className="word">FEARLESS</span>{" "}
+				<span className="word">EXPLORATION</span>{" "}
 				<aside style={{fontSize: "1rem", marginTop: "2rem", opacity: 0.5}}>
 					(you can select the text in this header, even tho it's a drawing)
 				</aside>
