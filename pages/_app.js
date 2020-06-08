@@ -47,11 +47,9 @@ class MyApp extends App {
 				<Component {...pageProps}/>
 			</main>
 			<footer className="page-footer">
-				<p>
-					<a href="https://github.com/1j01/isaiahodhner.io">Website source code</a>
-					&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
-					<a href="mailto:isaiahodhner@gmail.com">Send me an email</a>
-				</p>
+				<a href="https://github.com/1j01/isaiahodhner.io">Website source code</a>
+				&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+				<a href="mailto:isaiahodhner@gmail.com">Send me an email</a>
 			</footer>
 		</>;
 	}
