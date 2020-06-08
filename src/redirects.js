@@ -51,6 +51,7 @@ const path = require("path");
 const firebaseConfigPath = path.join(__dirname, "../firebase.json");
 const firebaseConfig = JSON.parse(fs.readFileSync(firebaseConfigPath, "utf8"));
 firebaseConfig.hosting.redirects = redirects.flatMap((redirect)=>
+	redirect.from.match(/\/\*$/) ? 
 	[{
 		source: redirect.from.replace(/\/\*$/, ""),
 		destination: redirect.to.replace(/:splat$/, ""),
@@ -59,7 +60,13 @@ firebaseConfig.hosting.redirects = redirects.flatMap((redirect)=>
 		source: redirect.from.replace(/\/\*$/, "/:splat*"),
 		destination: redirect.to,
 		type: 301,
-	},]
+	}]
+	:
+	[{
+		source: redirect.from,
+		destination: redirect.to,
+		type: 301,
+	}]
 )
 fs.writeFileSync(firebaseConfigPath, JSON.stringify(firebaseConfig, null, "\t"), "utf8");
 
