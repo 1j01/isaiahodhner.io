@@ -48,16 +48,9 @@ class MyApp extends App {
 			</main>
 			<footer className="page-footer">
 				<p>
-					This website's source code is <a href="https://github.com/1j01/isaiahodhner.io">on GitHub</a>.
-					Feel free to <a href="https://github.com/1j01/isaiahodhner.io/issues/new">open any
-					issues</a> there, or just <a href="mailto:isaiahodhner@gmail.com">send me an email</a>
-				</p>
-				<p>
-					Icons from
-					{" "}<a href="https://octicons.github.com/">Octicons</a>,
-					{" "}<a href="https://opensource.org/licenses/MIT">MIT-licensed</a>, and
-					{" "}<a href="https://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a>,
-					{" "}<a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
+					<a href="https://github.com/1j01/isaiahodhner.io">Website source code</a>
+					&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;
+					<a href="mailto:isaiahodhner@gmail.com">Send me an email</a>
 				</p>
 			</footer>
 		</>;
