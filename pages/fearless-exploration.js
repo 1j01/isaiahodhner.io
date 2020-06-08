@@ -7,7 +7,7 @@ class ManifestoPage extends React.Component {
 		return <div className="Manifesto">
 			<Title pageName="Fearless Exploration"/>
 			<style>{`
-				.hide-on-mission-page {
+				.hide-on-manifesto-page {
 					display: none;
 				}
 				.multi-medium-input {
@@ -37,7 +37,7 @@ class ManifestoPage extends React.Component {
 					text-shadow: none;
 				}
 			`}</style>
-			<h2 className="mission big on-mission-page" style={{position: "relative"}}>
+			<h2 className="principle big on-manifesto-page" style={{position: "relative"}}>
 				<span className="word">FEARLESS</span>{" "}
 				<span className="word">EXPLORATION</span>{" "}
 				<aside style={{fontSize: "1rem", marginTop: "2rem", opacity: 0.5}}>

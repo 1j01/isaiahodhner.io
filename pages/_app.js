@@ -11,7 +11,7 @@ class MyApp extends App {
 	// static getInitialProps({router}) {
 	// 	console.log("getInitialProps", router.pathname, router.asPath, router.route);
 	// 	return {
-	// 		isMissionPage: router.asPath === "/fearless-exploration",
+	// 		isManifestoPage: router.asPath === "/fearless-exploration",
 	// 		isFrontPage: router.asPath === "/",
 	// 	};
 	// }
@@ -19,15 +19,15 @@ class MyApp extends App {
 		const {Component, pageProps} = this.props;
 		// const is_front_page = (TODO);
 		// console.log(this.props);
-		const show_mission_big = false; // is_front_page;
+		const show_manifesto_link_big = false; // is_front_page;
 
 		return <>
 			<Title/>
 			<header className="page-header">
 				<h1><Link href="/"><a>Isaiah Odhner</a></Link></h1>
-				{/*this.props.isMissionPage ? null :*/
-					<nav className="hide-on-mission-page">
-						<h2 className={`mission${show_mission_big ? " big" : ""}`}>
+				{/*this.props.isManifestoPage ? null :*/
+					<nav className="hide-on-manifesto-page">
+						<h2 className={`principle${show_manifesto_link_big ? " big" : ""}`}>
 							<Link href="/fearless-exploration"><a>
 								Fearless Exploration
 								<div className="subtitle link-indicator">A manifesto (to come)</div>

@@ -23,7 +23,7 @@ export default ()=> {
 
 	const canvas = document.createElement("canvas");
 	const ctx = canvas.getContext("2d");
-	const container = document.querySelector(".mission.big");
+	const container = document.querySelector(".principle.big");
 	container.appendChild(canvas);
 	container.style.position = "relative";
 	canvas.style.position = "absolute";
@@ -186,7 +186,7 @@ export default ()=> {
 
 	MultiMedium.getPadding = lineWidth=> 50;
 
-	for (let element of document.querySelectorAll("main .mission .word")) {
+	for (let element of document.querySelectorAll("main .principle .word")) {
 		// @TODO: make it so it copies with spaces to the clipboard
 		// (it copies with newlines, but if you paste it into the address bar of chrome for instance,
 		// it comes out as all one word)

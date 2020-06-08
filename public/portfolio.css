@@ -46,50 +46,50 @@ header h1 {
 	font-weight: normal;
 	margin: 0;
 }
-.mission.big {
+.principle.big {
 	font-size: 10vmin;
 	margin: 0;
 	padding: 1em;
 	text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
 }
-.mission.big .word {
+.principle.big .word {
 	display: block;
 }
-.mission:not(.big) {
+.principle:not(.big) {
 	font-size: 2em;
 	text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
 }
 @media (max-width: 700px) {
-	.mission:not(.big),
-	.mission.big { /* specifity hacks */
+	.principle:not(.big),
+	.principle.big { /* specifity hacks */
 		font-size: 10vmin;
 	}
-	.mission .word {
+	.principle .word {
 		display: block;
 	}
 }
-.mission.big.on-mission-page {
+.principle.big.on-manifesto-page {
 	background: #87ceeb;
 	color: #4e321d;
 	text-shadow: none;
 	line-height: 1.5;
 }
-.mission .link-indicator {
+.principle .link-indicator {
 	font-size: 1rem;
 	text-shadow: none;
 	margin-top: 5px; /* based mainly on the text-shadow of the above elements, which is linear (px) */
 }
 @media (min-width: 550px) {
-	.mission.big .link-indicator {
+	.principle.big .link-indicator {
 		font-size: 0.3em;
 	}
 }
-.mission .link-indicator::before {
+.principle .link-indicator::before {
 	content: "\bb\a0";
 	animation: spin-arrows 1.5s 0.5s linear infinite;
 	display: inline-block;
 }
-.mission .link-indicator::after {
+.principle .link-indicator::after {
 	content: "\a0\bb";
 	animation: spin-arrows 1.5s 0s linear infinite;
 	display: inline-block;
