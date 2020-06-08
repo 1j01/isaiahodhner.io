@@ -13,7 +13,6 @@
 // console.log(redirects.join("\n"));
 
 const redirects = [
-	{from: "/make-making-better", to: "/fearless-exploration"},
 	{from: "/make-making-better/*", to: "/fearless-exploration"},
 	{from: "/98/*", to: "https://98.js.org/:splat"},
 	{from: "/jspaint/*", to: "https://jspaint.app/:splat"},
@@ -51,19 +50,12 @@ const path = require("path");
 const firebaseConfigPath = path.join(__dirname, "../firebase.json");
 const firebaseConfig = JSON.parse(fs.readFileSync(firebaseConfigPath, "utf8"));
 firebaseConfig.hosting.redirects = redirects.flatMap((redirect)=>
-	redirect.from.match(/\/\*$/) ? 
 	[{
 		source: redirect.from.replace(/\/\*$/, ""),
 		destination: redirect.to.replace(/:splat$/, ""),
 		type: 301,
 	}, {
 		source: redirect.from.replace(/\/\*$/, "/:splat*"),
-		destination: redirect.to,
-		type: 301,
-	}]
-	:
-	[{
-		source: redirect.from,
 		destination: redirect.to,
 		type: 301,
 	}]

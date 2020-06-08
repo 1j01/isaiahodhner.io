@@ -16,11 +16,6 @@
 				"type": 301
 			},
 			{
-				"source": "/make-making-better",
-				"destination": "/fearless-exploration",
-				"type": 301
-			},
-			{
 				"source": "/make-making-better/:splat*",
 				"destination": "/fearless-exploration",
 				"type": 301
