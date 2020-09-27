@@ -176,6 +176,11 @@ export const games = [
 		description: 'A dystopian trainhopping up-going parkour game-to-be'
 	},
 	{
+		repo_name: 'janitorial-android',
+		title: 'Janitorial Android',
+		description: 'Junkbot remake'
+	},
+	{
 		repo_name: 'mos',
 		title: 'MOS',
 		description: 'Monochrome Operating System'
