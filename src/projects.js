@@ -12,6 +12,11 @@ export const apps = [
 		url: "https://jspaint.app"
 	},
 	{
+		repo_name: 'true-random-movie',
+		title: 'True Random Movie',
+		description: 'Find something to watch...'
+	},
+	{
 		repo_name: 'midi-recorder',
 		title: 'MIDI Recorder',
 		description: 'The easiest way to record MIDI',
