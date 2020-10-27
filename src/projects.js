@@ -14,7 +14,7 @@ export const apps = [
 	{
 		repo_name: 'true-random-movie',
 		title: 'True Random Movie',
-		description: 'Find something to watch...'
+		description: 'Find something to watch, from over 32 thousand films'
 	},
 	{
 		repo_name: 'midi-recorder',
