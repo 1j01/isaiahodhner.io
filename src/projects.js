@@ -186,6 +186,11 @@ export const games = [
 		description: 'Junkbot remake'
 	},
 	{
+		repo_name: 'pbp2d',
+		title: 'Point Based Physics 2D',
+		description: 'Wobbly physics sandbox w/ sound'
+	},
+	{
 		repo_name: 'mos',
 		title: 'MOS',
 		description: 'Monochrome Operating System'
