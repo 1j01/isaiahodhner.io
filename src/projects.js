@@ -52,18 +52,18 @@ export const apps = [
 		url: "https://1j01.itch.io/nonsensical",
 		bg: "light"
 	},
-	{
-		repo_name: 'project-nexus',
-		title: 'Project Nexus',
-		description: 'A hub for all your coding projects',
-		url: 'repo'
-	},
-	{
-		repo_name: 'multifiddle',
-		title: 'MultiFiddle',
-		description: 'Minimalistic multiplayer live code fiddling environment',
-		url: "https://multifiddle.ml"
-	},
+	// {
+	// 	repo_name: 'project-nexus',
+	// 	title: 'Project Nexus',
+	// 	description: 'A hub for all your coding projects',
+	// 	url: 'repo'
+	// },
+	// {
+	// 	repo_name: 'multifiddle',
+	// 	title: 'MultiFiddle',
+	// 	description: 'Minimalistic multiplayer live code fiddling environment',
+	// 	url: "https://multifiddle.ml"
+	// },
 	{
 		repo_name: 'mind-map',
 		title: 'MindMap',
@@ -76,11 +76,11 @@ export const apps = [
 		description: <>Transparency from two opaque images (black and white <abbr title="backgrounds">BGs</abbr>)</>,
 		bg: "light"
 	},
-	{
-		repo_name: 'boxart',
-		title: 'BoxArt',
-		description: '3D drag & drop box art generator'
-	},
+	// {
+	// 	repo_name: 'boxart',
+	// 	title: 'BoxArt',
+	// 	description: '3D drag & drop box art generator'
+	// },
 	// {
 	// 	repo_name: 'gif-maker'
 	// 	title: 'GIF Maker'
