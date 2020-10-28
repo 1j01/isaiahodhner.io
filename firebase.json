@@ -51,6 +51,16 @@
 				"type": 301
 			},
 			{
+				"source": "/ascii-hypercube",
+				"destination": "https://1j01.github.io/ascii-hypercube/",
+				"type": 301
+			},
+			{
+				"source": "/ascii-hypercube/:splat*",
+				"destination": "https://1j01.github.io/ascii-hypercube/:splat",
+				"type": 301
+			},
+			{
 				"source": "/tri-chromatic-keyboard",
 				"destination": "https://1j01.github.io/tri-chromatic-keyboard/",
 				"type": 301
