@@ -5,6 +5,7 @@ const redirects = [
 	{from: "/jspaint/*", to: "https://jspaint.app/:splat"},
 	{from: "/wavey/*", to: "https://audio-editor.web.app/:splat"},
 	{from: "/ascii-hypercube/*", to: "https://1j01.github.io/ascii-hypercube/:splat"},
+	{from: "/true-random-movie/*", to: "https://1j01.github.io/true-random-movie/:splat"},
 	{from: "/tri-chromatic-keyboard/*", to: "https://1j01.github.io/tri-chromatic-keyboard/:splat"},
 	{from: "/guitar/*", to: "https://1j01.github.io/guitar/:splat"},
 	{from: "/midiflip/*", to: "https://1j01.github.io/midiflip/:splat"},

@@ -61,6 +61,16 @@
 				"type": 301
 			},
 			{
+				"source": "/true-random-movie",
+				"destination": "https://1j01.github.io/true-random-movie/",
+				"type": 301
+			},
+			{
+				"source": "/true-random-movie/:splat*",
+				"destination": "https://1j01.github.io/true-random-movie/:splat",
+				"type": 301
+			},
+			{
 				"source": "/tri-chromatic-keyboard",
 				"destination": "https://1j01.github.io/tri-chromatic-keyboard/",
 				"type": 301
