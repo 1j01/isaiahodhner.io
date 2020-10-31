@@ -18,7 +18,7 @@ import fearlessExplorationStrokeData from "./fearless-exploration-stroke-data";
 // TODO: Add some clouds! maybe. or change the perspective. then i could make interesting stuff on the ground instead.
 // TODO: Redraw the text with a tablet rather than a mouse?
 
-export default ()=> {
+const initDoodle = () => {
 	const choose = a=> a[~~(Math.random() * a.length)];
 
 	const canvas = document.createElement("canvas");
@@ -297,3 +297,5 @@ export default ()=> {
 		MultiMedium.all_spanvases = []; // @HACK! TODO: proper cleanup
 	}
 };
+
+export default initDoodle;
