@@ -45,11 +45,11 @@ const initDoodle = () => {
 		ctx.beginPath();
 		word_ctxs.push(ctx);
 		ctx.save();
-		ctx.translate(0, 3 * 4);
-		for (color of ["#4e321d", "#966643", "green", "#04a327"]) {
+		ctx.translate(0, 9);
+		for (color of ["green", "#04a327"]) {
 			ctx.strokeStyle = color;
 			ctx.beginPath();
-			ctx.translate(0, -3);
+			ctx.translate(0, -6);
 			for ({points} of strokes) {
 				ctx.moveTo(points[0].x*scale, points[0].y*scale);
 				if (points.length === 1) { ctx.lineTo(points[0].x*scale, (points[0].y*scale)+0.01); }
@@ -149,36 +149,36 @@ const initDoodle = () => {
 		// 	}
 		// }
 
-		const draw_branch = function(x, y, color, angle, recursion_level){
-			if (angle == null) { angle = Math.random()*Math.PI*2; }
-			if (recursion_level == null) { recursion_level = 0; }
-			ctx.save();
-			ctx.translate(x, y);
-			ctx.rotate(angle);
+		// const draw_branch = function(x, y, color, angle, recursion_level){
+		// 	if (angle == null) { angle = Math.random()*Math.PI*2; }
+		// 	if (recursion_level == null) { recursion_level = 0; }
+		// 	ctx.save();
+		// 	ctx.translate(x, y);
+		// 	ctx.rotate(angle);
 
-			ctx.strokeStyle = color;
-			ctx.lineWidth = weight / 4;
-			ctx.beginPath();
-			ctx.moveTo(0, 0);
-			ctx.lineTo(
-				(end_x = 0),
-				(end_y = Math.random() * 10)
-			);
-			ctx.stroke();
-			ctx.fillStyle = "green";
-			ctx.beginPath();
-			ctx.arc(end_x, end_y, weight / 4, 0, Math.PI * 2);
-			if (recursion_level < 3) {
-				for (let k = 0; k < 2; k++) {
-					const relative_angle = ((Math.random() * 2) - 1) * 0.9;
-					draw_branch(end_x, end_y, color, relative_angle, recursion_level + 1);
-				}
-			}
+		// 	ctx.strokeStyle = color;
+		// 	ctx.lineWidth = weight / 4;
+		// 	ctx.beginPath();
+		// 	ctx.moveTo(0, 0);
+		// 	ctx.lineTo(
+		// 		(end_x = 0),
+		// 		(end_y = Math.random() * 10)
+		// 	);
+		// 	ctx.stroke();
+		// 	ctx.fillStyle = "green";
+		// 	ctx.beginPath();
+		// 	ctx.arc(end_x, end_y, weight / 4, 0, Math.PI * 2);
+		// 	if (recursion_level < 3) {
+		// 		for (let k = 0; k < 2; k++) {
+		// 			const relative_angle = ((Math.random() * 2) - 1) * 0.9;
+		// 			draw_branch(end_x, end_y, color, relative_angle, recursion_level + 1);
+		// 		}
+		// 	}
 
-			ctx.fill();
+		// 	ctx.fill();
 
-			ctx.restore();
-		};
+		// 	ctx.restore();
+		// };
 
 		const find_furthest_point_in_direction = function(angle){
 			let furthest_dist = -Infinity;
@@ -196,19 +196,19 @@ const initDoodle = () => {
 			return furthest_point;
 		};
 
-		for (let k = 0; k < 2; k++) {
-			color = "#733e17";
-			const angle = Math.PI * 2 * Math.random();
-			point = find_furthest_point_in_direction(angle);
-			if (point != null) {
-				draw_branch(
-					point.x * scale,
-					point.y * scale,
-					color,
-					angle
-				);
-			}
-		}
+		// for (let k = 0; k < 2; k++) {
+		// 	color = "#733e17";
+		// 	const angle = Math.PI * 2 * Math.random();
+		// 	point = find_furthest_point_in_direction(angle);
+		// 	if (point != null) {
+		// 		draw_branch(
+		// 			point.x * scale,
+		// 			point.y * scale,
+		// 			color,
+		// 			angle
+		// 		);
+		// 	}
+		// }
 
 	};
 
