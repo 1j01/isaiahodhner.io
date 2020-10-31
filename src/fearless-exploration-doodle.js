@@ -44,9 +44,12 @@ const initDoodle = () => {
 
 		ctx.beginPath();
 		word_ctxs.push(ctx);
+		ctx.save();
+		ctx.translate(0, 3 * 4);
 		for (color of ["#4e321d", "#966643", "green", "#04a327"]) {
 			ctx.strokeStyle = color;
 			ctx.beginPath();
+			ctx.translate(0, -3);
 			for ({points} of strokes) {
 				ctx.moveTo(points[0].x*scale, points[0].y*scale);
 				if (points.length === 1) { ctx.lineTo(points[0].x*scale, (points[0].y*scale)+0.01); }
@@ -59,6 +62,7 @@ const initDoodle = () => {
 			}
 			ctx.stroke();
 		}
+		ctx.restore();
 
 		// const num_splotchy_knots = ctx === word_ctxs[1] ? 60 : 5;
 		// for (let i = 0, end = num_splotchy_knots, asc = 0 <= end; asc ? i < end : i > end; asc ? i++ : i--) {
