@@ -44,7 +44,7 @@ const initDoodle = () => {
 
 		ctx.beginPath();
 		word_ctxs.push(ctx);
-		for (color of ["#4e321d", "#966643", "#733e17"]) {
+		for (color of ["#4e321d", "#966643", "green", "#04a327"]) {
 			ctx.strokeStyle = color;
 			ctx.beginPath();
 			for ({points} of strokes) {
@@ -97,9 +97,9 @@ const initDoodle = () => {
 			}
 		};
 
-		const num_little_branches = ctx === word_ctxs[1] ? 600 : 50;
-		for (let j = 0; j < num_little_branches; j++) {
-			color = choose(["#4e321d", "#966643", "#733e17"]);
+		const num_leaves = 2000;
+		for (let j = 0; j < num_leaves; j++) {
+			color = choose(["#01b528", "#46e502", "#b7ea00"]);
 			point = find_random_point();
 			if (point != null) {
 				ctx.strokeStyle = color;
@@ -120,6 +120,30 @@ const initDoodle = () => {
 				ctx.fill();
 			}
 		}
+
+		// const num_little_branches = ctx === word_ctxs[1] ? 600 : 50;
+		// for (let j = 0; j < num_little_branches; j++) {
+		// 	color = choose(["#4e321d", "#966643", "#733e17"]);
+		// 	point = find_random_point();
+		// 	if (point != null) {
+		// 		ctx.strokeStyle = color;
+		// 		ctx.lineWidth = weight / 4;
+		// 		ctx.beginPath();
+		// 		ctx.moveTo(
+		// 			point.x * scale,
+		// 			point.y * scale
+		// 		);
+		// 		ctx.lineTo(
+		// 			(end_x = (point.x * scale) + ((((Math.random() * 2) - 1) * weight) / 2)),
+		// 			(end_y = (point.y * scale) + ((((((Math.random() * 2) - 1) * 5) - 3) * weight) / 6))
+		// 		);
+		// 		ctx.stroke();
+		// 		ctx.fillStyle = "green";
+		// 		ctx.beginPath();
+		// 		ctx.arc(end_x, end_y, weight / 4, 0, Math.PI * 2);
+		// 		ctx.fill();
+		// 	}
+		// }
 
 		const draw_branch = function(x, y, color, angle, recursion_level){
 			if (angle == null) { angle = Math.random()*Math.PI*2; }
