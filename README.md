@@ -5,7 +5,7 @@
 
 I want to redo it at some point so I can write long-form about my projects,
 and also to better emphasize the projects that I care about more,
-but for now, it's some sort of shocase of my projects.
+but for now, it's some sort of showcase of my projects.
 
 I laid out the projects in tiles, some of which span multiple grid cells. All projects have a 1x1 tile, and some have a 2x1 or 3x1.
 It dynamically lays it out so the grid is even on the bottom if possible.
