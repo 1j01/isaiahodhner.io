@@ -2,7 +2,7 @@ import Link from "next/link";
 
 function HomePage() {
 	return <div className="textual-page-content">
-		<h3 style={{ fontSize: "4em", fontWeight: "100", marginBottom: 0 }}>
+		<h3 style={{ fontSize: "4em", fontWeight: "100", marginBottom: 0, textShadow: "0px 25px 70px #00a1ff" }}>
 			Hi, I'm Isaiah
 		</h3>
 		<h4 style={{ fontSize: "2em", fontWeight: "100"}}>
