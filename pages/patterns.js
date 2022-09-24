@@ -261,18 +261,18 @@ class PatternsPage extends React.Component {
 			animate();
 		};
 
-		let scrollyness = 0;
+		let recentScrolling = 0;
 
 		this.resize_and_scroll_handler = (e) => {
 			updateDimensions();
-			scrollyness = 1; // @TODO: calculate amount scrolled
+			recentScrolling = 1; // @TODO: calculate amount scrolled
 			animate();
 		};
 
 		window.addEventListener("resize", this.resize_and_scroll_handler);
 		document.addEventListener("scroll", this.resize_and_scroll_handler);
 
-		const perform_cleary_operation = (fn) => {
+		const perform_clearing_operation = (fn) => {
 			ctx.save();
 			ctx.globalCompositeOperation = "destination-out";
 			fn((x, y, w, h, a) => {
@@ -311,18 +311,18 @@ class PatternsPage extends React.Component {
 
 			// Clear the canvas when scrolling
 			// @TODO: better handling for mobile, where scroll events are only sent once scrolling stops
-			scrollyness *= 0.9;
-			if (scrollyness < 0.0001) {
-				scrollyness = 0;
+			recentScrolling *= 0.9;
+			if (recentScrolling < 0.0001) {
+				recentScrolling = 0;
 			} else {
-				perform_cleary_operation((clear) => {
-					clear(0, 0, canvas.width, canvas.height, Math.min(scrollyness, 0.1));
+				perform_clearing_operation((clear) => {
+					clear(0, 0, canvas.width, canvas.height, Math.min(recentScrolling, 0.1));
 				});
 			}
 
 			// Clear the canvas above the patterns area
 			const patterns_area_rect = patterns.getBoundingClientRect();
-			perform_cleary_operation((clear) => {
+			perform_clearing_operation((clear) => {
 				for (let ah = 0; ah <= 30; ah++) {
 					clear(0, 0, canvas.width, patterns_area_rect.top - (ah / 2), 0.04);
 					const bottom_y = patterns_area_rect.bottom + (ah / 2);
@@ -330,7 +330,7 @@ class PatternsPage extends React.Component {
 				}
 			});
 
-			if ((particles.length > 0) || (scrollyness > 0.05)) {
+			if ((particles.length > 0) || (recentScrolling > 0.05)) {
 				requestAnimationFrame(animate);
 			}
 		};

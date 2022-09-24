@@ -61,7 +61,7 @@ export const apps = [
 	// {
 	// 	repo_name: 'multifiddle',
 	// 	title: 'MultiFiddle',
-	// 	description: 'Minimalistic multiplayer live code fiddling environment',
+	// 	description: 'Minimalist multiplayer live code fiddling environment',
 	// 	url: "https://multifiddle.ml"
 	// },
 	{
