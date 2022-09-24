@@ -61,7 +61,7 @@ header h1 {
 }
 @media (max-width: 700px) {
 	.principle:not(.big),
-	.principle.big { /* specifity hacks */
+	.principle.big { /* specificity hacks */
 		font-size: 10vmin;
 	}
 	.principle .word {
