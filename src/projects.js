@@ -191,6 +191,11 @@ export const games = [
 		description: 'Wobbly physics sandbox w/ sound'
 	},
 	{
+		repo_name: 'polywogg',
+		title: 'Polywogg',
+		description: 'Sword fighting game'
+	},
+	{
 		repo_name: 'mos',
 		title: 'MOS',
 		description: 'Monochrome Operating System'
