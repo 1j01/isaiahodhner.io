@@ -2,24 +2,16 @@ import Link from "next/link";
 
 function HomePage() {
 	return <div className="textual-page-content">
-		{/*<p>
-			Hi, my name is Isaiah.
-		</p>
-		<p>
-			I'm a programmer and avid pianist.
-		</p>
-		<p>
-			I haven't shared my music yet.
-		</p>*/}
-		<p>
+		<h3 style={{ fontSize: "4em", fontWeight: "100", marginBottom: 0 }}>
 			Hi, I'm Isaiah
-		</p>
-		<p>
+		</h3>
+		<h4 style={{ fontSize: "2em", fontWeight: "100"}}>
 			Programmer and pianist
-		</p>
-		<p>
-			Music not shared yet
-		</p>
+		</h4>
+		<h5 style={{ fontSize: "1rem", fontWeight: "normal", position: "relative", left: 89, top: -20 }}>
+			(Music not shared yet)
+		</h5>
+		{/* <p>In short, I press keys all day.</p> */}
 		{/*
 		<p>
 			I'm a programmer and designer,
