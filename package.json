@@ -30,7 +30,7 @@
   },
   "main": "index.html",
   "devDependencies": {
-    "coffeescript": "2.6.0",
+    "coffeescript": "^2.7.0",
     "glob": "^7.2.0"
   },
   "optionalGlobalDependencies": {
