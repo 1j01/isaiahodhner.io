@@ -1,42 +1,15 @@
 import React from "react";
+import Head from 'next/head';
 import initDoodles from "../src/fearless-exploration-doodle";
 import Title from "../src/title";
 
 class ManifestoPage extends React.Component {
 	render() {
 		return <div className="Manifesto">
-			<Title pageName="Fearless Exploration"/>
-			<style>{`
-				.hide-on-manifesto-page {
-					display: none;
-				}
-				.multi-medium-input {
-					background: white;
-					color: #444;
-					font-family: sans-serif;
-					max-width: 70em;
-					margin: 0 auto;
-					height: 150px;
-					position: fixed;
-					z-index: 2;
-					left: 0;
-					right: 0;
-					bottom: 0;
-					margin-bottom: 0.4cm;
-					box-shadow: 0 0 50px #fff;
-					border: 1px dashed rgba(0, 0, 0, 0.5);
-					border-radius: 8px;
-				}
-				.multi-medium-word:focus {
-					outline: none;
-					border-radius: 3px;
-					box-shadow: 0 0 2px 3px #FFFFFF, 0 0 4px 5px #FFC7C7, 0 0 100px 5px #FF77BB;
-					z-index: 1;
-				}
-				.multi-medium-word {
-					text-shadow: none;
-				}
-			`}</style>
+			<Title pageName="Fearless Exploration" />
+			<Head>
+				<link rel="stylesheet" href="/manifesto.css"/>
+			</Head>
 			<h2 className="principle big on-manifesto-page" style={{position: "relative"}}>
 				<span className="word">FEARLESS</span>{" "}
 				<span className="word">EXPLORATION</span>{" "}
