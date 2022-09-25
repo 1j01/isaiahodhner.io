@@ -1,5 +1,5 @@
 // To update firebase.json, run
-// node firebase.json.hosting.redirects.mjs
+// node firebase.json.hosting.redirects.js
 
 // This file is also used by the dev server in server.js
 

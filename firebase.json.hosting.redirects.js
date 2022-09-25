@@ -4,9 +4,9 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import redirects from "./src/redirects.mjs";
+import redirects from "./src/redirects.js";
 
-// Update firebase.json's hosting.redirects field with data from redirects.mjs
+// Update firebase.json's hosting.redirects field with data from redirects.js
 
 // Relevant docs:
 // https://firebase.google.com/docs/hosting/full-config#capture_url_segments_for_redirects

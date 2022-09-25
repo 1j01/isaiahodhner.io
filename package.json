@@ -28,6 +28,7 @@
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "coffee optimize-images.coffee"
   },
+  "type": "module",
   "main": "index.html",
   "devDependencies": {
     "coffeescript": "^2.7.0",

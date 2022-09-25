@@ -1,6 +1,6 @@
 import express from 'express'
 import next from 'next'
-import redirects from './redirects.mjs'
+import redirects from './redirects.js'
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
