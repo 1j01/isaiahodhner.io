@@ -1,5 +1,9 @@
+// To update firebase.json, run
+// node firebase.json.hosting.redirects.mjs
 
-const redirects = [
+// This file is also used by the dev server in server.js
+
+export default [
 	{from: "/make-making-better/*", to: "/fearless-exploration"},
 	{from: "/98/*", to: "https://98.js.org/:splat"},
 	{from: "/jspaint/*", to: "https://jspaint.app/:splat"},
@@ -40,25 +44,3 @@ const redirects = [
 	{from: "/simple-console/*", to: "https://1j01.github.io/simple-console/:splat"},
 	{from: "/whitebread/*", to: "https://1j01.github.io/whitebread/:splat"},
 ];
-
-// relevant docs:
-// https://firebase.google.com/docs/hosting/full-config#capture_url_segments_for_redirects
-
-const fs = require("fs");
-const path = require("path");
-const firebaseConfigPath = path.join(__dirname, "../firebase.json");
-const firebaseConfig = JSON.parse(fs.readFileSync(firebaseConfigPath, "utf8"));
-firebaseConfig.hosting.redirects = redirects.flatMap((redirect)=>
-	[{
-		source: redirect.from.replace(/\/\*$/, ""),
-		destination: redirect.to.replace(/:splat$/, ""),
-		type: 301,
-	}, {
-		source: redirect.from.replace(/\/\*$/, "/:splat*"),
-		destination: redirect.to,
-		type: 301,
-	}]
-)
-fs.writeFileSync(firebaseConfigPath, JSON.stringify(firebaseConfig, null, "\t"), "utf8");
-
-module.exports = redirects;

@@ -1,6 +1,6 @@
-const express = require('express')
-const next = require('next')
-const redirects = require('./redirects.js')
+import express from 'express'
+import next from 'next'
+import redirects from './redirects.mjs'
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
