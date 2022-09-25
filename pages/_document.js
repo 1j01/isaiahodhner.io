@@ -3,7 +3,8 @@
 
 import Document, {Html, Head, Main, NextScript} from 'next/document';
 
-class MyDocument extends Document {
+console.log("Document is:", Document);
+class MyDocument extends Document.default {
 	render() {
 		return (
 			<Html lang="en-US">
