@@ -257,3 +257,7 @@ body > * {
 	user-select: text;
 	-webkit-user-select: text;
 }
+
+/* I really wish I could put this CSS on just the relevant page! */
+/* But Next.js makes this really hard. */
+@import "manifesto.css";
