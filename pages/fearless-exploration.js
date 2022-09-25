@@ -3,6 +3,22 @@ import React from "react";
 import initDoodles from "../src/fearless-exploration-doodle";
 import Title from "../src/title";
 
+const script = {
+	// Can't use function stringification (for syntax highlighting)
+	// because it will change between server and client due to
+	// transpilation/bundling/minification and give
+	// "Warning: Prop `dangerouslySetInnerHTML` did not match."
+	__html: `
+		clearInterval(window._reloadInterval);
+		window._reloadInterval = setInterval(()=> {
+			// document.body.style.background = Math.random() < 0.5 ? "red" : "white";
+			// document.body.style.filter = Math.random() < 0.5 ? "invert()" : "";
+			const link = document.getElementById("manifesto-stylesheet");
+			link.href = link.href.replace(/\\?.*/, "") + "?" + Date.now()
+		}, 1000);
+	`
+};
+
 class ManifestoPage extends React.Component {
 	render() {
 		return <div className="Manifesto">
@@ -13,8 +29,10 @@ class ManifestoPage extends React.Component {
 			See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component"
 			*/}
 			{/* <Head> */}
-				<link rel="stylesheet" href="/manifesto.css"></link>
+				<link rel="stylesheet" href="/manifesto.css" id="manifesto-stylesheet"></link>
 			{/* </Head> */}
+			<script dangerouslySetInnerHTML={script}></script>
+			
 			<h2 className="principle big on-manifesto-page" style={{position: "relative"}}>
 				<span className="word">FEARLESS</span>{" "}
 				<span className="word">EXPLORATION</span>{" "}
