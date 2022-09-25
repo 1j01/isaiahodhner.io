@@ -1,5 +1,5 @@
-const glob = require("glob");
-const path = require("path");
+import glob from "glob";
+import path from "node:path";
 
 const getTileSizesData = ()=> {
 	const tileSizesByProjectRepoName = {};
@@ -23,4 +23,4 @@ const getTileSizesData = ()=> {
 	}
 	return tileSizesByProjectRepoName;
 };
-module.exports = getTileSizesData;
+export default getTileSizesData;
