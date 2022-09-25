@@ -1,5 +1,5 @@
 import React from "react";
-import Head from 'next/head';
+// import Head from 'next/head';
 import initDoodles from "../src/fearless-exploration-doodle";
 import Title from "../src/title";
 
@@ -7,9 +7,14 @@ class ManifestoPage extends React.Component {
 	render() {
 		return <div className="Manifesto">
 			<Title pageName="Fearless Exploration" />
-			<Head>
-				<link rel="stylesheet" href="/manifesto.css"/>
-			</Head>
+			{/* Next.js warns about putting a stylesheet in <Head>,
+			so I'll do something worse and put it in the body, to make it shut up.
+			"Do not add stylesheets using next/head (see <link rel="stylesheet"> tag with href="/manifesto.css"). Use Document instead.
+			See more info here: https://nextjs.org/docs/messages/no-stylesheets-in-head-component"
+			*/}
+			{/* <Head> */}
+				<link rel="stylesheet" href="/manifesto.css"></link>
+			{/* </Head> */}
 			<h2 className="principle big on-manifesto-page" style={{position: "relative"}}>
 				<span className="word">FEARLESS</span>{" "}
 				<span className="word">EXPLORATION</span>{" "}
