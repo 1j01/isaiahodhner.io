@@ -117,10 +117,12 @@ const Spanvas = (word, data)=> {
 		spanvas.render();
 	};
 
+	// let original_width = 0;
 	spanvas.render = ()=> {
 		spanvas.style.letterSpacing = ""; // so that the later letterSpacing calculation is idempotent
 		const rect = spanvas.getBoundingClientRect();
-		const original_width = original_width || rect.width;
+		// original_width = original_width || rect.width;
+		const original_width = rect.width;
 		canvas.style.display = "inline-block";
 		const ctx = canvas.getContext("2d");
 		if (strokes) {
@@ -185,7 +187,7 @@ const Spanvas = (word, data)=> {
 };
 
 
-const MultiMedium = (text, handwriting_data)=> {
+const MultiMedium = function (text, handwriting_data) {
 	let spanvas;
 	const element = document.createElement("span");
 	const words = text.split(" ");
