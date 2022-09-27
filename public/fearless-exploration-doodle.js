@@ -1,5 +1,5 @@
-import "../lib/multi-medium";
-import fearlessExplorationStrokeData from "./fearless-exploration-stroke-data";
+import "./lib/multi-medium.js";
+import fearlessExplorationStrokeData from "./fearless-exploration-stroke-data.js";
 
 // TODO: animate the text itself! with an animation of writing it and having the visuals all sprout from that
 // I want it to be luscious but also legible,
