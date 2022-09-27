@@ -68,12 +68,6 @@ header h1 {
 		display: block;
 	}
 }
-.principle.big.on-manifesto-page {
-	background: #87ceeb;
-	color: #4e321d;
-	text-shadow: none;
-	line-height: 1.5;
-}
 .principle .link-indicator {
 	font-size: 1rem;
 	text-shadow: none;

@@ -1,6 +1,42 @@
 
+body {
+	margin: 0;
+}
+.textual-page-content{
+	padding: 1em 0.5em;
+}
+@media (min-width: 700px) {
+	.textual-page-content{
+		padding: 2em;
+	}
+}
+
 .principle {
 	text-align: center;
+}
+.principle.big {
+	font-size: 10vmin;
+	margin: 0;
+	padding: 1em;
+	text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+}
+.principle.big .word {
+	display: block;
+}
+@media (max-width: 700px) {
+	.principle:not(.big),
+	.principle.big { /* specificity hacks */
+		font-size: 10vmin;
+	}
+	.principle .word {
+		display: block;
+	}
+}
+.principle.big.on-manifesto-page {
+	background: #87ceeb;
+	color: #4e321d;
+	text-shadow: none;
+	line-height: 1.5;
 }
 
 .multi-medium-input {
