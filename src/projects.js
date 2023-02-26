@@ -165,6 +165,12 @@ export const apps = [
 ];
 export const games = [
 	{
+		repo_name: 'chess-mashup',
+		title: 'Chess Mashup',
+		description: '3D chess game and variants',
+		bg: "dark"
+	},
+	{
 		repo_name: 'columns',
 		title: 'Columns',
 		description: 'A #BadBoxArt jam game',
