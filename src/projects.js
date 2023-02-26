@@ -131,14 +131,6 @@ export const apps = [
 	// 	description: 'Make any page look like SWEET BRO AND HELLA JEFF'
 	// 	url: 'https://chrome.google.com/webstore/detail/sbahjifier/gejobhmmpioknjihlhemplpfchbnbpin'
 	// }
-	// a gallery, not an app
-	{
-		repo_name: 'patterns',
-		title: 'Patterns',
-		description: 'Procedurally generated patterns',
-		url: 'patterns',
-		repo_url: 'https://github.com/1j01/isaiahodhner.io'
-	},
 	{
 		repo_name: 'pixelweaver',
 		title: 'Pixelweaver',
@@ -241,6 +233,13 @@ export const games = [
 		repo_name: 'pipes',
 		title: 'Pipes',
 		description: '3D pipes screensaver remake'
-	}
+	},
+	{
+		repo_name: 'patterns',
+		title: 'Patterns',
+		description: 'Procedurally generated patterns',
+		url: 'patterns',
+		repo_url: 'https://github.com/1j01/isaiahodhner.io'
+	},
 ];
 export const projects = [...apps, ...games];
