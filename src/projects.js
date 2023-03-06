@@ -169,7 +169,7 @@ export const games = [
 		bg: "light"
 	},
 	{
-		repo_name: 'tiamblia-original',
+		repo_name: 'tiamblia-game',
 		title: 'Tiamblia',
 		description: 'A notagame'
 	},
