@@ -12,6 +12,12 @@ export const apps = [
 		url: "https://jspaint.app"
 	},
 	{
+		repo_name: 'textual-paint',
+		title: 'Textual Paint',
+		description: 'MS Paint but it runs in the terminal',
+		url: "https://pypi.org/project/textual-paint/"
+	},
+	{
 		repo_name: 'true-random-movie',
 		title: 'True Random Movie',
 		description: 'Find something to watch, from over 32 thousand films'
