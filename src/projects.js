@@ -8,7 +8,13 @@ export const apps = [
 	{
 		repo_name: 'jspaint',
 		title: 'JS Paint',
-		description: 'Classic MS Paint, revived +Transparency +Unlimited Undos',
+		// description: 'Classic MS Paint, revived +Transparency +Unlimited Undos',
+		// description: 'MS Paint but it runs in the browser',
+		// description: 'MS Paint but it runs in the browser +Transparency +Unlimited Undos',
+		// as much as I like undo history features, the "unlimited" part is a bit of a lie
+		// since it crashes after a while.
+		// Mopaint has better undo history, saved to local storage.
+		description: 'MS Paint but it runs in the browser +transparency +voice control',
 		url: "https://jspaint.app"
 	},
 	{
@@ -20,12 +26,15 @@ export const apps = [
 	{
 		repo_name: 'true-random-movie',
 		title: 'True Random Movie',
-		description: 'Find something to watch, from over 32 thousand films'
+		// description: 'Find something to watch, from over 32 thousand films'
+		// description: 'Spinner with 32K+ films'
+		// description: 'Spin the wheel of 32K+ films'
+		description: <>Spin the wheel of <abbr title="over thirty-two thousand">32K+</abbr> films</>,
 	},
 	{
 		repo_name: 'midi-recorder',
 		title: 'MIDI Recorder',
-		description: 'The easiest way to record MIDI',
+		description: <>The easiest way to record <abbr title="musical instrument digital interface">MIDI</abbr></>,
 		url: "https://midi-recorder.web.app"
 	},
 	{
@@ -37,7 +46,7 @@ export const apps = [
 	{
 		repo_name: 'tri-chromatic-keyboard',
 		title: 'Tri-Chromatic Keyboard',
-		description: 'Like piano, but more symmetrical'
+		description: 'A more symmetrical piano'
 	},
 	{
 		repo_name: 'guitar',
@@ -48,7 +57,7 @@ export const apps = [
 	{
 		repo_name: 'midiflip',
 		title: 'MidiFlip',
-		description: 'Mathematical MIDI manipulation',
+		description: <>Mathematical <abbr title="musical instrument digital interface">MIDI</abbr> manipulation</>,
 		bg: "light"
 	},
 	{
@@ -99,12 +108,16 @@ export const apps = [
 		bg: "light"
 	},
 	// an app and library
+	// should add choon.js to https://ascii-to-midi.web.app/
+	// and add playback to https://midi-recorder.web.app/
+	// if this is interesting at all
 	// {
 	// 	repo_name: 'choon.js'
 	// 	title: 'Choon.js'
 	// 	description: 'Choon language interpreter built with the Web Audio API'
 	// }
 	// an app and library
+	// already added to https://midi-recorder.web.app/
 	// {
 	// 	repo_name: 'rtttl.js'
 	// 	title: 'RTTTL.js'
@@ -148,7 +161,7 @@ export const apps = [
 		title: 'Mopaint',
 		// description: <>Break down the boundary between programming and art.<br/>Eliminate fear of data loss.<br/>Reproducible Procedural Art 2</>
 		// description: <>Break down the boundary between programming and art.<br/>Refactor brush strokes.<br/>Reproducible Procedural Art 2</>
-		description: <>Break down the boundary between programming and art.<br/>Reproducible Procedural Art 2</>,
+		// description: <>Break down the boundary between programming and art.<br/>Reproducible Procedural Art 2</>,
 		// description: 'Reproducible Procedural Human Art'
 		// description: 'Reproducible Human Art'
 		// description: 'Human Art with Program-based Documents'
@@ -158,6 +171,9 @@ export const apps = [
 		// The power to change anything you have in your document after the fact (to undo, to change your mind,)
 		// is basically the kind of power & zen unlocked with computers (and e.g. MacPaint, vis-à-vis https://archive.org/details/mac_Zen_the_Art_of_Macintosh1986)
 		// but a difference in degree/extent/completeness becomes a difference in kind
+		// Anyways, very little of my vision is realized in the app yet, so...
+		// description: "Symmetry drawing app",
+		description: "Draw with symmetry, undo freely",
 		url: 'https://mopaint.app/'
 	}
 ];
@@ -177,7 +193,7 @@ export const games = [
 	{
 		repo_name: 'tiamblia-game',
 		title: 'Tiamblia',
-		description: 'A notagame'
+		description: 'Archery meditation'
 	},
 	{
 		repo_name: 'slugg',
@@ -187,12 +203,14 @@ export const games = [
 	{
 		repo_name: 'janitorial-android',
 		title: 'Janitorial Android',
-		description: 'Junkbot remake'
+		description: 'LEGO Junkbot remake'
 	},
 	{
 		repo_name: 'pbj-sandbox',
 		title: 'PBJ Sandbox',
-		description: 'Wobbly physics sandbox w/ sound'
+		// description: 'Wobbly physics sandbox w/ sound'
+		// description: 'Jelly physics simulation w/ sound'
+		description: 'Point-based jelly physics playground with dynamic audio'
 	},
 	{
 		repo_name: 'polywogg',
@@ -212,7 +230,8 @@ export const games = [
 	{
 		repo_name: 'board-game',
 		title: 'Chance',
-		description: 'A board game?'
+		// description: 'A board game?'
+		description: 'Nonexistent board game'
 	},
 	{
 		repo_name: 'une',
