@@ -179,6 +179,12 @@ export const apps = [
 ];
 export const games = [
 	{
+		repo_name: 'snakeshift',
+		title: 'Snakeshift',
+		description: 'Negative space puzzle game',
+		bg: "dark"
+	},
+	{
 		repo_name: 'chess-mashup',
 		title: 'Chess Mashup',
 		description: '3D chess game and variants',
