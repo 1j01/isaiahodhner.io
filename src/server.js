@@ -6,9 +6,6 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
-const escapeRegExp = (string)=>
-	string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&') // $& means the whole matched string
-
 app.prepare().then(() => {
 	const server = express()
 
