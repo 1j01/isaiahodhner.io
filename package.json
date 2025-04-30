@@ -23,8 +23,8 @@
   "private": true,
   "scripts": {
     "dev": "node src/server.js",
-    "build": "next build && next export",
-    "deploy": "next build && next export && firebase deploy",
+    "build": "next build",
+    "deploy": "next build && firebase deploy",
     "edit-image-tiled": "coffee edit-image-tiled.coffee",
     "optimages": "coffee optimize-images.coffee"
   },
