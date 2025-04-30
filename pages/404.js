@@ -10,9 +10,14 @@ export default function Custom404() {
 	}, [])
 	return <>
 		<Head><title>404</title></Head>
-		{/* <style>body,html{background:#000;border:0;padding:0;margin:0;width:100%;height:100%}canvas{position:absolute;left:50%;top:50%}</style> */}
-		<div style={{ background: "#000" }}>
-			<canvas ref={canvasRef} style={{}}><h1>404: Page Not Found</h1></canvas>
-		</div>
+		<style global jsx>{`
+			.page-main {
+				background:#000;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+			}
+		`}</style>
+		<canvas ref={canvasRef}><h1>404: Page Not Found</h1></canvas>
 	</>
 }
