@@ -1,4 +1,4 @@
-import Octicon, {Repo} from "@githubprimer/octicons-react";
+import { RepoIcon } from "@primer/octicons-react";
 import * as React from "react";
 const tileSizesByProjectRepoName = JSON.parse(process.env.tileSizesByProjectRepoNameJSON);
 
@@ -37,7 +37,7 @@ class ProjectsListing extends React.Component {
 						<img itemProp="image" width="256" height="256" src={image_url}/>
 					</a>
 					<header itemProp="name">
-						<a href={repo_url} className="repo" title="View repository on GitHub"><Octicon icon={Repo}/></a>
+						<a href={repo_url} className="repo" title="View repository on GitHub"><RepoIcon/></a>
 						<span>{project.title}</span>
 						{" " /* prevent double click selecting across header+footer as a single word */}
 					</header>

@@ -1,4 +1,4 @@
-import Octicon, {MarkGithub} from "@githubprimer/octicons-react";
+import { MarkGithubIcon } from "@primer/octicons-react";
 import App from 'next/app';
 import Link from "next/link";
 import Title from "../src/title";
@@ -39,7 +39,7 @@ class MyApp extends App {
 						<Link href="/apps">Web Apps</Link>{" "}
 						<Link href="/games">Games & Experiments</Link>
 						<br/><br/>
-						<a href="https://github.com/1j01"><Octicon icon={MarkGithub}/>More on GitHub</a>
+						<a href="https://github.com/1j01"><MarkGithubIcon/>More on GitHub</a>
 					</nav>
 				}
 			</header>
