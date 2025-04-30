@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Next.js App",
+            "program": "${workspaceFolder}/src/server.js",
+            "runtimeExecutable": "node",
+            "env": {
+                "NODE_ENV": "development",
+            },
+        }
+    ],
+}
