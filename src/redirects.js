@@ -27,7 +27,7 @@ const redirects = [
 	{from: "/stick-mangler/*", to: "https://1j01.github.io/stick-mangler/:splat"},
 	{from: "/pool/*", to: "https://1j01.github.io/pool/:splat"},
 	{from: "/dat-boi/*", to: "https://1j01.github.io/dat-boi/:splat"},
-	{from: "/pipes/http:/*", to: "https://1j01.github.io/pipes/"},
+	{from: "/pipes/http:/*", to: "https://1j01.github.io/pipes/"}, // I think this was meant to fix someone's broken link (this would be caught by the more general /pipes/* redirect but it would include the redundant path which isn't valid, so it would 404)
 	{from: "/pipes/*", to: "https://1j01.github.io/pipes/:splat"},
 	{from: "/ooplie/*", to: "https://1j01.github.io/ooplie/:splat"},
 	{from: "/choon.js/*", to: "https://1j01.github.io/choon.js/:splat"},
