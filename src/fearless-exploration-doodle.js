@@ -221,10 +221,10 @@ const initDoodle = () => {
 		const text = element.innerText; // + " "
 		// hm, can't do that, it tries to split it into multiple .multi-medium-word spanvases
 		element.innerHTML = "";
-		element.appendChild(new MultiMedium(text));
+		element.appendChild(MultiMedium(text));
 	}
 
-	// document.body.appendChild(new MultiMedium.Input());
+	// document.body.appendChild(MultiMedium.Input());
 
 	MultiMedium.setData(fearlessExplorationStrokeData);
 
