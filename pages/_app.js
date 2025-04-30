@@ -24,20 +24,20 @@ class MyApp extends App {
 		return <>
 			<Title/>
 			<header className="page-header">
-				<h1><Link href="/"><a>Isaiah Odhner</a></Link></h1>
+				<h1><Link href="/">Isaiah Odhner</Link></h1>
 				{/*this.props.isManifestoPage ? null :*/
 					<nav className="hide-on-manifesto-page">
 						<h2 className={`principle${show_manifesto_link_big ? " big" : ""}`}>
-							<Link href="/fearless-exploration"><a>
+							<Link href="/fearless-exploration">
 								Fearless Exploration
 								<div className="subtitle link-indicator">A manifesto (to come)</div>
-							</a></Link>
+							</Link>
 						</h2>
 						<a href="mailto:isaiahodhner@gmail.com">{email_icon}Email</a>{" "}
 						<a href="https://twitter.com/isaiahodhner">{twitter_icon}Twitter</a>
 						<br/><br/>
-						<Link href="/apps"><a>Web Apps</a></Link>{" "}
-						<Link href="/games"><a>Games & Experiments</a></Link>
+						<Link href="/apps">Web Apps</Link>{" "}
+						<Link href="/games">Games & Experiments</Link>
 						<br/><br/>
 						<a href="https://github.com/1j01"><Octicon icon={MarkGithub}/>More on GitHub</a>
 					</nav>
