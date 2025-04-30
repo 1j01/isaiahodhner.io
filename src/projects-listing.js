@@ -1,6 +1,6 @@
 import Octicon, {Repo} from "@githubprimer/octicons-react";
 import * as React from "react";
-const tileSizesByProjectRepoName = process.env.tileSizesByProjectRepoName;
+const tileSizesByProjectRepoName = JSON.parse(process.env.tileSizesByProjectRepoNameJSON);
 
 const parseSize = (size)=> size.split("x").map(Number);
 

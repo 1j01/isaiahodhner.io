@@ -1,5 +1,5 @@
 module.exports = {
 	env: {
-		tileSizesByProjectRepoName: require("./src/get-tile-sizes-data")(),
+		tileSizesByProjectRepoNameJSON: JSON.stringify(require("./src/get-tile-sizes-data")()),
 	}
 };
