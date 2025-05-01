@@ -2,6 +2,7 @@ import React from "react";
 import initDoodles from "../src/fearless-exploration-doodle";
 import Title from "../src/title";
 import WhyTheDividePoster from "../public/images/fearless-exploration/why-the-divide-v8.svg";
+import WhyTheDivide from "../src/components/why-the-divide";
 
 class ManifestoPage extends React.Component {
 	render() {
@@ -61,7 +62,13 @@ class ManifestoPage extends React.Component {
 			</p>
 			<div className="poster">
 				{/* <img src="/images/fearless-exploration/why-the-divide-v4.svg" alt="Why the Divide?"/> */}
-				<WhyTheDividePoster/>
+				<WhyTheDividePoster />
+			</div>
+			<p>
+				And a partial 3D version of the poster:
+			</p>
+			<div className="poster">
+				<WhyTheDivide/>
 			</div>
 			{/* <div className="textual-page-content" style={{ textAlign: "left" }}>
 				<p>

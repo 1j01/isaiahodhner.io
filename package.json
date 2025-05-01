@@ -30,9 +30,12 @@
   },
   "main": "index.html",
   "devDependencies": {
+    "@react-three/drei": "^10.0.7",
+    "@react-three/fiber": "^9.1.2",
     "@svgr/webpack": "^8.1.0",
     "coffeescript": "^2.7.0",
-    "glob": "^8.0.3"
+    "glob": "^8.0.3",
+    "three": "^0.176.0"
   },
   "optionalGlobalDependencies": {
     "gm": "^1.23.1",
