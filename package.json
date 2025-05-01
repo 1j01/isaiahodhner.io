@@ -30,6 +30,7 @@
   },
   "main": "index.html",
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "coffeescript": "^2.7.0",
     "glob": "^8.0.3"
   },
