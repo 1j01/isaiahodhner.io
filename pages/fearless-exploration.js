@@ -1,6 +1,7 @@
 import React from "react";
 import initDoodles from "../src/fearless-exploration-doodle";
 import Title from "../src/title";
+import WhyTheDividePoster from "../public/images/fearless-exploration/why-the-divide-v8.svg";
 
 class ManifestoPage extends React.Component {
 	render() {
@@ -55,6 +56,38 @@ class ManifestoPage extends React.Component {
 					For now you can follow me on <abbr title="The service formerly known as Twitter">Ex-Twitter</abbr>, <a href="https://twitter.com/isaiahodhner">@isaiahodhner</a>.
 				</p>
 			</div>
+			<p>
+				Here's a teaser poster:
+			</p>
+			<div className="poster">
+				{/* <img src="/images/fearless-exploration/why-the-divide-v4.svg" alt="Why the Divide?"/> */}
+				<WhyTheDividePoster/>
+			</div>
+			{/* <div className="textual-page-content" style={{ textAlign: "left" }}>
+				<p>
+					Why the Divide?
+				</p>
+
+				Dynamic/Procedural/Live/Non-Destructive:
+				<ul>
+					<li>Filters/Effects/Modifiers</li>
+					<li>Clipping Masks</li>
+					<li>Clones</li>
+					<li>Editable Objects</li>
+					<li>repetition is easy</li>
+					<li>indirect editing often complicates UI; usually you're editing objects like groups, paths, path nodes, or even procedural node graphs like Geometry Nodes or Shader Nodes in blender - each with their own paradigms - or going fully abstract with textual code</li>
+				</ul>
+						
+				Static/Manual/One-Off/Destructive:
+				<ul>
+					<li>Selection Manipulation</li>
+					<li>Tool Actions</li>
+					<li>Menu Actions</li>
+					<li>Copy/Paste</li>
+					<li>specialization is easy</li>
+					<li>direct editing often simplifies UI</li>
+				</ul>
+			</div> */}
 		</div>;
 	}
 	componentDidMount() {
