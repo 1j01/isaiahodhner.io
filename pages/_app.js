@@ -34,7 +34,7 @@ class MyApp extends App {
 							</Link>
 						</h2>
 						<a href="mailto:isaiahodhner@gmail.com">{email_icon}Email</a>{" "}
-						<a href="https://twitter.com/isaiahodhner">{twitter_icon}Twitter</a>
+						<a href="https://twitter.com/isaiahodhner" title="The service formerly known as Twitter.">{twitter_icon}Ex-Twitter</a>
 						<br/><br/>
 						<Link href="/apps">Web Apps</Link>{" "}
 						<Link href="/games">Games & Experiments</Link>
