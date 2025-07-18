@@ -155,7 +155,7 @@ export function BrickWall() {
     return bricks
   }
 
-  // Generate cords going through the holes - using simple cylinders
+  // Generate cords going through the holes
   const generateCords = () => {
     const cords = []
 
@@ -167,7 +167,6 @@ export function BrickWall() {
       const yPos = hole.row * (BRICK_HEIGHT + MORTAR_GAP) + BRICK_HEIGHT / 2
 
       // Create a cylinder that goes through the wall along the Z-axis
-      // The rotation [Math.PI/2, 0, 0] rotates it to align with the Z-axis
       cords.push(
         <mesh key={`cord-${index}`} position={[xPos, yPos, 0]} rotation={[Math.PI / 2, 0, 0]}>
           <cylinderGeometry args={[0.1, 0.1, 8, 16]} />
@@ -213,7 +212,6 @@ export function BrickWall() {
   const generateLabels = () => {
     const labels = []
 
-    // Position for the main title - restored to Text3D
     labels.push(
       <Center key="main-title" position={[0, wallHeight / 2, BRICK_DEPTH / 2 + 0.1]}>
         <Text3D
@@ -281,13 +279,8 @@ export function BrickWall() {
 
   return (
     <group ref={wallRef}>
-      {/* Individual bricks including crenelations */}
       {generateBricks()}
-
-      {/* Colored cords */}
       {generateCords()}
-
-      {/* Text labels */}
       {generateLabels()}
 
       {/* Ground */}
@@ -301,7 +294,6 @@ export function BrickWall() {
 
 
 export default function WhyTheDivide() {
-  // Calculate the correct isometric angle: arctan(1/sqrt(2)) ≈ 35.264°
   const isometricAngle = Math.atan(1 / Math.sqrt(2))
 
   return (
@@ -310,8 +302,8 @@ export default function WhyTheDivide() {
         shadows
         orthographic
         camera={{
-          position: [0, 0, 100], // Position doesn't matter for orthographic, just needs to face the scene
-          zoom: 25, // Adjusted zoom to see both sides of the wall
+          position: [0, 0, 100],
+          zoom: 25,
           near: 0.1,
           far: 1000,
         }}
@@ -321,12 +313,11 @@ export default function WhyTheDivide() {
         <spotLight position={[10, 15, 10]} angle={0.3} penumbra={1} intensity={1.5} castShadow />
         <directionalLight position={[-5, 5, 5]} intensity={0.5} castShadow />
 
-        {/* Apply true isometric rotation to the entire scene */}
         <group
           rotation={[
-            isometricAngle, // X rotation: ~35.264° (arctan(1/√2))
-            -Math.PI / 4, // Y rotation: -45°
-            0, // No Z rotation
+            isometricAngle,
+            -Math.PI / 4,
+            0,
           ]}
         >
           <BrickWall />
