@@ -12,7 +12,7 @@
 
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Environment } from "@react-three/drei"
-import { useRef } from "react"
+import { ReactElement, useRef } from "react"
 import { Text, Text3D, Center } from "@react-three/drei"
 import * as THREE from "three"
 
@@ -54,6 +54,7 @@ export function BrickWall() {
   }
 
   // Define hole positions (missing bricks)
+  // TODO: define together with the WORD_PAIRS
   const holePositions = [
     { row: 3, col: 3 },
     { row: 5, col: 7 },
@@ -69,7 +70,7 @@ export function BrickWall() {
 
   // Generate bricks for the main wall
   const generateBricks = () => {
-    const bricks: JSX.Element[] = []
+    const bricks: ReactElement[] = []
 
     // Generate main wall bricks
     for (let row = 0; row < numRows; row++) {
@@ -110,6 +111,7 @@ export function BrickWall() {
 
     // Generate crenelations as a continuation of the wall
     // First, add a continuous top row
+    // TODO: remove this (from AI-generated code)
     const topRowY = numRows * (BRICK_HEIGHT + MORTAR_GAP) + BRICK_HEIGHT / 2
 
     for (let col = 0; col < bricksPerRow; col++) {
@@ -157,7 +159,7 @@ export function BrickWall() {
 
   // Generate cords going through the holes
   const generateCords = () => {
-    const cords = []
+    const cords: ReactElement[] = []
 
     holePositions.forEach((hole, index) => {
       const isOddRow = hole.row % 2 === 1
@@ -210,7 +212,7 @@ export function BrickWall() {
 
   // Generate text labels for both sides
   const generateLabels = () => {
-    const labels = []
+    const labels: ReactElement[] = []
 
     labels.push(
       <Center key="main-title" position={[0, wallHeight / 2, BRICK_DEPTH / 2 + 0.1]}>
