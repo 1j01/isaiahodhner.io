@@ -299,7 +299,7 @@ export default function WhyTheDivide() {
   const isometricAngle = Math.atan(1 / Math.sqrt(2))
 
   return (
-    <div className="w-full h-screen">
+    <div style={{ width: "100%", height: "80vh" }}>
       <Canvas
         shadows
         orthographic
