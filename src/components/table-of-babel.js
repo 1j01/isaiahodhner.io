@@ -28,7 +28,7 @@ class TableOfBabel extends React.Component {
 	render() {
 		const domains = [];
 		const patterns = [];
-		for (const entry of data) {
+		for (const entry of data.entries) {
 			if (!domains.includes(entry.domain)) {
 				domains.push(entry.domain);
 			}
@@ -61,7 +61,7 @@ class TableOfBabel extends React.Component {
 							<td key="row-label" className="table-row-label"><strong>{pattern}</strong></td>
 							{domains.map((domain, j) => (
 								<td key={domain}>
-									{data
+									{data.entries
 										.filter(entry => entry.pattern === pattern && entry.domain === domain)
 										.map(entry => (
 											<TableOfBabelEntry key={entry.title} {...entry} />
