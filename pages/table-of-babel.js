@@ -55,12 +55,12 @@ class TableOfBabelPage extends React.Component {
 			`}</style>
 			<h2>Table of Babel</h2>
 			<div className="tob-header">
-				<TableOfBabelTagline/>
+				<TableOfBabelTagline />
 				{/* <p>
 					TODO: persistent, non-randomized, down-to-earth description of the table/project
 				</p> */}
 			</div>
-			<TableOfBabel/>
+			<TableOfBabel />
 		</div>;
 	}
 }
