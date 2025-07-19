@@ -230,6 +230,117 @@ export default function TableOfBabelTagline() {
 				{/* referencing Buzz Lightyear and the acronym ToB (admittedly weak with the small words that are first meant to be part of it and then not) */}
 				To Ontology and Beyond!
 			</p>
+			<p className="tagline" hidden>
+				{/* maybe overreaching... */}
+				Pinterest for engineers/scientists.
+			</p>
+			<p className="tagline" hidden>
+				An inspiration board for engineers.
+			</p>
+			<p className="tagline" hidden>
+				{/* weird, lame */}
+				Science slaps, dawg. Check dis out.
+			</p>
+			<p className="tagline" hidden>
+				{/* weird, with arguably bad implications, AI-generated */}
+				Science is a buffet. Take what you like.
+			</p>
+			<p className="tagline" hidden>
+				{/* weird, AI-autocompleted */}
+				Science slam poetry.
+			</p>
+			<p className="tagline" hidden>
+				{/* lame, AI-generated */}
+				Zero to infinity in one table.
+			</p>
+			<p className="tagline" hidden>
+				{/* idk bro (bad) */}
+				You can’t spell “wisdom” without “do”... or “is”.
+			</p>
+			<p className="tagline" hidden>
+				{/* lame, AI-generated */}
+				Where Knowledge Takes Shape.
+			</p>
+			<p className="tagline" hidden>
+				Patterns in the patterns.
+			</p>
+			<p className="tagline" hidden>
+				Constellations of concepts.
+				{/* [curated] */}
+			</p>
+			{/* Some more AI-generated taglines:
+			
+			You said:
+			try to write a tagline for every letter of the alphabet
+
+			ChatGPT said:
+			Here’s a full A–Z of tagline-style lines, each starting with a different letter. Some are conceptual, some punchy, some weird—variety by design.
+
+			🅰️ A – All fields. All formats. All at once.
+			🅱️ B – Because everything connects to everything else.
+			🇨 C – Cross the disciplines. Collapse the silos.
+			🅳 D – Data meets desire. In a table.
+			🅴 E – Everything is related. We just mapped it.
+			🅵 F – Fill in the gaps between the knowns.
+			🅶 G – Grid your loins.
+			🅷 H – Here’s how physics talks to poetry.
+			🅸 I – Intersection is where invention lives.
+			🅹 J – Just add context.
+			🅺 K – Knowledge isn’t linear. But this helps.
+			🅻 L – Link the overlooked. Label the unknown.
+			🅼 M – Mind the gaps—and map them.
+			🅽 N – Nothing escapes the matrix.
+			🅾️ O – One table. Infinite collisions.
+			🅿️ P – Patterns emerge. Meaning follows.
+			🆀 Q – Questions multiply in every direction.
+			🆁 R – Rows and relations and revelations.
+			🆂 S – Structure begets surprise.
+			🆃 T – The table is the territory.
+			🆄 U – Unlock hidden commonalities.
+			🆅 V – Visualize thought. Across domains.
+			🆆 W – What happens when no field stays in its lane?
+			🆇 X – X marks the unexplored intersections.
+			🆈 Y – You’re not the only field that matters.
+			🆉 Z – Zoom in on the universal weird.
+			Would you like these grouped by tone (e.g., academic, provocative, whimsical)? Or should I generate a version where every tagline still fits together into a coherent theme or progression?
+
+
+			You said:
+			Can you redo G? wth
+			and T, and... just give me a fresh batch
+
+
+			ChatGPT said:
+			Absolutely. Here's a fresh A–Z set—cleaner, sharper, and more consistent in tone. This version keeps a mix of clever, conceptual, and usable lines, without going off the rails:
+
+			🅰️ A – Across all domains, across all dimensions.
+			🅱️ B – Build the bridge between disciplines.
+			🅲 C – Connect concepts. Cross categories.
+			🅳 D – Discover what's missing—and what’s not supposed to fit.
+			🅴 E – Every field has something to teach the others.
+			🅵 F – Find the patterns across the partitions.
+			🅶 G – Gather the fragments. Make them speak.
+			🅷 H – Hold knowledge lightly. Cross it freely.
+			🅸 I – Intersections generate insight.
+			🅹 J – Join the dots—across silos, not just within them.
+			🅺 K – Knowledge is better when it overlaps.
+			🅻 L – Layer perspectives. Reveal structure.
+			🅼 M – Map the mess. Learn the logic.
+			🅽 N – No field stands alone.
+			🅾️ O – One chart. Many conversations.
+			🅿️ P – Push past your discipline’s edge.
+			🆀 Q – Question the categories. Question the gaps.
+			🆁 R – Relate everything to everything else, intentionally.
+			🆂 S – Structure your thinking. Then break it open.
+			🆃 T – Translate across fields, not just within them.
+			🆄 U – Unify what fragmentation left behind.
+			🆅 V – View knowledge through a multidimensional lens.
+			🆆 W – Weave together what the textbooks separate.
+			🆇 X – X is the unknown. This is where to look.
+			🆈 Y – Your field is not an island.
+			🆉 Z – Zoom out until the grid starts to speak.
+			Let me know if you want an A–Z set with a different tone (e.g. ironic, poetic, meme-ified) or focused around a single metaphor (navigation, ecosystems, language, architecture, etc.).
+			*/}
 		</div>
 	);
 }
