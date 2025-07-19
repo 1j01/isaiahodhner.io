@@ -14,6 +14,11 @@ const taglines = [
 	<>Building knowledge until we reach heaven.</>,
 	// Referencing the fall of the Tower of Babel
 	<>We've forgotten how to talk to each other. But now we have so many more ways to do so.</>,
+	// Referencing the fall of the Tower of Babel
+	<>With fields like so many languages, we've forgotten how to talk to each other. But we have so many new ways to communicate.</>,
+	// Referencing the fall of the Tower of Babel, AI autocompleted
+	<>With fields of study like so many languages, we need a Rosetta Stone.</>,
+	<>A Rosetta stone of the Sciences.</>,
 	// lame, AI-inspired
 	<>Bridges, not barriers.</>,
 	// lame, AI-generated
@@ -131,8 +136,10 @@ const taglines = [
 	// lame, AI-generated
 	<>Where Knowledge Takes Shape.</>,
 	<>Patterns in the patterns.</>,
-	<>Constellations of concepts.{/* [curated] */}
-	</>,
+	<>Constellations of concepts.{/* [curated] */}</>,
+	// haha, stupid play on "analog-to-digital converter" / "digital-to-analog converter"
+	// (it could of course be converted to analog by printing, making it a "digital-to-analog converted analog-to-analog converter")
+	<>A digital analog-to-analog converter.</>,
 	/* Some more AI-generated taglines:
 		
 		You said:
