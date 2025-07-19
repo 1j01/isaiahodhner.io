@@ -20,6 +20,10 @@ class TableOfBabelPage extends React.Component {
 				.TableOfBabel th {
 					text-align: center;
 					vertical-align: center;
+					border: 1px solid #ccc;
+				}
+				.TableOfBabel table {
+					border-collapse: collapse;
 				}
 				.TableOfBabelPage > h2 {
 					text-align: center;

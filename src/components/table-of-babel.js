@@ -37,7 +37,7 @@ class TableOfBabel extends React.Component {
 			}
 		}
 		return <div className="TableOfBabel">
-			<div style={{ background: "#eee", color: "#444", padding: "0.5rem", borderRadius: "8px" }}>
+			<div style={{ background: "#eee", color: "#444", padding: "0.5rem", borderRadius: "8px", marginBottom: "1rem" }}>
 				⚠️
 				Note: this is PLACEHOLDER content, generated with ChatGPT with the prompt "build an interdisciplinary reference chart, a table of structures/phenomena on one axis and fields of study/engineering (or media) on the other"
 				followed by the prompt "Every cell should be a full sentence description of a concrete example" for the descriptions.
