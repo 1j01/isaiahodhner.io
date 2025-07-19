@@ -133,6 +133,8 @@ const taglines = [
 	<>Zero to infinity in one table.</>,
 	// idk bro (bad)
 	<>You can’t spell “wisdom” without “do”... or “is”.</>,
+	// idk bro (bad)
+	<>You can’t spell “wisdom” without “is-dom”... which sounds like “is-dumb”.</>,
 	// lame, AI-generated
 	<>Where Knowledge Takes Shape.</>,
 	<>Patterns in the patterns.</>,
@@ -146,6 +148,9 @@ const taglines = [
 	// Don't think about this too much, spatially
 	<>Heightening humanity's horizons.</>,
 	<>Humanity's horizons, highlighted.</>,
+	<>Humanity's horizons, heralded.</>,
+	<>Heralding humanity's horizons.</>,
+	<>Intersectional insight. Instantly.</>
 	/* Some more AI-generated taglines:
 		
 		You said:
@@ -224,7 +229,7 @@ const taglines = [
 // TODO: make it randomly spin to select a tagline when clicked
 // TODO: pick and choose the best ones to show, or at least disable the duds
 export default function TableOfBabelTagline() {
-	const [ index, setIndex ] = React.useState(0);
+	const [index, setIndex] = React.useState(0);
 	return (
 		<div className="TableOfBabelTagline" onClick={() => {
 			setIndex((index + 1) % taglines.length);
