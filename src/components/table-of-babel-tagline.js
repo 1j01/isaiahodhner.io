@@ -211,10 +211,13 @@ const taglines = [
 // TODO: make it randomly spin to select a tagline when clicked
 // TODO: pick and choose the best ones to show, or at least disable the duds
 export default function TableOfBabelTagline() {
+	const [ index, setIndex ] = React.useState(0);
 	return (
-		<div className="taglines">
+		<div className="taglines" onClick={() => {
+			setIndex((index + 1) % taglines.length);
+		}} style={{ cursor: "pointer" }}>
 			<div className="tagline">
-				{taglines[0]}
+				{taglines[index]}
 			</div>
 		</div>
 	);
