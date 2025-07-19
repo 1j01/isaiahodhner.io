@@ -2,703 +2,820 @@
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Physics",
-		"description": "Quantum waves, EM spectrum",
+		"title": "Quantum waves, EM spectrum",
+		"description": "The oscillation of a pendulum demonstrates classical mechanical waves.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Biology",
-		"description": "Neural oscillations",
+		"title": "Neural oscillations",
+		"description": "Neurons exhibit oscillatory activity such as alpha brain waves.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Computer Science",
-		"description": "Signal processing",
+		"title": "Signal processing",
+		"description": "A fast Fourier transform is used to analyze audio waveforms in digital signal processing.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Architecture",
-		"description": "Acoustics in design",
+		"title": "Acoustics in design",
+		"description": "Suspended ceilings are designed to dampen sound wave oscillations in concert halls.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Media/Art",
-		"description": "Sound design, rhythm",
+		"title": "Sound design, rhythm",
+		"description": "Sound designers manipulate sine and square waves to create synthesized audio.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Sociology",
-		"description": "Crowd dynamics",
+		"title": "Crowd dynamics",
+		"description": "Stadium chants spread as rhythmic waves through crowds.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Psychology",
-		"description": "Brain rhythms",
+		"title": "Brain rhythms",
+		"description": "Exposure to rhythmic stimuli can entrain mood and attention.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Mathematics",
-		"description": "Fourier analysis",
+		"title": "Fourier analysis",
+		"description": "Fourier series represent periodic functions through infinite trigonometric sums.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Waveforms / Oscillations",
 		"domain": "Engineering",
-		"description": "Electrical, mechanical",
+		"title": "Electrical, mechanical",
+		"description": "Mechanical engineers analyze vibrational patterns in car suspension systems.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Physics",
-		"description": "Thermodynamic systems",
+		"title": "Thermodynamic systems",
+		"description": "A thermostat uses negative feedback to regulate temperature.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Biology",
-		"description": "Homeostasis",
+		"title": "Homeostasis",
+		"description": "Hormonal regulation like insulin release is controlled by feedback loops.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Computer Science",
-		"description": "Control systems, AI",
+		"title": "Control systems, AI",
+		"description": "Machine learning models adjust weights through backpropagation, a form of feedback.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Architecture",
-		"description": "Responsive environments",
+		"title": "Responsive environments",
+		"description": "Smart buildings use sensor feedback to adjust lighting and ventilation.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Media/Art",
-		"description": "Narrative recursion",
+		"title": "Narrative recursion",
+		"description": "Interactive installations respond to viewer actions in real time.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Sociology",
-		"description": "Social systems",
+		"title": "Social systems",
+		"description": "Bureaucracies self-regulate through policy feedback mechanisms.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Psychology",
-		"description": "Behavioral conditioning",
+		"title": "Behavioral conditioning",
+		"description": "Behavioral therapy uses feedback to reinforce desired actions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Mathematics",
-		"description": "Dynamical systems",
+		"title": "Dynamical systems",
+		"description": "Control theory models dynamic systems using feedback loops.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Feedback Loops",
 		"domain": "Engineering",
-		"description": "Systems, robotics",
+		"title": "Systems, robotics",
+		"description": "Industrial systems use feedback control in process automation.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Physics",
-		"description": "Particle interactions",
+		"title": "Particle interactions",
+		"description": "Electrical circuits are modeled as networks of resistors and capacitors.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Biology",
-		"description": "Neural networks",
+		"title": "Neural networks",
+		"description": "Neural networks in the brain transmit signals through interconnected neurons.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Computer Science",
-		"description": "Graph theory, internet",
+		"title": "Graph theory, internet",
+		"description": "The internet is represented as a graph of nodes and edges in routing algorithms.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Architecture",
-		"description": "Circulation routes",
+		"title": "Circulation routes",
+		"description": "Circulation paths in airports are designed using spatial network analysis.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Media/Art",
-		"description": "Network aesthetics",
+		"title": "Network aesthetics",
+		"description": "Visual artists create network-based data visualizations.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Sociology",
-		"description": "Social networks",
+		"title": "Social networks",
+		"description": "Social network analysis maps relationships and power dynamics.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Psychology",
-		"description": "Cognitive models",
+		"title": "Cognitive models",
+		"description": "Memory retrieval is modeled as activation across associative networks.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Mathematics",
-		"description": "Topology, combinatorics",
+		"title": "Topology, combinatorics",
+		"description": "Graph theory studies nodes and edges in mathematical structures.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Networks / Graphs",
 		"domain": "Engineering",
-		"description": "Information, civil",
+		"title": "Information, civil",
+		"description": "Engineers use fault-tolerant networks in communications systems.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Physics",
-		"description": "Chaos theory",
+		"title": "Chaos theory",
+		"description": "Snowflakes exhibit self-similar fractal geometry at different scales.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Biology",
-		"description": "Morphogenesis",
+		"title": "Morphogenesis",
+		"description": "Fern leaves replicate fractal growth patterns through cellular development.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Computer Science",
-		"description": "Recursive algorithms",
+		"title": "Recursive algorithms",
+		"description": "Fractal compression algorithms reduce image sizes using recursive structures.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Architecture",
-		"description": "Parametric design",
+		"title": "Parametric design",
+		"description": "Fractal-based facade designs repeat geometric motifs at multiple levels.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Media/Art",
-		"description": "Visual patterns",
+		"title": "Visual patterns",
+		"description": "Fractal animations visualize recursive processes in generative art.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Sociology",
-		"description": "Cultural memes",
+		"title": "Cultural memes",
+		"description": "Urban sprawl shows fractal-like expansion patterns.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Psychology",
-		"description": "Perceptual scaling",
+		"title": "Perceptual scaling",
+		"description": "Visual perception is sensitive to self-similar patterns in natural scenes.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Mathematics",
-		"description": "Fractal geometry",
+		"title": "Fractal geometry",
+		"description": "Mandelbrot sets model complex recursive geometries.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Fractals / Self-Similarity",
 		"domain": "Engineering",
-		"description": "Signal compression",
+		"title": "Signal compression",
+		"description": "Signal engineers analyze self-similar noise in communications.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Physics",
-		"description": "Harmonic oscillators",
+		"title": "Harmonic oscillators",
+		"description": "A bridge collapsing from synchronized footfalls shows mechanical resonance.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Biology",
-		"description": "Circadian rhythms",
+		"title": "Circadian rhythms",
+		"description": "Fireflies synchronize flashing in group mating displays.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Computer Science",
-		"description": "Clock synchronization",
+		"title": "Clock synchronization",
+		"description": "Distributed databases use time protocols to synchronize clocks.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Architecture",
-		"description": "Structural resonance",
+		"title": "Structural resonance",
+		"description": "Auditorium acoustics are tuned to enhance vocal resonance.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Media/Art",
-		"description": "Sound design",
+		"title": "Sound design",
+		"description": "Musical scores build emotional impact using harmonic resonance.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Sociology",
-		"description": "Collective action",
+		"title": "Collective action",
+		"description": "Protest movements can synchronize actions across cities.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Psychology",
-		"description": "Emotional entrainment",
+		"title": "Emotional entrainment",
+		"description": "Group activities like clapping or dancing induce emotional synchrony.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Mathematics",
-		"description": "Complex systems",
+		"title": "Complex systems",
+		"description": "Differential equations model systems reaching resonance conditions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Resonance / Synchronization",
 		"domain": "Engineering",
-		"description": "Mechanical, acoustical",
+		"title": "Mechanical, acoustical",
+		"description": "Engineers tune engines to reduce harmful vibrational resonance.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Physics",
-		"description": "Phase transitions",
+		"title": "Phase transitions",
+		"description": "Gas particles show emergent pressure without centralized control.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Biology",
-		"description": "Swarm behavior",
+		"title": "Swarm behavior",
+		"description": "Ant colonies build complex structures from simple local behaviors.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Computer Science",
-		"description": "Cellular automata",
+		"title": "Cellular automata",
+		"description": "Conway's Game of Life simulates emergent behavior from simple rules.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Architecture",
-		"description": "Generative design",
+		"title": "Generative design",
+		"description": "Emergent forms in parametric design result from algorithmic variation.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Media/Art",
-		"description": "Emergent narrative",
+		"title": "Emergent narrative",
+		"description": "Improvisational theatre builds narrative from spontaneous interaction.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Sociology",
-		"description": "Group behavior",
+		"title": "Group behavior",
+		"description": "Social norms emerge from repeated interactions among individuals.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Psychology",
-		"description": "Intuition, gestalt",
+		"title": "Intuition, gestalt",
+		"description": "Gestalt psychology explains how perceptions emerge from visual inputs.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Mathematics",
-		"description": "Complexity theory",
+		"title": "Complexity theory",
+		"description": "Cellular automata show emergent complexity from local rules.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Emergence",
 		"domain": "Engineering",
-		"description": "Adaptive systems",
+		"title": "Adaptive systems",
+		"description": "Swarm robotics uses simple unit behavior to achieve coordinated tasks.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Physics",
-		"description": "Thermodynamics",
+		"title": "Thermodynamics",
+		"description": "Heat flow increases entropy in closed physical systems.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Biology",
-		"description": "Genetic drift",
+		"title": "Genetic drift",
+		"description": "DNA replication introduces mutations increasing genetic entropy.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Computer Science",
-		"description": "Cryptography, data loss",
+		"title": "Cryptography, data loss",
+		"description": "Random number generators simulate entropy for encryption.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Architecture",
-		"description": "Material decay",
+		"title": "Material decay",
+		"description": "Time and wear introduce entropy into material building elements.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Media/Art",
-		"description": "Abstract representation",
+		"title": "Abstract representation",
+		"description": "Artists use entropy to represent decay and chaos in installations.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Sociology",
-		"description": "Social chaos",
+		"title": "Social chaos",
+		"description": "Social unrest increases when institutions fail to manage disorder.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Psychology",
-		"description": "Cognitive overload",
+		"title": "Cognitive overload",
+		"description": "High cognitive load results in reduced attention and increased error.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Mathematics",
-		"description": "Information theory",
+		"title": "Information theory",
+		"description": "Entropy quantifies disorder in probability distributions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Entropy / Disorder",
 		"domain": "Engineering",
-		"description": "Thermodynamic systems",
+		"title": "Thermodynamic systems",
+		"description": "Communication systems measure signal degradation via entropy.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Physics",
-		"description": "Forces, stress",
+		"title": "Forces, stress",
+		"description": "Trusses distribute tension and compression forces in bridges.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Biology",
-		"description": "Musculoskeletal systems",
+		"title": "Musculoskeletal systems",
+		"description": "Tendons and bones manage tensile and compressive biological loads.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Computer Science",
-		"description": "Data load balancing",
+		"title": "Data load balancing",
+		"description": "Load balancing in distributed systems reduces computational tension.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Architecture",
-		"description": "Structural loads",
+		"title": "Structural loads",
+		"description": "Arches use compression to support structural loads.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Media/Art",
-		"description": "Visual metaphor",
+		"title": "Visual metaphor",
+		"description": "Sculptors manipulate physical tension to express emotional states.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Sociology",
-		"description": "Social pressure",
+		"title": "Social pressure",
+		"description": "Social hierarchies produce tension between classes.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Psychology",
-		"description": "Mental stress",
+		"title": "Mental stress",
+		"description": "Chronic stress is studied as prolonged psychological tension.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Mathematics",
-		"description": "Vector mechanics",
+		"title": "Vector mechanics",
+		"description": "Vectors represent compressive and tensile force directions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Tension / Compression",
 		"domain": "Engineering",
-		"description": "Civil, mechanical",
+		"title": "Civil, mechanical",
+		"description": "Structural engineers model material limits under stress loads.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Physics",
-		"description": "Fluid dynamics",
+		"title": "Fluid dynamics",
+		"description": "Fluids in motion obey the Navier-Stokes equations.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Biology",
-		"description": "Blood flow",
+		"title": "Blood flow",
+		"description": "Blood circulates through the body in regulated flow paths.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Computer Science",
-		"description": "Data streaming",
+		"title": "Data streaming",
+		"description": "Streamed video data flows through network pipelines.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Architecture",
-		"description": "Airflow & plumbing",
+		"title": "Airflow & plumbing",
+		"description": "Wind tunnels test airflow over architectural models.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Media/Art",
-		"description": "Cinematic motion",
+		"title": "Cinematic motion",
+		"description": "Cinematographers use camera flow to guide viewer focus.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Sociology",
-		"description": "Migration, mobility",
+		"title": "Migration, mobility",
+		"description": "Urban migration creates flows of people and resources.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Psychology",
-		"description": "Stream of consciousness",
+		"title": "Stream of consciousness",
+		"description": "Stream-of-consciousness writing mimics unfiltered mental flow.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Mathematics",
-		"description": "Navier-Stokes equations",
+		"title": "Navier-Stokes equations",
+		"description": "Vector fields model flow in mathematical simulations.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Flow / Fluidity",
 		"domain": "Engineering",
-		"description": "Chemical, aerospace",
+		"title": "Chemical, aerospace",
+		"description": "Chemical engineers optimize fluid flow in reactors and pipelines.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Physics",
-		"description": "Quantum barriers",
+		"title": "Quantum barriers",
+		"description": "Quantum particles reflect or tunnel based on boundary conditions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Biology",
-		"description": "Skin, membranes",
+		"title": "Skin, membranes",
+		"description": "Cell membranes act as biological boundaries controlling flow.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Computer Science",
-		"description": "Interface design",
+		"title": "Interface design",
+		"description": "API boundaries define access between software modules.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Architecture",
-		"description": "Zoning, façade",
+		"title": "Zoning, façade",
+		"description": "Curtain walls create physical and visual architectural boundaries.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Media/Art",
-		"description": "Framing in art",
+		"title": "Framing in art",
+		"description": "Film framing establishes narrative boundaries.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Sociology",
-		"description": "Inclusion/exclusion",
+		"title": "Inclusion/exclusion",
+		"description": "Borders define social inclusion and exclusion.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Psychology",
-		"description": "Personal space",
+		"title": "Personal space",
+		"description": "Personal space sets psychological boundaries in interactions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Mathematics",
-		"description": "Set theory",
+		"title": "Set theory",
+		"description": "Boundary value problems determine solution constraints.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Boundary Conditions",
 		"domain": "Engineering",
-		"description": "Material sciences",
+		"title": "Material sciences",
+		"description": "Engineers define boundary constraints in finite element models.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Physics",
-		"description": "Brownian motion",
+		"title": "Brownian motion",
+		"description": "Thermal noise affects precision in electronic circuits.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Biology",
-		"description": "Genetic mutations",
+		"title": "Genetic mutations",
+		"description": "Genetic mutations arise from random biochemical events.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Computer Science",
-		"description": "Randomized algorithms",
+		"title": "Randomized algorithms",
+		"description": "Randomized algorithms improve efficiency in large datasets.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Architecture",
-		"description": "Ambient soundscapes",
+		"title": "Ambient soundscapes",
+		"description": "Ambient noise levels influence spatial layout in urban design.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Media/Art",
-		"description": "Glitch aesthetics",
+		"title": "Glitch aesthetics",
+		"description": "Glitch art embraces randomness and digital noise.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Sociology",
-		"description": "Disruptive events",
+		"title": "Disruptive events",
+		"description": "Riots represent unpredictable social noise within order.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Psychology",
-		"description": "Attention fluctuation",
+		"title": "Attention fluctuation",
+		"description": "Random distraction interferes with focused cognitive processes.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Mathematics",
-		"description": "Probability theory",
+		"title": "Probability theory",
+		"description": "Stochastic models describe systems influenced by randomness.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Noise / Randomness",
 		"domain": "Engineering",
-		"description": "Communications, control",
+		"title": "Communications, control",
+		"description": "Control engineers design filters to suppress signal noise.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Physics",
-		"description": "Solid-liquid-gas",
+		"title": "Solid-liquid-gas",
+		"description": "Water transitions from liquid to gas at boiling point.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Biology",
-		"description": "Metamorphosis",
+		"title": "Metamorphosis",
+		"description": "Caterpillars undergo metamorphosis into butterflies.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Computer Science",
-		"description": "Software versioning",
+		"title": "Software versioning",
+		"description": "Operating systems shift between modes during updates.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Architecture",
-		"description": "Material transitions",
+		"title": "Material transitions",
+		"description": "Thermochromic materials change color with phase change.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Media/Art",
-		"description": "Story arcs",
+		"title": "Story arcs",
+		"description": "Storylines shift tone to mark narrative transition.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Sociology",
-		"description": "Social revolution",
+		"title": "Social revolution",
+		"description": "Revolutions signify abrupt social phase transitions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Psychology",
-		"description": "Identity shifts",
+		"title": "Identity shifts",
+		"description": "Identity crises reflect psychological transitions.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Mathematics",
-		"description": "State transitions",
+		"title": "State transitions",
+		"description": "Phase transition models capture critical point behavior.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Phase Change / Transition",
 		"domain": "Engineering",
-		"description": "Thermodynamics",
+		"title": "Thermodynamics",
+		"description": "Materials engineers develop alloys with specific transition points.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Physics",
-		"description": "Particle physics",
+		"title": "Particle physics",
+		"description": "Crystals display symmetry in atomic lattice structures.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Biology",
-		"description": "Organism structure",
+		"title": "Organism structure",
+		"description": "Bilateral symmetry is a common trait in animal morphology.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Computer Science",
-		"description": "Symmetric encryption",
+		"title": "Symmetric encryption",
+		"description": "Encryption keys rely on symmetric and asymmetric cryptography.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Architecture",
-		"description": "Aesthetic balance",
+		"title": "Aesthetic balance",
+		"description": "Symmetrical building layouts guide human movement.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Media/Art",
-		"description": "Composition rules",
+		"title": "Composition rules",
+		"description": "Symmetry is used in visual art to imply harmony or disruption.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Sociology",
-		"description": "Power relations",
+		"title": "Power relations",
+		"description": "Asymmetric power relations define social stratification.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Psychology",
-		"description": "Facial recognition",
+		"title": "Facial recognition",
+		"description": "Facial asymmetry is linked to emotional expression perception.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Mathematics",
-		"description": "Group theory",
+		"title": "Group theory",
+		"description": "Group theory categorizes symmetrical transformations.",
 		"contributor": "AI"
 	},
 	{
 		"pattern": "Symmetry / Asymmetry",
 		"domain": "Engineering",
-		"description": "Structural analysis",
+		"title": "Structural analysis",
+		"description": "Aerospace engineers design wings with controlled asymmetry.",
 		"contributor": "AI"
 	}
 ]

@@ -18,6 +18,7 @@ class TableOfBabelEntry extends React.Component {
 		const className = "TableOfBabelEntry" + (isAI ? " ai-generated" : "");
 		return <div className={className} title={isAI ? "This is an AI-generated suggestion. It may be inane, irrelevant, or incorrect." : ""}>
 			{/* TODO: optional image */}
+			<h3>{this.props.title}</h3>
 			<p>{this.props.description}</p>
 		</div>;
 	}
@@ -38,7 +39,8 @@ class TableOfBabel extends React.Component {
 		return <div className="TableOfBabel">
 			<div>
 				Note: this is PLACEHOLDER content, generated with ChatGPT with the prompt "build an interdisciplinary reference chart, a table of structures/phenomena on one axis and fields of study/engineering (or media) on the other"
-				and while some of the content may be meaningful, much of it may be nonsensical or inane.
+				followed by the prompt "Every cell should be a full sentence description of a concrete example" for the descriptions.
+				While some of the content may be meaningful, much of it may be nonsensical or inane.
 				(I think "Networks / Graphs" makes more sense as as medium than as a phenomenon, for example, and that's just in the <i>structure</i> of the table.)
 			</div>
 			
