@@ -62,10 +62,10 @@ class TableOfBabelPage extends React.Component {
 			</div>
 			<TableOfBabel />
 			<p>
-				The columns are domains (fields of study, or types of media), and the rows are patterns (structures or phenomena).
+				The columns are domains (fields of study or types of media), and the rows are patterns (structures or phenomena).
 			</p>
 			<p>
-				At the intersection of each domain and pattern are examples of expressions (instances or applications) of that pattern in that domain.
+				At the intersection of each domain and pattern are examples of instances (applications or expressions) of that pattern in that domain.
 			</p>
 			<p>
 				Principles:
