@@ -35,6 +35,14 @@ class TableOfBabelPage extends React.Component {
 					text-align: center;
 					font-size: 1.2rem;
 				}
+				.TableOfBabelPage .references {
+					font-size: 0.8rem;
+				}
+				.TableOfBabelPage .flavor {
+					font-size: 0.8rem;
+					color: #666;
+					font-style: italic;
+				}
 				.TableOfBabelPage .ai-generated {
 					color: #888;
 				}

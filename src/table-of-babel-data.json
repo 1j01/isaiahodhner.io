@@ -86,6 +86,15 @@
 		},
 		{
 			"pattern": "Braess' Paradox",
+			"domain": "Architecture",
+			"TODO:domain": "Civil Engineering?",
+			"title": "Damping Vibrations",
+			"description": "A mechanism that contracts when pulled can toggle between two natural frequencies when resonating with one of them. This could be used to avoid catastrophic vibrations in a bridge, although it may be overly complex.",
+			"link": "https://youtu.be/-QTkPfq7w1A?t=1233",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "Braess' Paradox",
 			"domain": "Computer Science",
 			"TODO:domain": "Finance? Economics? Sociology?",
 			"title": "Blockchain networks",

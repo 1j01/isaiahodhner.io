@@ -14,12 +14,15 @@ import data from "../table-of-babel-data.json";
  */
 class TableOfBabelEntry extends React.Component {
 	render() {
-		const isAI = this.props.contributor === "AI";
+		const entry = this.props;
+		const isAI = entry.contributor === "AI";
 		const className = "TableOfBabelEntry" + (isAI ? " ai-generated" : "");
 		return <div className={className} title={isAI ? "This is an AI-generated suggestion. It may be inane, irrelevant, or incorrect." : ""}>
-			{/* TODO: optional image */}
-			<h3>{this.props.title}</h3>
-			<p>{this.props.description}</p>
+			{entry.image && <img src={entry.image} alt="" />}
+			<h3>{entry.title}</h3>
+			<p>{entry.description}</p>
+			{entry.link && <p className="references"><a href={entry.link} target="_blank" rel="noopener noreferrer">Reference</a></p>}
+			{entry.flavor && <p className="flavor">{entry.flavor}</p>}
 		</div>;
 	}
 }
@@ -39,7 +42,7 @@ class TableOfBabel extends React.Component {
 		return <div className="TableOfBabel">
 			<div style={{ background: "#eee", color: "#444", padding: "0.5rem", borderRadius: "8px", marginBottom: "1rem" }}>
 				⚠️
-				Note: this is PLACEHOLDER content, generated with ChatGPT with the prompt "build an interdisciplinary reference chart, a table of structures/phenomena on one axis and fields of study/engineering (or media) on the other"
+				Note: this is mainly PLACEHOLDER content, generated with ChatGPT with the prompt "build an interdisciplinary reference chart, a table of structures/phenomena on one axis and fields of study/engineering (or media) on the other"
 				followed by the prompt "Every cell should be a full sentence description of a concrete example" for the descriptions.
 				While some of the content may be meaningful, much of it may be nonsensical or inane.
 				(I think "Networks / Graphs" makes more sense as as medium than as a phenomenon, for example, and that's just in the <i>structure</i> of the table.)
