@@ -140,6 +140,12 @@ const taglines = [
 	// haha, stupid play on "analog-to-digital converter" / "digital-to-analog converter"
 	// (it could of course be converted to analog by printing, making it a "digital-to-analog converted analog-to-analog converter")
 	<>A digital analog-to-analog converter.</>,
+	<>Extend your horizons.</>,
+	<>Extend your horizons. Multi-dimensionally.</>,
+	<>Humanity's horizons.</>,
+	// Don't think about this too much, spatially
+	<>Heightening humanity's horizons.</>,
+	<>Humanity's horizons, highlighted.</>,
 	/* Some more AI-generated taglines:
 		
 		You said:
