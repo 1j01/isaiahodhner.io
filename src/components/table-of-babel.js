@@ -50,21 +50,21 @@ class TableOfBabel extends React.Component {
 					<tr>
 						{/* TODO: try diagonal split to describe both rows and columns? using arrows for now */}
 						{/* <th>→ Domain (Field / Medium)<br/>↓ Pattern (Structure / Phenomenon)</th> */}
-						<th>→ Domain<br/>↓ Pattern</th>
-						{domains.map((domain, i) => <th key={i}>{domain}</th>)}
+						<th key="row-column-label">→ Domain<br/>↓ Pattern</th>
+						{domains.map((domain, i) => <th key={domain}>{domain}</th>)}
 					</tr>
 				</thead>
 				<tbody>
 					{/* TODO: vet this AI-generated code, it looks really inefficient */}
 					{patterns.map((pattern, i) => (
-						<tr key={i}>
-							<td className="table-row-label"><strong>{pattern}</strong></td>
+						<tr key={pattern}>
+							<td key="row-label" className="table-row-label"><strong>{pattern}</strong></td>
 							{domains.map((domain, j) => (
-								<td key={j}>
+								<td key={domain}>
 									{data
 										.filter(entry => entry.pattern === pattern && entry.domain === domain)
 										.map(entry => (
-											<TableOfBabelEntry key={entry.id} {...entry} />
+											<TableOfBabelEntry key={entry.title} {...entry} />
 										))}
 								</td>
 							))}
