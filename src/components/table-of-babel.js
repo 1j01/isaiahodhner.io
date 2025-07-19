@@ -48,8 +48,9 @@ class TableOfBabel extends React.Component {
 			<table>
 				<thead>
 					<tr>
-						{/* TODO: diagonal split to describe both rows and columns? */}
-						<th>Domain (Field / Medium)</th>
+						{/* TODO: try diagonal split to describe both rows and columns? using arrows for now */}
+						{/* <th>→ Domain (Field / Medium)<br/>↓ Pattern (Structure / Phenomenon)</th> */}
+						<th>→ Domain<br/>↓ Pattern</th>
 						{domains.map((domain, i) => <th key={i}>{domain}</th>)}
 					</tr>
 				</thead>
