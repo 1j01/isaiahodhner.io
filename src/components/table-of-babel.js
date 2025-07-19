@@ -37,7 +37,8 @@ class TableOfBabel extends React.Component {
 			}
 		}
 		return <div className="TableOfBabel">
-			<div>
+			<div style={{ background: "#eee", color: "#444", padding: "0.5rem", borderRadius: "8px" }}>
+				⚠️
 				Note: this is PLACEHOLDER content, generated with ChatGPT with the prompt "build an interdisciplinary reference chart, a table of structures/phenomena on one axis and fields of study/engineering (or media) on the other"
 				followed by the prompt "Every cell should be a full sentence description of a concrete example" for the descriptions.
 				While some of the content may be meaningful, much of it may be nonsensical or inane.
@@ -56,7 +57,7 @@ class TableOfBabel extends React.Component {
 					{/* TODO: vet this AI-generated code, it looks really inefficient */}
 					{patterns.map((pattern, i) => (
 						<tr key={i}>
-							<td><strong>{pattern}</strong></td>
+							<td className="table-row-label"><strong>{pattern}</strong></td>
 							{domains.map((domain, j) => (
 								<td key={j}>
 									{data

@@ -213,7 +213,7 @@ const taglines = [
 export default function TableOfBabelTagline() {
 	const [ index, setIndex ] = React.useState(0);
 	return (
-		<div className="taglines" onClick={() => {
+		<div className="TableOfBabelTagline" onClick={() => {
 			setIndex((index + 1) % taglines.length);
 		}} style={{ cursor: "pointer" }}>
 			<div className="tagline">
