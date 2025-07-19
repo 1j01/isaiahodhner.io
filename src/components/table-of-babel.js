@@ -18,7 +18,7 @@ class TableOfBabelEntry extends React.Component {
 		const isAI = entry.contributor === "AI";
 		const className = "TableOfBabelEntry" + (isAI ? " ai-generated" : "");
 		return <div className={className} title={isAI ? "This is an AI-generated suggestion. It may be inane, irrelevant, or incorrect." : ""}>
-			{entry.image && <img src={entry.image} alt="" />}
+			{entry.image && <img className="image" src={entry.image} alt="" />}
 			<h3>{entry.title}</h3>
 			<p>{entry.description}</p>
 			{entry.link && <p className="references"><a href={entry.link} target="_blank" rel="noopener noreferrer">Reference</a></p>}

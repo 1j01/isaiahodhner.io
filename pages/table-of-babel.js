@@ -43,6 +43,9 @@ class TableOfBabelPage extends React.Component {
 					color: #666;
 					font-style: italic;
 				}
+				.TableOfBabelPage .image {
+					max-width: 100%;
+				}
 				.TableOfBabelPage .ai-generated {
 					color: #888;
 				}
