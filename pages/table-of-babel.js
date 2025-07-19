@@ -31,6 +31,9 @@ class TableOfBabelPage extends React.Component {
 					text-align: center;
 					font-size: 1.2rem;
 				}
+				.TableOfBabelPage .ai-generated {
+					color: #888;
+				}
 			`}</style>
 			<h2>Table of Babel</h2>
 			<div className="tob-header">
