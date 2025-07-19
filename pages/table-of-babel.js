@@ -35,6 +35,9 @@ class TableOfBabelPage extends React.Component {
 					text-align: center;
 					font-size: 1.2rem;
 				}
+				.TableOfBabelEntry:not(:last-child) {
+					border-bottom: 1px solid #ccc;
+				}
 				.TableOfBabelPage .references {
 					font-size: 0.8rem;
 				}
