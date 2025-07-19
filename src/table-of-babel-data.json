@@ -1,0 +1,704 @@
+[
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Physics",
+		"description": "Quantum waves, EM spectrum",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Biology",
+		"description": "Neural oscillations",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Computer Science",
+		"description": "Signal processing",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Architecture",
+		"description": "Acoustics in design",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Media/Art",
+		"description": "Sound design, rhythm",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Sociology",
+		"description": "Crowd dynamics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Psychology",
+		"description": "Brain rhythms",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Mathematics",
+		"description": "Fourier analysis",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Waveforms / Oscillations",
+		"domain": "Engineering",
+		"description": "Electrical, mechanical",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Physics",
+		"description": "Thermodynamic systems",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Biology",
+		"description": "Homeostasis",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Computer Science",
+		"description": "Control systems, AI",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Architecture",
+		"description": "Responsive environments",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Media/Art",
+		"description": "Narrative recursion",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Sociology",
+		"description": "Social systems",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Psychology",
+		"description": "Behavioral conditioning",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Mathematics",
+		"description": "Dynamical systems",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Feedback Loops",
+		"domain": "Engineering",
+		"description": "Systems, robotics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Physics",
+		"description": "Particle interactions",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Biology",
+		"description": "Neural networks",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Computer Science",
+		"description": "Graph theory, internet",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Architecture",
+		"description": "Circulation routes",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Media/Art",
+		"description": "Network aesthetics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Sociology",
+		"description": "Social networks",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Psychology",
+		"description": "Cognitive models",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Mathematics",
+		"description": "Topology, combinatorics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Networks / Graphs",
+		"domain": "Engineering",
+		"description": "Information, civil",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Physics",
+		"description": "Chaos theory",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Biology",
+		"description": "Morphogenesis",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Computer Science",
+		"description": "Recursive algorithms",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Architecture",
+		"description": "Parametric design",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Media/Art",
+		"description": "Visual patterns",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Sociology",
+		"description": "Cultural memes",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Psychology",
+		"description": "Perceptual scaling",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Mathematics",
+		"description": "Fractal geometry",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Fractals / Self-Similarity",
+		"domain": "Engineering",
+		"description": "Signal compression",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Physics",
+		"description": "Harmonic oscillators",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Biology",
+		"description": "Circadian rhythms",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Computer Science",
+		"description": "Clock synchronization",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Architecture",
+		"description": "Structural resonance",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Media/Art",
+		"description": "Sound design",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Sociology",
+		"description": "Collective action",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Psychology",
+		"description": "Emotional entrainment",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Mathematics",
+		"description": "Complex systems",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Resonance / Synchronization",
+		"domain": "Engineering",
+		"description": "Mechanical, acoustical",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Physics",
+		"description": "Phase transitions",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Biology",
+		"description": "Swarm behavior",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Computer Science",
+		"description": "Cellular automata",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Architecture",
+		"description": "Generative design",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Media/Art",
+		"description": "Emergent narrative",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Sociology",
+		"description": "Group behavior",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Psychology",
+		"description": "Intuition, gestalt",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Mathematics",
+		"description": "Complexity theory",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Emergence",
+		"domain": "Engineering",
+		"description": "Adaptive systems",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Physics",
+		"description": "Thermodynamics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Biology",
+		"description": "Genetic drift",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Computer Science",
+		"description": "Cryptography, data loss",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Architecture",
+		"description": "Material decay",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Media/Art",
+		"description": "Abstract representation",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Sociology",
+		"description": "Social chaos",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Psychology",
+		"description": "Cognitive overload",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Mathematics",
+		"description": "Information theory",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Entropy / Disorder",
+		"domain": "Engineering",
+		"description": "Thermodynamic systems",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Physics",
+		"description": "Forces, stress",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Biology",
+		"description": "Musculoskeletal systems",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Computer Science",
+		"description": "Data load balancing",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Architecture",
+		"description": "Structural loads",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Media/Art",
+		"description": "Visual metaphor",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Sociology",
+		"description": "Social pressure",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Psychology",
+		"description": "Mental stress",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Mathematics",
+		"description": "Vector mechanics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Tension / Compression",
+		"domain": "Engineering",
+		"description": "Civil, mechanical",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Physics",
+		"description": "Fluid dynamics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Biology",
+		"description": "Blood flow",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Computer Science",
+		"description": "Data streaming",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Architecture",
+		"description": "Airflow & plumbing",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Media/Art",
+		"description": "Cinematic motion",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Sociology",
+		"description": "Migration, mobility",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Psychology",
+		"description": "Stream of consciousness",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Mathematics",
+		"description": "Navier-Stokes equations",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Flow / Fluidity",
+		"domain": "Engineering",
+		"description": "Chemical, aerospace",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Physics",
+		"description": "Quantum barriers",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Biology",
+		"description": "Skin, membranes",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Computer Science",
+		"description": "Interface design",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Architecture",
+		"description": "Zoning, façade",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Media/Art",
+		"description": "Framing in art",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Sociology",
+		"description": "Inclusion/exclusion",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Psychology",
+		"description": "Personal space",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Mathematics",
+		"description": "Set theory",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Boundary Conditions",
+		"domain": "Engineering",
+		"description": "Material sciences",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Physics",
+		"description": "Brownian motion",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Biology",
+		"description": "Genetic mutations",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Computer Science",
+		"description": "Randomized algorithms",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Architecture",
+		"description": "Ambient soundscapes",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Media/Art",
+		"description": "Glitch aesthetics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Sociology",
+		"description": "Disruptive events",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Psychology",
+		"description": "Attention fluctuation",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Mathematics",
+		"description": "Probability theory",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Noise / Randomness",
+		"domain": "Engineering",
+		"description": "Communications, control",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Physics",
+		"description": "Solid-liquid-gas",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Biology",
+		"description": "Metamorphosis",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Computer Science",
+		"description": "Software versioning",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Architecture",
+		"description": "Material transitions",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Media/Art",
+		"description": "Story arcs",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Sociology",
+		"description": "Social revolution",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Psychology",
+		"description": "Identity shifts",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Mathematics",
+		"description": "State transitions",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Phase Change / Transition",
+		"domain": "Engineering",
+		"description": "Thermodynamics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Physics",
+		"description": "Particle physics",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Biology",
+		"description": "Organism structure",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Computer Science",
+		"description": "Symmetric encryption",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Architecture",
+		"description": "Aesthetic balance",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Media/Art",
+		"description": "Composition rules",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Sociology",
+		"description": "Power relations",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Psychology",
+		"description": "Facial recognition",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Mathematics",
+		"description": "Group theory",
+		"contributor": "AI"
+	},
+	{
+		"pattern": "Symmetry / Asymmetry",
+		"domain": "Engineering",
+		"description": "Structural analysis",
+		"contributor": "AI"
+	}
+]
