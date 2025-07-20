@@ -1,2 +1,72 @@
 {
+	// .----------------------------.
+	// | Filtering                  |
+	// '----------------------------'
+	// This hides files from the file tree as well as search results.
+	"files.exclude": {
+		"**/node_modules": true,
+		"**/.next": true, // Next.js
+		"**/dist": true, // Reserved
+		"**/build": true, // Reserved
+		"**/out": true, // Reserved
+	},
+	// This affects Find In Files (Ctrl+Shift+F), Go To File (Ctrl+P), and Quick Search.
+	"search.exclude": {
+		"**/.next": true, // Next.js
+		"**/dist": true, // Reserved
+		"**/build": true, // Reserved
+		"**/lib": true, // Reserved
+		"**/out": true, // Reserved
+		"**/*.tsbuildinfo": true,
+		// The package lock files contain a lot of repetition, and are usually noise in search results.
+		// You can often search with `npm ls` if you want to check if a package is installed,
+		// and what depends on what.
+		"**/package-lock.json": true,
+	},
+	// Prevent accidental editing.
+	// This can always be overridden with the command "File: Toggle Active Editor Read-only in Session"
+	"files.readonlyInclude": {
+		// Next.js
+		".next/**": true,
+		// Reserved
+		"dist/**": true,
+		// Node.js
+		"node_modules/**": true,
+		"package-lock.json": true,
+		// Python
+		"lib/**": true,
+		"lib64/**": true,
+		".venv/**": true,
+		"venv/**": true,
+		".env/**": true,
+		"env/**": true,
+	},
+	// .----------------------------.
+	// | Formatting                 |
+	// '----------------------------'
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.formatOnSave": true,
+	// npm respects different indent styles, but always adds a newline at the end of package.json/package-lock.json,
+	// so this avoids ping-ponging changes in git.
+	"files.insertFinalNewline": true,
+	// Sort imports on save. Also removes unused imports.
+	"[typescript]": {
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "always"
+		}
+	},
+	"javascript.format.semicolons": "insert",
+	"typescript.format.semicolons": "insert",
+	// .----------------------------.
+	// | Theming                    |
+	// '----------------------------'
+	// "workbench.colorTheme": "Simple BW Dark",
+	// "workbench.iconTheme": "vs-minimal",
+	// .------------------------- - .
+	// | Uncategorised settings
+	// '------------------------- - .
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"markdown.validate.enabled": true,
 }
