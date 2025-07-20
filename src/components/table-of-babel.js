@@ -6,7 +6,7 @@ import * as React from "react";
  * @TODO: both domain and pattern could be hierarchical paths, or I guess IDs which could have external hierarchy relationships defined,
  * or I guess maybe tags (lists of IDs) so an entry could show up multiple places.
  */
-import data from "../table-of-babel-data.json";
+import data from "../table-of-babel-data";
 
 /**
  * An expression of some structure/phenomenon/pattern in some field/medium/domain.
