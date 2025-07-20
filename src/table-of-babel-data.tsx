@@ -120,6 +120,25 @@ const data: TOBData = {
 			"contributor": "1j01",
 		},
 		{
+			"pattern": "Braess' Paradox",
+			"domain": "Psychology",
+			"title": "Prisoner's Dilemma?",
+			"description": "In the Prisoner's Dilemma, cooperation may be better than betrayal, but betrayal is often chosen. I suppose this is related!",
+			"editorNote": "Adding this one off the cuff, not sure if it fits Braess' Paradox properly.",
+			"contributor": "1j01",
+		},
+		{
+			"pattern": "Symmetry / Asymmetry",
+			"domain": "Computer Science",
+			"title": "Symmetric drawing",
+			// "description": "Calling a drawing function twice, once with an inverted coordinate, easily gives mirror symmetry: plot(x, y); plot(-x, y);",
+			// "description": "Calling a function twice, once with an inverted coordinate, gives mirror symmetry: for side in [-1, 1]: plot(side * x, y);",
+			"description": "Calling a function twice, once with an inverted coordinate, gives mirror symmetry.",
+			"editorNote": "Might want to make rich text easier, but for now I've added the code as an SVG image with text.",
+			"image": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='60'><style>text{font-family:monospace;white-space:preserve}</style><text x='10' y='20' font-size='16'>for side in [-1, 1]:</text><text x='10' y='40' font-size='16'>  plot(side * x, y)</text></svg>",
+			"contributor": "1j01"
+		},
+		{
 			"pattern": "Waveforms / Oscillations",
 			"domain": "Physics",
 			"title": "Quantum waves, EM spectrum",
