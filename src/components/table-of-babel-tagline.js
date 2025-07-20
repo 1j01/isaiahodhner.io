@@ -150,7 +150,13 @@ const taglines = [
 	<>Humanity's horizons, highlighted.</>,
 	<>Humanity's horizons, heralded.</>,
 	<>Heralding humanity's horizons.</>,
-	<>Intersectional insight. Instantly.</>
+	<>Intersectional insight. Instantly.</>,
+	// meh, AI-generated
+	<>Inspiring interdisciplinary inquiry.</>,
+	// meh
+	<>Encyclopedic Hopscotch.</>,
+	// "MEH"
+	<>Multidisciplinary Encyclopedic Hopscotch. Or "MEH."</>,
 	/* Some more AI-generated taglines:
 		
 		You said:
