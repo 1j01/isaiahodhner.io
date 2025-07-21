@@ -4,15 +4,43 @@ const data: TOBData = {
 	"patternCategoryRelations": [
 		{
 			"sub": "Flip-Flop",
-			"super": "Logic Gate",
+			"super": "Computation Primitive",
 		},
 		{
 			"sub": "Transistor",
-			"super": "Logic Gate", // dubious
+			"super": "Computation Primitive",
 		},
 		{
 			"sub": "Logic Gate",
 			"super": "Computation Primitive",
+		},
+		{
+			"sub": "AND Gate",
+			"super": "Logic Gate",
+		},
+		{
+			"sub": "OR Gate",
+			"super": "Logic Gate",
+		},
+		{
+			"sub": "NOT Gate",
+			"super": "Logic Gate",
+		},
+		{
+			"sub": "XOR Gate",
+			"super": "Logic Gate",
+		},
+		{
+			"sub": "NOR Gate",
+			"super": "Logic Gate",
+		},
+		{
+			"sub": "XNOR Gate",
+			"super": "Logic Gate",
+		},
+		{
+			"sub": "NAND Gate",
+			"super": "Logic Gate",
 		},
 	],
 	"domainCategoryRelations": [
