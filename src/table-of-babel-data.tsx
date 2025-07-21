@@ -45,7 +45,11 @@ const data: TOBData = {
 		},
 		{
 			"sub": "Transistor",
-			"super": "Logic Gate",
+			"super": "Logic Gate", // dubious
+		},
+		{
+			"sub": "Logic Gate",
+			"super": "Computation Primitive",
 		},
 	],
 	"domainCategoryRelations": [
@@ -81,7 +85,7 @@ const data: TOBData = {
 	"entries": [
 		{
 			"pattern": "Braess' Paradox",
-			"domain": "Sociology", // TODO: "Road Networks"
+			"domain": "Road Networks",
 			"title": "Removing roads can improve traffic flow",
 			"description": "Braess' Paradox shows that adding roads can counterintuitively increase congestion. Closing roads can improve traffic flow.",
 			"flavor": "Yet another reason for Arthur Dent to be unsatisfied with 'you've got to build bypasses'.",
@@ -89,7 +93,7 @@ const data: TOBData = {
 		},
 		{
 			"pattern": "Braess' Paradox",
-			"domain": "Sociology", // TODO: "Sports"
+			"domain": "Sports",
 			"title": "Star Player Overreliance",
 			"description": "If all plays go through a star player, it may not be the fastest route to score?",
 			"editorNote": "Theoretical. Seems a little dubious at first glance. Maybe want a way to show varying degrees of proven-ness.",
@@ -97,7 +101,7 @@ const data: TOBData = {
 		},
 		{
 			"pattern": "Braess' Paradox",
-			"domain": "Physics", // TODO: "Springs"
+			"domain": "Springs",
 			"title": "Cutting a rope can lift a load",
 			"description": "Where you might expect cutting a rope to drop a load, simply stretching the slack ropes taut, it can actually lift it.",
 			"image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Braess-Paradoxon_der_Mechanik.svg",
@@ -105,7 +109,7 @@ const data: TOBData = {
 		},
 		{
 			"pattern": "Braess' Paradox",
-			"domain": "Physics", // TODO: "Electricity"
+			"domain": "Electricity",
 			"title": "Power Grid Stability",
 			"description": "Adding a path for electrons in a nano-scale network can reduce its conductance. Or adding new power lines can desynchronize the power grid.",
 			"editorNote": "Is this the same phenomenon at different scales? Or are there different relations to phase? Can I just ditch 'nano-scale' to describe both? Or should I include two entries?",
@@ -113,7 +117,7 @@ const data: TOBData = {
 		},
 		{
 			"pattern": "Braess' Paradox",
-			"domain": "Biology", // TODO: "Ecology"
+			"domain": "Ecology",
 			"title": "Doomed Species",
 			"description": "Removal of a doomed species could lead to the survival of other species.",
 			"editorNote": "Is this really Braess' Paradox? Or just basic competition? I guess the analogy is in the relation to the NETWORK of food chains... Parking this for now.",
