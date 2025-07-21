@@ -1,15 +1,30 @@
 
+/**
+ * Expresses a hierarchical relationship.
+ */
 export interface TOBCategoryRelation {
 	sub: string;
 	super: string;
 }
 
+/**
+ * Pointless structure that could just be multiple module exports.
+ * Holdover from storing data in a JSON file.
+ */
 export interface TOBData {
 	patternCategoryRelations: TOBCategoryRelation[];
 	domainCategoryRelations: TOBCategoryRelation[];
 	entries: TOBEntry[];
 }
 
+
+/**
+ * An entry with a defined domain (field/medium) and pattern (structure/phenomenon)
+ * 
+ * @TODO both domain and pattern could be hierarchical paths,
+ * or I guess IDs which could have external hierarchy relationships defined,
+ * or I guess maybe tags (lists of IDs) so an entry could show up multiple places...
+ */
 export interface TOBEntry {
 	pattern: string;
 	domain: string;

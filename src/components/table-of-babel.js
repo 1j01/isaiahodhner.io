@@ -1,11 +1,6 @@
 // import { ArrowDownIcon, ArrowUpIcon, XIcon, FilterIcon, FilterRemoveIcon } from "@primer/octicons-react";
 import * as React from "react";
 
-/**
- * Entries with a defined domain (field/medium) and pattern (structure/phenomenon)
- * @TODO: both domain and pattern could be hierarchical paths, or I guess IDs which could have external hierarchy relationships defined,
- * or I guess maybe tags (lists of IDs) so an entry could show up multiple places.
- */
 import data from "../table-of-babel-data";
 
 /**
