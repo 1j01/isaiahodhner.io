@@ -154,11 +154,19 @@ footer a {
 	text-decoration: none;
 }
 
-p {
+p,
+ul {
 	max-width: 70em;
 	margin: 16px auto;
-	padding: 0 16px;
 	text-align: left;
+}
+
+li {
+	margin: 0.5em 0;
+}
+
+p {
+	padding: 0 16px;
 }
 
 .octicon,
