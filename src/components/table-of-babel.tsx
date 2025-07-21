@@ -140,7 +140,7 @@ class TableOfBabel extends React.Component {
 				const cellRect = grid.get(key);
 				if (!cellRect) {
 					// throw new Error(`No cell rectangle defined for grid coordinate (${x}, ${y})`);
-					tds.push(<td key={key} >...</td>);
+					tds.push(<td key={key} ></td>);
 					continue;
 				}
 				if (cellRect.x !== x || cellRect.y !== y) {
