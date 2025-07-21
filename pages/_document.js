@@ -1,7 +1,10 @@
 // _document is only rendered on the server side and not on the client side
 // Event handlers like onClick can't be added to this file
 
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import DocumentOrModule, { Html, Head, Main, NextScript } from 'next/document';
+
+// console.log("_document.js", { Document, Html, Head, Main, NextScript });
+const Document = DocumentOrModule.default || DocumentOrModule; // "type": "module" in package.json is causing insane complications
 
 class MyDocument extends Document {
 	render() {

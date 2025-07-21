@@ -1,7 +1,9 @@
-module.exports = {
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
+export default {
 	output: 'export',
 	env: {
-		tileSizesByProjectRepoNameJSON: JSON.stringify(require("./src/get-tile-sizes-data")()),
+		tileSizesByProjectRepoNameJSON: JSON.stringify(require("./src/get-tile-sizes-data.cjs")()),
 	},
 	webpack(config) {
 		const fileLoaderRule = config.module.rules.find((rule) =>

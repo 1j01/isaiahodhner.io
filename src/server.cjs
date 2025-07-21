@@ -1,6 +1,6 @@
 const express = require('express');
 const next = require('next');
-const redirects = require('./redirects.js');
+const redirects = require('./redirects.cjs');
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
