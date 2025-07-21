@@ -21,6 +21,8 @@ class TableOfBabelPage extends React.Component {
 					text-align: center;
 					vertical-align: center;
 					border: 1px solid #ccc;
+					min-width: 100px;
+					height: 50px;
 				}
 				.TableOfBabel td:empty {
 					background: #ffffff42;
