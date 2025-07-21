@@ -1,23 +1,23 @@
+import type { TOBCategoryNode, TOBCategoryRelation } from "./table-of-babel-types";
 
-export function parseCategories(relations, entryCategoryNames, rootName) {
-	const root = { name: rootName, subcategories: {}, spanSize: -1 };
-	const nodeByName = {};
+
+export function parseCategories(relations: TOBCategoryRelation[], entryCategoryNames: string[], rootName: string) {
+	const root: TOBCategoryNode = { name: rootName, subcategories: {}, spanSize: -1, subLayers: -1 };
+	const nodeByName: Record<string, TOBCategoryNode> = {};
 
 	// Add categories from relations
 	for (const relation of relations) {
 		if (!(relation.super in nodeByName)) {
-			nodeByName[relation.super] = { name: relation.super, subcategories: {}, spanSize: -1 };
+			nodeByName[relation.super] = { name: relation.super, subcategories: {}, spanSize: -1, subLayers: -1 };
 		}
-		nodeByName[relation.sub] = {
-			name: relation.sub, subcategories: {}, spanSize: -1
-		};
+		nodeByName[relation.sub] = { name: relation.sub, subcategories: {}, spanSize: -1, subLayers: -1 };
 	}
 
 	// Add categories from entries, that are not in the relations
 	// These will be assumed to be top-level categories
 	for (const categoryName of entryCategoryNames) {
 		if (!(categoryName in nodeByName)) {
-			nodeByName[categoryName] = { name: categoryName, subcategories: {}, spanSize: -1 };
+			nodeByName[categoryName] = { name: categoryName, subcategories: {}, spanSize: -1, subLayers: -1 };
 		}
 	}
 
@@ -73,19 +73,21 @@ export function parseCategories(relations, entryCategoryNames, rootName) {
 		}
 	}
 
-	// Calculate table span sizes, recursively
-	function calculateSpanSizes(node) {
+	// Calculate structural information needed for table display
+	function calculateStructuralProperties(node: TOBCategoryNode) {
 		const subcategories = Object.values(node.subcategories);
 		for (const subcategory of subcategories) {
-			calculateSpanSizes(subcategory);
+			calculateStructuralProperties(subcategory);
 		}
 		if (subcategories.length) {
 			node.spanSize = subcategories.reduce((sum, sub) => sum + sub.spanSize, 0);
+			node.subLayers = Math.max(...subcategories.map(sub => sub.subLayers)) + 1;
 		} else {
 			node.spanSize = 1;
+			node.subLayers = 0;
 		}
 	}
-	calculateSpanSizes(root);
+	calculateStructuralProperties(root);
 
 	return root;
 }

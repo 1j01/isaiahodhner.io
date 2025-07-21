@@ -1,7 +1,8 @@
 // import { ArrowDownIcon, ArrowUpIcon, XIcon, FilterIcon, FilterRemoveIcon } from "@primer/octicons-react";
 import * as React from "react";
 
-import data, { TOBEntry } from "../table-of-babel-data";
+import data from "../table-of-babel-data";
+import type { TOBEntry } from "../table-of-babel-types";
 // import { parseCategories } from "../table-of-babel-preprocessing";
 
 // const domains = parseCategories(data.domainCategoryRelations, data.entries.map(entry => entry.domain), "Domains (Types of Media / Fields of Study)");
