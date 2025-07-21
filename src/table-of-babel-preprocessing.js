@@ -76,12 +76,14 @@ export function parseCategories(relations, entryCategoryNames, rootName) {
 	// Calculate table span sizes, recursively
 	function calculateSpanSizes(node) {
 		const subcategories = Object.values(node.subcategories);
+		for (const subcategory of subcategories) {
+			calculateSpanSizes(subcategory);
+		}
 		if (subcategories.length) {
-			node.spanSize = subcategories.map(calculateSpanSizes).reduce((a, b) => a + b, 0);
+			node.spanSize = subcategories.reduce((sum, sub) => sum + sub.spanSize, 0);
 		} else {
 			node.spanSize = 1;
 		}
-		return node.spanSize;
 	}
 	calculateSpanSizes(root);
 
