@@ -2,13 +2,13 @@
 import * as React from "react";
 
 import data from "../table-of-babel-data";
-import type { TOBCellRect, TOBEntry } from "../table-of-babel-types";
-// import { parseCategories } from "../table-of-babel-preprocessing";
+import type { TOBCategoryNode, TOBCellRect, TOBEntry } from "../table-of-babel-types";
+import { parseCategories } from "../table-of-babel-preprocessing";
 
-// const domains = parseCategories(data.domainCategoryRelations, data.entries.map(entry => entry.domain), "Domains (Types of Media / Fields of Study)");
-// const patterns = parseCategories(data.patternCategoryRelations, data.entries.map(entry => entry.pattern), "Patterns (Structures / Phenomena)");
+const domains = parseCategories(data.domainCategoryRelations, data.entries.map(entry => entry.domain), "Domains (Types of Media / Fields of Study)");
+const patterns = parseCategories(data.patternCategoryRelations, data.entries.map(entry => entry.pattern), "Patterns (Structures / Phenomena)");
 
-// console.log({ domains, patterns });
+console.log({ domains, patterns });
 
 /**
  * An expression of some structure/phenomenon/pattern in some field/medium/domain.
@@ -33,6 +33,28 @@ class TableOfBabelEntry extends React.Component<TOBEntry> {
 const coordKey = (x, y) => `${x},${y}`;
 
 
+function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, cellRects: TOBCellRect[]) {
+	const spanSize = category.spanSize;
+	const subLayers = category.subLayers;
+
+	if (spanSize < 0 || subLayers < 0) {
+		throw new Error(`Category ${category.name} has invalid spanSize ${spanSize} or subLayers ${subLayers}`);
+	}
+
+	cellRects.push({
+		x,
+		y,
+		width: spanSize,
+		height: 1,
+		text: category.name,
+	});
+
+	let nextX = x;
+	for (const subcategory of Object.values(category.subcategories)) {
+		createCategoryLabels(subcategory, nextX, y + 1, cellRects);
+		nextX += subcategory.spanSize;
+	}
+}
 
 class TableOfBabel extends React.Component {
 	render() {
@@ -40,24 +62,14 @@ class TableOfBabel extends React.Component {
 		cellRects.push({
 			x: 0,
 			y: 0,
-			width: 2,
-			height: 2,
-			text: "Top left 2x2 cell",
+			width: patterns.subLayers,
+			height: domains.subLayers + 500, // placeholder until implementing row headers
+			text: "Patterns / Structures / Phenomena",
 		});
-		cellRects.push({
-			x: 2,
-			y: 0,
-			width: 1,
-			height: 2,
-			text: "Top right 1x2 cell",
-		});
-		cellRects.push({
-			x: 0,
-			y: 2,
-			width: 3,
-			height: 1,
-			text: "Bottom left 3x1 cell",
-		});
+		createCategoryLabels(domains, patterns.subLayers, 0, cellRects);
+
+
+
 		const grid = new Map<string, TOBCellRect>();
 		let gridWidth = 0;
 		let gridHeight = 0;
@@ -83,7 +95,9 @@ class TableOfBabel extends React.Component {
 				const key = coordKey(x, y);
 				const cellRect = grid.get(key);
 				if (!cellRect) {
-					throw new Error(`No cell rectangle defined for grid coordinate (${x}, ${y})`);
+					// throw new Error(`No cell rectangle defined for grid coordinate (${x}, ${y})`);
+					tds.push(<td key={key} >Empty</td>);
+					continue;
 				}
 				if (cellRect.x !== x || cellRect.y !== y) {
 					// Skip spanned cells
