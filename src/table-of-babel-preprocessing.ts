@@ -1,28 +1,9 @@
 import type { TOBCategoryNode, TOBCategoryRelation } from "./table-of-babel-types";
 
-
-export function parseCategories(relations: TOBCategoryRelation[], entryCategoryNames: string[], rootName: string) {
-	const root: TOBCategoryNode = { name: rootName, subcategories: {}, spanSize: -1, subLayers: -1 };
-	const nodeByName: Record<string, TOBCategoryNode> = {};
-
-	// Add categories from relations
-	for (const relation of relations) {
-		if (!(relation.super in nodeByName)) {
-			nodeByName[relation.super] = { name: relation.super, subcategories: {}, spanSize: -1, subLayers: -1 };
-		}
-		nodeByName[relation.sub] = { name: relation.sub, subcategories: {}, spanSize: -1, subLayers: -1 };
-	}
-
-	// Add categories from entries, that are not in the relations
-	// These will be assumed to be top-level categories
-	for (const categoryName of entryCategoryNames) {
-		if (!(categoryName in nodeByName)) {
-			nodeByName[categoryName] = { name: categoryName, subcategories: {}, spanSize: -1, subLayers: -1 };
-		}
-	}
+function detectCycles(relations: TOBCategoryRelation[], nodeByName: Record<string, TOBCategoryNode>) {
+	// (AI generated code)
 
 	// Build graph (for cycle detection)
-	// (AI generated code)
 	const adjacencyList = {};
 	for (const name in nodeByName) {
 		adjacencyList[name] = [];
@@ -32,7 +13,6 @@ export function parseCategories(relations: TOBCategoryRelation[], entryCategoryN
 	}
 
 	// Cycle detection using DFS
-	// (AI generated code)
 	const visited = new Set();
 	const stack = new Set();
 
@@ -55,6 +35,29 @@ export function parseCategories(relations: TOBCategoryRelation[], entryCategoryN
 			dfs(node);
 		}
 	}
+}
+
+export function parseCategories(relations: TOBCategoryRelation[], entryCategoryNames: string[], rootName: string) {
+	const root: TOBCategoryNode = { name: rootName, subcategories: {}, spanSize: -1, subLayers: -1 };
+	const nodeByName: Record<string, TOBCategoryNode> = {};
+
+	// Add categories from relations
+	for (const relation of relations) {
+		if (!(relation.super in nodeByName)) {
+			nodeByName[relation.super] = { name: relation.super, subcategories: {}, spanSize: -1, subLayers: -1 };
+		}
+		nodeByName[relation.sub] = { name: relation.sub, subcategories: {}, spanSize: -1, subLayers: -1 };
+	}
+
+	// Add categories from entries, that are not in the relations
+	// These will be assumed to be top-level categories
+	for (const categoryName of entryCategoryNames) {
+		if (!(categoryName in nodeByName)) {
+			nodeByName[categoryName] = { name: categoryName, subcategories: {}, spanSize: -1, subLayers: -1 };
+		}
+	}
+
+	detectCycles(relations, nodeByName);
 
 	// Build the tree structure
 	const nonTopLevel = new Set();
