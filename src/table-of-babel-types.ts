@@ -50,3 +50,12 @@ export interface TOBCategoryNode {
 	/** The number of layers of subcategories beneath this node. The formal term is "vertex height", but here it should be axis agnostic for clarity. */
 	subLayers: number;
 }
+
+export interface TOBCellRect {
+	x: number;
+	y: number;
+	width: number;
+	height: number;
+	// entries: TOBEntry[];
+	text: string;
+}

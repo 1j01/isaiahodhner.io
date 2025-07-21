@@ -2,7 +2,7 @@
 import * as React from "react";
 
 import data from "../table-of-babel-data";
-import type { TOBEntry } from "../table-of-babel-types";
+import type { TOBCellRect, TOBEntry } from "../table-of-babel-types";
 // import { parseCategories } from "../table-of-babel-preprocessing";
 
 // const domains = parseCategories(data.domainCategoryRelations, data.entries.map(entry => entry.domain), "Domains (Types of Media / Fields of Study)");
@@ -30,23 +30,72 @@ class TableOfBabelEntry extends React.Component<TOBEntry> {
 }
 
 // const entryKey = ({ pattern, domain }) => `${pattern} in ${domain}`;
-// const coordKey = (x, y) => `${x},${y}`;
+const coordKey = (x, y) => `${x},${y}`;
 
 
 
 class TableOfBabel extends React.Component {
 	render() {
-		const domains: string[] = [];
-		const patterns: string[] = [];
-		for (const entry of data.entries) {
-			if (!domains.includes(entry.domain)) {
-				domains.push(entry.domain);
-			}
-			if (!patterns.includes(entry.pattern)) {
-				patterns.push(entry.pattern);
+		const cellRects: TOBCellRect[] = [];
+		cellRects.push({
+			x: 0,
+			y: 0,
+			width: 2,
+			height: 2,
+			text: "Top left 2x2 cell",
+		});
+		cellRects.push({
+			x: 2,
+			y: 0,
+			width: 1,
+			height: 2,
+			text: "Top right 1x2 cell",
+		});
+		cellRects.push({
+			x: 0,
+			y: 2,
+			width: 3,
+			height: 1,
+			text: "Bottom left 3x1 cell",
+		});
+		const grid = new Map<string, TOBCellRect>();
+		let gridWidth = 0;
+		let gridHeight = 0;
+		for (const rect of cellRects) {
+			for (let y = rect.y; y < rect.y + rect.height; y++) {
+				for (let x = rect.x; x < rect.x + rect.width; x++) {
+					if (grid.has(coordKey(x, y))) {
+						throw new Error(`Grid at (${x}, ${y}) has overlapping cell rectangle definitions: ${JSON.stringify(grid.get(coordKey(x, y)))} and ${JSON.stringify(rect)}`);
+					}
+					grid.set(coordKey(x, y), rect);
+					gridWidth = Math.max(gridWidth, x + 1);
+					gridHeight = Math.max(gridHeight, y + 1);
+				}
 			}
 		}
-		// const grid = [];
+
+		// Note: numerical keys aren't great for rerendering
+		// TODO: semantically, should use th for headers, with scope="col" and scope="row"
+		const trs: React.ReactElement[] = [];
+		for (let y = 0; y < gridHeight; y++) {
+			const tds: React.ReactElement[] = [];
+			for (let x = 0; x < gridWidth; x++) {
+				const key = coordKey(x, y);
+				const cellRect = grid.get(key);
+				if (!cellRect) {
+					throw new Error(`No cell rectangle defined for grid coordinate (${x}, ${y})`);
+				}
+				if (cellRect.x !== x || cellRect.y !== y) {
+					// Skip spanned cells
+					continue;
+				}
+				tds.push(<td key={key} rowSpan={cellRect.height} colSpan={cellRect.width}>
+					{cellRect.text}
+				</td>);
+			}
+			trs.push(<tr key={y}>{tds}</tr>);
+		}
+
 		return <div className="TableOfBabel">
 			<div style={{ background: "#eee", color: "#444", padding: "0.5rem", borderRadius: "8px", marginBottom: "1rem" }}>
 				⚠️
@@ -57,30 +106,8 @@ class TableOfBabel extends React.Component {
 			</div>
 
 			<table>
-				<thead>
-					<tr>
-						{/* TODO: try diagonal split to describe both rows and columns? using arrows for now */}
-						{/* <th>→ Domain (Field / Medium)<br/>↓ Pattern (Structure / Phenomenon)</th> */}
-						<th key="row-column-label">→ Domain<br />↓ Pattern</th>
-						{domains.map((domain, i) => <th key={domain}>{domain}</th>)}
-					</tr>
-				</thead>
 				<tbody>
-					{/* TODO: vet this AI-generated code, it looks really inefficient */}
-					{patterns.map((pattern, i) => (
-						<tr key={pattern}>
-							<td key="row-label" className="table-row-label"><strong>{pattern}</strong></td>
-							{domains.map((domain, j) => (
-								<td key={domain}>
-									{data.entries
-										.filter(entry => entry.pattern === pattern && entry.domain === domain)
-										.map(entry => (
-											<TableOfBabelEntry key={entry.title} {...entry} />
-										))}
-								</td>
-							))}
-						</tr>
-					))}
+					{trs}
 				</tbody>
 			</table>
 		</div>;
