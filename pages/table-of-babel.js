@@ -22,6 +22,10 @@ class TableOfBabelPage extends React.Component {
 					vertical-align: center;
 					border: 1px solid #ccc;
 				}
+				.TableOfBabel td:empty {
+					background: #ffffff42;
+					border: 1px dashed #c8c7c7;
+				}
 				.TableOfBabel table {
 					border-collapse: collapse;
 				}
@@ -51,10 +55,6 @@ class TableOfBabelPage extends React.Component {
 				}
 				.TableOfBabelPage .ai-generated {
 					color: #888;
-				}
-				td:empty {
-					background: #ffffff42;
-					border: 1px dashed #c8c7c7;
 				}
 			`}</style>
 			<h2>Table of Babel</h2>
