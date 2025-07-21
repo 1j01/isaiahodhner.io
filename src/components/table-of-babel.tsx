@@ -72,12 +72,12 @@ class TableOfBabel extends React.Component {
 		cellRects.push({
 			x: 0,
 			y: 0,
-			width: patterns.subLayers,
-			height: domains.subLayers,
-			text: "Patterns / Structures / Phenomena",
+			width: patterns.subLayers + 1,
+			height: domains.subLayers + 1,
+			text: "GO SIT IN THE CORNER",
 		});
-		createCategoryLabels(domains, patterns.subLayers, 0, cellRects);
-		createCategoryLabels(patterns, domains.subLayers, 0, cellRects, true);
+		createCategoryLabels(domains, patterns.subLayers + 1, 0, cellRects);
+		createCategoryLabels(patterns, domains.subLayers + 1, 0, cellRects, true);
 
 
 
@@ -107,7 +107,7 @@ class TableOfBabel extends React.Component {
 				const cellRect = grid.get(key);
 				if (!cellRect) {
 					// throw new Error(`No cell rectangle defined for grid coordinate (${x}, ${y})`);
-					tds.push(<td key={key} >Empty</td>);
+					tds.push(<td key={key} >...</td>);
 					continue;
 				}
 				if (cellRect.x !== x || cellRect.y !== y) {
