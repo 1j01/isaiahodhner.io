@@ -53,7 +53,8 @@ function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, t
 		y,
 		width: spanSize,
 		height: Object.keys(category.subcategories).length ? 1 : totalLayers - y,
-		text: category.name
+		text: category.name,
+		headerScope: flipAxes ? "row" : "col",
 	};
 	if (flipAxes) {
 		[cellRect.x, cellRect.y] = [cellRect.y, cellRect.x];
@@ -133,7 +134,6 @@ class TableOfBabel extends React.Component {
 		}
 
 		// Note: numerical keys aren't great for rerendering
-		// TODO: semantically, should use th for headers, with scope="col" and scope="row"
 		const trs: React.ReactElement[] = [];
 		for (let y = 0; y < gridHeight; y++) {
 			const tds: React.ReactElement[] = [];
@@ -149,9 +149,18 @@ class TableOfBabel extends React.Component {
 					// Skip spanned cells
 					continue;
 				}
-				tds.push(<td key={key} rowSpan={cellRect.height} colSpan={cellRect.width}>
-					{cellRect.text}
-				</td>);
+				const isHeader = Boolean(cellRect.headerScope);
+				const CellTag = isHeader ? "th" : "td";
+				tds.push(
+					<CellTag
+						key={key}
+						rowSpan={cellRect.height}
+						colSpan={cellRect.width}
+						scope={isHeader ? cellRect.headerScope : undefined}
+					>
+						{cellRect.text}
+					</CellTag>
+				);
 			}
 			trs.push(<tr key={y}>{tds}</tr>);
 		}

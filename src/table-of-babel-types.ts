@@ -57,6 +57,6 @@ export interface TOBCellRect {
 	y: number;
 	width: number;
 	height: number;
-	// entries: TOBEntry[];
 	text: ReactElement | string;
+	headerScope?: "row" | "col";
 }
