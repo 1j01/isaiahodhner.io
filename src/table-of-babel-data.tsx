@@ -138,6 +138,70 @@ const data: TOBData = {
 			"contributor": "1j01",
 		},
 		{
+			"pattern": "Flip-Flop",
+			"domain": "Fluid Dynamics",
+			"title": "Fluidic oscillator/amplifier",
+			"description": "The central chamber creates eddies that flow naturally into outputs, but this flow can be essentially toggled by a small input flow.",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Fluidicamplifier.svg/330px-Fluidicamplifier.svg.png",
+			"link": "https://en.wikipedia.org/wiki/Fluidics#Components",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "Transistor",
+			"domain": "Fluid Dynamics",
+			"title": "Fluidic amplifier",
+			"description": "The central chamber creates eddies that flow naturally into outputs, in proportion to inputs that influence the direction of the flow.",
+			// TODO: clearer image (could crop this and remove the background)
+			"image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6E_Qidj73rdXh6m6kBe84aFCsYSFoFfDACe_cZyc5SCyNwby1EEsbVDMRzGPh2h6qnQo9b5zBjWL58OH98ArtwcjY6WMA4grjBv2IYiTkFcUBnYcEB1DlpWQC5WGH-sl1USv7e6-tnaQ/s1600/popularfluidic.png",
+			// "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Fluidicamplifier.svg/330px-Fluidicamplifier.svg.png",
+			"link": "https://en.wikipedia.org/wiki/Fluidics#Components",
+			"contributor": "1j01"
+		},
+		{
+			// TODO: separate entries for each gate
+			// maybe even a physics simulation of the gates?
+			"pattern": "Logic Gate",
+			"domain": "Fluid Dynamics",
+			"title": "Fluidic logic gates",
+			"description": "",
+			"image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXbRRK9aRVb-9-emctjCJnubaz1u5Ltce5ejFPvCsQA2WTgVtOhNrFdUsAAW0OtFvxs0EPkWZTk4JjSvMj4KdI7ilwnKbBpnkPNDjkmJh_Ne5lUpSUuy4Gjd5WzL_BfWlU9o6v6c5MRTc/s1600/fluid+logic+bowles.jpg",
+			// Image source isn't the best reference...
+			"link": "https://nummolt.blogspot.com/2016/05/fluidic-computers-logic-gates.html",
+			"contributor": "1j01"
+		},
+		{
+			// TODO: separate entries for each gate
+			// maybe even a physics simulation of the gates?
+			"pattern": "Logic Gate",
+			"domain": "Light",
+			"title": "Photonic logic gates",
+			"description": "",
+			"image": "https://www.spiedigitallibrary.org/ContentImages/Journals/OPEGAR/62/1/010901/WebImages/OE_62_1_010901_f013.png",
+			// not a logic gate, but a better image of the physical structure (array of nano-scale rods)
+			// "image": "https://www.spiedigitallibrary.org/ContentImages/Journals/OPEGAR/62/1/010901/FigureImages/OE_62_1_010901_f011.png",
+			"contributor": "1j01"
+		},
+		{
+			// TODO: separate entries for each gate
+			// maybe with interactive 3D models? a little three.js action? people have recreated Minecraft in three.js in multiple projects at least enough to DISPLAY redstone
+			"pattern": "Logic Gate",
+			"domain": "Minecraft",
+			"title": "Redstone Logic Gates",
+			"description": "",
+			// hotlinking not allowed on wikia
+			// don't wanna just bring the image into the repo without checking for a license
+			// "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0f/Compact-Redstone-Logic-Circuits.jpg/revision/latest?cb=20210728173647",
+			// ah, from the image gallery I found the original source, which is hotlinkable
+			"image": "https://i.redd.it/7xr9outg17z41.jpg",
+			"link": "https://minecraft.fandom.com/wiki/Redstone_circuits/Logic",
+			// A nice diagram and extensive tutorial:
+			// "image": "https://raw.githubusercontent.com/NewCaledoniaDevTeam/MountainsGuide/6bdee25a9010faae141746039198444934c7304d/docs/redstone/images/logic_circuit/logic_gates.png",
+			// "link": "https://newcaledoniadevteam.github.io/MountainsGuide/redstone/",
+			// TODO: allow multiple references per entry
+			// (should they be inline in text btw?)
+			"contributor": "1j01"
+		},
+		{
 			"pattern": "NOT Gate",
 			"domain": "Electricity",
 			"title": "NOT Gate",
@@ -191,6 +255,62 @@ const data: TOBData = {
 			"title": "XOR Gate",
 			"description": "",
 			"image": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "NOT Gate",
+			"domain": "Mathematics",
+			"title": "Negation",
+			"description": "",
+			"image": "https://wikimedia.org/api/rest_v1/media/math/render/svg/92efef0e89bdc77f6a848764195ef5b9d9bfcc6a",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "AND Gate",
+			"domain": "Mathematics",
+			"title": "Conjunction",
+			"description": "",
+			"image": "https://wikimedia.org/api/rest_v1/media/math/render/svg/75a90e903f21f11a0f4ab3caca1e6943ba7a9849",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "NAND Gate",
+			"domain": "Mathematics",
+			"title": "Non-conjunction",
+			"description": "",
+			"image": "https://wikimedia.org/api/rest_v1/media/math/render/svg/225f35bb78e90b9126458f1bc6bf1ed3f0724bbf",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "OR Gate",
+			"domain": "Mathematics",
+			"title": "Disjunction",
+			"description": "",
+			"image": "https://wikimedia.org/api/rest_v1/media/math/render/svg/4279cdbd3cb8ec4c3423065d9a7d83a82cfc89e3",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "NOR Gate",
+			"domain": "Mathematics",
+			"title": "Non-disjunction",
+			"description": "",
+			"image": "https://wikimedia.org/api/rest_v1/media/math/render/svg/08840f8e2022f127fc459d801a8f8ce93f65f55a",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "XNOR Gate",
+			"domain": "Mathematics",
+			"title": "Equivalence",
+			"description": "",
+			"image": "https://wikimedia.org/api/rest_v1/media/math/render/svg/6a925c0f94e91b108609068c5ceae7c671db84d9",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "XOR Gate",
+			"domain": "Mathematics",
+			"title": "Non-equivalence",
+			"description": "",
+			"image": "https://wikimedia.org/api/rest_v1/media/math/render/svg/f0512d6bdd29ff000dea0bf68b853618dcaabc3e",
 			"contributor": "1j01"
 		},
 		{
