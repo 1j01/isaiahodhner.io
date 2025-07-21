@@ -33,25 +33,35 @@ class TableOfBabelEntry extends React.Component<TOBEntry> {
 const coordKey = (x, y) => `${x},${y}`;
 
 
-function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, cellRects: TOBCellRect[]) {
+function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, cellRects: TOBCellRect[], flipAxes = false) {
 	const spanSize = category.spanSize;
 	const subLayers = category.subLayers;
 
-	if (spanSize < 0 || subLayers < 0) {
+	if (spanSize < 1 || subLayers < 0) {
 		throw new Error(`Category ${category.name} has invalid spanSize ${spanSize} or subLayers ${subLayers}`);
 	}
 
-	cellRects.push({
-		x,
-		y,
-		width: spanSize,
-		height: 1,
-		text: category.name,
-	});
+	if (flipAxes) {
+		cellRects.push({
+			y: x,
+			x: y,
+			height: spanSize,
+			width: 1,
+			text: category.name,
+		});
+	} else {
+		cellRects.push({
+			x,
+			y,
+			width: spanSize,
+			height: 1,
+			text: category.name,
+		});
+	}
 
 	let nextX = x;
 	for (const subcategory of Object.values(category.subcategories)) {
-		createCategoryLabels(subcategory, nextX, y + 1, cellRects);
+		createCategoryLabels(subcategory, nextX, y + 1, cellRects, flipAxes);
 		nextX += subcategory.spanSize;
 	}
 }
@@ -63,10 +73,11 @@ class TableOfBabel extends React.Component {
 			x: 0,
 			y: 0,
 			width: patterns.subLayers,
-			height: domains.subLayers + 500, // placeholder until implementing row headers
+			height: domains.subLayers,
 			text: "Patterns / Structures / Phenomena",
 		});
 		createCategoryLabels(domains, patterns.subLayers, 0, cellRects);
+		createCategoryLabels(patterns, domains.subLayers, 0, cellRects, true);
 
 
 
