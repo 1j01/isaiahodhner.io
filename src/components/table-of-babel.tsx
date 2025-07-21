@@ -78,7 +78,9 @@ class TableOfBabel extends React.Component {
 			y: 0,
 			width: patterns.subLayers + 1,
 			height: domains.subLayers + 1,
-			text: "GO SIT IN THE CORNER",
+			// text: "Table of Babel",
+			text: <>→ Domain (Field / Medium)<br /><br />↓ Pattern (Structure / Phenomenon)</>,
+			// text: <><div style={{ textAlign: "right" }}>→ Domain (Field / Medium)</div><div>↓ Pattern (Structure / Phenomenon)</div></>,
 		});
 		createCategoryLabels(domains, patterns.subLayers + 1, 0, domains.subLayers + 1, false, cellRects, cellRectsByCategory);
 		createCategoryLabels(patterns, domains.subLayers + 1, 0, patterns.subLayers + 1, true, cellRects, cellRectsByCategory);
