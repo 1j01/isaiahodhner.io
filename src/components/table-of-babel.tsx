@@ -32,6 +32,13 @@ class TableOfBabelEntry extends React.Component<TOBEntry> {
 // const entryKey = ({ pattern, domain }) => `${pattern} in ${domain}`;
 const coordKey = (x, y) => `${x},${y}`;
 
+function overlaps(a: TOBCellRect, b: TOBCellRect): boolean {
+	return a.x < b.x + b.width && a.x + a.width > b.x && a.y < b.y + b.height && a.y + a.height > b.y;
+}
+
+function rectsEqual(a: TOBCellRect, b: TOBCellRect): boolean {
+	return a.x === b.x && a.y === b.y && a.width === b.width && a.height === b.height;
+}
 
 function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, totalLayers: number, flipAxes = false, cellRects: TOBCellRect[], cellRectsByCategory: Record<string, TOBCellRect> = {}) {
 	const spanSize = category.spanSize;
@@ -90,11 +97,21 @@ class TableOfBabel extends React.Component {
 				// text: entry.title,
 				text: <TableOfBabelEntry {...entry} />
 			};
-			cellRects.push(cellRect);
 			// TODO: I might need to create "Other" categories before I can coherently layout the entries,
 			// if there are any entries categorized directly under a super-category for which there are also entries for subcategories
-			// For now, I'm just showing one entry total...
-			break;
+			const overlappingCell = cellRects.find(rect => overlaps(rect, cellRect));
+			if (overlappingCell) {
+				if (rectsEqual(overlappingCell, cellRect)) {
+					overlappingCell.text = (<>
+						{overlappingCell.text}
+						{cellRect.text}
+					</>);
+				} else {
+					throw new Error(`Cell rectangle for entry overlaps with existing cell rectangle. Existing: ${JSON.stringify(overlappingCell)} vs New: ${JSON.stringify(cellRect)}`);
+				}
+			} else {
+				cellRects.push(cellRect);
+			}
 		}
 
 		const grid = new Map<string, TOBCellRect>();
