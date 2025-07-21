@@ -21,7 +21,9 @@
 		"url": "https://github.com/1j01/isaiahodhner.io/issues"
 	},
 	"private": true,
+	"type": "module",
 	"scripts": {
+		"test": "mocha --loader=ts-node/esm \"test/**/*.{ts,js}\"",
 		"dev": "node src/server.js",
 		"build": "next build",
 		"deploy": "next build && firebase deploy",
@@ -33,9 +35,12 @@
 		"@react-three/drei": "^10.0.7",
 		"@react-three/fiber": "^9.1.2",
 		"@svgr/webpack": "^8.1.0",
+		"chai": "^5.2.1",
 		"coffeescript": "^2.7.0",
 		"glob": "^8.0.3",
-		"three": "^0.176.0"
+		"mocha": "^11.7.1",
+		"three": "^0.176.0",
+		"ts-node": "^10.9.2"
 	},
 	"optionalGlobalDependencies": {
 		"gm": "^1.23.1",

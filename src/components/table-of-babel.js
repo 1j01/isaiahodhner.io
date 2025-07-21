@@ -2,6 +2,12 @@
 import * as React from "react";
 
 import data from "../table-of-babel-data";
+// import { parseCategories } from "../table-of-babel-preprocessing";
+
+// const domains = parseCategories(data.domainCategoryRelations, data.entries.map(entry => entry.domain), "Domains (Types of Media / Fields of Study)");
+// const patterns = parseCategories(data.patternCategoryRelations, data.entries.map(entry => entry.pattern), "Patterns (Structures / Phenomena)");
+
+// console.log({ domains, patterns });
 
 /**
  * An expression of some structure/phenomenon/pattern in some field/medium/domain.
@@ -22,6 +28,11 @@ class TableOfBabelEntry extends React.Component {
 	}
 }
 
+// const entryKey = ({ pattern, domain }) => `${pattern} in ${domain}`;
+// const coordKey = (x, y) => `${x},${y}`;
+
+
+
 class TableOfBabel extends React.Component {
 	render() {
 		const domains = [];
@@ -34,6 +45,7 @@ class TableOfBabel extends React.Component {
 				patterns.push(entry.pattern);
 			}
 		}
+		// const grid = [];
 		return <div className="TableOfBabel">
 			<div style={{ background: "#eee", color: "#444", padding: "0.5rem", borderRadius: "8px", marginBottom: "1rem" }}>
 				⚠️
