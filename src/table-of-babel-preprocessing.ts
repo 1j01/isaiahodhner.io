@@ -1,5 +1,9 @@
 import type { TOBCategoryNode, TOBCategoryRelation } from "./table-of-babel-types";
 
+/**
+ * For sanity, detect cycles in the category relations.
+ * Throws an error if a cycle is detected.
+ */
 function detectCycles(relations: TOBCategoryRelation[], nodeByName: Record<string, TOBCategoryNode>) {
 	// (AI generated code)
 
@@ -37,6 +41,26 @@ function detectCycles(relations: TOBCategoryRelation[], nodeByName: Record<strin
 	}
 }
 
+/**
+ * Calculate structural information needed for table display.
+ */
+function calculateStructuralProperties(node: TOBCategoryNode) {
+	const subcategories = Object.values(node.subcategories);
+	for (const subcategory of subcategories) {
+		calculateStructuralProperties(subcategory);
+	}
+	if (subcategories.length) {
+		node.spanSize = subcategories.reduce((sum, sub) => sum + sub.spanSize, 0);
+		node.subLayers = Math.max(...subcategories.map(sub => sub.subLayers)) + 1;
+	} else {
+		node.spanSize = 1;
+		node.subLayers = 0;
+	}
+}
+
+/**
+ * Calculate a category tree from the relations and entry category names.
+ */
 export function parseCategories(relations: TOBCategoryRelation[], entryCategoryNames: string[], rootName: string) {
 	const root: TOBCategoryNode = { name: rootName, subcategories: {}, spanSize: -1, subLayers: -1 };
 	const nodeByName: Record<string, TOBCategoryNode> = {};
@@ -76,20 +100,6 @@ export function parseCategories(relations: TOBCategoryRelation[], entryCategoryN
 		}
 	}
 
-	// Calculate structural information needed for table display
-	function calculateStructuralProperties(node: TOBCategoryNode) {
-		const subcategories = Object.values(node.subcategories);
-		for (const subcategory of subcategories) {
-			calculateStructuralProperties(subcategory);
-		}
-		if (subcategories.length) {
-			node.spanSize = subcategories.reduce((sum, sub) => sum + sub.spanSize, 0);
-			node.subLayers = Math.max(...subcategories.map(sub => sub.subLayers)) + 1;
-		} else {
-			node.spanSize = 1;
-			node.subLayers = 0;
-		}
-	}
 	calculateStructuralProperties(root);
 
 	return root;
