@@ -1,7 +1,7 @@
 // import { ArrowDownIcon, ArrowUpIcon, XIcon, FilterIcon, FilterRemoveIcon } from "@primer/octicons-react";
 import * as React from "react";
 
-import data from "../table-of-babel-data";
+import data, { TOBEntry } from "../table-of-babel-data";
 // import { parseCategories } from "../table-of-babel-preprocessing";
 
 // const domains = parseCategories(data.domainCategoryRelations, data.entries.map(entry => entry.domain), "Domains (Types of Media / Fields of Study)");
@@ -13,7 +13,7 @@ import data from "../table-of-babel-data";
  * An expression of some structure/phenomenon/pattern in some field/medium/domain.
  * There may be multiple of these entries per cell in the table, if there are multiple examples.
  */
-class TableOfBabelEntry extends React.Component {
+class TableOfBabelEntry extends React.Component<TOBEntry> {
 	render() {
 		const entry = this.props;
 		const isAI = entry.contributor === "AI";
@@ -35,8 +35,8 @@ class TableOfBabelEntry extends React.Component {
 
 class TableOfBabel extends React.Component {
 	render() {
-		const domains = [];
-		const patterns = [];
+		const domains: string[] = [];
+		const patterns: string[] = [];
 		for (const entry of data.entries) {
 			if (!domains.includes(entry.domain)) {
 				domains.push(entry.domain);
