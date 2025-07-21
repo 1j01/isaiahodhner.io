@@ -138,6 +138,62 @@ const data: TOBData = {
 			"contributor": "1j01",
 		},
 		{
+			"pattern": "NOT Gate",
+			"domain": "Electricity",
+			"title": "NOT Gate",
+			"description": "",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/NOT_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "AND Gate",
+			"domain": "Electricity",
+			"title": "AND Gate",
+			"description": "",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/6/64/AND_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "NAND Gate",
+			"domain": "Electricity",
+			"title": "NAND Gate",
+			"description": "",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/NAND_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "OR Gate",
+			"domain": "Electricity",
+			"title": "OR Gate",
+			"description": "",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/OR_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "NOR Gate",
+			"domain": "Electricity",
+			"title": "NOR Gate",
+			"description": "",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/NOR_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "XNOR Gate",
+			"domain": "Electricity",
+			"title": "XNOR Gate",
+			"description": "",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/XNOR_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
+			"pattern": "XOR Gate",
+			"domain": "Electricity",
+			"title": "XOR Gate",
+			"description": "",
+			"image": "https://upload.wikimedia.org/wikipedia/commons/0/01/XOR_ANSI.svg",
+			"contributor": "1j01"
+		},
+		{
 			"pattern": "Symmetry / Asymmetry",
 			"domain": "Computer Science",
 			"title": "Symmetric drawing",
