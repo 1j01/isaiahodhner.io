@@ -5,7 +5,7 @@ function HomePage() {
 		<h3 style={{ fontSize: "4em", fontWeight: "100", marginBottom: 0, textShadow: "0px 25px 70px #00a1ff" }}>
 			Hi, I'm Isaiah
 		</h3>
-		<h4 style={{ fontSize: "2em", fontWeight: "100"}}>
+		<h4 style={{ fontSize: "2em", fontWeight: "100" }}>
 			Programmer and pianist
 		</h4>
 		<h5 style={{ fontSize: "1rem", fontWeight: "normal", position: "relative", left: 89, top: -20 }}>

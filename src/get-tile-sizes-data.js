@@ -1,7 +1,7 @@
 const glob = require("glob");
 const path = require("path");
 
-const getTileSizesData = ()=> {
+const getTileSizesData = () => {
 	const tileSizesByProjectRepoName = {};
 	const tileImagesFolder = path.resolve("public/images/projects");
 	for (let img_path of glob.sync(path.join(tileImagesFolder, `*.png`))) {

@@ -1,52 +1,52 @@
 {
-  "name": "isaiahodhner.io",
-  "version": "2.0.0",
-  "author": "Isaiah Odhner",
-  "description": "My personal website and portfolio",
-  "keywords": [
-    "personal",
-    "portfolio",
-    "website",
-    "person",
-    "programmer",
-    "projects",
-    "Isaiah",
-    "Odhner"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/1j01/isaiahodhner.io.git"
-  },
-  "bugs": {
-    "url": "https://github.com/1j01/isaiahodhner.io/issues"
-  },
-  "private": true,
-  "scripts": {
-    "dev": "node src/server.js",
-    "build": "next build",
-    "deploy": "next build && firebase deploy",
-    "edit-image-tiled": "coffee edit-image-tiled.coffee",
-    "optimages": "coffee optimize-images.coffee"
-  },
-  "main": "index.html",
-  "devDependencies": {
-    "@react-three/drei": "^10.0.7",
-    "@react-three/fiber": "^9.1.2",
-    "@svgr/webpack": "^8.1.0",
-    "coffeescript": "^2.7.0",
-    "glob": "^8.0.3",
-    "three": "^0.176.0"
-  },
-  "optionalGlobalDependencies": {
-    "gm": "^1.23.1",
-    "optimage": "^0.2.0"
-  },
-  "dependencies": {
-    "@primer/octicons-react": "19.15.1",
-    "express": "^5.1.0",
-    "next": "15.3.1",
-    "prop-types": "^15.8.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
-  }
+	"name": "isaiahodhner.io",
+	"version": "2.0.0",
+	"author": "Isaiah Odhner",
+	"description": "My personal website and portfolio",
+	"keywords": [
+		"personal",
+		"portfolio",
+		"website",
+		"person",
+		"programmer",
+		"projects",
+		"Isaiah",
+		"Odhner"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/1j01/isaiahodhner.io.git"
+	},
+	"bugs": {
+		"url": "https://github.com/1j01/isaiahodhner.io/issues"
+	},
+	"private": true,
+	"scripts": {
+		"dev": "node src/server.js",
+		"build": "next build",
+		"deploy": "next build && firebase deploy",
+		"edit-image-tiled": "coffee edit-image-tiled.coffee",
+		"optimages": "coffee optimize-images.coffee"
+	},
+	"main": "index.html",
+	"devDependencies": {
+		"@react-three/drei": "^10.0.7",
+		"@react-three/fiber": "^9.1.2",
+		"@svgr/webpack": "^8.1.0",
+		"coffeescript": "^2.7.0",
+		"glob": "^8.0.3",
+		"three": "^0.176.0"
+	},
+	"optionalGlobalDependencies": {
+		"gm": "^1.23.1",
+		"optimage": "^0.2.0"
+	},
+	"dependencies": {
+		"@primer/octicons-react": "19.15.1",
+		"express": "^5.1.0",
+		"next": "15.3.1",
+		"prop-types": "^15.8.1",
+		"react": "19.1.0",
+		"react-dom": "19.1.0"
+	}
 }

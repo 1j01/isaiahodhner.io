@@ -7,7 +7,7 @@ import WhyTheDivide from "../src/components/why-the-divide";
 class ManifestoPage extends React.Component {
 	render() {
 		return <div className="Manifesto">
-			<Title pageName="Fearless Exploration"/>
+			<Title pageName="Fearless Exploration" />
 			<style>{`
 				.hide-on-manifesto-page {
 					display: none;
@@ -39,10 +39,10 @@ class ManifestoPage extends React.Component {
 					text-shadow: none;
 				}
 			`}</style>
-			<h2 className="principle big on-manifesto-page" style={{position: "relative"}}>
+			<h2 className="principle big on-manifesto-page" style={{ position: "relative" }}>
 				<span className="word">FEARLESS</span>{" "}
 				<span className="word">EXPLORATION</span>{" "}
-				<aside style={{fontSize: "1rem", marginTop: "2rem", opacity: 0.5}}>
+				<aside style={{ fontSize: "1rem", marginTop: "2rem", opacity: 0.5 }}>
 					(you can select the text in this header, even tho it's a drawing)
 				</aside>
 			</h2>
@@ -68,7 +68,7 @@ class ManifestoPage extends React.Component {
 				And a partial 3D version of the poster:
 			</p>
 			<div className="poster">
-				<WhyTheDivide/>
+				<WhyTheDivide />
 			</div>
 			{/* <div className="textual-page-content" style={{ textAlign: "left" }}>
 				<p>

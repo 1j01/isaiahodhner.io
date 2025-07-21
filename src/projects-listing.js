@@ -2,7 +2,7 @@ import { RepoIcon } from "@primer/octicons-react";
 import * as React from "react";
 const tileSizesByProjectRepoName = JSON.parse(process.env.tileSizesByProjectRepoNameJSON);
 
-const parseSize = (size)=> size.split("x").map(Number);
+const parseSize = (size) => size.split("x").map(Number);
 
 class ProjectsListing extends React.Component {
 	render() {
@@ -23,8 +23,8 @@ class ProjectsListing extends React.Component {
 				} else {
 					sizes = tileSizesByProjectRepoName[project.repo_name] || ["1x1"];
 				}
-				const bigness = (size)=> parseSize(size).reduce(((a, b)=> a * b), 1);
-				sizes.sort((a, b)=> bigness(a) - bigness(b));
+				const bigness = (size) => parseSize(size).reduce(((a, b) => a * b), 1);
+				sizes.sort((a, b) => bigness(a) - bigness(b));
 
 				return <article
 					key={project.repo_name}
@@ -34,10 +34,10 @@ class ProjectsListing extends React.Component {
 					data-sizes={sizes}
 				>
 					<a href={url} itemProp="url">
-						<img itemProp="image" width="256" height="256" src={image_url}/>
+						<img itemProp="image" width="256" height="256" src={image_url} />
 					</a>
 					<header itemProp="name">
-						<a href={repo_url} className="repo" title="View repository on GitHub"><RepoIcon/></a>
+						<a href={repo_url} className="repo" title="View repository on GitHub"><RepoIcon /></a>
 						<span>{project.title}</span>
 						{" " /* prevent double click selecting across header+footer as a single word */}
 					</header>
@@ -131,7 +131,7 @@ class ProjectsListing extends React.Component {
 			debug(`${tiles_per_row} tiles per row`);
 
 			const articles = Array.from(document.querySelectorAll("article"));
-			debug({articles});
+			debug({ articles });
 
 			debug("let's find a layout");
 			debug("can we have everything at max size?"); // assuming the last size in the array is the biggest
@@ -188,7 +188,7 @@ class ProjectsListing extends React.Component {
 				const [w, h] = layout[i];
 				article.resize(w, h);
 			}
-		}
+		};
 		find_a_layout();
 
 		// @TODO: dynamically (or statically) apply a maximum site width?

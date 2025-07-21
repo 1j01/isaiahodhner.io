@@ -19,7 +19,7 @@ import fearlessExplorationStrokeData from "./fearless-exploration-stroke-data";
 // TODO: Redraw the text with a tablet rather than a mouse?
 
 const initDoodle = () => {
-	const choose = a=> a[~~(Math.random() * a.length)];
+	const choose = a => a[~~(Math.random() * a.length)];
 
 	const canvas = document.createElement("canvas");
 	const ctx = canvas.getContext("2d");
@@ -35,7 +35,7 @@ const initDoodle = () => {
 	// the MultiMedium thing is mostly just getting in the way at this point
 	// I'd rather control the drawing entirely
 	// but instead I'm collecting contexts
-	MultiMedium.drawStrokes = function(strokes, ctx, scale){
+	MultiMedium.drawStrokes = function (strokes, ctx, scale) {
 		let color, end_x, end_y, point, points, stroke;
 		if (scale == null) { scale = 1; }
 		const weight = ctx.lineWidth;
@@ -50,13 +50,13 @@ const initDoodle = () => {
 			ctx.strokeStyle = color;
 			ctx.beginPath();
 			ctx.translate(0, -3);
-			for ({points} of strokes) {
-				ctx.moveTo(points[0].x*scale, points[0].y*scale);
-				if (points.length === 1) { ctx.lineTo(points[0].x*scale, (points[0].y*scale)+0.01); }
+			for ({ points } of strokes) {
+				ctx.moveTo(points[0].x * scale, points[0].y * scale);
+				if (points.length === 1) { ctx.lineTo(points[0].x * scale, (points[0].y * scale) + 0.01); }
 				for (point of points) {
 					ctx.lineTo(
-						(point.x * scale) + ((((Math.random() * 2) - 1) * weight)/2),
-						(point.y * scale) + ((((Math.random() * 2) - 1) * weight)/3)
+						(point.x * scale) + ((((Math.random() * 2) - 1) * weight) / 2),
+						(point.y * scale) + ((((Math.random() * 2) - 1) * weight) / 3)
 					);
 				}
 			}
@@ -92,7 +92,7 @@ const initDoodle = () => {
 		// 	ctx.stroke();
 		// }
 
-		const find_random_point = function() {
+		const find_random_point = function () {
 			// TODO: even distribution with varying numbers of points in each stroke (especially e.g. dotted 'i's)
 			// (or we might want to base it on ImageData instead of the list of points)
 			stroke = choose(strokes);
@@ -149,8 +149,8 @@ const initDoodle = () => {
 		// 	}
 		// }
 
-		const draw_branch = function(x, y, color, angle, recursion_level){
-			if (angle == null) { angle = Math.random()*Math.PI*2; }
+		const draw_branch = function (x, y, color, angle, recursion_level) {
+			if (angle == null) { angle = Math.random() * Math.PI * 2; }
 			if (recursion_level == null) { recursion_level = 0; }
 			ctx.save();
 			ctx.translate(x, y);
@@ -180,10 +180,10 @@ const initDoodle = () => {
 			ctx.restore();
 		};
 
-		const find_furthest_point_in_direction = function(angle){
+		const find_furthest_point_in_direction = function (angle) {
 			let furthest_dist = -Infinity;
 			let furthest_point = null;
-			for ({points} of strokes) {
+			for ({ points } of strokes) {
 				for (point of points) {
 					// x = point.x * Math.cos(angle) - point.y * Math.sin(angle)
 					const y = (point.y * Math.cos(angle)) - (point.x * Math.sin(angle));
@@ -212,7 +212,7 @@ const initDoodle = () => {
 
 	};
 
-	MultiMedium.getPadding = lineWidth=> 50;
+	MultiMedium.getPadding = lineWidth => 50;
 
 	for (let element of document.querySelectorAll("main .principle .word")) {
 		// @TODO: make it so it copies with spaces to the clipboard
@@ -233,7 +233,7 @@ const initDoodle = () => {
 
 
 	class Bird {
-		constructor(x, y){
+		constructor(x, y) {
 			this.x = x;
 			this.y = y;
 			this.vx = 0;
@@ -280,7 +280,7 @@ const initDoodle = () => {
 				return this.flapCyclePosition += (Math.PI * 2) / 100;
 			}
 		}
-		draw(ctx){
+		draw(ctx) {
 			ctx.beginPath();
 			ctx.save();
 			ctx.translate(this.x, this.y);
@@ -301,7 +301,7 @@ const initDoodle = () => {
 	const birds = ([0, 1, 2, 3, 4].map((i) => new Bird(-50, 400)));
 
 	let animation_frame_id;
-	const animate = function() {
+	const animate = function () {
 		let bird;
 		const width = container.clientWidth;
 		const height = container.clientHeight;
@@ -320,10 +320,10 @@ const initDoodle = () => {
 
 	animation_frame_id = requestAnimationFrame(animate);
 
-	return ()=> {
+	return () => {
 		cancelAnimationFrame(animation_frame_id);
 		MultiMedium.all_spanvases = []; // @HACK! TODO: proper cleanup
-	}
+	};
 };
 
 export default initDoodle;

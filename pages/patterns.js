@@ -123,12 +123,12 @@ class PatternsPage extends React.Component {
 				itemScope
 				itemType="http://schema.org/ImageObject"
 			>
-				<img src={`/images/patterns/${fname}`} itemProp="contentURL"/>
+				<img src={`/images/patterns/${fname}`} itemProp="contentURL" />
 			</article>
 		);
 
 		return <div>
-			<Title pageName="Patterns"/>
+			<Title pageName="Patterns" />
 			<h1 className="page-title">Patterns</h1>
 			<p>
 				These are some repeating patterns and textures I made with code (and a tool that I made (with code)).
@@ -192,7 +192,7 @@ class PatternsPage extends React.Component {
 
 		class Particle {
 
-			constructor({img, x, y}) {
+			constructor({ img, x, y }) {
 				this.img = img;
 				this.x = x;
 				this.y = y;

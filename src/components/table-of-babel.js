@@ -47,13 +47,13 @@ class TableOfBabel extends React.Component {
 				While some of the content may be meaningful, much of it may be nonsensical or inane.
 				(I think "Networks / Graphs" makes more sense as as medium than as a phenomenon, for example, and that's just in the <i>structure</i> of the table.)
 			</div>
-			
+
 			<table>
 				<thead>
 					<tr>
 						{/* TODO: try diagonal split to describe both rows and columns? using arrows for now */}
 						{/* <th>→ Domain (Field / Medium)<br/>↓ Pattern (Structure / Phenomenon)</th> */}
-						<th key="row-column-label">→ Domain<br/>↓ Pattern</th>
+						<th key="row-column-label">→ Domain<br />↓ Pattern</th>
 						{domains.map((domain, i) => <th key={domain}>{domain}</th>)}
 					</tr>
 				</thead>

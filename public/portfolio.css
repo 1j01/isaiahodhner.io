@@ -1,4 +1,3 @@
-
 html,
 body,
 #__next {
@@ -6,9 +5,11 @@ body,
 	display: flex;
 	flex-direction: column;
 }
+
 main {
 	flex: 1;
 }
+
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
@@ -18,134 +19,168 @@ body {
 	color: #505050;
 	line-height: 1;
 }
+
 * {
 	font-size: 100%;
 }
+
 .page-header,
 .page-footer,
-.textual-page-content{
+.textual-page-content {
 	padding: 1em 0;
 }
+
 @media (min-width: 700px) {
+
 	.page-header,
 	.page-footer,
-	.textual-page-content{
+	.textual-page-content {
 		padding: 2em;
 	}
 }
+
 header {
 	background: #0083A5;
 	color: white;
 }
+
 footer {
 	background: #132125;
 	color: #cecece;
 }
+
 header h1 {
 	font-size: 3em;
 	font-weight: normal;
 	margin: 0;
 }
+
 .principle.big {
 	font-size: 10vmin;
 	margin: 0;
 	padding: 1em;
-	text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
+	text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
 }
+
 .principle.big .word {
 	display: block;
 }
+
 .principle:not(.big) {
 	font-size: 2em;
-	text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+	text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
 }
+
 @media (max-width: 700px) {
+
+	/* specificity hack: "A or not A" is not redundant, it increases priority */
 	.principle:not(.big),
-	.principle.big { /* specificity hacks */
+	.principle.big {
 		font-size: 10vmin;
 	}
+
 	.principle .word {
 		display: block;
 	}
 }
+
 .principle.big.on-manifesto-page {
 	background: #87ceeb;
 	color: #4e321d;
 	text-shadow: none;
 	line-height: 1.5;
 }
+
 .principle .link-indicator {
 	font-size: 1rem;
 	text-shadow: none;
-	margin-top: 5px; /* based mainly on the text-shadow of the above elements, which is linear (px) */
+	/* based mainly on the text-shadow of the above elements, which is linear (px) */
+	margin-top: 5px;
 }
+
 @media (min-width: 550px) {
 	.principle.big .link-indicator {
 		font-size: 0.3em;
 	}
 }
+
 .principle .link-indicator::before {
 	content: "\bb\a0";
 	animation: spin-arrows 1.5s 0.5s linear infinite;
 	display: inline-block;
 }
+
 .principle .link-indicator::after {
 	content: "\a0\bb";
 	animation: spin-arrows 1.5s 0s linear infinite;
 	display: inline-block;
 }
+
 @keyframes spin-arrows {
 	from {
 		transform: rotateX(0turn);
 	}
+
 	to {
 		transform: rotateX(1turn);
 	}
 }
+
 nav {
 	font-size: 1.3em;
 	margin-top: 0.5em;
 }
+
 nav a:not(:last-child) {
 	padding-right: 0.4em;
 }
+
 .page-header h1 a {
 	color: inherit;
 }
+
 .page-header a {
 	color: inherit;
 	text-decoration: none;
 }
+
 .page-header h1 a {
 	text-shadow: 1px 25px 60px white;
 }
+
 p a,
 footer a {
 	color: #ff2eaa;
 	text-decoration: none;
 }
+
 p {
 	max-width: 70em;
 	margin: 16px auto;
 	padding: 0 16px;
 	text-align: left;
 }
+
 .octicon,
 .icon {
 	fill: currentColor;
 	padding: 0 5px;
 }
+
 nav .octicon {
 	vertical-align: unset !important;
 }
+
 .icon-twitter,
 .icon-email {
 	vertical-align: text-bottom;
 }
+
 article span,
 article header .octicon {
-	vertical-align: middle; 
+	vertical-align: middle;
 }
+
 article {
 	display: inline-block;
 	position: relative;
@@ -153,33 +188,40 @@ article {
 	box-shadow: 0 0 0 5px #0083A5;
 	vertical-align: top;
 }
+
 article img {
 	vertical-align: top;
 }
+
 .tiles-container {
 	/* 16px = the margin of the p before #patterns and of articles in #patterns */
 	/* 5px = width of border implemented as a box-shadow on the articles */
 	padding-top: calc(16px - 5px);
 	padding-bottom: calc(16px - 5px);
 }
+
 .page-title {
 	font-size: 2em;
 }
+
 #patterns article img {
 	width: 256px;
 	height: 256px;
 }
-article > a {
+
+article>a {
 	display: block;
 	width: 100%;
 	height: 100%;
 	transition: outline 0.2s ease-in-out, box-shadow;
 	outline: 1px solid transparent;
 }
-article > a:focus {
+
+article>a:focus {
 	outline: 1px solid white;
 	box-shadow: 0px 0px 5px 1px white;
 }
+
 article header,
 article footer {
 	position: absolute;
@@ -191,6 +233,7 @@ article footer {
 	/* text-shadow: 0 2px 5px black, 0 1px 1px black; */
 	text-shadow: 0 1px 5px rgb(0, 49, 61), 0 0 15px rgb(0, 131, 165);
 }
+
 /* [data-bg="light"] header,
 [data-bg="light"] footer {
 	background: #1D1D1D;
@@ -199,10 +242,12 @@ article a {
 	text-decoration: none;
 	color: inherit;
 }
+
 article header {
 	top: 0;
 	font-size: 1.2em;
 }
+
 article footer {
 	bottom: 0;
 	font-size: 1.0em;
@@ -216,6 +261,7 @@ article .repo {
 	opacity: 0.3;
 	outline: none;
 }
+
 article .repo:hover,
 article .repo:active,
 article .repo:focus {
@@ -223,10 +269,13 @@ article .repo:focus {
 }
 
 /* selection color */
-::selection { /* WebKit/Blink Browsers */
-	 background: rgba(98, 180, 254, 0.6);
+::selection {
+	/* WebKit/Blink Browsers */
+	background: rgba(98, 180, 254, 0.6);
 }
-::-moz-selection { /* Gecko Browsers */
+
+::-moz-selection {
+	/* Gecko Browsers */
 	background: rgba(98, 180, 254, 0.6);
 }
 
@@ -235,25 +284,30 @@ body {
 	user-select: none;
 	-webkit-user-select: none;
 }
-body > * {
+
+body>* {
 	user-select: text;
 	-webkit-user-select: text;
 }
+
 .page-header {
 	user-select: none;
 	-webkit-user-select: none;
 }
+
 .page-header * {
 	user-select: text;
 	-webkit-user-select: text;
 }
-.tiles-container > article {
+
+.tiles-container>article {
 	user-select: none;
 	-webkit-user-select: none;
 }
-.tiles-container > article > header,
-.tiles-container > article > header *,
-.tiles-container > article > footer {
+
+.tiles-container>article>header,
+.tiles-container>article>header *,
+.tiles-container>article>footer {
 	user-select: text;
 	-webkit-user-select: text;
 }
