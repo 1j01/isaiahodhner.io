@@ -8,7 +8,7 @@ function HomePage() {
 		<h4 style={{ fontSize: "2em", fontWeight: "100" }}>
 			Programmer and pianist
 		</h4>
-		<h5 style={{ fontSize: "1rem", fontWeight: "normal", position: "relative", left: 89, top: -20 }}>
+		<h5 style={{ fontSize: "1rem", fontWeight: "normal" }}>
 			(Music not shared yet)
 		</h5>
 		{/* <p>In short, I press keys all day.</p> */}
