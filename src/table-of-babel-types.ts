@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import type { TOBCategoryRelation } from "./table-of-babel-data";
 
 /**
@@ -57,5 +58,5 @@ export interface TOBCellRect {
 	width: number;
 	height: number;
 	// entries: TOBEntry[];
-	text: string;
+	text: ReactElement | string;
 }

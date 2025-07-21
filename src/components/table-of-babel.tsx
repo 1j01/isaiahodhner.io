@@ -33,7 +33,7 @@ class TableOfBabelEntry extends React.Component<TOBEntry> {
 const coordKey = (x, y) => `${x},${y}`;
 
 
-function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, totalLayers: number, cellRects: TOBCellRect[], flipAxes = false) {
+function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, totalLayers: number, flipAxes = false, cellRects: TOBCellRect[], cellRectsByCategory: Record<string, TOBCellRect> = {}) {
 	const spanSize = category.spanSize;
 	const subLayers = category.subLayers;
 
@@ -41,28 +41,23 @@ function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, t
 		throw new Error(`Category ${category.name} has invalid spanSize ${spanSize} or subLayers ${subLayers}`);
 	}
 
-	const height = Object.keys(category.subcategories).length ? 1 : totalLayers - y;
+	let cellRect: TOBCellRect = {
+		x,
+		y,
+		width: spanSize,
+		height: Object.keys(category.subcategories).length ? 1 : totalLayers - y,
+		text: category.name
+	};
 	if (flipAxes) {
-		cellRects.push({
-			y: x,
-			x: y,
-			height: spanSize,
-			width: height,
-			text: category.name,
-		});
-	} else {
-		cellRects.push({
-			x,
-			y,
-			width: spanSize,
-			height: height,
-			text: category.name,
-		});
+		[cellRect.x, cellRect.y] = [cellRect.y, cellRect.x];
+		[cellRect.width, cellRect.height] = [cellRect.height, cellRect.width];
 	}
+	cellRects.push(cellRect);
+	cellRectsByCategory[category.name] = cellRect;
 
 	let nextX = x;
 	for (const subcategory of Object.values(category.subcategories)) {
-		createCategoryLabels(subcategory, nextX, y + 1, totalLayers, cellRects, flipAxes);
+		createCategoryLabels(subcategory, nextX, y + 1, totalLayers, flipAxes, cellRects, cellRectsByCategory);
 		nextX += subcategory.spanSize;
 	}
 }
@@ -70,6 +65,7 @@ function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, t
 class TableOfBabel extends React.Component {
 	render() {
 		const cellRects: TOBCellRect[] = [];
+		const cellRectsByCategory: Record<string, TOBCellRect> = {};
 		cellRects.push({
 			x: 0,
 			y: 0,
@@ -77,10 +73,29 @@ class TableOfBabel extends React.Component {
 			height: domains.subLayers + 1,
 			text: "GO SIT IN THE CORNER",
 		});
-		createCategoryLabels(domains, patterns.subLayers + 1, 0, domains.subLayers + 1, cellRects);
-		createCategoryLabels(patterns, domains.subLayers + 1, 0, patterns.subLayers + 1, cellRects, true);
+		createCategoryLabels(domains, patterns.subLayers + 1, 0, domains.subLayers + 1, false, cellRects, cellRectsByCategory);
+		createCategoryLabels(patterns, domains.subLayers + 1, 0, patterns.subLayers + 1, true, cellRects, cellRectsByCategory);
 
-
+		for (const entry of data.entries) {
+			const domainRect = cellRectsByCategory[entry.domain];
+			const patternRect = cellRectsByCategory[entry.pattern];
+			if (!domainRect || !patternRect) {
+				throw new Error(`No cell rectangle found for entry with domain "${entry.domain}" and pattern "${entry.pattern}"`);
+			}
+			const cellRect: TOBCellRect = {
+				x: domainRect.x,
+				y: patternRect.y,
+				width: domainRect.width,
+				height: patternRect.height,
+				// text: entry.title,
+				text: <TableOfBabelEntry {...entry} />
+			};
+			cellRects.push(cellRect);
+			// TODO: I might need to create "Other" categories before I can coherently layout the entries,
+			// if there are any entries categorized directly under a super-category for which there are also entries for subcategories
+			// For now, I'm just showing one entry total...
+			break;
+		}
 
 		const grid = new Map<string, TOBCellRect>();
 		let gridWidth = 0;
