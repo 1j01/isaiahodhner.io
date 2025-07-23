@@ -82,6 +82,7 @@ class TableOfBabel extends React.Component {
 			// text: "Table of Babel",
 			text: <>→ Domain (Field / Medium)<br /><br />↓ Pattern (Structure / Phenomenon)</>,
 			// text: <><div style={{ textAlign: "right" }}>→ Domain (Field / Medium)</div><div>↓ Pattern (Structure / Phenomenon)</div></>,
+			headerScope: "col", // really both, but that's not a valid value (there is "rowgroup" or "colgroup" which I guess could be made to apply to the whole table, but I don't know if that's meaningful...)
 		});
 		createCategoryLabels(domains, patterns.subLayers + 1, 0, domains.subLayers + 1, false, cellRects, cellRectsByCategory);
 		createCategoryLabels(patterns, domains.subLayers + 1, 0, patterns.subLayers + 1, true, cellRects, cellRectsByCategory);

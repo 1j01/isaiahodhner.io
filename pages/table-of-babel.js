@@ -14,6 +14,12 @@ class TableOfBabelPage extends React.Component {
 				}
 				.TableOfBabel th {
 					font-weight: bold;
+					background:rgb(182, 217, 240);
+					border-color: #999 !important;
+					/*background: #0083A5;
+					color: #fff;
+					font-size: 1.1rem;
+					border-color: #fff !important;*/
 				}
 				.TableOfBabel td,
 				.TableOfBabel th {
