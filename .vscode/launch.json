@@ -4,7 +4,7 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Launch Next.js App",
-			"program": "${workspaceFolder}/src/server.js",
+			"program": "${workspaceFolder}/src/server.cjs",
 			"runtimeExecutable": "node",
 			"env": {
 				"NODE_ENV": "development",

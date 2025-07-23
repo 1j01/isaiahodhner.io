@@ -24,7 +24,7 @@
 	"type": "module",
 	"scripts": {
 		"test": "mocha --loader=ts-node/esm \"test/**/*.{ts,js}\"",
-		"dev": "node src/server.js",
+		"dev": "node src/server.cjs",
 		"build": "next build",
 		"deploy": "next build && firebase deploy",
 		"edit-image-tiled": "coffee edit-image-tiled.coffee",
