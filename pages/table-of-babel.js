@@ -12,7 +12,6 @@ class TableOfBabelPage extends React.Component {
 					padding: 1rem;
 					overflow: auto;
 				}
-				.TableOfBabel .table-row-label,
 				.TableOfBabel th {
 					font-weight: bold;
 				}
