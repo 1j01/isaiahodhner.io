@@ -31,11 +31,11 @@ export interface TOBEntry {
 	pattern: string;
 	domain: string;
 	title: string;
-	description: string;
-	flavor?: string;
+	description: string | ReactElement;
+	flavor?: string | ReactElement;
 	editorNote?: string;
 	link?: string;
-	image?: string;
+	image?: string | ReactElement;
 	contributor: string;
 }
 

@@ -1,5 +1,6 @@
 // import { ArrowDownIcon, ArrowUpIcon, XIcon, FilterIcon, FilterRemoveIcon } from "@primer/octicons-react";
 import * as React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 
 import data from "../table-of-babel-data";
 import type { TOBCategoryNode, TOBCellRect, TOBEntry } from "../table-of-babel-types";
@@ -20,7 +21,7 @@ class TableOfBabelEntry extends React.Component<TOBEntry> {
 		const isAI = entry.contributor === "AI";
 		const className = "TableOfBabelEntry" + (isAI ? " ai-generated" : "");
 		return <div className={className} title={isAI ? "This is an AI-generated suggestion. It may be inane, irrelevant, or incorrect." : ""}>
-			{entry.image && <img className="image" src={entry.image} alt="" />}
+			{entry.image && (typeof entry.image === "string" ? <img className="image" src={entry.image} alt="" /> : entry.image)}
 			<h3>{entry.title}</h3>
 			<p>{entry.description}</p>
 			{entry.link && <p className="references"><a href={entry.link} target="_blank" rel="noopener noreferrer">Reference</a></p>}
@@ -38,6 +39,19 @@ function overlaps(a: TOBCellRect, b: TOBCellRect): boolean {
 
 function rectsEqual(a: TOBCellRect, b: TOBCellRect): boolean {
 	return a.x === b.x && a.y === b.y && a.width === b.width && a.height === b.height;
+}
+
+function stringify(rect: TOBCellRect | undefined): string {
+	if (!rect) {
+		return String(rect);
+	}
+	let content;
+	if (typeof rect.text === "string") {
+		content = rect.text;
+	} else {
+		content = renderToStaticMarkup(rect.text);
+	}
+	return `(${rect.x}, ${rect.y}) [${rect.width}x${rect.height}] "${content}"`;
 }
 
 function createCategoryLabels(category: TOBCategoryNode, x: number, y: number, totalLayers: number, flipAxes = false, cellRects: TOBCellRect[], cellRectsByCategory: Record<string, TOBCellRect> = {}) {
@@ -111,7 +125,7 @@ class TableOfBabel extends React.Component {
 						{cellRect.text}
 					</>);
 				} else {
-					throw new Error(`Cell rectangle for entry overlaps with existing cell rectangle. Existing: ${JSON.stringify(overlappingCell)} vs New: ${JSON.stringify(cellRect)}`);
+					throw new Error(`Cell rectangle for entry overlaps with existing cell rectangle. Existing: ${stringify(overlappingCell)} vs New: ${stringify(cellRect)}`);
 				}
 			} else {
 				cellRects.push(cellRect);
@@ -125,7 +139,7 @@ class TableOfBabel extends React.Component {
 			for (let y = rect.y; y < rect.y + rect.height; y++) {
 				for (let x = rect.x; x < rect.x + rect.width; x++) {
 					if (grid.has(coordKey(x, y))) {
-						throw new Error(`Grid at (${x}, ${y}) has overlapping cell rectangle definitions: ${JSON.stringify(grid.get(coordKey(x, y)))} and ${JSON.stringify(rect)}`);
+						throw new Error(`Grid at (${x}, ${y}) has overlapping cell rectangle definitions: ${stringify(grid.get(coordKey(x, y)))} and ${stringify(rect)}`);
 					}
 					grid.set(coordKey(x, y), rect);
 					gridWidth = Math.max(gridWidth, x + 1);

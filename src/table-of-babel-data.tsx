@@ -1,4 +1,56 @@
+import type { ReactElement } from "react";
 import type { TOBData } from "./table-of-babel-types";
+
+const logicGatesImageInfo = {
+	src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXbRRK9aRVb-9-emctjCJnubaz1u5Ltce5ejFPvCsQA2WTgVtOhNrFdUsAAW0OtFvxs0EPkWZTk4JjSvMj4KdI7ilwnKbBpnkPNDjkmJh_Ne5lUpSUuy4Gjd5WzL_BfWlU9o6v6c5MRTc/s1600/fluid+logic+bowles.jpg",
+	// TODO: why is the vertical crop off?
+	x: 220, y: 115, width: 900, height: 1477,
+	cellsX: 5, cellsY: 8,
+	// I THINK the "Key" is equivalent to a not gate
+	rows: ["OR Gate", "NOR Gate", "AND Gate", "Flip-Flop", "NAND Gate", /*"Key"*/ "NOT Gate", "Binary Counter", "XOR Gate"],
+	cols: ["N.F.P.A. Symbol", "Logic Symbol", "Valve Equivalent", "Electrical Equivalent", "Fluidic Silhouette"],
+};
+// function LogicGateImage({ row, col }): ReactElement {
+// 	const x = logicGatesImageInfo.cols.indexOf(col);
+// 	const y = logicGatesImageInfo.rows.indexOf(row);
+// 	return <img src={logicGatesImageInfo.src} style={{ clipPath: `inset(${y * 100 / logicGatesImageInfo.cellsY}% ${100 - (x + 1) * 100 / logicGatesImageInfo.cellsX}% ${100 - (y + 1) * 100 / logicGatesImageInfo.cellsY}% ${x * 100 / logicGatesImageInfo.cellsX}%)` }} />;
+// }
+function LogicGateImage({ row, col }) {
+	const { x: baseX, y: baseY, width, height, cellsX, cellsY, src } = logicGatesImageInfo;
+
+	const cellWidth = width / cellsX;
+	const cellHeight = height / cellsY;
+
+	const colIndex = logicGatesImageInfo.cols.indexOf(col);
+	const rowIndex = logicGatesImageInfo.rows.indexOf(row);
+
+	if (colIndex < 0 || rowIndex < 0) {
+		throw new Error(`Invalid row "${row}" or column "${col}" for LogicGateImage.`);
+	}
+
+	const cropX = baseX + colIndex * cellWidth;
+	const cropY = baseY + rowIndex * cellHeight;
+
+	return (
+		<div style={{
+			width: `${cellWidth}px`,
+			height: `${cellHeight}px`,
+			overflow: 'hidden',
+			position: 'relative',
+		}}>
+			<img
+				src={src}
+				alt={`${row} - ${col}`}
+				style={{
+					position: 'absolute',
+					left: `-${cropX}px`,
+					top: `-${cropY}px`,
+				}}
+			/>
+		</div>
+	);
+}
+
 
 const data: TOBData = {
 	"patternCategoryRelations": [
@@ -7,7 +59,11 @@ const data: TOBData = {
 			"super": "Computation Primitive",
 		},
 		{
-			"sub": "Transistor",
+			"sub": "Transistor", // "Amplifier" might be a better general name
+			"super": "Computation Primitive",
+		},
+		{
+			"sub": "Binary Counter",
 			"super": "Computation Primitive",
 		},
 		{
@@ -157,18 +213,39 @@ const data: TOBData = {
 			"link": "https://en.wikipedia.org/wiki/Fluidics#Components",
 			"contributor": "1j01"
 		},
-		{
-			// TODO: separate entries for each gate
-			// maybe even a physics simulation of the gates?
-			"pattern": "Logic Gate",
+		// {
+		// 	// TODO: separate entries for each gate
+		// 	// maybe even a physics simulation of the gates?
+		// 	"pattern": "Logic Gate",
+		// 	"domain": "Fluid Dynamics",
+		// 	"title": "Fluidic logic gates",
+		// 	"description": "",
+		// 	"image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXbRRK9aRVb-9-emctjCJnubaz1u5Ltce5ejFPvCsQA2WTgVtOhNrFdUsAAW0OtFvxs0EPkWZTk4JjSvMj4KdI7ilwnKbBpnkPNDjkmJh_Ne5lUpSUuy4Gjd5WzL_BfWlU9o6v6c5MRTc/s1600/fluid+logic+bowles.jpg",
+		// 	// Image source isn't the best reference...
+		// 	"link": "https://nummolt.blogspot.com/2016/05/fluidic-computers-logic-gates.html",
+		// 	"contributor": "1j01"
+		// },
+		...logicGatesImageInfo.rows.map(row => ({
+			// TODO: a physics simulation of the gates would be epic
+			"pattern": row,
 			"domain": "Fluid Dynamics",
-			"title": "Fluidic logic gates",
+			"title": "Fluidic " + row, //row + " Fluidic Logic Gate",
 			"description": "",
-			"image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXbRRK9aRVb-9-emctjCJnubaz1u5Ltce5ejFPvCsQA2WTgVtOhNrFdUsAAW0OtFvxs0EPkWZTk4JjSvMj4KdI7ilwnKbBpnkPNDjkmJh_Ne5lUpSUuy4Gjd5WzL_BfWlU9o6v6c5MRTc/s1600/fluid+logic+bowles.jpg",
-			// Image source isn't the best reference...
+			"image": <LogicGateImage row={row} col="Fluidic Silhouette" />,
 			"link": "https://nummolt.blogspot.com/2016/05/fluidic-computers-logic-gates.html",
 			"contributor": "1j01"
-		},
+		})),
+		// TODO: merge the separate entries that have the symbols into this mapped set that has lower level diagrams
+		...logicGatesImageInfo.rows.map(row => ({
+			// TODO: a physics simulation of the gates would be epic
+			"pattern": row,
+			"domain": "Electricity",
+			"title": row,
+			"description": "",
+			"image": <LogicGateImage row={row} col="Electrical Equivalent" />,
+			"link": "https://nummolt.blogspot.com/2016/05/fluidic-computers-logic-gates.html",
+			"contributor": "1j01"
+		})),
 		{
 			// TODO: separate entries for each gate
 			// maybe even a physics simulation of the gates?
