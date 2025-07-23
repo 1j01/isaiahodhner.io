@@ -3,9 +3,9 @@ import type { TOBData } from "./table-of-babel-types";
 
 const logicGatesImageInfo = {
 	src: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjXbRRK9aRVb-9-emctjCJnubaz1u5Ltce5ejFPvCsQA2WTgVtOhNrFdUsAAW0OtFvxs0EPkWZTk4JjSvMj4KdI7ilwnKbBpnkPNDjkmJh_Ne5lUpSUuy4Gjd5WzL_BfWlU9o6v6c5MRTc/s1600/fluid+logic+bowles.jpg",
-	// TODO: why is the vertical crop off?
-	x: 220, y: 115, width: 900, height: 1477,
+	x: 220, y: 114, width: 900, height: 1479,
 	cellsX: 5, cellsY: 8,
+	row7CellHeight: 205, // this one is larger than the others
 	// I THINK the "Key" is equivalent to a not gate
 	rows: ["OR Gate", "NOR Gate", "AND Gate", "Flip-Flop", "NAND Gate", /*"Key"*/ "NOT Gate", "Binary Counter", "XOR Gate"],
 	cols: ["N.F.P.A. Symbol", "Logic Symbol", "Valve Equivalent", "Electrical Equivalent", "Fluidic Silhouette"],
@@ -18,18 +18,22 @@ const logicGatesImageInfo = {
 function LogicGateImage({ row, col }) {
 	const { x: baseX, y: baseY, width, height, cellsX, cellsY, src } = logicGatesImageInfo;
 
-	const cellWidth = width / cellsX;
-	const cellHeight = height / cellsY;
-
 	const colIndex = logicGatesImageInfo.cols.indexOf(col);
 	const rowIndex = logicGatesImageInfo.rows.indexOf(row);
+
+	const mostCellHeights = (height - logicGatesImageInfo.row7CellHeight) / (cellsY - 1);
+	const cellWidth = width / cellsX;
+	const cellHeight = row === "Binary Counter" ? logicGatesImageInfo.row7CellHeight : mostCellHeights;
 
 	if (colIndex < 0 || rowIndex < 0) {
 		throw new Error(`Invalid row "${row}" or column "${col}" for LogicGateImage.`);
 	}
 
 	const cropX = baseX + colIndex * cellWidth;
-	const cropY = baseY + rowIndex * cellHeight;
+	let cropY = baseY;
+	for (let i = 0; i < rowIndex; i++) {
+		cropY += i === 6 ? logicGatesImageInfo.row7CellHeight : mostCellHeights;
+	}
 
 	return (
 		<div style={{
