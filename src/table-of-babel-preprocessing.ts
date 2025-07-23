@@ -8,7 +8,7 @@ function detectCycles(relations: TOBCategoryRelation[], nodeByName: Record<strin
 	// (AI generated code)
 
 	// Build graph (for cycle detection)
-	const adjacencyList = {};
+	const adjacencyList: Record<string, string[]> = {};
 	for (const name in nodeByName) {
 		adjacencyList[name] = [];
 	}
@@ -17,10 +17,10 @@ function detectCycles(relations: TOBCategoryRelation[], nodeByName: Record<strin
 	}
 
 	// Cycle detection using DFS
-	const visited = new Set();
-	const stack = new Set();
+	const visited = new Set<string>();
+	const stack = new Set<string>();
 
-	function dfs(node) {
+	function dfs(node: string) {
 		if (stack.has(node)) {
 			throw new Error(`circular dependency detected: ${Array.from(stack).join(' -> ')} -> ${node}`);
 		}

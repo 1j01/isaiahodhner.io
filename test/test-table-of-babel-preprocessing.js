@@ -8,7 +8,8 @@ describe('parseCategories', () => {
 		expect(tree).to.deep.equal({
 			name: 'root',
 			subcategories: {},
-			spanSize: 1
+			spanSize: 1,
+			subLayers: 0,
 		});
 	});
 
@@ -41,16 +42,19 @@ describe('parseCategories', () => {
 						B: {
 							name: 'B',
 							subcategories: {
-								D: { name: 'D', subcategories: {}, spanSize: 1 }
+								D: { name: 'D', subcategories: {}, spanSize: 1, subLayers: 0 }
 							},
-							spanSize: 1
+							spanSize: 1,
+							subLayers: 1,
 						},
-						C: { name: 'C', subcategories: {}, spanSize: 1 }
+						C: { name: 'C', subcategories: {}, spanSize: 1, subLayers: 0 }
 					},
-					spanSize: 2
+					spanSize: 2,
+					subLayers: 2,
 				}
 			},
-			spanSize: 2
+			spanSize: 2,
+			subLayers: 3,
 		});
 	});
 
@@ -71,15 +75,18 @@ describe('parseCategories', () => {
 						B: {
 							name: 'B',
 							subcategories: {
-								C: { name: 'C', subcategories: {}, spanSize: 1 }
+								C: { name: 'C', subcategories: {}, spanSize: 1, subLayers: 0 },
 							},
-							spanSize: 1
+							spanSize: 1,
+							subLayers: 1,
 						}
 					},
-					spanSize: 1
+					spanSize: 1,
+					subLayers: 2,
 				}
 			},
-			spanSize: 1
+			spanSize: 1,
+			subLayers: 3,
 		});
 	});
 
