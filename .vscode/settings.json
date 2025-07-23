@@ -59,6 +59,7 @@
 	},
 	"javascript.format.semicolons": "insert",
 	"typescript.format.semicolons": "insert",
+	"typescript.preferences.importModuleSpecifierEnding": "minimal",
 	// .----------------------------.
 	// | Theming                    |
 	// '----------------------------'

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { parseCategories } from "../src/table-of-babel-preprocessing.js";
+import { parseCategories } from '../src/table-of-babel-preprocessing';
 
 describe('parseCategories', () => {
 	it('handles empty case', () => {
