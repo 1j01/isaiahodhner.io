@@ -268,16 +268,19 @@ const data: TOBData = {
 			"pattern": "Logic Gate",
 			"domain": "Minecraft",
 			"title": "Redstone Logic Gates",
-			"description": "",
+			"description": "(Note: the NAND is wrong in this image, the top comparator should be in subtraction mode)",
 			// hotlinking not allowed on wikia
 			// don't wanna just bring the image into the repo without checking for a license
 			// "image": "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0f/Compact-Redstone-Logic-Circuits.jpg/revision/latest?cb=20210728173647",
 			// ah, from the image gallery I found the original source, which is hotlinkable
 			"image": "https://i.redd.it/7xr9outg17z41.jpg",
+			// "link": "https://www.reddit.com/r/Minecraft/comments/clkimg/no_interference_1_block_high_logic_gates/",
 			"link": "https://minecraft.fandom.com/wiki/Redstone_circuits/Logic",
-			// A nice diagram and extensive tutorial:
+			// A nice diagram of torch-based gates and an extensive tutorial:
 			// "image": "https://raw.githubusercontent.com/NewCaledoniaDevTeam/MountainsGuide/6bdee25a9010faae141746039198444934c7304d/docs/redstone/images/logic_circuit/logic_gates.png",
 			// "link": "https://newcaledoniadevteam.github.io/MountainsGuide/redstone/",
+			// Screenshot of torch-based gates:
+			// https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/6b/LogicGatesRedstone.jpg/revision/latest?cb=20240301005020
 			// TODO: allow multiple references per entry
 			// (should they be inline in text btw?)
 			"contributor": "1j01"
