@@ -9,7 +9,9 @@ import { parseCategories } from "../table-of-babel-preprocessing";
 const domains = parseCategories(data.domainCategoryRelations, data.entries.map(entry => entry.domain), "Domains (Types of Media / Fields of Study)");
 const patterns = parseCategories(data.patternCategoryRelations, data.entries.map(entry => entry.pattern), "Patterns (Structures / Phenomena)");
 
-console.log({ domains, patterns });
+// Note: this code runs on the server and client
+// console.log({ domains, patterns });
+console.log(`Table of Babel: ${domains.spanSize} domains, ${patterns.spanSize} patterns, ${data.entries.length} entries`);
 
 /**
  * An expression of some structure/phenomenon/pattern in some field/medium/domain.
