@@ -132,8 +132,23 @@ nav {
 }
 
 nav a:not(:last-child) {
-	padding-right: 0.4em;
+	margin-right: 0.4em;
 }
+
+.page-tabs {
+	font-size: 1.3em;
+}
+
+.page-tabs a {
+	border: 2px solid #14a7cc;
+	background: #14a7cc;
+	padding: 8px;
+	/* border-radius: 20px 20px 5px 5px; */
+	border-radius: 10px;
+	color: white;
+	text-decoration: none;
+}
+
 
 .page-header h1 a {
 	color: inherit;

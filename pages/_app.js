@@ -28,20 +28,21 @@ class MyApp extends App {
 				<h1><Link href="/">Isaiah Odhner</Link></h1>
 				{/*this.props.isManifestoPage ? null :*/
 					<nav className="hide-on-manifesto-page">
-						<h2 className={`principle${show_manifesto_link_big ? " big" : ""}`}>
+						{/* <h2 className={`principle${show_manifesto_link_big ? " big" : ""}`}>
 							<Link href="/fearless-exploration">
 								Fearless Exploration
 								<div className="subtitle link-indicator">A manifesto (to come)</div>
 							</Link>
-						</h2>
+						</h2> */}
 						<a href="mailto:isaiahodhner@gmail.com">{email_icon}Email</a>{" "}
 						<a href="https://twitter.com/isaiahodhner" title="The service formerly known as Twitter.">{twitter_icon}Ex-Twitter</a>{" "}
 						<a href="https://bsky.app/profile/1j01.bsky.social" title="Bluesky, a Twitter replacement.">{bluesky_icon}Bluesky</a>{" "}
+						<a href="https://github.com/1j01"><MarkGithubIcon />GitHub</a>{" "}
 						<br /><br />
-						<Link href="/apps">Apps</Link>{" "}
-						<Link href="/games">Games & Experiments</Link>
-						<br /><br />
-						<a href="https://github.com/1j01"><MarkGithubIcon />More on GitHub</a>
+						<div className="page-tabs">
+							<Link href="/apps">Apps</Link>{" "}
+							<Link href="/games">Games & Experiments</Link>
+						</div>
 					</nav>
 				}
 			</header>
