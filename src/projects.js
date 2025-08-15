@@ -24,6 +24,12 @@ export const apps = [
 		url: "https://pypi.org/project/textual-paint/"
 	},
 	{
+		repo_name: 'tracky-mouse',
+		title: 'Tracky Mouse',
+		description: 'Hands-free mouse control',
+		url: "https://trackymouse.js.org"
+	},
+	{
 		repo_name: 'true-random-movie',
 		title: 'True Random Movie',
 		// description: 'Find something to watch, from over 32 thousand films'

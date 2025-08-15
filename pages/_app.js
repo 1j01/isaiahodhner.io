@@ -38,7 +38,7 @@ class MyApp extends App {
 						<a href="https://twitter.com/isaiahodhner" title="The service formerly known as Twitter.">{twitter_icon}Ex-Twitter</a>{" "}
 						<a href="https://bsky.app/profile/1j01.bsky.social" title="Bluesky, a Twitter replacement.">{bluesky_icon}Bluesky</a>{" "}
 						<br /><br />
-						<Link href="/apps">Web Apps</Link>{" "}
+						<Link href="/apps">Apps</Link>{" "}
 						<Link href="/games">Games & Experiments</Link>
 						<br /><br />
 						<a href="https://github.com/1j01"><MarkGithubIcon />More on GitHub</a>
