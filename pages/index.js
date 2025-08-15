@@ -43,6 +43,30 @@ function HomePage() {
 			that <a href="https://en.wikipedia.org/wiki/Exception_that_proves_the_rule">proves the rule</a>...
 		</p>
 		*/}
+		<p>
+			I'm most well known for <a href="https://jspaint.app/about">JS Paint</a>, a detailed recreation of Microsoft Paint as a web app, with extra features.
+		</p>
+		<p>
+			I've also created a whole desktop environment around it, called <a href="https://98.js.org">98.js</a>, housing many other Windows 98 software remakes.
+		</p>
+		<p>
+			I'm interested in accessibility for people who can't use a mouse, with projects like <a href="https://trackymouse.js.org/">Tracky Mouse</a>,
+			which I've also integrated into JS Paint.
+		</p>
+		<p>
+			{/* My dream is to empower artists by improving the backbone that software is built on */}
+			My dream is to empower people by improving the very models that software is built upon, inventing based on the principle of
+			{" "}<Link href="/fearless-exploration">Fearless Exploration</Link>.
+		</p>
+		{/* <p>
+			For instance, people shouldn't have to lose their work if they accidentally close a tab, or if they undo and do anything other than redo.
+			This implies auto-save and non-linear history, respectively, but we can go much further.
+		</p>
+		<p>
+			<a href="https://mopaint.app">Mopaint</a> is a proof of concept of a program you can close and reopen, preserving not just the current state, but the history,
+			and you can get back to any state even if you undo and do something else, because the history is non-linear.
+			(JS Paint currently has non-linear history but doesn't auto-save the history.)
+		</p> */}
 	</div>;
 }
 
