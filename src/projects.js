@@ -46,7 +46,7 @@ export const apps = [
 	{
 		repo_name: 'wavey',
 		title: 'Wavey',
-		description: <>Proof-of-concept online <abbr title="digital audio workstation">DAW</abbr></>,
+		description: <>Proof-of-concept online <abbr title="Digital Audio Workstation">DAW</abbr></>,
 		url: 'https://audio-editor.web.app'
 	},
 	{
@@ -63,7 +63,7 @@ export const apps = [
 	{
 		repo_name: 'midiflip',
 		title: 'MidiFlip',
-		description: <>Mathematical <abbr title="musical instrument digital interface">MIDI</abbr> manipulation</>,
+		description: <>Mathematical <abbr title="Musical Instrument Digital Interface">MIDI</abbr> manipulation</>,
 		bg: "light"
 	},
 	{
