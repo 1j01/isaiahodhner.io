@@ -2,6 +2,7 @@ import Link from "next/link";
 
 function HomePage() {
 	return <div className="textual-page-content">
+		<img src="images/avatar.png" alt="Avatar" style={{ width: "300px", maxWidth: "80%", filter: "drop-shadow(0px 25px 100px #00a1ff)" }} />
 		<h3 style={{ fontSize: "4em", fontWeight: "100", marginBottom: 0, textShadow: "0px 25px 70px #00a1ff" }}>
 			Hi, I'm Isaiah
 		</h3>
