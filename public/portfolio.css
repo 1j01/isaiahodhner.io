@@ -131,8 +131,9 @@ nav {
 	margin-top: 0.5em;
 }
 
-nav a:not(:last-child) {
-	margin-right: 0.4em;
+nav a {
+	display: inline-block;
+	margin: 0.2em;
 }
 
 .page-tabs {
