@@ -37,7 +37,7 @@ class MyApp extends App {
 						<a href="mailto:isaiahodhner@gmail.com">{email_icon}Email</a>{" "}
 						<a href="https://twitter.com/isaiahodhner" title="The service formerly known as Twitter.">{twitter_icon}Ex-Twitter</a>{" "}
 						<a href="https://bsky.app/profile/1j01.bsky.social" title="Bluesky, a Twitter replacement.">{bluesky_icon}Bluesky</a>{" "}
-						<a href="https://github.com/1j01"><MarkGithubIcon />GitHub</a>{" "}
+						<a href="https://github.com/1j01"><MarkGithubIcon size={24} />GitHub</a>{" "}
 						<br /><br />
 						<div className="page-tabs">
 							<Link href="/apps">Apps</Link>{" "}

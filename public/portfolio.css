@@ -191,10 +191,6 @@ p {
 	padding: 0 5px;
 }
 
-nav .octicon {
-	vertical-align: unset !important;
-}
-
 .icon-twitter,
 .icon-bluesky,
 .icon-email {
