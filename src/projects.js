@@ -208,17 +208,15 @@ export const games = [
 		description: 'Archery meditation'
 	},
 	{
-		// Note: I have a few other crossword puzzles
-		// If I make enough that I'm PROUD of I'll change this to link to my profile
-		// For now it feels quaint to just link to one, and show its fun title
-		// (It also makes it easier to give a description if it's not all said in the title with something like "Crosswords")
-		title: 'Ocean Lotion Promotion',
+		title: 'My Crosswords',
 		// image_url: 'https://crosshare.org/api/ogimage/FmITASez7g44HLMqO33W',
 		image_url: 'images/projects/ocean-lotion-promotion.png',
-		repo_name: 'crosshare', // fake ID
-		repo_url: 'https://crosshare.org/isaiahodhner', // not an actual repo...
-		description: 'A crossword puzzle',
-		url: 'https://crosshare.org/crosswords/FmITASez7g44HLMqO33W/ocean-lotion-promotion',
+		// repo_name: 'crosshare', // fake ID
+		// repo_url: 'https://crosshare.org/isaiahodhner', // not an actual repo... I do have a crossword-helper repo but it's for tools, not the puzzles themselves
+		repo_name: 'crossword-helper', // points to tools, not the puzzles themselves
+		// description: 'Puzzles by me on Crosshare',
+		description: 'Play my puzzles on Crosshare',
+		url: 'https://crosshare.org/isaiahodhner',
 	},
 	{
 		repo_name: 'slugg',
