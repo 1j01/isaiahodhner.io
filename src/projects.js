@@ -236,6 +236,11 @@ export const games = [
 		description: 'Point-based jelly physics playground with dynamic audio'
 	},
 	{
+		repo_name: 'cardium',
+		title: 'Cardium',
+		description: 'Card mechanics prototype'
+	},
+	{
 		repo_name: 'polywogg',
 		title: 'Polywogg',
 		description: 'Sword fighting game'
