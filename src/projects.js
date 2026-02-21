@@ -241,6 +241,28 @@ export const games = [
 		description: 'Card mechanics prototype'
 	},
 	{
+		repo_name: 'jengle-gym',
+		url: 'https://1j01.github.io/jengle-gym/ttt',
+		image_url: '/images/projects/ttt.png',
+		title: 'Trick Track Trove',
+		description: 'Marble track waterfall builder'
+	},
+	{
+		repo_name: 'jengle-gym',
+		title: 'Jengle Gym',
+		description: 'Domino tower builder'
+	},
+	{
+		repo_name: 'platcoin',
+		title: 'Coin Quest',
+		description: 'Platformer with a flippy twist'
+	},
+	{
+		repo_name: 'pixelball',
+		title: 'Byte Ball',
+		description: '2P arcade basketball'
+	},
+	{
 		repo_name: 'polywogg',
 		title: 'Polywogg',
 		description: 'Sword fighting game'
