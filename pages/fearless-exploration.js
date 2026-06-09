@@ -53,8 +53,10 @@ class ManifestoPage extends React.Component {
 				</p>
 				<p>
 					I'll be writing a manifesto, which I'll put here, or at least link to it / redirect.
-					I also plan on starting a Patreon page.
 					For now you can follow me on <abbr title="The service formerly known as Twitter">Ex-Twitter</abbr>, <a href="https://twitter.com/isaiahodhner">@isaiahodhner</a>.
+					{/* For now you can follow me on <abbr title="The service formerly known as Twitter">Ex-Twitter</abbr>, <a href="https://twitter.com/isaiahodhner">@isaiahodhner</a>,
+					or Bluesky at <a href="https://bsky.app/profile/1j01.bsky.social">1j01.bsky.social</a>. */}
+					{/* For now you can follow me on <abbr title="The service formerly known as Twitter">Ex-Twitter</abbr>, <a href="https://twitter.com/isaiahodhner">@isaiahodhner</a>, or support me on <a href="https://www.patreon.com/iodhner">Patreon</a>. */}
 				</p>
 			</div>
 			<p>
